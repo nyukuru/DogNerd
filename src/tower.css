@@ -1,0 +1,99 @@
+[class*="tower_combatCell__"]:has(> .dognerd-turns) {
+  overflow: visible;
+}
+
+.dognerd-item-badge.dognerd-turns {
+  --dognerd-badge-bg: #63d19f;
+  --dognerd-badge-border: #a8ead0;
+  --dognerd-badge-text: #0f3d2a;
+  position: absolute;
+  top: -7px;
+  left: -7px;
+  pointer-events: none;
+}
+
+[class*="tower_playerPortraitFx__"]:has(> .dognerd-statuses) {
+  position: relative;
+}
+
+.dognerd-statuses {
+  position: absolute;
+  /* above the portrait layers, which go up to z-index 60 */
+  z-index: 100;
+  right: 4px;
+  bottom: 4px;
+  left: 4px;
+  display: flex;
+  flex-wrap: wrap-reverse;
+  justify-content: center;
+  gap: 3px;
+  pointer-events: none;
+}
+
+.dognerd-status-good {
+  --dognerd-badge-bg: #63d19f;
+  --dognerd-badge-border: #a8ead0;
+  --dognerd-badge-text: #0f3d2a;
+}
+
+.dognerd-status-fire {
+  --dognerd-badge-bg: #ff7a2f;
+  --dognerd-badge-border: #ffbb94;
+}
+
+.dognerd-status-poison {
+  --dognerd-badge-bg: #4e8d29;
+  --dognerd-badge-border: #8fc96b;
+}
+
+.dognerd-status-curse {
+  --dognerd-badge-bg: #ae63d1;
+  --dognerd-badge-border: #d6a8eb;
+}
+
+.dognerd-status-weak {
+  --dognerd-badge-bg: #915045;
+  --dognerd-badge-border: #c79a92;
+}
+
+.dognerd-status-stun {
+  --dognerd-badge-bg: #ffc841;
+  --dognerd-badge-border: #ffe39a;
+  --dognerd-badge-text: #3d2c00;
+}
+
+.dognerd-status-ice {
+  --dognerd-badge-bg: #89ceff;
+  --dognerd-badge-border: #c9e8ff;
+  --dognerd-badge-text: #0b3050;
+}
+
+.dognerd-status-charm {
+  --dognerd-badge-bg: #ff41b5;
+  --dognerd-badge-border: #ff9ad6;
+}
+
+.dognerd-status-size {
+  --dognerd-badge-bg: #6b63d1;
+  --dognerd-badge-border: #aaa5ee;
+}
+
+.dognerd-status-other {
+  --dognerd-badge-bg: #777;
+  --dognerd-badge-border: #aaa;
+}
+
+.dognerd-queue {
+  position: absolute;
+  top: 4px;
+  right: 4px;
+  padding: 2px 6px;
+  border: 1px solid rgb(137, 206, 255);
+  border-radius: 8px;
+  background: rgb(63, 133, 255);
+  color: white;
+  font-size: 24px;
+  font-style: normal;
+  line-height: 1.2;
+  pointer-events: none;
+}

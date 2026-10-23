@@ -1,0 +1,10 @@
+result
+result-*
+dist/
+web-ext-artifacts/
+node_modules/
+.firefox-profile/
+.chrome-profile/
+.pre-commit-config.yaml
+.mcp.json
+*.zip

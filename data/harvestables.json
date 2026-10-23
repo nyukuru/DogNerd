@@ -1,0 +1,1222 @@
+{
+  "schema": 1,
+  "blocks": [
+    {
+      "name": null,
+      "color": null,
+      "size": 76
+    }
+  ],
+  "slots": [
+    {
+      "name": "Acorn",
+      "block": null,
+      "sprite": "/img/item_acorn.png",
+      "obtain": [
+        {
+          "where": null,
+          "details": [
+            [
+              null,
+              "Grown from Acorn"
+            ]
+          ]
+        }
+      ]
+    },
+    {
+      "name": "Apple",
+      "block": null,
+      "sprite": "/img/item_apple.png",
+      "obtain": [
+        {
+          "where": null,
+          "details": [
+            [
+              null,
+              "Grown from Apple Tree Seeds"
+            ]
+          ]
+        }
+      ]
+    },
+    {
+      "name": "Worm Apple",
+      "block": null,
+      "sprite": "/img/item_wormy_apple.png",
+      "obtain": [
+        {
+          "where": null,
+          "details": [
+            [
+              null,
+              "Variant of Apple"
+            ]
+          ]
+        }
+      ]
+    },
+    {
+      "name": "Golden Apple",
+      "block": null,
+      "sprite": "/img/item_golden_apple.png",
+      "obtain": [
+        {
+          "where": null,
+          "details": [
+            [
+              null,
+              "Variant of Apple"
+            ]
+          ]
+        }
+      ]
+    },
+    {
+      "name": "Apl",
+      "block": null,
+      "sprite": "/img/item_apl.png",
+      "obtain": [
+        {
+          "where": null,
+          "details": [
+            [
+              null,
+              "Variant of Apple"
+            ]
+          ]
+        }
+      ]
+    },
+    {
+      "name": "Watermelon",
+      "block": null,
+      "sprite": "/img/item_watermelon.png",
+      "obtain": [
+        {
+          "where": null,
+          "details": [
+            [
+              null,
+              "Grown from Watermelon Seed"
+            ]
+          ]
+        }
+      ]
+    },
+    {
+      "name": "Water Melon",
+      "block": null,
+      "sprite": "/img/item_water_melon.png",
+      "obtain": [
+        {
+          "where": null,
+          "details": [
+            [
+              null,
+              "Variant of Watermelon"
+            ],
+            [
+              null,
+              "Hint for obtaining: Surround Watermelon Crop with Water. Water tiles cannot have crops in them"
+            ]
+          ]
+        }
+      ]
+    },
+    {
+      "name": "Cube Watermelon",
+      "block": null,
+      "sprite": "/img/item_cube_watermelon.png",
+      "obtain": [
+        {
+          "where": null,
+          "details": [
+            [
+              null,
+              "Variant of Watermelon"
+            ]
+          ]
+        }
+      ]
+    },
+    {
+      "name": "Boneanna",
+      "block": null,
+      "sprite": "/img/item_boneanna.png",
+      "obtain": [
+        {
+          "where": null,
+          "details": [
+            [
+              null,
+              "Grown from Boneanna Seeds"
+            ]
+          ]
+        }
+      ]
+    },
+    {
+      "name": "Doggplant",
+      "block": null,
+      "sprite": "/img/item_doggplant.png",
+      "obtain": [
+        {
+          "where": null,
+          "details": [
+            [
+              null,
+              "Grown from Doggplant Seeds"
+            ]
+          ]
+        }
+      ]
+    },
+    {
+      "name": "Pomnapple",
+      "block": null,
+      "sprite": "/img/item_pomnapple.png",
+      "obtain": [
+        {
+          "where": null,
+          "details": [
+            [
+              null,
+              "Grown from Pomnapple Seed"
+            ]
+          ]
+        }
+      ]
+    },
+    {
+      "name": "White Pomnapple",
+      "block": null,
+      "sprite": "/img/item_white_pomnapple.png",
+      "obtain": [
+        {
+          "where": null,
+          "details": [
+            [
+              null,
+              "Variant of Pomnapple"
+            ]
+          ]
+        }
+      ]
+    },
+    {
+      "name": "Pawberry",
+      "block": null,
+      "sprite": "/img/item_pawberry.png",
+      "obtain": [
+        {
+          "where": null,
+          "details": [
+            [
+              null,
+              "Grown from Pawberry Seeds"
+            ]
+          ]
+        }
+      ]
+    },
+    {
+      "name": "Rainbow Pawberry",
+      "block": null,
+      "sprite": "/img/item_rainbow_pawberry.png",
+      "obtain": [
+        {
+          "where": null,
+          "details": [
+            [
+              null,
+              "Variant of Pawberry"
+            ]
+          ]
+        }
+      ]
+    },
+    {
+      "name": "Power Pawberry",
+      "block": null,
+      "sprite": "/img/item_power_pawberry.png",
+      "obtain": [
+        {
+          "where": null,
+          "details": [
+            [
+              null,
+              "Variant of Pawberry"
+            ]
+          ]
+        }
+      ]
+    },
+    {
+      "name": "Oak Leaf",
+      "block": null,
+      "sprite": "/img/item_oakleaf.png",
+      "obtain": [
+        {
+          "where": null,
+          "details": [
+            [
+              null,
+              "Variant of Acorn"
+            ]
+          ]
+        }
+      ]
+    },
+    {
+      "name": "Oak Syrup",
+      "block": null,
+      "sprite": "/img/item_oak_syrup.png",
+      "obtain": [
+        {
+          "where": null,
+          "details": [
+            [
+              null,
+              "Variant of Acorn"
+            ]
+          ]
+        }
+      ]
+    },
+    {
+      "name": "Collieflower",
+      "block": null,
+      "sprite": "/img/item_collieflower.png",
+      "obtain": [
+        {
+          "where": null,
+          "details": [
+            [
+              null,
+              "Grown from Collieflower Seeds"
+            ]
+          ]
+        }
+      ]
+    },
+    {
+      "name": "Purple Collieflower",
+      "block": null,
+      "sprite": "/img/item_purple_collieflower.png",
+      "obtain": [
+        {
+          "where": null,
+          "details": [
+            [
+              null,
+              "Variant of Collieflower"
+            ]
+          ]
+        }
+      ]
+    },
+    {
+      "name": "Barkkoli",
+      "block": null,
+      "sprite": "/img/item_barkkoli.png",
+      "obtain": [
+        {
+          "where": null,
+          "details": [
+            [
+              null,
+              "Grown from Barkkoli Seeds"
+            ]
+          ]
+        }
+      ]
+    },
+    {
+      "name": "Hot Choccoli",
+      "block": null,
+      "sprite": "/img/item_hot_choccoli.png",
+      "obtain": [
+        {
+          "where": null,
+          "details": [
+            [
+              null,
+              "Variant of Barkkoli"
+            ]
+          ]
+        }
+      ]
+    },
+    {
+      "name": "Sweet Peas",
+      "block": null,
+      "sprite": "/img/item_sweet_peas.png",
+      "obtain": [
+        {
+          "where": null,
+          "details": [
+            [
+              null,
+              "Grown from Sweet Pea Seeds"
+            ]
+          ]
+        }
+      ]
+    },
+    {
+      "name": "Sour Peas",
+      "block": null,
+      "sprite": "/img/item_sour_peas.png",
+      "obtain": [
+        {
+          "where": null,
+          "details": [
+            [
+              null,
+              "Variant of Sweet Peas"
+            ]
+          ]
+        }
+      ]
+    },
+    {
+      "name": "Flowery Cactus",
+      "block": null,
+      "sprite": "https://static.wikitide.net/dogonlinedotnetwikiwiki/a/a4/Item_Flowery_Cactus.png",
+      "obtain": [
+        {
+          "where": null,
+          "details": [
+            [
+              null,
+              "Grown from Flowery Cactus Seeds"
+            ]
+          ]
+        }
+      ]
+    },
+    {
+      "name": "Cowboy Cactus",
+      "block": null,
+      "sprite": "/img/item_cowboy_cactus.png",
+      "obtain": [
+        {
+          "where": null,
+          "details": [
+            [
+              null,
+              "Grown from Cowboy Cactus Seeds"
+            ]
+          ]
+        }
+      ]
+    },
+    {
+      "name": "Starry Cactus",
+      "block": null,
+      "sprite": "/img/item_starry_cactus.png",
+      "obtain": [
+        {
+          "where": null,
+          "details": [
+            [
+              null,
+              "Grown from Starry Cactus Seeds"
+            ]
+          ]
+        }
+      ]
+    },
+    {
+      "name": "Cack-o-lantern",
+      "block": null,
+      "sprite": "/img/item_cackolantern.png",
+      "obtain": [
+        {
+          "where": null,
+          "details": [
+            [
+              null,
+              "Grown from Cack-o-lantern Seeds"
+            ]
+          ]
+        }
+      ]
+    },
+    {
+      "name": "Cactus Juice",
+      "block": null,
+      "sprite": "/img/item_cactus_juice.png",
+      "obtain": [
+        {
+          "where": null,
+          "details": [
+            [
+              null,
+              "Variant of Flowery Cactus"
+            ]
+          ]
+        }
+      ]
+    },
+    {
+      "name": "Prickly Pear",
+      "block": null,
+      "sprite": "/img/item_prickly_pear.png",
+      "obtain": [
+        {
+          "where": null,
+          "details": [
+            [
+              null,
+              "Variant of Cowboy Cactus"
+            ]
+          ]
+        }
+      ]
+    },
+    {
+      "name": "Blue Doggyflower",
+      "block": null,
+      "sprite": "/img/item_flower_blue.png",
+      "obtain": [
+        {
+          "where": null,
+          "details": [
+            [
+              null,
+              "Grown from Flower Seeds"
+            ]
+          ]
+        }
+      ]
+    },
+    {
+      "name": "Green Doggyflower",
+      "block": null,
+      "sprite": "/img/item_flower_green.png",
+      "obtain": [
+        {
+          "where": null,
+          "details": [
+            [
+              null,
+              "Grown from Flower Seeds"
+            ]
+          ]
+        }
+      ]
+    },
+    {
+      "name": "Purple Doggyflower",
+      "block": null,
+      "sprite": "/img/item_flower_purple.png",
+      "obtain": [
+        {
+          "where": null,
+          "details": [
+            [
+              null,
+              "Grown from Flower Seeds"
+            ]
+          ]
+        }
+      ]
+    },
+    {
+      "name": "Red Doggyflower",
+      "block": null,
+      "sprite": "/img/item_flower_red.png",
+      "obtain": [
+        {
+          "where": null,
+          "details": [
+            [
+              null,
+              "Grown from Flower Seeds"
+            ]
+          ]
+        }
+      ]
+    },
+    {
+      "name": "Cranberries",
+      "block": null,
+      "sprite": "/img/item_cranberries.png",
+      "obtain": [
+        {
+          "where": null,
+          "details": [
+            [
+              null,
+              "Grown from Cranberry Seeds"
+            ]
+          ]
+        }
+      ]
+    },
+    {
+      "name": "Rice",
+      "block": null,
+      "sprite": "/img/item_rice.png",
+      "obtain": [
+        {
+          "where": null,
+          "details": [
+            [
+              null,
+              "Grown from Rice Seeds"
+            ]
+          ]
+        }
+      ]
+    },
+    {
+      "name": "Big Rice",
+      "block": null,
+      "sprite": "/img/item_big_rice.png",
+      "obtain": [
+        {
+          "where": null,
+          "details": [
+            [
+              null,
+              "Variant of Rice"
+            ]
+          ]
+        }
+      ]
+    },
+    {
+      "name": "Agate",
+      "block": null,
+      "sprite": "/img/item_agate.png",
+      "obtain": [
+        {
+          "where": null,
+          "details": [
+            [
+              null,
+              "Oak Tree (dig up), Apple Tree (dig up), Barkkoli (dig up), Pomnapple (dig up)"
+            ]
+          ]
+        }
+      ]
+    },
+    {
+      "name": "Rose Quartz",
+      "block": null,
+      "sprite": "/img/item_rosequartz.png",
+      "obtain": [
+        {
+          "where": null,
+          "details": [
+            [
+              null,
+              "Flowery Cactus (dig up), Cowboy Cactus (dig up), Starry Cactus (dig up), Cack-o-lantern (dig up)"
+            ]
+          ]
+        }
+      ]
+    },
+    {
+      "name": "Obsidian",
+      "block": null,
+      "sprite": "/img/item_obsidian.png",
+      "obtain": [
+        {
+          "where": null,
+          "details": [
+            [
+              null,
+              "Oak Tree (dig up), Apple Tree (dig up)"
+            ]
+          ]
+        }
+      ]
+    },
+    {
+      "name": "Smoky Quartz",
+      "block": null,
+      "sprite": "/img/item_smokyquartz.png",
+      "obtain": [
+        {
+          "where": null,
+          "details": [
+            [
+              null,
+              "Flowery Cactus (dig up), Cowboy Cactus (dig up), Starry Cactus (dig up), Cack-o-lantern (dig up)"
+            ]
+          ]
+        }
+      ]
+    },
+    {
+      "name": "Turquoise",
+      "block": null,
+      "sprite": "/img/item_turquoise.png",
+      "obtain": [
+        {
+          "where": null,
+          "details": [
+            [
+              null,
+              "Fruits, Veggies, Flowers. Most Commonly Watermelon (dig up) and Pomnapple (dig up)"
+            ]
+          ]
+        }
+      ]
+    },
+    {
+      "name": "Garnet",
+      "block": null,
+      "sprite": "/img/item_garnet.png",
+      "obtain": [
+        {
+          "where": null,
+          "details": [
+            [
+              null,
+              "Fruits, Veggies, Flowers. Most Commonly Watermelon (dig up) and Pomnapple (dig up)"
+            ]
+          ]
+        }
+      ]
+    },
+    {
+      "name": "Amber",
+      "block": null,
+      "sprite": "/img/item_amber.png",
+      "obtain": [
+        {
+          "where": null,
+          "details": [
+            [
+              null,
+              "Oak Tree (dig up)"
+            ]
+          ]
+        }
+      ]
+    },
+    {
+      "name": "Amethyst",
+      "block": null,
+      "sprite": "/img/item_amethyst.png",
+      "obtain": [
+        {
+          "where": null,
+          "details": [
+            [
+              null,
+              "Flowery Cactus (dig up), Cowboy Cactus (dig up), Starry Cactus (dig up), Cack-o-lantern (dig up)"
+            ]
+          ]
+        }
+      ]
+    },
+    {
+      "name": "Geode",
+      "block": null,
+      "sprite": "/img/item_geode.png",
+      "obtain": [
+        {
+          "where": null,
+          "details": [
+            [
+              null,
+              "Flowery Cactus (dig up), Cowboy Cactus (dig up), Starry Cactus (dig up), Cack-o-lantern (dig up)"
+            ]
+          ]
+        }
+      ]
+    },
+    {
+      "name": "Opal",
+      "block": null,
+      "sprite": "/img/item_opal.png",
+      "obtain": [
+        {
+          "where": null,
+          "details": [
+            [
+              null,
+              "Fruits, Veggies, Flowers. Most Commonly Barkkoli (dig up) and Sweet Peas (dig up)"
+            ]
+          ]
+        }
+      ]
+    },
+    {
+      "name": "Pyrite",
+      "block": null,
+      "sprite": "/img/item_pyrite.png",
+      "obtain": [
+        {
+          "where": null,
+          "details": [
+            [
+              null,
+              "Fruits, Veggies, Flowers. Most Commonly Pawberry Bush (dig up) and Sweet Peas (dig up)"
+            ]
+          ]
+        }
+      ]
+    },
+    {
+      "name": "Bivalve Fossil",
+      "block": null,
+      "sprite": "/img/item_fossil_bivalve.png",
+      "obtain": [
+        {
+          "where": null,
+          "details": [
+            [
+              null,
+              "Farm Weed (dig up)"
+            ]
+          ]
+        }
+      ]
+    },
+    {
+      "name": "Gastropod Fossil",
+      "block": null,
+      "sprite": "/img/item_fossil_gastropod.png",
+      "obtain": [
+        {
+          "where": null,
+          "details": [
+            [
+              null,
+              "Farm Weed (dig up)"
+            ]
+          ]
+        }
+      ]
+    },
+    {
+      "name": "Lizard Fossil",
+      "block": null,
+      "sprite": "/img/item_lizard_fossil.png",
+      "obtain": [
+        {
+          "where": null,
+          "details": [
+            [
+              null,
+              "Farm Weed (dig up)"
+            ]
+          ]
+        }
+      ]
+    },
+    {
+      "name": "Bumblebee",
+      "block": null,
+      "sprite": "/img/item_bumblebee.png",
+      "obtain": [
+        {
+          "where": null,
+          "details": [
+            [
+              null,
+              "Can appear on empty plots"
+            ]
+          ]
+        }
+      ]
+    },
+    {
+      "name": "Gummy Worm",
+      "block": null,
+      "sprite": "/img/item_gummy_worm.png",
+      "obtain": [
+        {
+          "where": null,
+          "details": [
+            [
+              null,
+              "Barkkoli (dig up), Pomnapple (dig up), Flower Bush (dig up)"
+            ]
+          ]
+        }
+      ]
+    },
+    {
+      "name": "Snail",
+      "block": null,
+      "sprite": "/img/item_snail.png",
+      "obtain": [
+        {
+          "where": null,
+          "details": [
+            [
+              null,
+              "Barkkoli (dig up)"
+            ]
+          ]
+        }
+      ]
+    },
+    {
+      "name": "Acorn Weevil",
+      "block": null,
+      "sprite": "/img/item_acorn_weevil.png",
+      "obtain": [
+        {
+          "where": null,
+          "details": [
+            [
+              null,
+              "Can appear on empty plots next to vegetables"
+            ]
+          ]
+        }
+      ]
+    },
+    {
+      "name": "Apple Moth",
+      "block": null,
+      "sprite": "/img/item_apple_moth.png",
+      "obtain": []
+    },
+    {
+      "name": "Candy-Striped Leafhopper",
+      "block": null,
+      "sprite": "/img/item_candy-striped_leafhopper.png",
+      "obtain": [
+        {
+          "where": null,
+          "details": [
+            [
+              null,
+              "Can appear on empty plots next to trees"
+            ]
+          ]
+        }
+      ]
+    },
+    {
+      "name": "Dragonfly",
+      "block": null,
+      "sprite": "/img/item_dragonfly.png",
+      "obtain": [
+        {
+          "where": null,
+          "details": [
+            [
+              null,
+              "Can appear on empty plots"
+            ]
+          ]
+        }
+      ]
+    },
+    {
+      "name": "Fire Ant",
+      "block": null,
+      "sprite": "/img/item_fireant.png",
+      "obtain": [
+        {
+          "where": null,
+          "details": [
+            [
+              null,
+              "Barkkoli (dig up), Flowery Cactus (dig up), Doggplant (dig up), Pawberry Bush (dig up)"
+            ]
+          ]
+        }
+      ]
+    },
+    {
+      "name": "Giraffe Weevil",
+      "block": null,
+      "sprite": "/img/item_giraffe_weevil.png",
+      "obtain": [
+        {
+          "where": null,
+          "details": [
+            [
+              null,
+              "Can appear on empty plots next to trees"
+            ]
+          ]
+        }
+      ]
+    },
+    {
+      "name": "Hercules Beetle",
+      "block": null,
+      "sprite": "/img/item_hercules_beetle.png",
+      "obtain": [
+        {
+          "where": null,
+          "details": [
+            [
+              null,
+              "Oak Tree (dig up), Apple Tree (dig up)"
+            ]
+          ]
+        }
+      ]
+    },
+    {
+      "name": "Rhino Beetle",
+      "block": null,
+      "sprite": "/img/item_rhino_beetle.png",
+      "obtain": [
+        {
+          "where": null,
+          "details": [
+            [
+              null,
+              "Oak Tree (dig up), Apple Tree (dig up)"
+            ]
+          ]
+        }
+      ]
+    },
+    {
+      "name": "Rosy Maple Moth",
+      "block": null,
+      "sprite": "/img/item_rosy_maple_moth.png",
+      "obtain": [
+        {
+          "where": null,
+          "details": [
+            [
+              null,
+              "Oak Tree"
+            ]
+          ]
+        }
+      ]
+    },
+    {
+      "name": "Sockfly",
+      "block": null,
+      "sprite": "/img/item_sockfly.png",
+      "obtain": [
+        {
+          "where": null,
+          "details": [
+            [
+              null,
+              "Can appear on empty plots next to trees"
+            ]
+          ]
+        }
+      ]
+    },
+    {
+      "name": "Stickbug",
+      "block": null,
+      "sprite": "/img/item_stickbug.png",
+      "obtain": [
+        {
+          "where": null,
+          "details": [
+            [
+              null,
+              "Barkkoli (dig up), Pawberry Bush (dig up), Pomnapple (dig up)"
+            ]
+          ]
+        }
+      ]
+    },
+    {
+      "name": "Io Moth",
+      "block": null,
+      "sprite": "https://static.wikitide.net/dogonlinedotnetwikiwiki/c/c1/Item_Io_Moth.png",
+      "obtain": [
+        {
+          "where": null,
+          "details": [
+            [
+              null,
+              "Can appear on empty plots next to cacti and trees"
+            ]
+          ]
+        }
+      ]
+    },
+    {
+      "name": "Dog Egg",
+      "block": null,
+      "sprite": "/img/item_egg_dog.png",
+      "obtain": [
+        {
+          "where": null,
+          "details": [
+            [
+              null,
+              "Eggschange"
+            ]
+          ]
+        }
+      ]
+    },
+    {
+      "name": "Bug Egg",
+      "block": null,
+      "sprite": "/img/item_bug_egg.png",
+      "obtain": [
+        {
+          "where": null,
+          "details": [
+            [
+              null,
+              "Eggschange"
+            ]
+          ]
+        }
+      ]
+    },
+    {
+      "name": "Pig Egg",
+      "block": null,
+      "sprite": "/img/item_egg_pig.png",
+      "obtain": [
+        {
+          "where": null,
+          "details": [
+            [
+              null,
+              "Eggschange"
+            ]
+          ]
+        }
+      ]
+    },
+    {
+      "name": "Evil Egg",
+      "block": null,
+      "sprite": "https://static.wikitide.net/dogonlinedotnetwikiwiki/2/27/Item_Evil_Egg.png",
+      "obtain": [
+        {
+          "where": null,
+          "details": [
+            [
+              null,
+              "Eggschange"
+            ]
+          ]
+        }
+      ]
+    },
+    {
+      "name": "Blue Secretegg",
+      "block": null,
+      "sprite": "/img/item_secretegg_blue.png",
+      "obtain": [
+        {
+          "where": null,
+          "details": [
+            [
+              null,
+              "Chicken Dog"
+            ]
+          ]
+        }
+      ]
+    },
+    {
+      "name": "Green Secretegg",
+      "block": null,
+      "sprite": "/img/item_secretegg_green.png",
+      "obtain": [
+        {
+          "where": null,
+          "details": [
+            [
+              null,
+              "Chicken Dog"
+            ]
+          ]
+        }
+      ]
+    },
+    {
+      "name": "Red Secretegg",
+      "block": null,
+      "sprite": "/img/item_secretegg_red.png",
+      "obtain": [
+        {
+          "where": null,
+          "details": [
+            [
+              null,
+              "Chicken Dog"
+            ]
+          ]
+        }
+      ]
+    },
+    {
+      "name": "Gold Secretegg",
+      "block": null,
+      "sprite": "/img/item_secretegg_gold.png",
+      "obtain": [
+        {
+          "where": null,
+          "details": [
+            [
+              null,
+              "Chicken Dog"
+            ]
+          ]
+        }
+      ]
+    },
+    {
+      "name": "Chrysalis Egg",
+      "block": null,
+      "sprite": "https://static.wikitide.net/dogonlinedotnetwikiwiki/1/1a/Item_Chrysalis_Egg.png",
+      "obtain": [
+        {
+          "where": null,
+          "details": [
+            [
+              null,
+              "Eggschange"
+            ]
+          ]
+        }
+      ]
+    },
+    {
+      "name": "Strange Egg",
+      "block": null,
+      "sprite": "/img/item_egg_strange.png",
+      "obtain": [
+        {
+          "where": null,
+          "details": [
+            [
+              null,
+              "Trading Post"
+            ]
+          ]
+        }
+      ]
+    },
+    {
+      "name": "Vacation Egg",
+      "block": null,
+      "sprite": "https://static.wikitide.net/dogonlinedotnetwikiwiki/c/cc/Item_Vacation_Egg.png",
+      "obtain": [
+        {
+          "where": null,
+          "details": [
+            [
+              null,
+              "Eggschange"
+            ]
+          ]
+        }
+      ]
+    }
+  ]
+}

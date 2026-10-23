@@ -1,0 +1,4015 @@
+{
+  "schema": 1,
+  "unseen": "hidden",
+  "blocks": [
+    {
+      "name": null,
+      "color": null,
+      "size": 236
+    }
+  ],
+  "slots": [
+    {
+      "name": "Five Hardboiled Eggs",
+      "block": null,
+      "group": 5,
+      "sprite": "/img/item_5eggs.png",
+      "obtain": [
+        {
+          "where": null,
+          "details": [
+            [
+              null,
+              "TOGBU, Gachapon (Food Token)"
+            ]
+          ]
+        }
+      ]
+    },
+    {
+      "name": "Golden Apple",
+      "block": null,
+      "group": 5,
+      "sprite": "/img/item_golden_apple.png",
+      "obtain": [
+        {
+          "where": null,
+          "details": [
+            [
+              null,
+              "Gardening (Apple Tree)"
+            ]
+          ]
+        }
+      ]
+    },
+    {
+      "name": "Neapolitan Sharkdae",
+      "block": null,
+      "group": 5,
+      "sprite": "/img/item_neapolitan_sharkdae.png",
+      "obtain": [
+        {
+          "where": null,
+          "details": [
+            [
+              null,
+              "Cooking"
+            ]
+          ]
+        }
+      ]
+    },
+    {
+      "name": "Pomna Colada",
+      "block": null,
+      "group": 5,
+      "sprite": "/img/item_pomna_colada.png",
+      "obtain": [
+        {
+          "where": null,
+          "details": [
+            [
+              null,
+              "Cooking"
+            ]
+          ]
+        }
+      ]
+    },
+    {
+      "name": "Abyss Jelly",
+      "block": null,
+      "group": 4,
+      "sprite": "/img/item_abyss_jelly.png",
+      "obtain": [
+        {
+          "where": null,
+          "details": [
+            [
+              null,
+              "Cooking"
+            ]
+          ]
+        }
+      ]
+    },
+    {
+      "name": "Big Rice",
+      "block": null,
+      "group": 4,
+      "sprite": "/img/item_big_rice.png",
+      "obtain": [
+        {
+          "where": null,
+          "details": [
+            [
+              null,
+              "Gardening (Rice Plant)"
+            ]
+          ]
+        }
+      ]
+    },
+    {
+      "name": "Cube Watermelon",
+      "block": null,
+      "group": 4,
+      "sprite": "/img/item_cube_watermelon.png",
+      "obtain": [
+        {
+          "where": null,
+          "details": [
+            [
+              null,
+              "Gardening (Watermelon Plant)"
+            ]
+          ]
+        }
+      ]
+    },
+    {
+      "name": "Hot Choccoli",
+      "block": null,
+      "group": 4,
+      "sprite": "/img/item_hot_choccoli.png",
+      "obtain": [
+        {
+          "where": null,
+          "details": [
+            [
+              null,
+              "Gardening (Barkkoli Plant)"
+            ]
+          ]
+        }
+      ]
+    },
+    {
+      "name": "Purple Collieflower",
+      "block": null,
+      "group": 4,
+      "sprite": "/img/item_purple_collieflower.png",
+      "obtain": [
+        {
+          "where": null,
+          "details": [
+            [
+              null,
+              "Gardening (Collieflower Plant)"
+            ]
+          ]
+        }
+      ]
+    },
+    {
+      "name": "Rainbow Pawberry",
+      "block": null,
+      "group": 4,
+      "sprite": "/img/item_rainbow_pawberry.png",
+      "obtain": [
+        {
+          "where": null,
+          "details": [
+            [
+              null,
+              "Gardening (Pawberry Plant)"
+            ]
+          ]
+        }
+      ]
+    },
+    {
+      "name": "Sour Peas",
+      "block": null,
+      "group": 4,
+      "sprite": "/img/item_sour_peas.png",
+      "obtain": [
+        {
+          "where": null,
+          "details": [
+            [
+              null,
+              "Gardening (Sweet Peas Plant)"
+            ]
+          ]
+        }
+      ]
+    },
+    {
+      "name": "White Pomnapple",
+      "block": null,
+      "group": 4,
+      "sprite": "/img/item_white_pomnapple.png",
+      "obtain": [
+        {
+          "where": null,
+          "details": [
+            [
+              null,
+              "Gardening (Pomnapple Plant)"
+            ]
+          ]
+        }
+      ]
+    },
+    {
+      "name": "Bao Wow",
+      "block": null,
+      "group": 3,
+      "sprite": "/img/item_bao_wow.png",
+      "obtain": [
+        {
+          "where": null,
+          "details": [
+            [
+              null,
+              "Bush, TOGBU, Gachapon (Food Token)"
+            ]
+          ]
+        }
+      ]
+    },
+    {
+      "name": "Brick of Seaweed",
+      "block": null,
+      "group": 3,
+      "sprite": "/img/item_brickofseaweed.png",
+      "obtain": [
+        {
+          "where": null,
+          "details": [
+            [
+              null,
+              "Cooking"
+            ]
+          ]
+        }
+      ]
+    },
+    {
+      "name": "Caprese Salad",
+      "block": null,
+      "group": 3,
+      "sprite": "/img/item_caprese_salad.png",
+      "obtain": [
+        {
+          "where": null,
+          "details": [
+            [
+              null,
+              "Cooking"
+            ]
+          ]
+        }
+      ]
+    },
+    {
+      "name": "Chocolate Ice Cream Sharkwich",
+      "block": null,
+      "group": 3,
+      "sprite": "/img/item_chocolatesharkwich.png",
+      "obtain": [
+        {
+          "where": null,
+          "details": [
+            [
+              null,
+              "Fishing (Ice Fishing Hole)"
+            ]
+          ]
+        }
+      ]
+    },
+    {
+      "name": "Cooked Steak",
+      "block": null,
+      "group": 3,
+      "sprite": "/img/item_cookedsteak.png",
+      "obtain": [
+        {
+          "where": null,
+          "details": [
+            [
+              null,
+              "Lonely Tower (Ruff Roast), TOGBU, Gachapon (Food Token)"
+            ]
+          ]
+        }
+      ]
+    },
+    {
+      "name": "Craw's Dad",
+      "block": null,
+      "group": 3,
+      "sprite": "/img/item_craws_dad.png",
+      "obtain": [
+        {
+          "where": null,
+          "details": [
+            [
+              null,
+              "Fishing (Desert Oasis)"
+            ]
+          ]
+        }
+      ]
+    },
+    {
+      "name": "Dango Throwing Spear",
+      "block": null,
+      "group": 3,
+      "sprite": "https://static.wikitide.net/dogonlinedotnetwikiwiki/d/d9/Item_Dango_Throwing_Spear.png",
+      "obtain": [
+        {
+          "where": null,
+          "details": [
+            [
+              null,
+              "Lonely Tower (Aheemheem, Peam)"
+            ]
+          ]
+        }
+      ]
+    },
+    {
+      "name": "Doggplant",
+      "block": null,
+      "group": 3,
+      "sprite": "/img/item_doggplant.png",
+      "obtain": [
+        {
+          "where": null,
+          "details": [
+            [
+              null,
+              "Gardening (Doggplant Plant)"
+            ]
+          ]
+        }
+      ]
+    },
+    {
+      "name": "Donut",
+      "block": null,
+      "group": 3,
+      "sprite": "/img/item_donut.png",
+      "obtain": [
+        {
+          "where": null,
+          "details": [
+            [
+              null,
+              "Lonely Tower (Cursed Conjurer), TOGBU, Gachapon (Food Token)"
+            ]
+          ]
+        }
+      ]
+    },
+    {
+      "name": "Egg Musubi",
+      "block": null,
+      "group": 3,
+      "sprite": "/img/item_eggmusubi.png",
+      "obtain": [
+        {
+          "where": null,
+          "details": [
+            [
+              null,
+              "Cooking"
+            ]
+          ]
+        }
+      ]
+    },
+    {
+      "name": "Holy Cannoli",
+      "block": null,
+      "group": 3,
+      "sprite": "/img/item_holy_cannoli.png",
+      "obtain": [
+        {
+          "where": null,
+          "details": [
+            [
+              null,
+              "Lonely Tower (Snooty Soot)"
+            ]
+          ]
+        }
+      ]
+    },
+    {
+      "name": "Ice Cream Sharkwich",
+      "block": null,
+      "group": 3,
+      "sprite": "https://static.wikitide.net/dogonlinedotnetwikiwiki/1/11/Item_Ice_Cream_Sharkwich.png",
+      "obtain": [
+        {
+          "where": null,
+          "details": [
+            [
+              null,
+              "Fishing (Ice Fishing Hole)"
+            ]
+          ]
+        }
+      ]
+    },
+    {
+      "name": "Larged Fries",
+      "block": null,
+      "group": 3,
+      "sprite": "https://static.wikitide.net/dogonlinedotnetwikiwiki/7/72/Item_Larged_Fries.png",
+      "obtain": [
+        {
+          "where": null,
+          "details": [
+            [
+              null,
+              "TOGBU, Gachapon (Food Token)"
+            ]
+          ]
+        }
+      ]
+    },
+    {
+      "name": "Mammothfish",
+      "block": null,
+      "group": 3,
+      "sprite": "/img/item_mammothfish.png",
+      "obtain": [
+        {
+          "where": null,
+          "details": [
+            [
+              null,
+              "Fishing (Ice Fishing Hole)"
+            ]
+          ]
+        }
+      ]
+    },
+    {
+      "name": "Oak Syrup",
+      "block": null,
+      "group": 3,
+      "sprite": "/img/item_oak_syrup.png",
+      "obtain": [
+        {
+          "where": null,
+          "details": [
+            [
+              null,
+              "Gardening (Oak Tree)"
+            ]
+          ]
+        }
+      ]
+    },
+    {
+      "name": "Ocean Fella",
+      "block": null,
+      "group": 3,
+      "sprite": "https://static.wikitide.net/dogonlinedotnetwikiwiki/4/40/Item_Ocean_Fella.png",
+      "obtain": [
+        {
+          "where": null,
+          "details": [
+            [
+              null,
+              "Fishing (Sky Fishing (Golden Grub))"
+            ]
+          ]
+        }
+      ]
+    },
+    {
+      "name": "Parfait",
+      "block": null,
+      "group": 3,
+      "sprite": "/img/item_parfait.png",
+      "obtain": [
+        {
+          "where": null,
+          "details": [
+            [
+              null,
+              "Lonely Tower (Dogre)"
+            ]
+          ]
+        }
+      ]
+    },
+    {
+      "name": "PB&J Sandwich",
+      "block": null,
+      "group": 3,
+      "sprite": "/img/item_pbj_sandwich.png",
+      "obtain": [
+        {
+          "where": null,
+          "details": [
+            [
+              null,
+              "Cooking"
+            ]
+          ]
+        }
+      ]
+    },
+    {
+      "name": "Polar Prawn Temaki",
+      "block": null,
+      "group": 3,
+      "sprite": "/img/item_polarprawntemaki.png",
+      "obtain": [
+        {
+          "where": null,
+          "details": [
+            [
+              null,
+              "Cooking"
+            ]
+          ]
+        }
+      ]
+    },
+    {
+      "name": "Pumpkin Stew",
+      "block": null,
+      "group": 3,
+      "sprite": "/img/item_pumpkin_stew.png",
+      "obtain": [
+        {
+          "where": null,
+          "details": [
+            [
+              null,
+              "Cooking"
+            ]
+          ]
+        }
+      ]
+    },
+    {
+      "name": "Salmon Nigiri",
+      "block": null,
+      "group": 3,
+      "sprite": "/img/item_salmonnigiri.png",
+      "obtain": [
+        {
+          "where": null,
+          "details": [
+            [
+              null,
+              "Cooking"
+            ]
+          ]
+        }
+      ]
+    },
+    {
+      "name": "Strawberry Ice Cream Sharkwich",
+      "block": null,
+      "group": 3,
+      "sprite": "https://static.wikitide.net/dogonlinedotnetwikiwiki/a/ab/Item_Strawberry_Ice_Cream_Sharkwich.png",
+      "obtain": [
+        {
+          "where": null,
+          "details": [
+            [
+              null,
+              "Fishing (Ice Fishing Hole)"
+            ]
+          ]
+        }
+      ]
+    },
+    {
+      "name": "Sub Sandwich",
+      "block": null,
+      "group": 3,
+      "sprite": "/img/item_subsandwich.png",
+      "obtain": [
+        {
+          "where": null,
+          "details": [
+            [
+              null,
+              "Fishing (Desert Oasis (Bombastic Bait))"
+            ]
+          ]
+        }
+      ]
+    },
+    {
+      "name": "Sweet N Sour Stirfry",
+      "block": null,
+      "group": 3,
+      "sprite": "/img/item_sweet_n_sour_stirfry.png",
+      "obtain": [
+        {
+          "where": null,
+          "details": [
+            [
+              null,
+              "Cooking"
+            ]
+          ]
+        }
+      ]
+    },
+    {
+      "name": "Turnip Au Gratin",
+      "block": null,
+      "group": 3,
+      "sprite": "/img/item_turnip_au_gratin.png",
+      "obtain": [
+        {
+          "where": null,
+          "details": [
+            [
+              null,
+              "Cooking"
+            ]
+          ]
+        }
+      ]
+    },
+    {
+      "name": "Apple",
+      "block": null,
+      "group": 2,
+      "sprite": "/img/item_apple.png",
+      "obtain": [
+        {
+          "where": null,
+          "details": [
+            [
+              null,
+              "Gardening (Apple Tree), Bush"
+            ]
+          ]
+        }
+      ]
+    },
+    {
+      "name": "Bacon Battleaxe",
+      "block": null,
+      "group": 2,
+      "sprite": "/img/item_baconbattleaxe.png",
+      "obtain": [
+        {
+          "where": null,
+          "details": [
+            [
+              null,
+              "Lonely Tower (Dogburger), Gachapon (Weapons Token)"
+            ]
+          ]
+        }
+      ]
+    },
+    {
+      "name": "Boneanna",
+      "block": null,
+      "group": 2,
+      "sprite": "/img/item_boneanna.png",
+      "obtain": [
+        {
+          "where": null,
+          "details": [
+            [
+              null,
+              "Gardening (Boneanna Plant)"
+            ]
+          ]
+        }
+      ]
+    },
+    {
+      "name": "Boneanna Bread",
+      "block": null,
+      "group": 2,
+      "sprite": "/img/item_boneanna_bread.png",
+      "obtain": [
+        {
+          "where": null,
+          "details": [
+            [
+              null,
+              "Cooking"
+            ]
+          ]
+        }
+      ]
+    },
+    {
+      "name": "Boneanna Smoothie",
+      "block": null,
+      "group": 2,
+      "sprite": "/img/item_boneanna_smoothie.png",
+      "obtain": [
+        {
+          "where": null,
+          "details": [
+            [
+              null,
+              "Cooking"
+            ]
+          ]
+        }
+      ]
+    },
+    {
+      "name": "Boneannas Foster",
+      "block": null,
+      "group": 2,
+      "sprite": "/img/item_boneannas_foster.png",
+      "obtain": [
+        {
+          "where": null,
+          "details": [
+            [
+              null,
+              "Cooking"
+            ]
+          ]
+        }
+      ]
+    },
+    {
+      "name": "Cactus Juice",
+      "block": null,
+      "group": 2,
+      "sprite": "/img/item_cactus_juice.png",
+      "obtain": [
+        {
+          "where": null,
+          "details": [
+            [
+              null,
+              "Gardening (Flowery Cactus)"
+            ]
+          ]
+        }
+      ]
+    },
+    {
+      "name": "Chicken Leg",
+      "block": null,
+      "group": 2,
+      "sprite": "/img/item_chickenleg.png",
+      "obtain": [
+        {
+          "where": null,
+          "details": [
+            [
+              null,
+              "Lonely Tower (Balloon Dog), TOGBU, Gachapon (Food Token)"
+            ]
+          ]
+        }
+      ]
+    },
+    {
+      "name": "Collieflower",
+      "block": null,
+      "group": 2,
+      "sprite": "/img/item_collieflower.png",
+      "obtain": [
+        {
+          "where": null,
+          "details": [
+            [
+              null,
+              "Gardening (Collieflower Plant)"
+            ]
+          ]
+        }
+      ]
+    },
+    {
+      "name": "Comb Jelly",
+      "block": null,
+      "group": 2,
+      "sprite": "/img/item_combjelly.png",
+      "obtain": [
+        {
+          "where": null,
+          "details": [
+            [
+              null,
+              "Fishing (Ocean Fishing Cruiser)"
+            ]
+          ]
+        }
+      ]
+    },
+    {
+      "name": "Festive Candy Apple",
+      "block": null,
+      "group": 2,
+      "sprite": "/img/item_festive_candy_apple.png",
+      "obtain": [
+        {
+          "where": null,
+          "details": [
+            [
+              null,
+              "Cooking"
+            ]
+          ]
+        }
+      ]
+    },
+    {
+      "name": "Grilled Lobster Tail",
+      "block": null,
+      "group": 2,
+      "sprite": "/img/item_grilled_lobster_tail.png",
+      "obtain": [
+        {
+          "where": null,
+          "details": [
+            [
+              null,
+              "Cooking"
+            ]
+          ]
+        }
+      ]
+    },
+    {
+      "name": "Gummy Shark",
+      "block": null,
+      "group": 2,
+      "sprite": "/img/item_gummy_shark.png",
+      "obtain": [
+        {
+          "where": null,
+          "details": [
+            [
+              null,
+              "Fishing (Ocean Fishing Cruiser)"
+            ]
+          ]
+        }
+      ]
+    },
+    {
+      "name": "Honeycomb",
+      "block": null,
+      "group": 2,
+      "sprite": "/img/item_honeycomb.png",
+      "obtain": [
+        {
+          "where": null,
+          "details": [
+            [
+              null,
+              "Fortune Cookie, Misfortune Cookie"
+            ]
+          ]
+        }
+      ]
+    },
+    {
+      "name": "Hotdogtopus",
+      "block": null,
+      "group": 2,
+      "sprite": "/img/item_hotdogtopus.png",
+      "obtain": [
+        {
+          "where": null,
+          "details": [
+            [
+              null,
+              "Fishing (Ice Fishing Hole)"
+            ]
+          ]
+        }
+      ]
+    },
+    {
+      "name": "Leafy Sheepdog",
+      "block": null,
+      "group": 2,
+      "sprite": "/img/item_leafy_sheepdog.png",
+      "obtain": [
+        {
+          "where": null,
+          "details": [
+            [
+              null,
+              "Fishing (Ocean Fishing Cruiser)"
+            ]
+          ]
+        }
+      ]
+    },
+    {
+      "name": "Pawberry Pixie Stick",
+      "block": null,
+      "group": 2,
+      "sprite": "https://static.wikitide.net/dogonlinedotnetwikiwiki/c/c5/Item_Pawberry_Pixie_Stick.png",
+      "obtain": [
+        {
+          "where": null,
+          "details": [
+            [
+              null,
+              "Desert Trading"
+            ]
+          ]
+        }
+      ]
+    },
+    {
+      "name": "Peanut Butter",
+      "block": null,
+      "group": 2,
+      "sprite": "/img/item_peanutbutter.png",
+      "obtain": [
+        {
+          "where": null,
+          "details": [
+            [
+              null,
+              "Lonely Tower (Sky Dog, Deadly Dogma), TOGBU, Gachapon (Food Token)"
+            ]
+          ]
+        }
+      ]
+    },
+    {
+      "name": "Pomnapple",
+      "block": null,
+      "group": 2,
+      "sprite": "/img/item_pomnapple.png",
+      "obtain": [
+        {
+          "where": null,
+          "details": [
+            [
+              null,
+              "Gardening (Pomnapple Plant)"
+            ]
+          ]
+        }
+      ]
+    },
+    {
+      "name": "Popcorn",
+      "block": null,
+      "group": 2,
+      "sprite": "/img/item_popcorn.png",
+      "obtain": [
+        {
+          "where": null,
+          "details": [
+            [
+              null,
+              "Cooking, TOGBU, Lonely Tower, Gachapon (Food Token)"
+            ]
+          ]
+        }
+      ]
+    },
+    {
+      "name": "Prickly Pear",
+      "block": null,
+      "group": 2,
+      "sprite": "/img/item_prickly_pear.png",
+      "obtain": [
+        {
+          "where": null,
+          "details": [
+            [
+              null,
+              "Gardening (Cowboy Cactus)"
+            ]
+          ]
+        }
+      ]
+    },
+    {
+      "name": "Sizzling Shad",
+      "block": null,
+      "group": 2,
+      "sprite": "/img/item_sizzling_shad.png",
+      "obtain": [
+        {
+          "where": null,
+          "details": [
+            [
+              null,
+              "Fishing (Desert Oasis)"
+            ]
+          ]
+        }
+      ]
+    },
+    {
+      "name": "Smallfry Stew",
+      "block": null,
+      "group": 2,
+      "sprite": "/img/item_smallfry_stew.png",
+      "obtain": [
+        {
+          "where": null,
+          "details": [
+            [
+              null,
+              "Cooking"
+            ]
+          ]
+        }
+      ]
+    },
+    {
+      "name": "Steak",
+      "block": null,
+      "group": 2,
+      "sprite": "/img/item_steak.png",
+      "obtain": [
+        {
+          "where": null,
+          "details": [
+            [
+              null,
+              "Lonely Tower (Dogburger), TOGBU"
+            ]
+          ]
+        }
+      ]
+    },
+    {
+      "name": "Summer Smoothie",
+      "block": null,
+      "group": 2,
+      "sprite": "/img/item_summersmoothie.png",
+      "obtain": [
+        {
+          "where": null,
+          "details": [
+            [
+              null,
+              "Cooking"
+            ]
+          ]
+        }
+      ]
+    },
+    {
+      "name": "Sweet Peas",
+      "block": null,
+      "group": 2,
+      "sprite": "/img/item_sweet_peas.png",
+      "obtain": [
+        {
+          "where": null,
+          "details": [
+            [
+              null,
+              "Gardening, Lonely Tower"
+            ]
+          ]
+        }
+      ]
+    },
+    {
+      "name": "Watermelon Buster",
+      "block": null,
+      "group": 2,
+      "sprite": "/img/item_watermelonbuster.png",
+      "obtain": [
+        {
+          "where": null,
+          "details": [
+            [
+              null,
+              "Desert Trading"
+            ]
+          ]
+        }
+      ]
+    },
+    {
+      "name": "Amulet of Cheese",
+      "block": null,
+      "group": 1,
+      "sprite": "/img/item_amulet_of_cheese.png",
+      "obtain": [
+        {
+          "where": null,
+          "details": [
+            [
+              null,
+              "Desert Trading"
+            ]
+          ]
+        }
+      ]
+    },
+    {
+      "name": "Amulet of Treats",
+      "block": null,
+      "group": 1,
+      "sprite": "/img/item_amuletoftreats.png",
+      "obtain": [
+        {
+          "where": null,
+          "details": [
+            [
+              null,
+              "Desert Trading, Gachapon (Weapons Token)"
+            ]
+          ]
+        }
+      ]
+    },
+    {
+      "name": "Arctic Cod",
+      "block": null,
+      "group": 1,
+      "sprite": "/img/item_arcticcod.png",
+      "obtain": [
+        {
+          "where": null,
+          "details": [
+            [
+              null,
+              "Fishing (Ice Fishing Hole)"
+            ]
+          ]
+        }
+      ]
+    },
+    {
+      "name": "Aurora Eel",
+      "block": null,
+      "group": 1,
+      "sprite": "https://static.wikitide.net/dogonlinedotnetwikiwiki/b/ba/Item_Aurora_Eel.png",
+      "obtain": [
+        {
+          "where": null,
+          "details": [
+            [
+              null,
+              "Fishing (Sky Fishing)"
+            ]
+          ]
+        }
+      ]
+    },
+    {
+      "name": "Barkkoli",
+      "block": null,
+      "group": 1,
+      "sprite": "/img/item_barkkoli.png",
+      "obtain": [
+        {
+          "where": null,
+          "details": [
+            [
+              null,
+              "Gardening (Barkkoli Plant)"
+            ]
+          ]
+        }
+      ]
+    },
+    {
+      "name": "Barracuda",
+      "block": null,
+      "group": 1,
+      "sprite": "/img/item_barracuda.png",
+      "obtain": [
+        {
+          "where": null,
+          "details": [
+            [
+              null,
+              "Fishing (Old Fishin' Hole)"
+            ]
+          ]
+        }
+      ]
+    },
+    {
+      "name": "Blue Balloonfish",
+      "block": null,
+      "group": 1,
+      "sprite": "/img/items/fish/AirfishBalloonBlue.png",
+      "obtain": [
+        {
+          "where": null,
+          "details": [
+            [
+              null,
+              "Fishing (Sky Fishing)"
+            ]
+          ]
+        }
+      ]
+    },
+    {
+      "name": "Blue Lobster",
+      "block": null,
+      "group": 1,
+      "sprite": "/img/item_bluelobster.png",
+      "obtain": [
+        {
+          "where": null,
+          "details": [
+            [
+              null,
+              "Fishing (Ocean Fishing Cruiser)"
+            ]
+          ]
+        }
+      ]
+    },
+    {
+      "name": "Blue Pawpsicle",
+      "block": null,
+      "group": 1,
+      "sprite": "/img/item_blue_pawpsicle.png",
+      "obtain": [
+        {
+          "where": null,
+          "details": [
+            [
+              null,
+              "Summer Event"
+            ]
+          ]
+        }
+      ]
+    },
+    {
+      "name": "Blueberries",
+      "block": null,
+      "group": 1,
+      "sprite": "/img/item_blueberries.png",
+      "obtain": [
+        {
+          "where": null,
+          "details": [
+            [
+              null,
+              "Farmer's Market"
+            ]
+          ]
+        }
+      ]
+    },
+    {
+      "name": "Blueberry Pie",
+      "block": null,
+      "group": 1,
+      "sprite": "/img/item_blueberrypie.png",
+      "obtain": [
+        {
+          "where": null,
+          "details": [
+            [
+              null,
+              "Cooking, TOGBU, Gachapon (Food Token)"
+            ]
+          ]
+        }
+      ]
+    },
+    {
+      "name": "Bone",
+      "block": null,
+      "group": 1,
+      "sprite": "/img/item_bone.png",
+      "obtain": [
+        {
+          "where": null,
+          "details": [
+            [
+              null,
+              "Farmer's Market"
+            ]
+          ]
+        }
+      ]
+    },
+    {
+      "name": "Bone Apple Tea",
+      "block": null,
+      "group": 1,
+      "sprite": "/img/item_boneappletea.png",
+      "obtain": [
+        {
+          "where": null,
+          "details": [
+            [
+              null,
+              "Cooking"
+            ]
+          ]
+        }
+      ]
+    },
+    {
+      "name": "Boneanna Bow",
+      "block": null,
+      "group": 1,
+      "sprite": "/img/item_boneanna_bow.png",
+      "obtain": [
+        {
+          "where": null,
+          "details": [
+            [
+              null,
+              "Desert Trading"
+            ]
+          ]
+        }
+      ]
+    },
+    {
+      "name": "Boneanna Pawpsicle",
+      "block": null,
+      "group": 1,
+      "sprite": "/img/item_boneanna_pawpsicle.png",
+      "obtain": [
+        {
+          "where": null,
+          "details": [
+            [
+              null,
+              "Summer Event"
+            ]
+          ]
+        }
+      ]
+    },
+    {
+      "name": "Breadfish",
+      "block": null,
+      "group": 1,
+      "sprite": "/img/item_breadfish.png",
+      "obtain": [
+        {
+          "where": null,
+          "details": [
+            [
+              null,
+              "Fishing (Old Fishin' Hole)"
+            ]
+          ]
+        }
+      ]
+    },
+    {
+      "name": "Breadhead",
+      "block": null,
+      "group": 1,
+      "sprite": "/img/clothes_breadhead.png",
+      "obtain": [
+        {
+          "where": null,
+          "details": [
+            [
+              null,
+              "Fortune Cookie"
+            ]
+          ]
+        }
+      ]
+    },
+    {
+      "name": "Butterfish",
+      "block": null,
+      "group": 1,
+      "sprite": "/img/item_butterfish.png",
+      "obtain": [
+        {
+          "where": null,
+          "details": [
+            [
+              null,
+              "Fishing (Old Fishin' Hole)"
+            ]
+          ]
+        }
+      ]
+    },
+    {
+      "name": "Cact-o-lantern",
+      "block": null,
+      "group": 1,
+      "sprite": null,
+      "obtain": [
+        {
+          "where": null,
+          "details": [
+            [
+              null,
+              "Gardening (Cact-o-lantern Plant)"
+            ]
+          ]
+        }
+      ]
+    },
+    {
+      "name": "Cactus Pufferfish",
+      "block": null,
+      "group": 1,
+      "sprite": "/img/item_cactus_pufferfish.png",
+      "obtain": [
+        {
+          "where": null,
+          "details": [
+            [
+              null,
+              "Fishing (Desert Oasis)"
+            ]
+          ]
+        }
+      ]
+    },
+    {
+      "name": "Camel Fish",
+      "block": null,
+      "group": 1,
+      "sprite": "/img/item_camel_fish.png",
+      "obtain": [
+        {
+          "where": null,
+          "details": [
+            [
+              null,
+              "Fishing (Desert Oasis)"
+            ]
+          ]
+        }
+      ]
+    },
+    {
+      "name": "Candy Apple",
+      "block": null,
+      "group": 1,
+      "sprite": "/img/item_candy_apple.png",
+      "obtain": [
+        {
+          "where": null,
+          "details": [
+            [
+              null,
+              "Cooking"
+            ]
+          ]
+        }
+      ]
+    },
+    {
+      "name": "Candy Cane",
+      "block": null,
+      "group": 1,
+      "sprite": "/img/item_candycane.png",
+      "obtain": [
+        {
+          "where": null,
+          "details": [
+            [
+              null,
+              "Cozy Cocoa Bookstore"
+            ]
+          ]
+        }
+      ]
+    },
+    {
+      "name": "Capelin",
+      "block": null,
+      "group": 1,
+      "sprite": "/img/item_capelin.png",
+      "obtain": [
+        {
+          "where": null,
+          "details": [
+            [
+              null,
+              "Fishing (Ice Fishing Hole)"
+            ]
+          ]
+        }
+      ]
+    },
+    {
+      "name": "Carrots",
+      "block": null,
+      "group": 1,
+      "sprite": "/img/item_carrots.png",
+      "obtain": [
+        {
+          "where": null,
+          "details": [
+            [
+              null,
+              "Farmer's Market, TOGBU, Gachapon (Food Token)"
+            ]
+          ]
+        }
+      ]
+    },
+    {
+      "name": "Chaos Donut",
+      "block": null,
+      "group": 1,
+      "sprite": "/img/item_chaos_donut.png",
+      "obtain": [
+        {
+          "where": null,
+          "details": [
+            [
+              null,
+              "Desert Trading"
+            ]
+          ]
+        }
+      ]
+    },
+    {
+      "name": "Cheese",
+      "block": null,
+      "group": 1,
+      "sprite": "/img/item_cheese.png",
+      "obtain": [
+        {
+          "where": null,
+          "details": [
+            [
+              null,
+              "Lonely Tower (Peeper)"
+            ]
+          ]
+        }
+      ]
+    },
+    {
+      "name": "Cheese Cutlass",
+      "block": null,
+      "group": 1,
+      "sprite": "/img/item_cheesecutlass.png",
+      "obtain": [
+        {
+          "where": null,
+          "details": [
+            [
+              null,
+              "Desert Trading, Gachapon (Weapons Token)"
+            ]
+          ]
+        }
+      ]
+    },
+    {
+      "name": "Cheese Dress",
+      "block": null,
+      "group": 1,
+      "sprite": null,
+      "obtain": [
+        {
+          "where": null,
+          "details": [
+            [
+              null,
+              "The Fashion Hut, Gachapon (Clothes Token)"
+            ]
+          ]
+        }
+      ]
+    },
+    {
+      "name": "Chef Boy-R-Dog",
+      "block": null,
+      "group": 1,
+      "sprite": "https://static.wikitide.net/dogonlinedotnetwikiwiki/5/5d/Item_Chef_Boy-R-Dog.png",
+      "obtain": [
+        {
+          "where": null,
+          "details": [
+            [
+              null,
+              "Eggschange"
+            ]
+          ]
+        }
+      ]
+    },
+    {
+      "name": "Cherry Earrings",
+      "block": null,
+      "group": 1,
+      "sprite": "/img/clothes_cherry_earrings_floppyear.png",
+      "obtain": [
+        {
+          "where": null,
+          "details": [
+            [
+              null,
+              "The Fashion Hut"
+            ]
+          ]
+        }
+      ]
+    },
+    {
+      "name": "Chicken Egg",
+      "block": null,
+      "group": 1,
+      "sprite": "https://static.wikitide.net/dogonlinedotnetwikiwiki/1/16/Item_Chicken_Egg.png",
+      "obtain": [
+        {
+          "where": null,
+          "details": [
+            [
+              null,
+              "Eggschange"
+            ]
+          ]
+        }
+      ]
+    },
+    {
+      "name": "Chocolate Chip Cookie",
+      "block": null,
+      "group": 1,
+      "sprite": "/img/item_chocolate_chip_cookie.png",
+      "obtain": [
+        {
+          "where": null,
+          "details": [
+            [
+              null,
+              "Lonely Tower (Cookie Nightjar)"
+            ]
+          ]
+        }
+      ]
+    },
+    {
+      "name": "Clam",
+      "block": null,
+      "group": 1,
+      "sprite": "/img/item_clam.png",
+      "obtain": [
+        {
+          "where": null,
+          "details": [
+            [
+              null,
+              "Fishing (Ocean Fishing Cruiser)"
+            ]
+          ]
+        }
+      ]
+    },
+    {
+      "name": "Cloudfish",
+      "block": null,
+      "group": 1,
+      "sprite": "/img/items/fish/AirfishCloud.png",
+      "obtain": [
+        {
+          "where": null,
+          "details": [
+            [
+              null,
+              "Fishing (Sky Fishing)"
+            ]
+          ]
+        }
+      ]
+    },
+    {
+      "name": "Coconut",
+      "block": null,
+      "group": 1,
+      "sprite": "/img/item_coconut.png",
+      "obtain": [
+        {
+          "where": null,
+          "details": [
+            [
+              null,
+              "Lonely Tower (Pup Cup)"
+            ]
+          ]
+        }
+      ]
+    },
+    {
+      "name": "Coelacanth",
+      "block": null,
+      "group": 1,
+      "sprite": "/img/item_coelacanth.png",
+      "obtain": [
+        {
+          "where": null,
+          "details": [
+            [
+              null,
+              "Fishing (Old Fishin' Hole)"
+            ]
+          ]
+        }
+      ]
+    },
+    {
+      "name": "Coldfish",
+      "block": null,
+      "group": 1,
+      "sprite": "/img/item_coldfish.png",
+      "obtain": [
+        {
+          "where": null,
+          "details": [
+            [
+              null,
+              "Fishing (Ice Fishing Hole)"
+            ]
+          ]
+        }
+      ]
+    },
+    {
+      "name": "Corn",
+      "block": null,
+      "group": 1,
+      "sprite": "/img/item_corn.png",
+      "obtain": [
+        {
+          "where": null,
+          "details": [
+            [
+              null,
+              "Farmer's Market"
+            ]
+          ]
+        }
+      ]
+    },
+    {
+      "name": "Cowboy Cactus",
+      "block": null,
+      "group": 1,
+      "sprite": "/img/item_cowboy_cactus.png",
+      "obtain": [
+        {
+          "where": null,
+          "details": [
+            [
+              null,
+              "Gardening (Cowboy Cactus Plant)"
+            ]
+          ]
+        }
+      ]
+    },
+    {
+      "name": "Cranberries",
+      "block": null,
+      "group": 1,
+      "sprite": "/img/item_cranberries.png",
+      "obtain": [
+        {
+          "where": null,
+          "details": [
+            [
+              null,
+              "Gardening (Cranberry Plant)"
+            ]
+          ]
+        }
+      ]
+    },
+    {
+      "name": "Crayfish",
+      "block": null,
+      "group": 1,
+      "sprite": "/img/item_crayfish.png",
+      "obtain": [
+        {
+          "where": null,
+          "details": [
+            [
+              null,
+              "Fishing (Old Fishin' Hole)"
+            ]
+          ]
+        }
+      ]
+    },
+    {
+      "name": "Crimson Crawler",
+      "block": null,
+      "group": 1,
+      "sprite": "/img/item_crimsoncrawler.png",
+      "obtain": [
+        {
+          "where": null,
+          "details": [
+            [
+              null,
+              "Fishing (Ocean Fishing Cruiser)"
+            ]
+          ]
+        }
+      ]
+    },
+    {
+      "name": "Deepsea Fangly Fish",
+      "block": null,
+      "group": 1,
+      "sprite": "/img/item_deepsea_fanglyfish.png",
+      "obtain": [
+        {
+          "where": null,
+          "details": [
+            [
+              null,
+              "Fishing (Ocean Fishing Cruiser)"
+            ]
+          ]
+        }
+      ]
+    },
+    {
+      "name": "Dog Pop",
+      "block": null,
+      "group": 1,
+      "sprite": "/img/item_dog_pop.png",
+      "obtain": []
+    },
+    {
+      "name": "Doggummy",
+      "block": null,
+      "group": 1,
+      "sprite": "/img/item_doggummy.png",
+      "obtain": [
+        {
+          "where": null,
+          "details": [
+            [
+              null,
+              "TOGBU, Gachapon (Food Token)"
+            ]
+          ]
+        }
+      ]
+    },
+    {
+      "name": "Doggy Treat",
+      "block": null,
+      "group": 1,
+      "sprite": "https://static.wikitide.net/dogonlinedotnetwikiwiki/1/17/Item_Doggy_Treat.png",
+      "obtain": [
+        {
+          "where": null,
+          "details": [
+            [
+              null,
+              "Cozy Cocoa Bookstore"
+            ]
+          ]
+        }
+      ]
+    },
+    {
+      "name": "Extraterrestrial Octopus",
+      "block": null,
+      "group": 1,
+      "sprite": "https://static.wikitide.net/dogonlinedotnetwikiwiki/1/13/Item_Extraterrestrial_Octopus.png",
+      "obtain": [
+        {
+          "where": null,
+          "details": [
+            [
+              null,
+              "Fishing (Sky Fishing)"
+            ]
+          ]
+        }
+      ]
+    },
+    {
+      "name": "Eye of Horus Fish",
+      "block": null,
+      "group": 1,
+      "sprite": "https://static.wikitide.net/dogonlinedotnetwikiwiki/8/8f/Item_Eye_of_Horus_Fish.png",
+      "obtain": [
+        {
+          "where": null,
+          "details": [
+            [
+              null,
+              "Fishing (Desert Oasis)"
+            ]
+          ]
+        }
+      ]
+    },
+    {
+      "name": "Fish and Chips",
+      "block": null,
+      "group": 1,
+      "sprite": "https://static.wikitide.net/dogonlinedotnetwikiwiki/5/54/Item_Fish_and_Chips.png",
+      "obtain": [
+        {
+          "where": null,
+          "details": [
+            [
+              null,
+              "Cooking"
+            ]
+          ]
+        }
+      ]
+    },
+    {
+      "name": "Flowery Cactus",
+      "block": null,
+      "group": 1,
+      "sprite": "https://static.wikitide.net/dogonlinedotnetwikiwiki/a/a4/Item_Flowery_Cactus.png",
+      "obtain": [
+        {
+          "where": null,
+          "details": [
+            [
+              null,
+              "Gardening"
+            ]
+          ]
+        }
+      ]
+    },
+    {
+      "name": "Flying Fish",
+      "block": null,
+      "group": 1,
+      "sprite": "/img/items/fish/AirfishFlyfish.png",
+      "obtain": [
+        {
+          "where": null,
+          "details": [
+            [
+              null,
+              "Fishing (Sky Fishing)"
+            ]
+          ]
+        }
+      ]
+    },
+    {
+      "name": "Freshwater Eel",
+      "block": null,
+      "group": 1,
+      "sprite": "/img/item_freshwater_eel.png",
+      "obtain": [
+        {
+          "where": null,
+          "details": [
+            [
+              null,
+              "Fishing (Old Fishin' Hole)"
+            ]
+          ]
+        }
+      ]
+    },
+    {
+      "name": "Fried Eggplant",
+      "block": null,
+      "group": 1,
+      "sprite": "/img/item_fried_eggplant.png",
+      "obtain": [
+        {
+          "where": null,
+          "details": [
+            [
+              null,
+              "Farmer's Market, TOGBU, Gachapon (Food Token)"
+            ]
+          ]
+        }
+      ]
+    },
+    {
+      "name": "Gleepfish",
+      "block": null,
+      "group": 1,
+      "sprite": "/img/item_gleepfish.png",
+      "obtain": [
+        {
+          "where": null,
+          "details": [
+            [
+              null,
+              "Fishing (Old Fishin' Hole)"
+            ]
+          ]
+        }
+      ]
+    },
+    {
+      "name": "Gothfish",
+      "block": null,
+      "group": 1,
+      "sprite": "/img/item_gothfish.png",
+      "obtain": [
+        {
+          "where": null,
+          "details": [
+            [
+              null,
+              "Fishing (Desert Oasis)"
+            ]
+          ]
+        }
+      ]
+    },
+    {
+      "name": "Gummy Skull",
+      "block": null,
+      "group": 1,
+      "sprite": "/img/item_gummy_skull.png",
+      "obtain": [
+        {
+          "where": null,
+          "details": [
+            [
+              null,
+              "Lonely Tower (Unigore)"
+            ]
+          ]
+        }
+      ]
+    },
+    {
+      "name": "Gummy Worm",
+      "block": null,
+      "group": 1,
+      "sprite": "/img/item_gummy_worm.png",
+      "obtain": [
+        {
+          "where": null,
+          "details": [
+            [
+              null,
+              "Gardening"
+            ]
+          ]
+        }
+      ]
+    },
+    {
+      "name": "Guppy",
+      "block": null,
+      "group": 1,
+      "sprite": "/img/item_guppy.png",
+      "obtain": [
+        {
+          "where": null,
+          "details": [
+            [
+              null,
+              "Fishing (Old Fishin' Hole)"
+            ]
+          ]
+        }
+      ]
+    },
+    {
+      "name": "Hambone",
+      "block": null,
+      "group": 1,
+      "sprite": "https://static.wikitide.net/dogonlinedotnetwikiwiki/3/3d/Item_Hambone.png",
+      "obtain": [
+        {
+          "where": null,
+          "details": [
+            [
+              null,
+              "Lonely Tower (Ruff Roast)"
+            ]
+          ]
+        }
+      ]
+    },
+    {
+      "name": "Handfish",
+      "block": null,
+      "group": 1,
+      "sprite": "/img/item_handfish.png",
+      "obtain": [
+        {
+          "where": null,
+          "details": [
+            [
+              null,
+              "Fishing (Old Fishin' Hole)"
+            ]
+          ]
+        }
+      ]
+    },
+    {
+      "name": "Hot N Spicy Fish",
+      "block": null,
+      "group": 1,
+      "sprite": "/img/item_hot_n_spicy_fish.png",
+      "obtain": [
+        {
+          "where": null,
+          "details": [
+            [
+              null,
+              "Fishing (Desert Oasis)"
+            ]
+          ]
+        }
+      ]
+    },
+    {
+      "name": "Hotted Dog",
+      "block": null,
+      "group": 1,
+      "sprite": "/img/item_hotteddog.png",
+      "obtain": [
+        {
+          "where": null,
+          "details": [
+            [
+              null,
+              "Lonely Tower (Balloon Dog), Bush, TOGBU, Gachapon (Food Token)"
+            ]
+          ]
+        }
+      ]
+    },
+    {
+      "name": "Jelly Jellyfish",
+      "block": null,
+      "group": 1,
+      "sprite": "/img/item_jellyjellyfish.png",
+      "obtain": [
+        {
+          "where": null,
+          "details": [
+            [
+              null,
+              "Fishing (Ocean Fishing Cruiser)"
+            ]
+          ]
+        }
+      ]
+    },
+    {
+      "name": "Largemouth Bass",
+      "block": null,
+      "group": 1,
+      "sprite": "/img/item_largemouth_bass.png",
+      "obtain": [
+        {
+          "where": null,
+          "details": [
+            [
+              null,
+              "Fishing (Old Fishin' Hole)"
+            ]
+          ]
+        }
+      ]
+    },
+    {
+      "name": "Lobster",
+      "block": null,
+      "group": 1,
+      "sprite": "/img/item_lobster.png",
+      "obtain": [
+        {
+          "where": null,
+          "details": [
+            [
+              null,
+              "Fishing (Ocean Fishing Cruiser)"
+            ]
+          ]
+        }
+      ]
+    },
+    {
+      "name": "Lungfish",
+      "block": null,
+      "group": 1,
+      "sprite": "/img/item_lungfish.png",
+      "obtain": [
+        {
+          "where": null,
+          "details": [
+            [
+              null,
+              "Fishing (Desert Oasis)"
+            ]
+          ]
+        }
+      ]
+    },
+    {
+      "name": "Maki",
+      "block": null,
+      "group": 1,
+      "sprite": "/img/item_maki.png",
+      "obtain": [
+        {
+          "where": null,
+          "details": [
+            [
+              null,
+              "Cooking"
+            ]
+          ]
+        }
+      ]
+    },
+    {
+      "name": "Mashed Potatoes",
+      "block": null,
+      "group": 1,
+      "sprite": "/img/item_mashed_potatoes.png",
+      "obtain": [
+        {
+          "where": null,
+          "details": [
+            [
+              null,
+              "Cooking"
+            ]
+          ]
+        }
+      ]
+    },
+    {
+      "name": "Mayonnaise",
+      "block": null,
+      "group": 1,
+      "sprite": "/img/item_mayonnaise.png",
+      "obtain": [
+        {
+          "where": null,
+          "details": [
+            [
+              null,
+              "Desert Trading"
+            ]
+          ]
+        }
+      ]
+    },
+    {
+      "name": "MEÅTBÖL",
+      "block": null,
+      "group": 1,
+      "sprite": "/img/item_meatbol.png",
+      "obtain": [
+        {
+          "where": null,
+          "details": [
+            [
+              null,
+              "TOGBU, Gachapon (Food Token)"
+            ]
+          ]
+        }
+      ]
+    },
+    {
+      "name": "Milk",
+      "block": null,
+      "group": 1,
+      "sprite": "/img/item_milk.png",
+      "obtain": [
+        {
+          "where": null,
+          "details": [
+            [
+              null,
+              "Lonely Tower (Pup Cup, Peeper)"
+            ]
+          ]
+        }
+      ]
+    },
+    {
+      "name": "Minnow",
+      "block": null,
+      "group": 1,
+      "sprite": "https://static.wikitide.net/dogonlinedotnetwikiwiki/d/de/Item_Minnow.png",
+      "obtain": [
+        {
+          "where": null,
+          "details": [
+            [
+              null,
+              "Fishing (Old Fishin' Hole)"
+            ]
+          ]
+        }
+      ]
+    },
+    {
+      "name": "Moonfish",
+      "block": null,
+      "group": 1,
+      "sprite": "/img/item_moonfish.png",
+      "obtain": [
+        {
+          "where": null,
+          "details": [
+            [
+              null,
+              "Fishing (Desert Oasis)"
+            ]
+          ]
+        }
+      ]
+    },
+    {
+      "name": "Mozzarella Sticks",
+      "block": null,
+      "group": 1,
+      "sprite": "https://static.wikitide.net/dogonlinedotnetwikiwiki/7/7e/Item_Mozzarella_Sticks.png",
+      "obtain": [
+        {
+          "where": null,
+          "details": [
+            [
+              null,
+              "Cooking"
+            ]
+          ]
+        }
+      ]
+    },
+    {
+      "name": "Mushroom",
+      "block": null,
+      "group": 1,
+      "sprite": "/img/item_mushroom.png",
+      "obtain": [
+        {
+          "where": null,
+          "details": [
+            [
+              null,
+              "Bush, TOGBU, Gachapon (Food Token)"
+            ]
+          ]
+        }
+      ]
+    },
+    {
+      "name": "Musscle",
+      "block": null,
+      "group": 1,
+      "sprite": "/img/item_musscle.png",
+      "obtain": [
+        {
+          "where": null,
+          "details": [
+            [
+              null,
+              "Fishing (Ocean Fishing Cruiser)"
+            ]
+          ]
+        }
+      ]
+    },
+    {
+      "name": "Mussel",
+      "block": null,
+      "group": 1,
+      "sprite": "/img/item_mussel.png",
+      "obtain": [
+        {
+          "where": null,
+          "details": [
+            [
+              null,
+              "Fishing (Ocean Fishing Cruiser)"
+            ]
+          ]
+        }
+      ]
+    },
+    {
+      "name": "Octojelly",
+      "block": null,
+      "group": 1,
+      "sprite": "/img/item_octojelly.png",
+      "obtain": [
+        {
+          "where": null,
+          "details": [
+            [
+              null,
+              "Fishing (Old Fishin' Hole)"
+            ]
+          ]
+        }
+      ]
+    },
+    {
+      "name": "Onigiri",
+      "block": null,
+      "group": 1,
+      "sprite": "/img/item_onigiri.png",
+      "obtain": [
+        {
+          "where": null,
+          "details": [
+            [
+              null,
+              "Cooking"
+            ]
+          ]
+        }
+      ]
+    },
+    {
+      "name": "Onion",
+      "block": null,
+      "group": 1,
+      "sprite": "/img/item_onion.png",
+      "obtain": [
+        {
+          "where": null,
+          "details": [
+            [
+              null,
+              "Lonely Tower (Dogre)"
+            ]
+          ]
+        }
+      ]
+    },
+    {
+      "name": "Onion Rings",
+      "block": null,
+      "group": 1,
+      "sprite": "/img/item_onion_rings.png",
+      "obtain": [
+        {
+          "where": null,
+          "details": [
+            [
+              null,
+              "Cooking"
+            ]
+          ]
+        }
+      ]
+    },
+    {
+      "name": "Pawberry",
+      "block": null,
+      "group": 1,
+      "sprite": "/img/item_pawberry.png",
+      "obtain": [
+        {
+          "where": null,
+          "details": [
+            [
+              null,
+              "Gardening (Pawberry Plant)"
+            ]
+          ]
+        }
+      ]
+    },
+    {
+      "name": "Pawberry Pawpsicle",
+      "block": null,
+      "group": 1,
+      "sprite": "/img/item_pawberry_pawpsicle.png",
+      "obtain": [
+        {
+          "where": null,
+          "details": [
+            [
+              null,
+              "Summer Event"
+            ]
+          ]
+        }
+      ]
+    },
+    {
+      "name": "Pawprint Cookie",
+      "block": null,
+      "group": 1,
+      "sprite": "/img/item_pawprint_cookie.png",
+      "obtain": [
+        {
+          "where": null,
+          "details": [
+            [
+              null,
+              "Lonely Tower (Cookie Nightjar)"
+            ]
+          ]
+        }
+      ]
+    },
+    {
+      "name": "Pickle Buckler",
+      "block": null,
+      "group": 1,
+      "sprite": "/img/item_pickle_buckler.png",
+      "obtain": [
+        {
+          "where": null,
+          "details": [
+            [
+              null,
+              "Lonely Tower (Dogburger)"
+            ]
+          ]
+        }
+      ]
+    },
+    {
+      "name": "Plane-Mimicking Fish",
+      "block": null,
+      "group": 1,
+      "sprite": "https://static.wikitide.net/dogonlinedotnetwikiwiki/e/e5/Item_Plane-Mimicking_Fish.png",
+      "obtain": [
+        {
+          "where": null,
+          "details": [
+            [
+              null,
+              "Fishing (Sky Fishing)"
+            ]
+          ]
+        }
+      ]
+    },
+    {
+      "name": "Polar Prawn",
+      "block": null,
+      "group": 1,
+      "sprite": "/img/item_polar_prawn.png",
+      "obtain": [
+        {
+          "where": null,
+          "details": [
+            [
+              null,
+              "Fishing (Ice Fishing Hole)"
+            ]
+          ]
+        }
+      ]
+    },
+    {
+      "name": "Potato",
+      "block": null,
+      "group": 1,
+      "sprite": "/img/item_potato.png",
+      "obtain": [
+        {
+          "where": null,
+          "details": [
+            [
+              null,
+              "Farmer's Market, TOGBU, Gachapon (Food Token)"
+            ]
+          ]
+        }
+      ]
+    },
+    {
+      "name": "Power Pawberry",
+      "block": null,
+      "group": 1,
+      "sprite": "/img/item_power_pawberry.png",
+      "obtain": [
+        {
+          "where": null,
+          "details": [
+            [
+              null,
+              "Gardening (Pawberry Plant)"
+            ]
+          ]
+        }
+      ]
+    },
+    {
+      "name": "Prismatic Koi",
+      "block": null,
+      "group": 1,
+      "sprite": "/img/item_prismatic_koi.png",
+      "obtain": [
+        {
+          "where": null,
+          "details": [
+            [
+              null,
+              "Fishing (Old Fishin' Hole (Golden Grub))"
+            ]
+          ]
+        }
+      ]
+    },
+    {
+      "name": "Pumpkin",
+      "block": null,
+      "group": 1,
+      "sprite": "/img/item_pumpkin.png",
+      "obtain": [
+        {
+          "where": null,
+          "details": [
+            [
+              null,
+              "Farmer's Market"
+            ]
+          ]
+        }
+      ]
+    },
+    {
+      "name": "Pupfish",
+      "block": null,
+      "group": 1,
+      "sprite": "/img/item_pupfish.png",
+      "obtain": [
+        {
+          "where": null,
+          "details": [
+            [
+              null,
+              "Fishing (Desert Oasis (Golden Grub))"
+            ]
+          ]
+        }
+      ]
+    },
+    {
+      "name": "Pupperoni Pizza",
+      "block": null,
+      "group": 1,
+      "sprite": "/img/item_pupperonipizza.png",
+      "obtain": [
+        {
+          "where": null,
+          "details": [
+            [
+              null,
+              "TOGBU, Gachapon (Food Token)"
+            ]
+          ]
+        }
+      ]
+    },
+    {
+      "name": "Rainbow Trout",
+      "block": null,
+      "group": 1,
+      "sprite": "/img/item_rainbow_trout.png",
+      "obtain": [
+        {
+          "where": null,
+          "details": [
+            [
+              null,
+              "Fishing (Old Fishin' Hole)"
+            ]
+          ]
+        }
+      ]
+    },
+    {
+      "name": "Rainbow Trout",
+      "block": null,
+      "group": 1,
+      "sprite": "/img/items/fish/AirfishRainbowTrout.png",
+      "obtain": [
+        {
+          "where": null,
+          "details": [
+            [
+              null,
+              "Fishing (Sky Fishing)"
+            ]
+          ]
+        }
+      ]
+    },
+    {
+      "name": "Red Balloonfish",
+      "block": null,
+      "group": 1,
+      "sprite": "/img/items/fish/AirfishBalloon.png",
+      "obtain": [
+        {
+          "where": null,
+          "details": [
+            [
+              null,
+              "Fishing (Sky Fishing)"
+            ]
+          ]
+        }
+      ]
+    },
+    {
+      "name": "Rice",
+      "block": null,
+      "group": 1,
+      "sprite": "/img/item_rice.png",
+      "obtain": [
+        {
+          "where": null,
+          "details": [
+            [
+              null,
+              "Gardening (Rice Plant)"
+            ]
+          ]
+        }
+      ]
+    },
+    {
+      "name": "Sabretooth Tigerfish",
+      "block": null,
+      "group": 1,
+      "sprite": "/img/item_sabretoothtigerfish.png",
+      "obtain": [
+        {
+          "where": null,
+          "details": [
+            [
+              null,
+              "Fishing (Ice Fishing Hole)"
+            ]
+          ]
+        }
+      ]
+    },
+    {
+      "name": "Salmon",
+      "block": null,
+      "group": 1,
+      "sprite": "/img/item_salmon.png",
+      "obtain": [
+        {
+          "where": null,
+          "details": [
+            [
+              null,
+              "Fishing (Old Fishin' Hole)"
+            ]
+          ]
+        }
+      ]
+    },
+    {
+      "name": "Scorpion Fish",
+      "block": null,
+      "group": 1,
+      "sprite": "/img/item_scorpion_fish.png",
+      "obtain": [
+        {
+          "where": null,
+          "details": [
+            [
+              null,
+              "Fishing (Desert Oasis)"
+            ]
+          ]
+        }
+      ]
+    },
+    {
+      "name": "Sea Angel",
+      "block": null,
+      "group": 1,
+      "sprite": "/img/item_sea_angel.png",
+      "obtain": [
+        {
+          "where": null,
+          "details": [
+            [
+              null,
+              "Fishing (Ocean Fishing Cruiser)"
+            ]
+          ]
+        }
+      ]
+    },
+    {
+      "name": "Sea Star",
+      "block": null,
+      "group": 1,
+      "sprite": "/img/item_seastar.png",
+      "obtain": [
+        {
+          "where": null,
+          "details": [
+            [
+              null,
+              "Fishing (Ocean Fishing Cruiser)"
+            ]
+          ]
+        }
+      ]
+    },
+    {
+      "name": "Shawarma Knife",
+      "block": null,
+      "group": 1,
+      "sprite": "/img/item_shawarmaknife.png",
+      "obtain": [
+        {
+          "where": null,
+          "details": [
+            [
+              null,
+              "Icy Pricey Mountain"
+            ]
+          ]
+        }
+      ]
+    },
+    {
+      "name": "Shooting Starfish",
+      "block": null,
+      "group": 1,
+      "sprite": "/img/item_shootingstarfish.png",
+      "obtain": [
+        {
+          "where": null,
+          "details": [
+            [
+              null,
+              "Fishing (Ocean Fishing Cruiser)"
+            ]
+          ]
+        }
+      ]
+    },
+    {
+      "name": "Sizzling Spear",
+      "block": null,
+      "group": 1,
+      "sprite": "/img/item_sizzlingspear.png",
+      "obtain": [
+        {
+          "where": null,
+          "details": [
+            [
+              null,
+              "Lonely Tower (Barraskewda)"
+            ]
+          ]
+        }
+      ]
+    },
+    {
+      "name": "Skyfish",
+      "block": null,
+      "group": 1,
+      "sprite": "/img/items/fish/AirfishSkyfish.png",
+      "obtain": [
+        {
+          "where": null,
+          "details": [
+            [
+              null,
+              "Fishing (Sky Fishing)"
+            ]
+          ]
+        }
+      ]
+    },
+    {
+      "name": "Slice of Toast",
+      "block": null,
+      "group": 1,
+      "sprite": "/img/item_breadslice.png",
+      "obtain": [
+        {
+          "where": null,
+          "details": [
+            [
+              null,
+              "Cozy Cocoa Bookstore, Bush"
+            ]
+          ]
+        }
+      ]
+    },
+    {
+      "name": "Smooshed Ice Cream",
+      "block": null,
+      "group": 1,
+      "sprite": "/img/item_smooshed_icecream.png",
+      "obtain": [
+        {
+          "where": null,
+          "details": [
+            [
+              null,
+              "Lonely Tower (Freezy Paws)"
+            ]
+          ]
+        }
+      ]
+    },
+    {
+      "name": "Sniffillet",
+      "block": null,
+      "group": 1,
+      "sprite": "/img/item_sniffillet.png",
+      "obtain": [
+        {
+          "where": null,
+          "details": [
+            [
+              null,
+              "Fishing (Old Fishin' Hole)"
+            ]
+          ]
+        }
+      ]
+    },
+    {
+      "name": "Starry Cactus",
+      "block": null,
+      "group": 1,
+      "sprite": "/img/item_starry_cactus.png",
+      "obtain": [
+        {
+          "where": null,
+          "details": [
+            [
+              null,
+              "Gardening (Starry Cactus Plant)"
+            ]
+          ]
+        }
+      ]
+    },
+    {
+      "name": "Starwhale",
+      "block": null,
+      "group": 1,
+      "sprite": "https://static.wikitide.net/dogonlinedotnetwikiwiki/d/da/Item_Starwhale.png",
+      "obtain": [
+        {
+          "where": null,
+          "details": [
+            [
+              null,
+              "Fishing (Sky Fishing)"
+            ]
+          ]
+        }
+      ]
+    },
+    {
+      "name": "Steamfish",
+      "block": null,
+      "group": 1,
+      "sprite": "/img/items/fish/AirfishSteampunk2.png",
+      "obtain": [
+        {
+          "where": null,
+          "details": [
+            [
+              null,
+              "Fishing (Sky Fishing)"
+            ]
+          ]
+        }
+      ]
+    },
+    {
+      "name": "Stick of Butter",
+      "block": null,
+      "group": 1,
+      "sprite": "/img/item_butter.png",
+      "obtain": [
+        {
+          "where": null,
+          "details": [
+            [
+              null,
+              "Farmer's Market, TOGBU, Gachapon (Food Token)"
+            ]
+          ]
+        }
+      ]
+    },
+    {
+      "name": "Sugar",
+      "block": null,
+      "group": 1,
+      "sprite": "/img/item_sugar.png",
+      "obtain": [
+        {
+          "where": null,
+          "details": [
+            [
+              null,
+              "Trading"
+            ]
+          ]
+        }
+      ]
+    },
+    {
+      "name": "Sugar Cookie",
+      "block": null,
+      "group": 1,
+      "sprite": "/img/item_sugar_cookie.png",
+      "obtain": [
+        {
+          "where": null,
+          "details": [
+            [
+              null,
+              "Lonely Tower (Cookie Nightjar)"
+            ]
+          ]
+        }
+      ]
+    },
+    {
+      "name": "Sunfish",
+      "block": null,
+      "group": 1,
+      "sprite": "/img/item_sunfish.png",
+      "obtain": [
+        {
+          "where": null,
+          "details": [
+            [
+              null,
+              "Fishing (Desert Oasis)"
+            ]
+          ]
+        }
+      ]
+    },
+    {
+      "name": "Swede",
+      "block": null,
+      "group": 1,
+      "sprite": "/img/item_swede.png",
+      "obtain": [
+        {
+          "where": null,
+          "details": [
+            [
+              null,
+              "TOGBU, Gachapon (Food Token)"
+            ]
+          ]
+        }
+      ]
+    },
+    {
+      "name": "Taco",
+      "block": null,
+      "group": 1,
+      "sprite": "/img/item_taco.png",
+      "obtain": [
+        {
+          "where": null,
+          "details": [
+            [
+              null,
+              "Lonely Tower (Balloon Dog), TOGBU, Gachapon (Food Token)"
+            ]
+          ]
+        }
+      ]
+    },
+    {
+      "name": "Thundering Cloudfish",
+      "block": null,
+      "group": 1,
+      "sprite": "https://static.wikitide.net/dogonlinedotnetwikiwiki/3/3d/Item_Thundering_Cloudfish.png",
+      "obtain": [
+        {
+          "where": null,
+          "details": [
+            [
+              null,
+              "Fishing (Sky Fishing)"
+            ]
+          ]
+        }
+      ]
+    },
+    {
+      "name": "Toad in the Hole",
+      "block": null,
+      "group": 1,
+      "sprite": "/img/item_toadinthehole.png",
+      "obtain": [
+        {
+          "where": null,
+          "details": [
+            [
+              null,
+              "Cooking"
+            ]
+          ]
+        }
+      ]
+    },
+    {
+      "name": "Toasted Breadhead",
+      "block": null,
+      "group": 1,
+      "sprite": null,
+      "obtain": [
+        {
+          "where": null,
+          "details": [
+            [
+              null,
+              "Fortune Cookie"
+            ]
+          ]
+        }
+      ]
+    },
+    {
+      "name": "Tomato",
+      "block": null,
+      "group": 1,
+      "sprite": "/img/item_tomato.png",
+      "obtain": [
+        {
+          "where": null,
+          "details": [
+            [
+              null,
+              "Farmer's Market, TOGBU, Gachapon (Food Token)"
+            ]
+          ]
+        }
+      ]
+    },
+    {
+      "name": "Trickster Donut",
+      "block": null,
+      "group": 1,
+      "sprite": "/img/item_trickster_donut.png",
+      "obtain": [
+        {
+          "where": null,
+          "details": [
+            [
+              null,
+              "Desert Trading"
+            ]
+          ]
+        }
+      ]
+    },
+    {
+      "name": "Turnip",
+      "block": null,
+      "group": 1,
+      "sprite": "/img/item_turnip.png",
+      "obtain": [
+        {
+          "where": null,
+          "details": [
+            [
+              null,
+              "Farmer's Market, TOGBU, Gachapon (Food Token)"
+            ]
+          ]
+        }
+      ]
+    },
+    {
+      "name": "Vanilla Cookies",
+      "block": null,
+      "group": 1,
+      "sprite": "/img/item_vanilla_cookies.png",
+      "obtain": [
+        {
+          "where": null,
+          "details": [
+            [
+              null,
+              "Lonely Tower (Cookie Nightjar)"
+            ]
+          ]
+        }
+      ]
+    },
+    {
+      "name": "Very Lost Fish",
+      "block": null,
+      "group": 1,
+      "sprite": "/img/items/fish/AirfishLostfish.png",
+      "obtain": [
+        {
+          "where": null,
+          "details": [
+            [
+              null,
+              "Fishing (Sky Fishing)"
+            ]
+          ]
+        }
+      ]
+    },
+    {
+      "name": "Water Melon",
+      "block": null,
+      "group": 1,
+      "sprite": "/img/item_water_melon.png",
+      "obtain": [
+        {
+          "where": null,
+          "details": [
+            [
+              null,
+              "Gardening (Watermelon Plant + 8 surrounding squares filled with ONLY water)"
+            ]
+          ]
+        }
+      ]
+    },
+    {
+      "name": "Watermelon",
+      "block": null,
+      "group": 1,
+      "sprite": "/img/item_watermelon.png",
+      "obtain": [
+        {
+          "where": null,
+          "details": [
+            [
+              null,
+              "Gardening (Watermelon Plant)"
+            ]
+          ]
+        }
+      ]
+    },
+    {
+      "name": "Wormhole Donut",
+      "block": null,
+      "group": 1,
+      "sprite": "/img/item_wormhole_donut.png",
+      "obtain": [
+        {
+          "where": null,
+          "details": [
+            [
+              null,
+              "Desert Trading"
+            ]
+          ]
+        }
+      ]
+    },
+    {
+      "name": "Acorn",
+      "block": null,
+      "group": 0,
+      "sprite": "/img/item_acorn.png",
+      "obtain": [
+        {
+          "where": null,
+          "details": [
+            [
+              null,
+              "Farmer's Market, Lonely Tower (Sky Dog)"
+            ]
+          ]
+        }
+      ]
+    },
+    {
+      "name": "Apl",
+      "block": null,
+      "group": 0,
+      "sprite": "/img/item_apl.png",
+      "obtain": [
+        {
+          "where": null,
+          "details": [
+            [
+              null,
+              "Gardening (Apple Tree)"
+            ]
+          ]
+        }
+      ]
+    },
+    {
+      "name": "Barraskewer Tail",
+      "block": null,
+      "group": 0,
+      "sprite": "https://static.wikitide.net/dogonlinedotnetwikiwiki/9/92/Barraskewer_Tail.png",
+      "obtain": [
+        {
+          "where": null,
+          "details": [
+            [
+              null,
+              "Lonely Tower"
+            ]
+          ]
+        }
+      ]
+    },
+    {
+      "name": "Batfish",
+      "block": null,
+      "group": 0,
+      "sprite": "/img/item_batfish.png",
+      "obtain": [
+        {
+          "where": null,
+          "details": [
+            [
+              null,
+              "Fishing (Desert Oasis)"
+            ]
+          ]
+        }
+      ]
+    },
+    {
+      "name": "Bow-Wow Gan Ma",
+      "block": null,
+      "group": 0,
+      "sprite": "/img/items/food/Material_Saucier_Crisp.png",
+      "obtain": [
+        {
+          "where": null,
+          "details": [
+            [
+              null,
+              "TOGBU, Gachapon (Food Token)"
+            ]
+          ]
+        }
+      ]
+    },
+    {
+      "name": "Brieeb",
+      "block": null,
+      "group": 0,
+      "sprite": "/img/items/food/Brieeb.png",
+      "obtain": [
+        {
+          "where": null,
+          "details": [
+            [
+              null,
+              "TOGBU, Gachapon (Food Token)"
+            ]
+          ]
+        }
+      ]
+    },
+    {
+      "name": "Candy Bracelets",
+      "block": null,
+      "group": 0,
+      "sprite": "https://static.wikitide.net/dogonlinedotnetwikiwiki/2/2f/Item_Candy_Bracelets.png",
+      "obtain": [
+        {
+          "where": null,
+          "details": [
+            [
+              null,
+              "Hot Dog Topic, Gachapon (Food Token)"
+            ]
+          ]
+        }
+      ]
+    },
+    {
+      "name": "Candy Necklace",
+      "block": null,
+      "group": 0,
+      "sprite": "https://static.wikitide.net/dogonlinedotnetwikiwiki/f/fe/Item_Candy_Necklace.png",
+      "obtain": [
+        {
+          "where": null,
+          "details": [
+            [
+              null,
+              "Hot Dog Topic, Gachapon (Clothes Token)"
+            ]
+          ]
+        }
+      ]
+    },
+    {
+      "name": "Caramel Apple",
+      "block": null,
+      "group": 0,
+      "sprite": "/img/clothes_caramel_apple_handheld.png",
+      "obtain": [
+        {
+          "where": null,
+          "details": [
+            [
+              null,
+              "Lonely Tower, Fishing, Gardening"
+            ]
+          ]
+        }
+      ]
+    },
+    {
+      "name": "Cheese Puffs",
+      "block": null,
+      "group": 0,
+      "sprite": "/img/item_cheesepuffs.png",
+      "obtain": [
+        {
+          "where": null,
+          "details": [
+            [
+              null,
+              "Lonely Tower, TOGBU, Gachapon (Food Token)"
+            ]
+          ]
+        }
+      ]
+    },
+    {
+      "name": "Cheese Shirt",
+      "block": null,
+      "group": 0,
+      "sprite": null,
+      "obtain": [
+        {
+          "where": null,
+          "details": [
+            [
+              null,
+              "The Fashion Hut"
+            ]
+          ]
+        }
+      ]
+    },
+    {
+      "name": "Chocolate-Chip Battleaxe",
+      "block": null,
+      "group": 0,
+      "sprite": "/img/item_chocolatebattleaxe.png",
+      "obtain": [
+        {
+          "where": null,
+          "details": [
+            [
+              null,
+              "Lonely Tower (Cookie Nightjar)"
+            ]
+          ]
+        }
+      ]
+    },
+    {
+      "name": "Crispy Bacon Battleaxe",
+      "block": null,
+      "group": 0,
+      "sprite": "/img/item_crispy_bacon_battleaxe.png",
+      "obtain": [
+        {
+          "where": null,
+          "details": [
+            [
+              null,
+              "Cooking"
+            ]
+          ]
+        }
+      ]
+    },
+    {
+      "name": "Dropped Ice Cream",
+      "block": null,
+      "group": 0,
+      "sprite": "https://static.wikitide.net/dogonlinedotnetwikiwiki/6/63/Item_Dropped_Ice_Cream.png",
+      "obtain": [
+        {
+          "where": null,
+          "details": [
+            [
+              null,
+              "Lonely Tower"
+            ]
+          ]
+        }
+      ]
+    },
+    {
+      "name": "Egg (Pipis)",
+      "block": null,
+      "group": 0,
+      "sprite": "/img/item_egg.png",
+      "obtain": [
+        {
+          "where": null,
+          "details": [
+            [
+              null,
+              "Bush"
+            ]
+          ]
+        }
+      ]
+    },
+    {
+      "name": "Egg on My Face",
+      "block": null,
+      "group": 0,
+      "sprite": "https://static.wikitide.net/dogonlinedotnetwikiwiki/1/11/Item_Egg_on_My_Face.png",
+      "obtain": [
+        {
+          "where": null,
+          "details": [
+            [
+              null,
+              "Egg Hatching"
+            ]
+          ]
+        }
+      ]
+    },
+    {
+      "name": "Fool's Gold Apple",
+      "block": null,
+      "group": 0,
+      "sprite": "https://static.wikitide.net/dogonlinedotnetwikiwiki/9/96/Item_Fool%27s_Gold_Apple.png",
+      "obtain": [
+        {
+          "where": null,
+          "details": [
+            [
+              null,
+              "Desert Trading"
+            ]
+          ]
+        }
+      ]
+    },
+    {
+      "name": "Fortune Cookie",
+      "block": null,
+      "group": 0,
+      "sprite": "/img/item_fortunecookie.png",
+      "obtain": [
+        {
+          "where": null,
+          "details": [
+            [
+              null,
+              "Desert Trading, Bush, TOGBU, Lonely Tower, Gachapon (Food Token)"
+            ]
+          ]
+        }
+      ]
+    },
+    {
+      "name": "Fossil Fish",
+      "block": null,
+      "group": 0,
+      "sprite": "/img/item_fossilfish.png",
+      "obtain": [
+        {
+          "where": null,
+          "details": [
+            [
+              null,
+              "Fishing (Desert Oasis)"
+            ]
+          ]
+        }
+      ]
+    },
+    {
+      "name": "Glue",
+      "block": null,
+      "group": 0,
+      "sprite": "/img/item_glue.png",
+      "obtain": [
+        {
+          "where": null,
+          "details": [
+            [
+              null,
+              "TOGBU, Gachapon (Food Token)"
+            ]
+          ]
+        }
+      ]
+    },
+    {
+      "name": "Golden Bone",
+      "block": null,
+      "group": 0,
+      "sprite": null,
+      "obtain": [
+        {
+          "where": null,
+          "details": [
+            [
+              null,
+              "Temple of Dog"
+            ]
+          ]
+        }
+      ]
+    },
+    {
+      "name": "Homework",
+      "block": null,
+      "group": 0,
+      "sprite": "/img/item_homework.png",
+      "obtain": [
+        {
+          "where": null,
+          "details": [
+            [
+              null,
+              "TOGBU, Gachapon (Food Token)"
+            ]
+          ]
+        }
+      ]
+    },
+    {
+      "name": "Hot Cocoa",
+      "block": null,
+      "group": 0,
+      "sprite": "/img/item_cocoa.png",
+      "obtain": [
+        {
+          "where": null,
+          "details": [
+            [
+              null,
+              "Cozy Cocoa Bookstore"
+            ]
+          ]
+        }
+      ]
+    },
+    {
+      "name": "Hot Sauce",
+      "block": null,
+      "group": 0,
+      "sprite": "https://static.wikitide.net/dogonlinedotnetwikiwiki/3/3d/Item_Hot_Sauce.png",
+      "obtain": [
+        {
+          "where": null,
+          "details": [
+            [
+              null,
+              "TOGBU, Gachapon (Food Token)"
+            ]
+          ]
+        }
+      ]
+    },
+    {
+      "name": "Hourglass Fish",
+      "block": null,
+      "group": 0,
+      "sprite": "/img/item_hourglassfish.png",
+      "obtain": [
+        {
+          "where": null,
+          "details": [
+            [
+              null,
+              "Fishing (Desert Oasis)"
+            ]
+          ]
+        }
+      ]
+    },
+    {
+      "name": "Jellyfish...?",
+      "block": null,
+      "group": 0,
+      "sprite": "/img/items/fish/AirfishJellyfish.png",
+      "obtain": [
+        {
+          "where": null,
+          "details": [
+            [
+              null,
+              "Fishing (Sky Fishing)"
+            ]
+          ]
+        }
+      ]
+    },
+    {
+      "name": "Misfortune Cookie",
+      "block": null,
+      "group": 0,
+      "sprite": "/img/item_misfortune.png",
+      "obtain": [
+        {
+          "where": null,
+          "details": [
+            [
+              null,
+              "Lonely Tower, Desert Trading, Bush, TOGBU, Gachapon (Food Token)"
+            ]
+          ]
+        }
+      ]
+    },
+    {
+      "name": "Mold Boot",
+      "block": null,
+      "group": 0,
+      "sprite": "/img/item_moldboot.png",
+      "obtain": [
+        {
+          "where": null,
+          "details": [
+            [
+              null,
+              "Lonely Tower (Boot Dog)"
+            ]
+          ]
+        }
+      ]
+    },
+    {
+      "name": "Nasty Sweet",
+      "block": null,
+      "group": 0,
+      "sprite": "/img/item_nasty_sweet.png",
+      "obtain": [
+        {
+          "where": null,
+          "details": [
+            [
+              null,
+              "TOGBU, Gachapon (Food Token)"
+            ]
+          ]
+        }
+      ]
+    },
+    {
+      "name": "Peeper Piper's Pepper",
+      "block": null,
+      "group": 0,
+      "sprite": "/img/item_peeperpiperspepper.png",
+      "obtain": [
+        {
+          "where": null,
+          "details": [
+            [
+              null,
+              "Lonely Tower (Peeper Piper)"
+            ]
+          ]
+        }
+      ]
+    },
+    {
+      "name": "Promotional Gothdog",
+      "block": null,
+      "group": 0,
+      "sprite": "/img/item_gothdog.png",
+      "obtain": [
+        {
+          "where": null,
+          "details": [
+            [
+              null,
+              "Random Site Event"
+            ]
+          ]
+        }
+      ]
+    },
+    {
+      "name": "Rattleray",
+      "block": null,
+      "group": 0,
+      "sprite": "/img/item_rattleray.png",
+      "obtain": [
+        {
+          "where": null,
+          "details": [
+            [
+              null,
+              "Fishing (Desert Oasis)"
+            ]
+          ]
+        }
+      ]
+    },
+    {
+      "name": "Rocketfish",
+      "block": null,
+      "group": 0,
+      "sprite": "/img/item_rocketfish.png",
+      "obtain": [
+        {
+          "where": null,
+          "details": [
+            [
+              null,
+              "Fishing (Ice Fishing Hole (Golden Grub))"
+            ]
+          ]
+        }
+      ]
+    },
+    {
+      "name": "Soda",
+      "block": null,
+      "group": 0,
+      "sprite": "/img/item_soda.png",
+      "obtain": [
+        {
+          "where": null,
+          "details": [
+            [
+              null,
+              "Lonely Tower (Balloon Dog, Sky Dog), TOGBU, Gachapon (Food Token)"
+            ]
+          ]
+        }
+      ]
+    },
+    {
+      "name": "Soy Sauce",
+      "block": null,
+      "group": 0,
+      "sprite": "/img/items/food/Material_Saucier_Soy.png",
+      "obtain": [
+        {
+          "where": null,
+          "details": [
+            [
+              null,
+              "TOGBU, Gachapon (Food Token)"
+            ]
+          ]
+        }
+      ]
+    },
+    {
+      "name": "Strange Stock",
+      "block": null,
+      "group": 0,
+      "sprite": "/img/item_strange_stock.png",
+      "obtain": [
+        {
+          "where": null,
+          "details": [
+            [
+              null,
+              "Random Site Event"
+            ]
+          ]
+        }
+      ]
+    },
+    {
+      "name": "The Big Stogie",
+      "block": null,
+      "group": 0,
+      "sprite": "https://static.wikitide.net/dogonlinedotnetwikiwiki/1/17/Item_The_Big_Stogie.png",
+      "obtain": [
+        {
+          "where": null,
+          "details": [
+            [
+              null,
+              "Lonely Tower (Crony Bones and Da Bawss)"
+            ]
+          ]
+        }
+      ]
+    },
+    {
+      "name": "Unholy Mackerel",
+      "block": null,
+      "group": 0,
+      "sprite": "/img/item_unholy_mackerel.png",
+      "obtain": [
+        {
+          "where": null,
+          "details": [
+            [
+              null,
+              "Egg Hatching (Evil Egg)"
+            ]
+          ]
+        }
+      ]
+    },
+    {
+      "name": "Vanilla Pendant",
+      "block": null,
+      "group": 0,
+      "sprite": "/img/item_vanilla_pendant.png",
+      "obtain": [
+        {
+          "where": null,
+          "details": [
+            [
+              null,
+              "Desert Trading"
+            ]
+          ]
+        }
+      ]
+    },
+    {
+      "name": "Watermelon Earrings",
+      "block": null,
+      "group": 0,
+      "sprite": "https://static.wikitide.net/dogonlinedotnetwikiwiki/f/fe/Item_Watermelon_Earrings.png",
+      "obtain": [
+        {
+          "where": null,
+          "details": [
+            [
+              null,
+              "Desert Trading"
+            ]
+          ]
+        }
+      ]
+    },
+    {
+      "name": "Worm Apple",
+      "block": null,
+      "group": 0,
+      "sprite": "/img/item_wormy_apple.png",
+      "obtain": [
+        {
+          "where": null,
+          "details": [
+            [
+              null,
+              "Gardening (Apple Tree)"
+            ]
+          ]
+        }
+      ]
+    },
+    {
+      "name": "Yum Egg",
+      "block": null,
+      "group": 0,
+      "sprite": "https://static.wikitide.net/dogonlinedotnetwikiwiki/0/01/Item_Yum_Egg.png",
+      "obtain": [
+        {
+          "where": null,
+          "details": [
+            [
+              null,
+              "Lonely Tower (Enourmous Treasure Chests (Floor 2))"
+            ]
+          ]
+        }
+      ]
+    }
+  ]
+}

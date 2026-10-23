@@ -1,0 +1,541 @@
+{
+  "schema": 1,
+  "unseen": "hidden",
+  "blocks": [
+    {
+      "name": null,
+      "color": null,
+      "size": 33
+    }
+  ],
+  "slots": [
+    {
+      "name": "Dr. Cactus's Desert Survival Guide",
+      "block": null,
+      "sprite": "/img/item_desertsurvival.png",
+      "obtain": [
+        {
+          "where": null,
+          "details": [
+            [
+              "Obtained",
+              "Cozy Cocoa Bookstore, Gachapon"
+            ]
+          ]
+        }
+      ]
+    },
+    {
+      "name": "How to Become Much Fluffier",
+      "block": null,
+      "sprite": "/img/item_howtobefluffier.png",
+      "obtain": [
+        {
+          "where": null,
+          "details": [
+            [
+              "Obtained",
+              "Cozy Cocoa Bookstore, Gachapon"
+            ]
+          ]
+        }
+      ]
+    },
+    {
+      "name": "Sopping Wet Book",
+      "block": null,
+      "sprite": "/img/item_advancedswimmingtechniques.png",
+      "obtain": [
+        {
+          "where": null,
+          "details": [
+            [
+              "Obtained",
+              "Cozy Cocoa Bookstore, Gachapon"
+            ]
+          ]
+        }
+      ]
+    },
+    {
+      "name": "VIP Ocean Cruiser Ticket",
+      "block": null,
+      "sprite": "/img/item_vip_fishing_ticket.png",
+      "obtain": [
+        {
+          "where": null,
+          "details": [
+            [
+              "Obtained",
+              "The Lonely Tower, Gachapon"
+            ]
+          ]
+        }
+      ]
+    },
+    {
+      "name": "Airship Ticket",
+      "block": null,
+      "sprite": "/img/items/books/Rarebook_Ticket.png",
+      "obtain": [
+        {
+          "where": null,
+          "details": [
+            [
+              "Obtained",
+              "The Lonely Tower"
+            ]
+          ]
+        }
+      ]
+    },
+    {
+      "name": "Farmer's Almanac",
+      "block": null,
+      "sprite": "/img/item_book_farmers.png",
+      "obtain": [
+        {
+          "where": null,
+          "details": [
+            [
+              "Obtained",
+              "Cozy Cocoa Bookstore, Gachapon"
+            ]
+          ]
+        }
+      ]
+    },
+    {
+      "name": "Magical Story Book",
+      "block": null,
+      "sprite": "/img/item_book_beginners_magic.png",
+      "obtain": [
+        {
+          "where": null,
+          "details": [
+            [
+              "Obtained",
+              "Cozy Cocoa Bookstore, Gachapon"
+            ]
+          ]
+        }
+      ]
+    },
+    {
+      "name": "Wizard Book",
+      "block": null,
+      "sprite": "/img/item_book_wizard.png",
+      "obtain": [
+        {
+          "where": null,
+          "details": [
+            [
+              "Obtained",
+              "The Lonely Tower"
+            ]
+          ]
+        }
+      ]
+    },
+    {
+      "name": "Tales from The Lonely Tower",
+      "block": null,
+      "sprite": "/img/item_book_advanced_combat.png",
+      "obtain": [
+        {
+          "where": null,
+          "details": [
+            [
+              "Obtained",
+              "Icy Pricey Shawarma Stand"
+            ]
+          ]
+        }
+      ]
+    },
+    {
+      "name": "Tales from The Lonely Tower II",
+      "block": null,
+      "sprite": "/img/item_book_legendary_combat.png",
+      "obtain": [
+        {
+          "where": null,
+          "details": [
+            [
+              "Obtained",
+              "The Lonely Tower"
+            ]
+          ]
+        }
+      ]
+    },
+    {
+      "name": "Booboo Book",
+      "block": null,
+      "sprite": "/img/item_bandaged_book.png",
+      "obtain": [
+        {
+          "where": null,
+          "details": [
+            [
+              "Obtained",
+              "The Lonely Tower"
+            ]
+          ]
+        }
+      ]
+    },
+    {
+      "name": "Look Book",
+      "block": null,
+      "sprite": "/img/item_book_lookbook.png",
+      "obtain": [
+        {
+          "where": null,
+          "details": [
+            [
+              "Obtained",
+              "Cozy Cocoa Bookstore, Gachapon"
+            ]
+          ]
+        }
+      ]
+    },
+    {
+      "name": "Gachapon Machine Blueprint",
+      "block": null,
+      "sprite": "/img/item_book_gachaponmachineblueprint.png",
+      "obtain": [
+        {
+          "where": null,
+          "details": [
+            [
+              "Obtained",
+              "Trading Post"
+            ]
+          ]
+        }
+      ]
+    },
+    {
+      "name": "Tattered Treasure Map",
+      "block": null,
+      "sprite": "https://static.wikitide.net/dogonlinedotnetwikiwiki/a/a7/Item_Tattered_Treasure_Map.png",
+      "obtain": [
+        {
+          "where": null,
+          "details": [
+            [
+              "Obtained",
+              "Trading Post"
+            ]
+          ]
+        }
+      ]
+    },
+    {
+      "name": "Ghostly Treasure Map",
+      "block": null,
+      "sprite": "https://static.wikitide.net/dogonlinedotnetwikiwiki/b/b8/Item_Ghostly_Treasure_Map.png",
+      "obtain": [
+        {
+          "where": null,
+          "details": [
+            [
+              "Obtained",
+              "The Lonely Tower"
+            ]
+          ]
+        }
+      ]
+    },
+    {
+      "name": "Deadly Doom Book",
+      "block": null,
+      "sprite": "https://static.wikitide.net/dogonlinedotnetwikiwiki/1/1c/Item_Deadly_Doom_Book.png",
+      "obtain": [
+        {
+          "where": null,
+          "details": [
+            [
+              "Obtained",
+              "The Lonely Tower"
+            ]
+          ]
+        }
+      ]
+    },
+    {
+      "name": "Sneaky Scroll",
+      "block": null,
+      "sprite": "/img/item_sneaky_scroll.png",
+      "obtain": [
+        {
+          "where": null,
+          "details": [
+            [
+              "Obtained",
+              "Cozy Cocoa Bookstore, Gachapon"
+            ]
+          ]
+        }
+      ]
+    },
+    {
+      "name": "Deep Fryer Desires",
+      "block": null,
+      "sprite": "/img/item_book_deepfryersdesires.png",
+      "obtain": [
+        {
+          "where": null,
+          "details": [
+            [
+              "Obtained",
+              "Cozy Cocoa Bookstore, Gachapon"
+            ]
+          ]
+        }
+      ]
+    },
+    {
+      "name": "Farm Fresh Feasts",
+      "block": null,
+      "sprite": "/img/item_book_farm_fresh.png",
+      "obtain": [
+        {
+          "where": null,
+          "details": [
+            [
+              "Obtained",
+              "Trading Post, Gachapon"
+            ]
+          ]
+        }
+      ]
+    },
+    {
+      "name": "Sushi Book",
+      "block": null,
+      "sprite": "/img/item_sushibook.png",
+      "obtain": [
+        {
+          "where": null,
+          "details": [
+            [
+              "Obtained",
+              "Cozy Cocoa Bookstore"
+            ]
+          ]
+        }
+      ]
+    },
+    {
+      "name": "The Big Book",
+      "block": null,
+      "sprite": "/img/item_thebigbook.png",
+      "obtain": [
+        {
+          "where": null,
+          "details": [
+            [
+              "Obtained",
+              "The Lonely Tower"
+            ]
+          ]
+        }
+      ]
+    },
+    {
+      "name": "Funny DVD",
+      "block": null,
+      "sprite": "/img/item_paulblart.png",
+      "obtain": [
+        {
+          "where": null,
+          "details": [
+            [
+              "Obtained",
+              "Trading Post"
+            ]
+          ]
+        }
+      ]
+    },
+    {
+      "name": "Angry Book",
+      "block": null,
+      "sprite": "/img/item_book_angry.png",
+      "obtain": [
+        {
+          "where": null,
+          "details": [
+            [
+              "Obtained",
+              "The Lonely Tower"
+            ]
+          ]
+        }
+      ]
+    },
+    {
+      "name": "Dentist Book",
+      "block": null,
+      "sprite": "/img/item_book_dentist.png",
+      "obtain": [
+        {
+          "where": null,
+          "details": [
+            [
+              "Obtained",
+              "The Lonely Tower, Gachapon"
+            ]
+          ]
+        }
+      ]
+    },
+    {
+      "name": "Necro Book",
+      "block": null,
+      "sprite": "/img/item_book_necro.png",
+      "obtain": [
+        {
+          "where": null,
+          "details": [
+            [
+              "Obtained",
+              "Gachapon"
+            ]
+          ]
+        }
+      ]
+    },
+    {
+      "name": "Dog Braille for Beginners",
+      "block": null,
+      "sprite": "/img/items/books/Badbook_Braille.png",
+      "obtain": [
+        {
+          "where": null,
+          "details": [
+            [
+              "Obtained",
+              "The Lonely Tower"
+            ]
+          ]
+        }
+      ]
+    },
+    {
+      "name": "The Word of DOG",
+      "block": null,
+      "sprite": "/img/items/books/Badbook_WordofDOG.png",
+      "obtain": [
+        {
+          "where": null,
+          "details": [
+            [
+              "Obtained",
+              "The Lonely Tower"
+            ]
+          ]
+        }
+      ]
+    },
+    {
+      "name": "DOGSHA Handbook",
+      "block": null,
+      "sprite": "/img/items/books/Goodbook_OSHA.png",
+      "obtain": [
+        {
+          "where": null,
+          "details": [
+            [
+              "Obtained",
+              "The Lonely Tower"
+            ]
+          ]
+        }
+      ]
+    },
+    {
+      "name": "The Tome of Messages",
+      "block": null,
+      "sprite": "/img/items/books/Goodbook_Ansuz.png",
+      "obtain": [
+        {
+          "where": null,
+          "details": [
+            [
+              "Obtained",
+              "The Lonely Tower"
+            ]
+          ]
+        }
+      ]
+    },
+    {
+      "name": "The Alchemist's Handbook",
+      "block": null,
+      "sprite": "/img/items/books/Goodbook_Alchemy.png",
+      "obtain": [
+        {
+          "where": null,
+          "details": [
+            [
+              "Obtained",
+              "The Lonely Tower"
+            ]
+          ]
+        }
+      ]
+    },
+    {
+      "name": "The Navidogson Record",
+      "block": null,
+      "sprite": "/img/items/books/Goodbook_House.png",
+      "obtain": [
+        {
+          "where": null,
+          "details": [
+            [
+              "Obtained",
+              "The Lonely Tower"
+            ]
+          ]
+        }
+      ]
+    },
+    {
+      "name": "The Ochre Lord",
+      "block": null,
+      "sprite": "/img/items/books/Goodbook_Yellow.png",
+      "obtain": [
+        {
+          "where": null,
+          "details": [
+            [
+              "Obtained",
+              "The Lonely Tower"
+            ]
+          ]
+        }
+      ]
+    },
+    {
+      "name": "The Necrodogicon",
+      "block": null,
+      "sprite": "/img/items/books/Rarebook_Necro.png",
+      "obtain": [
+        {
+          "where": null,
+          "details": [
+            [
+              "Obtained",
+              "Trading Post"
+            ]
+          ]
+        }
+      ]
+    }
+  ]
+}

@@ -1,0 +1,72 @@
+.dognerd-item-badges {
+  position: absolute;
+  top: -7px;
+  left: -7px;
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+  gap: 2px;
+  pointer-events: none;
+}
+
+[class*="ItemCard_iconWrap__"]:has(> .dognerd-item-badges) > [class*="ItemCard_badge__"] {
+  display: none;
+}
+
+.dognerd-item-badge {
+  display: flex;
+  align-items: center;
+  gap: 3px;
+  padding: 1px 5px;
+  border: 1px solid var(--dognerd-badge-border);
+  border-radius: 8px;
+  background: var(--dognerd-badge-bg);
+  color: var(--dognerd-badge-text, white);
+  font-size: 20px;
+  font-style: normal;
+  font-weight: normal;
+  line-height: 1.1;
+  white-space: nowrap;
+}
+
+.dognerd-item-badge > .dognerd-icon {
+  display: flex;
+  zoom: 2;
+}
+
+.dognerd-item-badge.dognerd-off {
+  filter: grayscale(1);
+  opacity: 0.55;
+}
+
+.dognerd-item-badge.dognerd-food {
+  --dognerd-badge-bg: #ffc841;
+  --dognerd-badge-border: #ffe39a;
+  --dognerd-badge-text: #3d2c00;
+}
+
+.dognerd-item-badge.dognerd-book {
+  --dognerd-badge-bg: #ff41b5;
+  --dognerd-badge-border: #ff9ad6;
+}
+
+.dognerd-item-badge.dognerd-doghouse {
+  --dognerd-badge-bg: #ff4141;
+  --dognerd-badge-border: #ff9a9a;
+}
+
+.dognerd-item-badge.dognerd-storage {
+  --dognerd-badge-bg: #6b63d1;
+  --dognerd-badge-border: #aaa5ee;
+}
+
+.dognerd-item-badge.dognerd-closet {
+  --dognerd-badge-bg: #4e8d29;
+  --dognerd-badge-border: #8fc96b;
+}
+
+@media (max-width: 780px) {
+  .dognerd-item-badge {
+    font-size: 16px;
+  }
+}

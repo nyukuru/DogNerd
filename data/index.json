@@ -1,0 +1,10 @@
+{
+  "schema": 1,
+  "collections": [
+    "fish",
+    "books",
+    "enemies",
+    "harvestables",
+    "food"
+  ]
+}

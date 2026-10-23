@@ -1,0 +1,44 @@
+{
+  "manifest_version": 3,
+  "name": "DogNerd",
+  "version": "0.1.0",
+  "description": "Extra information and UI improvements for Dog Online.",
+  "homepage_url": "https://github.com/nyukuru/DogNerd",
+  "icons": {
+    "128": "img/icon.png"
+  },
+  "browser_specific_settings": {
+    "gecko": {
+      "id": "dognerd@nyukuru",
+      "strict_min_version": "140.0",
+      "data_collection_permissions": {
+        "required": ["none"]
+      }
+    },
+    "gecko_android": {
+      "strict_min_version": "142.0"
+    }
+  },
+  "permissions": ["storage"],
+  "host_permissions": ["https://dogonline.net/*", "https://raw.githubusercontent.com/nyukuru/DogNerd/*"],
+  "web_accessible_resources": [
+    {
+      "resources": ["img/*", "data/*"],
+      "matches": ["https://dogonline.net/*"]
+    }
+  ],
+  "content_scripts": [
+    {
+      "matches": ["https://dogonline.net/*"],
+      "js": ["src/tower-page.js"],
+      "run_at": "document_start",
+      "world": "MAIN"
+    },
+    {
+      "matches": ["https://dogonline.net/*"],
+      "js": ["src/common.js", "src/collection.js", "src/fishing.js", "src/items.js", "src/tower.js"],
+      "css": ["src/collection.css", "src/fishing.css", "src/items.css", "src/tower.css"],
+      "run_at": "document_idle"
+    }
+  ]
+}

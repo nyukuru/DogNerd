@@ -1,0 +1,996 @@
+{
+  "schema": 1,
+  "blocks": [
+    {
+      "name": "Floor 1",
+      "color": "#4DB6AC",
+      "size": 13
+    },
+    {
+      "name": "Floor 2",
+      "color": "#4DB6AC",
+      "size": 5
+    },
+    {
+      "name": "Cheese Maze",
+      "color": "#FDD835",
+      "size": 1
+    },
+    {
+      "name": "Peeper's Parlor",
+      "color": "#9575CD",
+      "size": 10
+    },
+    {
+      "name": "Freezy Fridge",
+      "color": "#9575CD",
+      "size": 5
+    },
+    {
+      "name": "Dogre's Dungeon",
+      "color": "#9575CD",
+      "size": 8
+    },
+    {
+      "name": "Hungry Hall",
+      "color": "#9575CD",
+      "size": 9
+    },
+    {
+      "name": "Construction Junction",
+      "color": "#F06292",
+      "size": 3
+    },
+    {
+      "name": "Dreamy Dragon's Den",
+      "color": "#F06292",
+      "size": 5
+    }
+  ],
+  "slots": [
+    {
+      "name": "Peeper",
+      "block": "Floor 1",
+      "sprite": "/img/tower/enemy_peeper.png",
+      "obtain": [
+        {
+          "where": null,
+          "details": [
+            [
+              "Found",
+              "Floor 1, Peeper's Parlor"
+            ]
+          ]
+        }
+      ]
+    },
+    {
+      "name": "Pup Cup",
+      "block": "Floor 1",
+      "sprite": "/img/tower/enemy_pupcup.png",
+      "obtain": [
+        {
+          "where": null,
+          "details": [
+            [
+              "Found",
+              "Floor 1, Freezy Fridge"
+            ]
+          ]
+        }
+      ]
+    },
+    {
+      "name": "Balloon Dog",
+      "block": "Floor 1",
+      "sprite": "/img/tower/enemy_balloon.png",
+      "obtain": [
+        {
+          "where": null,
+          "details": [
+            [
+              "Found",
+              "Floor 1"
+            ]
+          ]
+        }
+      ]
+    },
+    {
+      "name": "Boot Dog",
+      "block": "Floor 1",
+      "sprite": "/img/tower/enemy_bootdog.png",
+      "obtain": [
+        {
+          "where": null,
+          "details": [
+            [
+              "Found",
+              "Floor 1, Peeper's Parlor"
+            ]
+          ]
+        }
+      ]
+    },
+    {
+      "name": "Sky Dog",
+      "block": "Floor 1",
+      "sprite": "/img/tower/enemy_skydog.png",
+      "obtain": [
+        {
+          "where": null,
+          "details": [
+            [
+              "Found",
+              "Floor 1"
+            ]
+          ]
+        }
+      ]
+    },
+    {
+      "name": "Freezy Pup",
+      "block": "Floor 1",
+      "sprite": "/img/tower/enemy_freezypup.png",
+      "obtain": [
+        {
+          "where": null,
+          "details": [
+            [
+              "Found",
+              "Floor 1, Freezy Fridge, Hungry Hall"
+            ]
+          ]
+        }
+      ]
+    },
+    {
+      "name": "Deadly Dogma",
+      "block": "Floor 1",
+      "sprite": "/img/tower/enemy_deadly_dogma.png",
+      "obtain": [
+        {
+          "where": null,
+          "details": [
+            [
+              "Found",
+              "Floor 1, Floor 2"
+            ]
+          ]
+        }
+      ]
+    },
+    {
+      "name": "Cursed Conjuror",
+      "block": "Floor 1",
+      "sprite": "/img/tower/enemy_cursed_conjuror.png",
+      "obtain": [
+        {
+          "where": null,
+          "details": [
+            [
+              "Found",
+              "Floor 1, Floor 2"
+            ]
+          ]
+        }
+      ]
+    },
+    {
+      "name": "Booby Trap",
+      "block": "Floor 1",
+      "sprite": "/img/tower/enemy_booby_trap.png",
+      "obtain": [
+        {
+          "where": null,
+          "details": [
+            [
+              "Found",
+              "Floor 1, Floor 2"
+            ]
+          ]
+        }
+      ]
+    },
+    {
+      "name": "Rodin",
+      "block": "Floor 1",
+      "sprite": "/img/tower/enemy_rodin.png",
+      "obtain": [
+        {
+          "where": null,
+          "details": [
+            [
+              "Found",
+              "Floor 1"
+            ]
+          ]
+        }
+      ]
+    },
+    {
+      "name": "Crony Bones and Da Bawss",
+      "block": "Floor 2",
+      "sprite": "/img/tower/enemy_cronybones.png",
+      "obtain": [
+        {
+          "where": null,
+          "details": [
+            [
+              "Found",
+              "Floor 2"
+            ]
+          ]
+        }
+      ]
+    },
+    {
+      "name": "Big Mitts Molly",
+      "block": "Floor 1",
+      "sprite": "/img/tower/enemy_bigmittsmolly.png",
+      "obtain": [
+        {
+          "where": null,
+          "details": [
+            [
+              "Found",
+              "Floor 1"
+            ]
+          ]
+        }
+      ]
+    },
+    {
+      "name": "Cheese",
+      "block": "Cheese Maze",
+      "sprite": "/img/tower/enemy_cheese.png",
+      "obtain": [
+        {
+          "where": null,
+          "details": [
+            [
+              "Found",
+              "Cheese Maze"
+            ]
+          ]
+        }
+      ]
+    },
+    {
+      "name": "Clouddoggy",
+      "block": "Floor 2",
+      "sprite": "/img/tower/enemy_clouddoggy.png",
+      "obtain": [
+        {
+          "where": null,
+          "details": [
+            [
+              "Found",
+              "Floor 2"
+            ]
+          ]
+        }
+      ]
+    },
+    {
+      "name": "Grimy Grim",
+      "block": "Floor 2",
+      "sprite": "/img/tower/enemy_grimy_grim.png",
+      "obtain": [
+        {
+          "where": null,
+          "details": [
+            [
+              "Found",
+              "Floor 2, Peeper's Parlor"
+            ]
+          ]
+        }
+      ]
+    },
+    {
+      "name": "Unigore",
+      "block": "Floor 2",
+      "sprite": "/img/tower/enemy_unigore.png",
+      "obtain": [
+        {
+          "where": null,
+          "details": [
+            [
+              "Found",
+              "Floor 2"
+            ]
+          ]
+        }
+      ]
+    },
+    {
+      "name": "Dogslime",
+      "block": "Floor 2",
+      "sprite": "/img/tower/enemy_cubeslime.png",
+      "obtain": [
+        {
+          "where": null,
+          "details": [
+            [
+              "Found",
+              "Floor 2"
+            ]
+          ]
+        }
+      ]
+    },
+    {
+      "name": "Weeper",
+      "block": "Peeper's Parlor",
+      "sprite": "/img/tower/enemy_weeper.png",
+      "obtain": [
+        {
+          "where": null,
+          "details": [
+            [
+              "Found",
+              "Peeper's Parlor"
+            ]
+          ]
+        }
+      ]
+    },
+    {
+      "name": "Peeper Piper",
+      "block": "Peeper's Parlor",
+      "sprite": "/img/tower/enemy_peeperpiper.png",
+      "obtain": [
+        {
+          "where": null,
+          "details": [
+            [
+              "Found",
+              "Peeper's Parlor"
+            ]
+          ]
+        }
+      ]
+    },
+    {
+      "name": "Leeper",
+      "block": "Peeper's Parlor",
+      "sprite": "/img/tower/enemy_leeper.png",
+      "obtain": [
+        {
+          "where": null,
+          "details": [
+            [
+              "Found",
+              "Peeper's Parlor"
+            ]
+          ]
+        }
+      ]
+    },
+    {
+      "name": "Creeper",
+      "block": "Peeper's Parlor",
+      "sprite": "/img/tower/enemy_creeper.png",
+      "obtain": [
+        {
+          "where": null,
+          "details": [
+            [
+              "Found",
+              "Peeper's Parlor"
+            ]
+          ]
+        }
+      ]
+    },
+    {
+      "name": "Reeper",
+      "block": "Peeper's Parlor",
+      "sprite": "/img/tower/enemy_reeper.png",
+      "obtain": [
+        {
+          "where": null,
+          "details": [
+            [
+              "Found",
+              "Peeper's Parlor"
+            ]
+          ]
+        }
+      ]
+    },
+    {
+      "name": "Papa Peeper",
+      "block": "Peeper's Parlor",
+      "sprite": "/img/tower/enemy_papa_peeper.png",
+      "obtain": [
+        {
+          "where": null,
+          "details": [
+            [
+              "Found",
+              "Peeper's Parlor"
+            ]
+          ]
+        }
+      ]
+    },
+    {
+      "name": "Surfer Peeper",
+      "block": "Peeper's Parlor",
+      "sprite": "/img/tower/enemy_surfinpeepr.png",
+      "obtain": [
+        {
+          "where": null,
+          "details": [
+            [
+              "Found",
+              "Peeper's Parlor"
+            ]
+          ]
+        }
+      ]
+    },
+    {
+      "name": "Sweeper",
+      "block": "Peeper's Parlor",
+      "sprite": "/img/tower/enemy_sweeper.png",
+      "obtain": [
+        {
+          "where": null,
+          "details": [
+            [
+              "Found",
+              "Peeper's Parlor"
+            ]
+          ]
+        }
+      ]
+    },
+    {
+      "name": "Threeper",
+      "block": "Peeper's Parlor",
+      "sprite": "/img/tower/enemy_threeper.png",
+      "obtain": [
+        {
+          "where": null,
+          "details": [
+            [
+              "Found",
+              "Peeper's Parlor"
+            ]
+          ]
+        }
+      ]
+    },
+    {
+      "name": "Pappy Peeper",
+      "block": "Peeper's Parlor",
+      "sprite": "/img/tower/enemy_pappypeeper.png",
+      "obtain": [
+        {
+          "where": null,
+          "details": [
+            [
+              "Found",
+              "Peeper's Parlor"
+            ]
+          ]
+        }
+      ]
+    },
+    {
+      "name": "Two-Scoop Freezy Pup",
+      "block": "Freezy Fridge",
+      "sprite": "/img/tower/enemy_twoscoop_freezeypup.png",
+      "obtain": [
+        {
+          "where": null,
+          "details": [
+            [
+              "Found",
+              "Freezy Fridge"
+            ]
+          ]
+        }
+      ]
+    },
+    {
+      "name": "Frost Biter",
+      "block": "Freezy Fridge",
+      "sprite": "/img/tower/enemy_frostbiter.png",
+      "obtain": [
+        {
+          "where": null,
+          "details": [
+            [
+              "Found",
+              "Freezy Fridge"
+            ]
+          ]
+        }
+      ]
+    },
+    {
+      "name": "Dingbat",
+      "block": "Freezy Fridge",
+      "sprite": "/img/tower/enemy_dingbat.png",
+      "obtain": [
+        {
+          "where": null,
+          "details": [
+            [
+              "Found",
+              "Freezy Fridge"
+            ]
+          ]
+        }
+      ]
+    },
+    {
+      "name": "Big Sno Dawg",
+      "block": "Freezy Fridge",
+      "sprite": "/img/tower/enemy_bigsnodawg.png",
+      "obtain": [
+        {
+          "where": null,
+          "details": [
+            [
+              "Found",
+              "Freezy Fridge"
+            ]
+          ]
+        }
+      ]
+    },
+    {
+      "name": "Arcteeth",
+      "block": "Freezy Fridge",
+      "sprite": "/img/tower/enemy_icewolf.png",
+      "obtain": [
+        {
+          "where": null,
+          "details": [
+            [
+              "Found",
+              "Freezy Fridge"
+            ]
+          ]
+        }
+      ]
+    },
+    {
+      "name": "Slog",
+      "block": "Dogre's Dungeon",
+      "sprite": "/img/tower/enemy_slog.png",
+      "obtain": [
+        {
+          "where": null,
+          "details": [
+            [
+              "Found",
+              "Dogre's Dungeon"
+            ]
+          ]
+        }
+      ]
+    },
+    {
+      "name": "Sluppy",
+      "block": "Dogre's Dungeon",
+      "sprite": "/img/tower/enemy_slog2.png",
+      "obtain": [
+        {
+          "where": null,
+          "details": [
+            [
+              "Found",
+              "Dogre's Dungeon"
+            ]
+          ]
+        }
+      ]
+    },
+    {
+      "name": "Dog Germ",
+      "block": "Dogre's Dungeon",
+      "sprite": "/img/tower/enemy_germ.png",
+      "obtain": [
+        {
+          "where": null,
+          "details": [
+            [
+              "Found",
+              "Dogre's Dungeon"
+            ]
+          ]
+        }
+      ]
+    },
+    {
+      "name": "Leatsch",
+      "block": "Dogre's Dungeon",
+      "sprite": "/img/tower/enemy_leatsch.png",
+      "obtain": [
+        {
+          "where": null,
+          "details": [
+            [
+              "Found",
+              "Dogre's Dungeon"
+            ]
+          ]
+        }
+      ]
+    },
+    {
+      "name": "Poison Potbull",
+      "block": "Dogre's Dungeon",
+      "sprite": "/img/tower/enemy_potbull.png",
+      "obtain": [
+        {
+          "where": null,
+          "details": [
+            [
+              "Found",
+              "Dogre's Dungeon"
+            ]
+          ]
+        }
+      ]
+    },
+    {
+      "name": "The Devourer",
+      "block": "Dogre's Dungeon",
+      "sprite": "/img/tower/enemy_the_devourer.png",
+      "obtain": [
+        {
+          "where": null,
+          "details": [
+            [
+              "Found",
+              "Dogre's Dungeon"
+            ]
+          ]
+        }
+      ]
+    },
+    {
+      "name": "The Alchemist",
+      "block": "Dogre's Dungeon",
+      "sprite": "/img/tower/enemy_alchemist.png",
+      "obtain": [
+        {
+          "where": null,
+          "details": [
+            [
+              "Found",
+              "Dogre's Dungeon, Floor 2"
+            ]
+          ]
+        }
+      ]
+    },
+    {
+      "name": "Dogre",
+      "block": "Dogre's Dungeon",
+      "sprite": "/img/tower/enemy_dogre.png",
+      "obtain": [
+        {
+          "where": null,
+          "details": [
+            [
+              "Found",
+              "Dogre's Dungeon"
+            ]
+          ]
+        }
+      ]
+    },
+    {
+      "name": "Aheemheem",
+      "block": "Hungry Hall",
+      "sprite": "/img/tower/enemy_aheemheem.png",
+      "obtain": [
+        {
+          "where": null,
+          "details": [
+            [
+              "Found",
+              "Hungry Hall"
+            ]
+          ]
+        }
+      ]
+    },
+    {
+      "name": "Pieder",
+      "block": "Hungry Hall",
+      "sprite": "/img/tower/enemy_pieder.png",
+      "obtain": [
+        {
+          "where": null,
+          "details": [
+            [
+              "Found",
+              "Hungry Hall"
+            ]
+          ]
+        }
+      ]
+    },
+    {
+      "name": "Peam",
+      "block": "Hungry Hall",
+      "sprite": "/img/tower/enemy_peam.png",
+      "obtain": [
+        {
+          "where": null,
+          "details": [
+            [
+              "Found",
+              "Hungry Hall"
+            ]
+          ]
+        }
+      ]
+    },
+    {
+      "name": "Dogburger",
+      "block": "Hungry Hall",
+      "sprite": "/img/tower/enemy_dogburger.png",
+      "obtain": [
+        {
+          "where": null,
+          "details": [
+            [
+              "Found",
+              "Hungry Hall"
+            ]
+          ]
+        }
+      ]
+    },
+    {
+      "name": "Grow'd Up Pieder",
+      "block": "Hungry Hall",
+      "sprite": "/img/tower/enemy_groweduppieder.png",
+      "obtain": [
+        {
+          "where": null,
+          "details": [
+            [
+              "Found",
+              "Hungry Hall"
+            ]
+          ]
+        }
+      ]
+    },
+    {
+      "name": "Hop Pot",
+      "block": "Hungry Hall",
+      "sprite": "/img/tower/enemy_hop_pot.png",
+      "obtain": [
+        {
+          "where": null,
+          "details": [
+            [
+              "Found",
+              "Hungry Hall"
+            ]
+          ]
+        }
+      ]
+    },
+    {
+      "name": "Ruff Roast",
+      "block": "Hungry Hall",
+      "sprite": "/img/tower/enemy_ruffroast.png",
+      "obtain": [
+        {
+          "where": null,
+          "details": [
+            [
+              "Found",
+              "Hungry Hall"
+            ]
+          ]
+        }
+      ]
+    },
+    {
+      "name": "Barraskewer",
+      "block": "Hungry Hall",
+      "sprite": "/img/tower/enemy_barraskewer.png",
+      "obtain": [
+        {
+          "where": null,
+          "details": [
+            [
+              "Found",
+              "Hungry Hall"
+            ]
+          ]
+        }
+      ]
+    },
+    {
+      "name": "Cookie Nightjar",
+      "block": "Hungry Hall",
+      "sprite": "/img/tower/enemy_cookie_nightjar.png",
+      "obtain": [
+        {
+          "where": null,
+          "details": [
+            [
+              "Found",
+              "Hungry Hall"
+            ]
+          ]
+        }
+      ]
+    },
+    {
+      "name": "Caution Collie",
+      "block": "Construction Junction",
+      "sprite": "/img/npc_thecone_small.png",
+      "obtain": [
+        {
+          "where": null,
+          "details": [
+            [
+              "Found",
+              "Construction Junction (Floor 1)"
+            ]
+          ]
+        }
+      ]
+    },
+    {
+      "name": "Mallet Mutt",
+      "block": "Construction Junction",
+      "sprite": "/img/tower/enemy_hammer.png",
+      "obtain": [
+        {
+          "where": null,
+          "details": [
+            [
+              "Found",
+              "Construction Junction (Floor 1)"
+            ]
+          ]
+        }
+      ]
+    },
+    {
+      "name": "Telephony",
+      "block": "Construction Junction",
+      "sprite": "/img/tower/enemy_telephony.png",
+      "obtain": [
+        {
+          "where": null,
+          "details": [
+            [
+              "Found",
+              "Construction Junction (Floor 1)"
+            ]
+          ]
+        }
+      ]
+    },
+    {
+      "name": "Clover",
+      "block": "Dreamy Dragon's Den",
+      "sprite": "/img/tower/enemy_magicclover.png",
+      "obtain": [
+        {
+          "where": null,
+          "details": [
+            [
+              "Found",
+              "Dreamy Dragon's Den (Floor 2)"
+            ]
+          ]
+        }
+      ]
+    },
+    {
+      "name": "Harp of Dogda",
+      "block": "Dreamy Dragon's Den",
+      "sprite": "/img/tower/enemy_magicharp.png",
+      "obtain": [
+        {
+          "where": null,
+          "details": [
+            [
+              "Found",
+              "Dreamy Dragon's Den (Floor 2)"
+            ]
+          ]
+        }
+      ]
+    },
+    {
+      "name": "Rainbow",
+      "block": "Dreamy Dragon's Den",
+      "sprite": "/img/tower/enemy_magicrainbow.png",
+      "obtain": [
+        {
+          "where": null,
+          "details": [
+            [
+              "Found",
+              "Dreamy Dragon's Den (Floor 2)"
+            ]
+          ]
+        }
+      ]
+    },
+    {
+      "name": "Snooty Soot",
+      "block": "Dreamy Dragon's Den",
+      "sprite": "/img/tower/enemy_dragon.png",
+      "obtain": [
+        {
+          "where": null,
+          "details": [
+            [
+              "Found",
+              "Dreamy Dragon's Den (Floor 2)"
+            ]
+          ]
+        }
+      ]
+    },
+    {
+      "name": "Hatchling Tennis Ball",
+      "block": "Dreamy Dragon's Den",
+      "sprite": "/img/tower/enemy_hatchling_tennisball.png",
+      "obtain": [
+        {
+          "where": null,
+          "details": [
+            [
+              "Found",
+              "Dreamy Dragon's Den (Floor 2)"
+            ]
+          ]
+        }
+      ]
+    },
+    {
+      "name": "Doggy Ghost",
+      "block": "Floor 1",
+      "sprite": "/img/tower/enemy_ghost.png",
+      "obtain": [
+        {
+          "where": null,
+          "details": [
+            [
+              "Found",
+              "Floor 1"
+            ]
+          ]
+        }
+      ]
+    },
+    {
+      "name": "Haunted Pumpkin Dog",
+      "block": "Floor 1",
+      "sprite": "/img/tower/enemy_pumpkin.png",
+      "obtain": [
+        {
+          "where": null,
+          "details": [
+            [
+              "Found",
+              "Floor 1"
+            ]
+          ]
+        }
+      ]
+    }
+  ]
+}

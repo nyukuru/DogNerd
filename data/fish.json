@@ -1,0 +1,1826 @@
+{
+  "schema": 1,
+  "blocks": [
+    {
+      "name": "Old Fishin' Hole",
+      "color": "#3fae52",
+      "size": 17
+    },
+    {
+      "name": "Desert Oasis",
+      "color": "#c99c42",
+      "size": 16
+    },
+    {
+      "name": "Ice Fishing Hole",
+      "color": "#b5d3e5",
+      "size": 11
+    },
+    {
+      "name": "Ocean Fishing Cruiser",
+      "color": "#15276b",
+      "size": 14
+    },
+    {
+      "name": "Fly Fishing Ship",
+      "color": "#3a64fc",
+      "size": 15
+    }
+  ],
+  "slots": [
+    {
+      "name": "Minnow",
+      "block": "Old Fishin' Hole",
+      "sprite": "https://static.wikitide.net/dogonlinedotnetwikiwiki/d/de/Item_Minnow.png",
+      "obtain": [
+        {
+          "where": "Old Fishin' Hole",
+          "details": [
+            [
+              "Times of Day",
+              "All"
+            ],
+            [
+              "Minimum Bait",
+              "Bucket of Worms"
+            ],
+            [
+              "Weather Conditions",
+              "All"
+            ]
+          ]
+        },
+        {
+          "where": "Ocean Fishing Cruiser",
+          "details": [
+            [
+              "Times of Day",
+              "Afternoon, Evening, Night"
+            ],
+            [
+              "Minimum Bait",
+              "Bucket of Worms"
+            ],
+            [
+              "Weather Conditions",
+              "All"
+            ]
+          ]
+        }
+      ]
+    },
+    {
+      "name": "Guppy",
+      "block": "Old Fishin' Hole",
+      "sprite": "/img/item_guppy.png",
+      "obtain": [
+        {
+          "where": "Old Fishin' Hole",
+          "details": [
+            [
+              "Times of Day",
+              "All"
+            ],
+            [
+              "Minimum Bait",
+              "Bucket of Worms"
+            ],
+            [
+              "Weather Conditions",
+              "All"
+            ]
+          ]
+        }
+      ]
+    },
+    {
+      "name": "Barracuda",
+      "block": "Old Fishin' Hole",
+      "sprite": "/img/item_barracuda.png",
+      "obtain": [
+        {
+          "where": "Old Fishin' Hole",
+          "details": [
+            [
+              "Times of Day",
+              "All"
+            ],
+            [
+              "Minimum Bait",
+              "Bucket of Worms"
+            ],
+            [
+              "Weather Conditions",
+              "All"
+            ]
+          ]
+        }
+      ]
+    },
+    {
+      "name": "Octojelly",
+      "block": "Old Fishin' Hole",
+      "sprite": "/img/item_octojelly.png",
+      "obtain": [
+        {
+          "where": "Old Fishin' Hole",
+          "details": [
+            [
+              "Times of Day",
+              "Evening, Night"
+            ],
+            [
+              "Minimum Bait",
+              "Mound of Minnows"
+            ],
+            [
+              "Weather Conditions",
+              "All"
+            ]
+          ]
+        }
+      ]
+    },
+    {
+      "name": "Sniffillet",
+      "block": "Old Fishin' Hole",
+      "sprite": "/img/item_sniffillet.png",
+      "obtain": [
+        {
+          "where": "Old Fishin' Hole",
+          "details": [
+            [
+              "Times of Day",
+              "Night"
+            ],
+            [
+              "Minimum Bait",
+              "Mound of Minnows"
+            ],
+            [
+              "Weather Conditions",
+              "All"
+            ]
+          ]
+        }
+      ]
+    },
+    {
+      "name": "Funny Duck",
+      "block": "Old Fishin' Hole",
+      "sprite": "/img/item_funnyduck.png",
+      "obtain": [
+        {
+          "where": "Old Fishin' Hole",
+          "details": [
+            [
+              "Times of Day",
+              "Morning, Afternoon"
+            ],
+            [
+              "Minimum Bait",
+              "Mound of Minnows"
+            ],
+            [
+              "Weather Conditions",
+              "All"
+            ]
+          ]
+        }
+      ]
+    },
+    {
+      "name": "Salmon",
+      "block": "Old Fishin' Hole",
+      "sprite": "/img/item_salmon.png",
+      "obtain": [
+        {
+          "where": "Old Fishin' Hole",
+          "details": [
+            [
+              "Times of Day",
+              "All"
+            ],
+            [
+              "Minimum Bait",
+              "Mound of Minnows"
+            ],
+            [
+              "Weather Conditions",
+              "All"
+            ]
+          ]
+        }
+      ]
+    },
+    {
+      "name": "Crayfish",
+      "block": "Old Fishin' Hole",
+      "sprite": "/img/item_crayfish.png",
+      "obtain": [
+        {
+          "where": "Old Fishin' Hole",
+          "details": [
+            [
+              "Times of Day",
+              "All"
+            ],
+            [
+              "Minimum Bait",
+              "Cup of Crickets"
+            ],
+            [
+              "Weather Conditions",
+              "All"
+            ]
+          ]
+        }
+      ]
+    },
+    {
+      "name": "Freshwater Eel",
+      "block": "Old Fishin' Hole",
+      "sprite": "/img/item_freshwater_eel.png",
+      "obtain": [
+        {
+          "where": "Old Fishin' Hole",
+          "details": [
+            [
+              "Times of Day",
+              "Night"
+            ],
+            [
+              "Minimum Bait",
+              "Bucket of Worms"
+            ],
+            [
+              "Weather Conditions",
+              "Clear Skies, Stormy"
+            ]
+          ]
+        }
+      ]
+    },
+    {
+      "name": "Largemouth Bass",
+      "block": "Old Fishin' Hole",
+      "sprite": "/img/item_largemouth_bass.png",
+      "obtain": [
+        {
+          "where": "Old Fishin' Hole",
+          "details": [
+            [
+              "Times of Day",
+              "Morning, Afternoon, Evening"
+            ],
+            [
+              "Minimum Bait",
+              "Cup of Crickets"
+            ],
+            [
+              "Weather Conditions",
+              "All"
+            ]
+          ]
+        }
+      ]
+    },
+    {
+      "name": "Rainbow Trout",
+      "block": "Old Fishin' Hole",
+      "sprite": "/img/item_rainbow_trout.png",
+      "obtain": [
+        {
+          "where": "Old Fishin' Hole",
+          "details": [
+            [
+              "Times of Day",
+              "All"
+            ],
+            [
+              "Minimum Bait",
+              "Cup of Crickets"
+            ],
+            [
+              "Weather Conditions",
+              "All"
+            ]
+          ]
+        }
+      ]
+    },
+    {
+      "name": "Breadfish",
+      "block": "Old Fishin' Hole",
+      "sprite": "/img/item_breadfish.png",
+      "obtain": [
+        {
+          "where": "Old Fishin' Hole",
+          "details": [
+            [
+              "Times of Day",
+              "All"
+            ],
+            [
+              "Minimum Bait",
+              "Cup of Crickets"
+            ],
+            [
+              "Weather Conditions",
+              "Clear Skies"
+            ]
+          ]
+        }
+      ]
+    },
+    {
+      "name": "Butterfish",
+      "block": "Old Fishin' Hole",
+      "sprite": "/img/item_butterfish.png",
+      "obtain": [
+        {
+          "where": "Old Fishin' Hole",
+          "details": [
+            [
+              "Times of Day",
+              "All"
+            ],
+            [
+              "Minimum Bait",
+              "Cup of Crickets"
+            ],
+            [
+              "Weather Conditions",
+              "Clear Skies"
+            ]
+          ]
+        }
+      ]
+    },
+    {
+      "name": "Handfish",
+      "block": "Old Fishin' Hole",
+      "sprite": "/img/item_handfish.png",
+      "obtain": [
+        {
+          "where": "Old Fishin' Hole",
+          "details": [
+            [
+              "Times of Day",
+              "Morning, Afternoon, Evening"
+            ],
+            [
+              "Minimum Bait",
+              "Pouch of Prawns"
+            ],
+            [
+              "Weather Conditions",
+              "All"
+            ]
+          ]
+        }
+      ]
+    },
+    {
+      "name": "Gleepfish",
+      "block": "Old Fishin' Hole",
+      "sprite": "/img/item_gleepfish.png",
+      "obtain": [
+        {
+          "where": "Old Fishin' Hole",
+          "details": [
+            [
+              "Times of Day",
+              "Night"
+            ],
+            [
+              "Minimum Bait",
+              "Pouch of Prawns"
+            ],
+            [
+              "Weather Conditions",
+              "Clear Skies, Rainy, Stormy"
+            ]
+          ]
+        }
+      ]
+    },
+    {
+      "name": "Coelacanth",
+      "block": "Old Fishin' Hole",
+      "sprite": "/img/item_coelacanth.png",
+      "obtain": [
+        {
+          "where": "Old Fishin' Hole",
+          "details": [
+            [
+              "Times of Day",
+              "Night"
+            ],
+            [
+              "Minimum Bait",
+              "Mound of Minnows"
+            ],
+            [
+              "Weather Conditions",
+              "Clear Skies, Rainy"
+            ]
+          ]
+        }
+      ]
+    },
+    {
+      "name": "Prismatic Koi",
+      "block": "Old Fishin' Hole",
+      "sprite": "/img/item_prismatic_koi.png",
+      "obtain": [
+        {
+          "where": "Old Fishin' Hole",
+          "details": [
+            [
+              "Times of Day",
+              "All"
+            ],
+            [
+              "Minimum Bait",
+              "Golden Grub"
+            ],
+            [
+              "Weather Conditions",
+              "All"
+            ]
+          ]
+        }
+      ]
+    },
+    {
+      "name": "Cactus Pufferfish",
+      "block": "Desert Oasis",
+      "sprite": "/img/item_cactus_pufferfish.png",
+      "obtain": [
+        {
+          "where": "Desert Oasis",
+          "details": [
+            [
+              "Times of Day",
+              "All"
+            ],
+            [
+              "Minimum Bait",
+              "Bucket of Worms"
+            ],
+            [
+              "Weather Conditions",
+              "All"
+            ]
+          ]
+        }
+      ]
+    },
+    {
+      "name": "Lungfish",
+      "block": "Desert Oasis",
+      "sprite": "/img/item_lungfish.png",
+      "obtain": [
+        {
+          "where": "Desert Oasis",
+          "details": [
+            [
+              "Times of Day",
+              "Morning, Afternoon"
+            ],
+            [
+              "Minimum Bait",
+              "Bucket of Worms"
+            ],
+            [
+              "Weather Conditions",
+              "All"
+            ]
+          ]
+        }
+      ]
+    },
+    {
+      "name": "Gothfish",
+      "block": "Desert Oasis",
+      "sprite": "/img/item_gothfish.png",
+      "obtain": [
+        {
+          "where": "Desert Oasis",
+          "details": [
+            [
+              "Times of Day",
+              "Night"
+            ],
+            [
+              "Minimum Bait",
+              "Bucket of Worms"
+            ],
+            [
+              "Weather Conditions",
+              "All"
+            ]
+          ]
+        }
+      ]
+    },
+    {
+      "name": "Camel Fish",
+      "block": "Desert Oasis",
+      "sprite": "/img/item_camel_fish.png",
+      "obtain": [
+        {
+          "where": "Desert Oasis",
+          "details": [
+            [
+              "Times of Day",
+              "Morning, Afternoon"
+            ],
+            [
+              "Minimum Bait",
+              "Mound of Minnows"
+            ],
+            [
+              "Weather Conditions",
+              "Clear Skies, Rainy, Stormy"
+            ]
+          ]
+        }
+      ]
+    },
+    {
+      "name": "Fossil Fish",
+      "block": "Desert Oasis",
+      "sprite": "/img/item_fossilfish.png",
+      "obtain": [
+        {
+          "where": "Desert Oasis",
+          "details": [
+            [
+              "Times of Day",
+              "All"
+            ],
+            [
+              "Minimum Bait",
+              "Cup of Crickets"
+            ],
+            [
+              "Weather Conditions",
+              "All"
+            ]
+          ]
+        }
+      ]
+    },
+    {
+      "name": "Hourglass Fish",
+      "block": "Desert Oasis",
+      "sprite": "/img/item_hourglassfish.png",
+      "obtain": [
+        {
+          "where": "Desert Oasis",
+          "details": [
+            [
+              "Times of Day",
+              "All"
+            ],
+            [
+              "Minimum Bait",
+              "Cup of Crickets"
+            ],
+            [
+              "Weather Conditions",
+              "All"
+            ]
+          ]
+        }
+      ]
+    },
+    {
+      "name": "Hot N Spicy Fish",
+      "block": "Desert Oasis",
+      "sprite": "/img/item_hot_n_spicy_fish.png",
+      "obtain": [
+        {
+          "where": "Desert Oasis",
+          "details": [
+            [
+              "Times of Day",
+              "Afternoon, Evening"
+            ],
+            [
+              "Minimum Bait",
+              "Mound of Minnows"
+            ],
+            [
+              "Weather Conditions",
+              "All"
+            ]
+          ]
+        }
+      ]
+    },
+    {
+      "name": "Craw's Dad",
+      "block": "Desert Oasis",
+      "sprite": "/img/item_craws_dad.png",
+      "obtain": [
+        {
+          "where": "Desert Oasis",
+          "details": [
+            [
+              "Times of Day",
+              "Morning, Afternoon, Evening"
+            ],
+            [
+              "Minimum Bait",
+              "Cup of Crickets"
+            ],
+            [
+              "Weather Conditions",
+              "All"
+            ]
+          ]
+        }
+      ]
+    },
+    {
+      "name": "Rattleray",
+      "block": "Desert Oasis",
+      "sprite": "/img/item_rattleray.png",
+      "obtain": [
+        {
+          "where": "Desert Oasis",
+          "details": [
+            [
+              "Times of Day",
+              "All"
+            ],
+            [
+              "Minimum Bait",
+              "Cup of Crickets"
+            ],
+            [
+              "Weather Conditions",
+              "All"
+            ]
+          ]
+        }
+      ]
+    },
+    {
+      "name": "Sizzling Shad",
+      "block": "Desert Oasis",
+      "sprite": "/img/item_sizzling_shad.png",
+      "obtain": [
+        {
+          "where": "Desert Oasis",
+          "details": [
+            [
+              "Times of Day",
+              "Morning, Afternoon, Evening"
+            ],
+            [
+              "Minimum Bait",
+              "Cup of Crickets"
+            ],
+            [
+              "Weather Conditions",
+              "All"
+            ]
+          ]
+        }
+      ]
+    },
+    {
+      "name": "Batfish",
+      "block": "Desert Oasis",
+      "sprite": "/img/item_batfish.png",
+      "obtain": [
+        {
+          "where": "Desert Oasis",
+          "details": [
+            [
+              "Times of Day",
+              "Night"
+            ],
+            [
+              "Minimum Bait",
+              "Cup of Crickets"
+            ],
+            [
+              "Weather Conditions",
+              "All"
+            ]
+          ]
+        }
+      ]
+    },
+    {
+      "name": "Scorpion Fish",
+      "block": "Desert Oasis",
+      "sprite": "/img/item_scorpion_fish.png",
+      "obtain": [
+        {
+          "where": "Desert Oasis",
+          "details": [
+            [
+              "Times of Day",
+              "All"
+            ],
+            [
+              "Minimum Bait",
+              "Pouch of Prawns"
+            ],
+            [
+              "Weather Conditions",
+              "All"
+            ]
+          ]
+        }
+      ]
+    },
+    {
+      "name": "Eye of Horus Fish",
+      "block": "Desert Oasis",
+      "sprite": "https://static.wikitide.net/dogonlinedotnetwikiwiki/8/8f/Item_Eye_of_Horus_Fish.png",
+      "obtain": [
+        {
+          "where": "Desert Oasis",
+          "details": [
+            [
+              "Times of Day",
+              "All"
+            ],
+            [
+              "Minimum Bait",
+              "Pouch of Prawns"
+            ],
+            [
+              "Weather Conditions",
+              "All"
+            ]
+          ]
+        }
+      ]
+    },
+    {
+      "name": "Sunfish",
+      "block": "Desert Oasis",
+      "sprite": "/img/item_sunfish.png",
+      "obtain": [
+        {
+          "where": "Desert Oasis",
+          "details": [
+            [
+              "Times of Day",
+              "Morning, Afternoon"
+            ],
+            [
+              "Minimum Bait",
+              "Pouch of Prawns"
+            ],
+            [
+              "Weather Conditions",
+              "All"
+            ]
+          ]
+        }
+      ]
+    },
+    {
+      "name": "Moonfish",
+      "block": "Desert Oasis",
+      "sprite": "/img/item_moonfish.png",
+      "obtain": [
+        {
+          "where": "Desert Oasis",
+          "details": [
+            [
+              "Times of Day",
+              "Evening, Night"
+            ],
+            [
+              "Minimum Bait",
+              "Pouch of Prawns"
+            ],
+            [
+              "Weather Conditions",
+              "All"
+            ]
+          ]
+        }
+      ]
+    },
+    {
+      "name": "Pupfish",
+      "block": "Desert Oasis",
+      "sprite": "/img/item_pupfish.png",
+      "obtain": [
+        {
+          "where": "Desert Oasis",
+          "details": [
+            [
+              "Times of Day",
+              "All"
+            ],
+            [
+              "Minimum Bait",
+              "Golden Grub"
+            ],
+            [
+              "Weather Conditions",
+              "All"
+            ]
+          ]
+        }
+      ]
+    },
+    {
+      "name": "Polar Prawn",
+      "block": "Ice Fishing Hole",
+      "sprite": "/img/item_polar_prawn.png",
+      "obtain": [
+        {
+          "where": "Ice Fishing Hole",
+          "details": [
+            [
+              "Times of Day",
+              "All"
+            ],
+            [
+              "Minimum Bait",
+              "Bucket of Worms"
+            ],
+            [
+              "Weather Conditions",
+              "All"
+            ]
+          ]
+        }
+      ]
+    },
+    {
+      "name": "Arctic Cod",
+      "block": "Ice Fishing Hole",
+      "sprite": "/img/item_arcticcod.png",
+      "obtain": [
+        {
+          "where": "Ice Fishing Hole",
+          "details": [
+            [
+              "Times of Day",
+              "All"
+            ],
+            [
+              "Minimum Bait",
+              "Bucket of Worms"
+            ],
+            [
+              "Weather Conditions",
+              "All"
+            ]
+          ]
+        }
+      ]
+    },
+    {
+      "name": "Coldfish",
+      "block": "Ice Fishing Hole",
+      "sprite": "/img/item_coldfish.png",
+      "obtain": [
+        {
+          "where": "Ice Fishing Hole",
+          "details": [
+            [
+              "Times of Day",
+              "All"
+            ],
+            [
+              "Minimum Bait",
+              "Bucket of Worms"
+            ],
+            [
+              "Weather Conditions",
+              "All"
+            ]
+          ]
+        }
+      ]
+    },
+    {
+      "name": "Capelin",
+      "block": "Ice Fishing Hole",
+      "sprite": "/img/item_capelin.png",
+      "obtain": [
+        {
+          "where": "Ice Fishing Hole",
+          "details": [
+            [
+              "Times of Day",
+              "All"
+            ],
+            [
+              "Minimum Bait",
+              "Bucket of Worms"
+            ],
+            [
+              "Weather Conditions",
+              "All"
+            ]
+          ]
+        }
+      ]
+    },
+    {
+      "name": "Sabretooth Tigerfish",
+      "block": "Ice Fishing Hole",
+      "sprite": "/img/item_sabretoothtigerfish.png",
+      "obtain": [
+        {
+          "where": "Ice Fishing Hole",
+          "details": [
+            [
+              "Times of Day",
+              "All"
+            ],
+            [
+              "Minimum Bait",
+              "Cup of Crickets"
+            ],
+            [
+              "Weather Conditions",
+              "All"
+            ]
+          ]
+        }
+      ]
+    },
+    {
+      "name": "Mammothfish",
+      "block": "Ice Fishing Hole",
+      "sprite": "/img/item_mammothfish.png",
+      "obtain": [
+        {
+          "where": "Ice Fishing Hole",
+          "details": [
+            [
+              "Times of Day",
+              "All"
+            ],
+            [
+              "Minimum Bait",
+              "Cup of Crickets"
+            ],
+            [
+              "Weather Conditions",
+              "All"
+            ]
+          ]
+        }
+      ]
+    },
+    {
+      "name": "Ice Cream Sharkwich",
+      "block": "Ice Fishing Hole",
+      "sprite": "https://static.wikitide.net/dogonlinedotnetwikiwiki/1/11/Item_Ice_Cream_Sharkwich.png",
+      "obtain": [
+        {
+          "where": "Ice Fishing Hole",
+          "details": [
+            [
+              "Times of Day",
+              "All"
+            ],
+            [
+              "Minimum Bait",
+              "Cup of Crickets"
+            ],
+            [
+              "Weather Conditions",
+              "All"
+            ]
+          ]
+        }
+      ]
+    },
+    {
+      "name": "Strawberry Ice Cream Sharkwich",
+      "block": "Ice Fishing Hole",
+      "sprite": "https://static.wikitide.net/dogonlinedotnetwikiwiki/a/ab/Item_Strawberry_Ice_Cream_Sharkwich.png",
+      "obtain": [
+        {
+          "where": "Ice Fishing Hole",
+          "details": [
+            [
+              "Times of Day",
+              "All"
+            ],
+            [
+              "Minimum Bait",
+              "Pouch of Prawns"
+            ],
+            [
+              "Weather Conditions",
+              "All"
+            ]
+          ]
+        }
+      ]
+    },
+    {
+      "name": "Chocolate Ice Cream Sharkwich",
+      "block": "Ice Fishing Hole",
+      "sprite": "/img/item_chocolatesharkwich.png",
+      "obtain": [
+        {
+          "where": "Ice Fishing Hole",
+          "details": [
+            [
+              "Times of Day",
+              "All"
+            ],
+            [
+              "Minimum Bait",
+              "Pouch of Prawns"
+            ],
+            [
+              "Weather Conditions",
+              "All"
+            ]
+          ]
+        }
+      ]
+    },
+    {
+      "name": "Hotdogtopus",
+      "block": "Ice Fishing Hole",
+      "sprite": "/img/item_hotdogtopus.png",
+      "obtain": [
+        {
+          "where": "Ice Fishing Hole",
+          "details": [
+            [
+              "Times of Day",
+              "All"
+            ],
+            [
+              "Minimum Bait",
+              "Pouch of Prawns"
+            ],
+            [
+              "Weather Conditions",
+              "All"
+            ]
+          ]
+        }
+      ]
+    },
+    {
+      "name": "Rocketfish",
+      "block": "Ice Fishing Hole",
+      "sprite": "/img/item_rocketfish.png",
+      "obtain": [
+        {
+          "where": "Ice Fishing Hole",
+          "details": [
+            [
+              "Times of Day",
+              "All"
+            ],
+            [
+              "Minimum Bait",
+              "Golden Grub"
+            ],
+            [
+              "Weather Conditions",
+              "All"
+            ]
+          ]
+        }
+      ]
+    },
+    {
+      "name": "Sea Star",
+      "block": "Ocean Fishing Cruiser",
+      "sprite": "/img/item_seastar.png",
+      "obtain": [
+        {
+          "where": "Ocean Fishing Cruiser",
+          "details": [
+            [
+              "Times of Day",
+              "All"
+            ],
+            [
+              "Minimum Bait",
+              "Bucket of Worms"
+            ],
+            [
+              "Weather Conditions",
+              "All"
+            ]
+          ]
+        }
+      ]
+    },
+    {
+      "name": "Mussel",
+      "block": "Ocean Fishing Cruiser",
+      "sprite": "/img/item_mussel.png",
+      "obtain": [
+        {
+          "where": "Ocean Fishing Cruiser",
+          "details": [
+            [
+              "Times of Day",
+              "All"
+            ],
+            [
+              "Minimum Bait",
+              "Bucket of Worms"
+            ],
+            [
+              "Weather Conditions",
+              "Clear Skies, Stormy"
+            ]
+          ]
+        }
+      ]
+    },
+    {
+      "name": "Musscle",
+      "block": "Ocean Fishing Cruiser",
+      "sprite": "/img/item_musscle.png",
+      "obtain": [
+        {
+          "where": "Ocean Fishing Cruiser",
+          "details": [
+            [
+              "Times of Day",
+              "Morning, Afternoon"
+            ],
+            [
+              "Minimum Bait",
+              "Cup of Crickets"
+            ],
+            [
+              "Weather Conditions",
+              "Clear Skies"
+            ]
+          ]
+        }
+      ]
+    },
+    {
+      "name": "Deepsea Fangly Fish",
+      "block": "Ocean Fishing Cruiser",
+      "sprite": "/img/item_deepsea_fanglyfish.png",
+      "obtain": [
+        {
+          "where": "Ocean Fishing Cruiser",
+          "details": [
+            [
+              "Times of Day",
+              "Night"
+            ],
+            [
+              "Minimum Bait",
+              "Mound of Minnows"
+            ],
+            [
+              "Weather Conditions",
+              "All"
+            ]
+          ]
+        }
+      ]
+    },
+    {
+      "name": "Gummy Shark",
+      "block": "Ocean Fishing Cruiser",
+      "sprite": "/img/item_gummy_shark.png",
+      "obtain": [
+        {
+          "where": "Ocean Fishing Cruiser",
+          "details": [
+            [
+              "Times of Day",
+              "All"
+            ],
+            [
+              "Minimum Bait",
+              "Mound of Minnows"
+            ],
+            [
+              "Weather Conditions",
+              "All"
+            ]
+          ]
+        }
+      ]
+    },
+    {
+      "name": "Comb Jelly",
+      "block": "Ocean Fishing Cruiser",
+      "sprite": "/img/item_combjelly.png",
+      "obtain": [
+        {
+          "where": "Ocean Fishing Cruiser",
+          "details": [
+            [
+              "Times of Day",
+              "Morning, Night"
+            ],
+            [
+              "Minimum Bait",
+              "Pouch of Prawns"
+            ],
+            [
+              "Weather Conditions",
+              "All"
+            ]
+          ]
+        }
+      ]
+    },
+    {
+      "name": "Jelly Jellyfish",
+      "block": "Ocean Fishing Cruiser",
+      "sprite": "/img/item_jellyjellyfish.png",
+      "obtain": [
+        {
+          "where": "Ocean Fishing Cruiser",
+          "details": [
+            [
+              "Times of Day",
+              "Morning, Afternoon"
+            ],
+            [
+              "Minimum Bait",
+              "Pouch of Prawns"
+            ],
+            [
+              "Weather Conditions",
+              "All"
+            ]
+          ]
+        }
+      ]
+    },
+    {
+      "name": "Crimson Crawler",
+      "block": "Ocean Fishing Cruiser",
+      "sprite": "/img/item_crimsoncrawler.png",
+      "obtain": [
+        {
+          "where": "Ocean Fishing Cruiser",
+          "details": [
+            [
+              "Times of Day",
+              "All"
+            ],
+            [
+              "Minimum Bait",
+              "Cup of Crickets"
+            ],
+            [
+              "Weather Conditions",
+              "All"
+            ]
+          ]
+        }
+      ]
+    },
+    {
+      "name": "Lobster",
+      "block": "Ocean Fishing Cruiser",
+      "sprite": "/img/item_lobster.png",
+      "obtain": [
+        {
+          "where": "Ocean Fishing Cruiser",
+          "details": [
+            [
+              "Times of Day",
+              "All"
+            ],
+            [
+              "Minimum Bait",
+              "Cup of Crickets"
+            ],
+            [
+              "Weather Conditions",
+              "Clear Skies"
+            ]
+          ]
+        }
+      ]
+    },
+    {
+      "name": "Clam",
+      "block": "Ocean Fishing Cruiser",
+      "sprite": "/img/item_clam.png",
+      "obtain": [
+        {
+          "where": "Ocean Fishing Cruiser",
+          "details": [
+            [
+              "Times of Day",
+              "Night"
+            ],
+            [
+              "Minimum Bait",
+              "Cup of Crickets"
+            ],
+            [
+              "Weather Conditions",
+              "Clear Skies, Rainy, Stormy"
+            ]
+          ]
+        }
+      ]
+    },
+    {
+      "name": "Leafy Sheepdog",
+      "block": "Ocean Fishing Cruiser",
+      "sprite": "/img/item_leafy_sheepdog.png",
+      "obtain": [
+        {
+          "where": "Ocean Fishing Cruiser",
+          "details": [
+            [
+              "Times of Day",
+              "All"
+            ],
+            [
+              "Minimum Bait",
+              "Pouch of Prawns"
+            ],
+            [
+              "Weather Conditions",
+              "All"
+            ]
+          ]
+        }
+      ]
+    },
+    {
+      "name": "Blue Lobster",
+      "block": "Ocean Fishing Cruiser",
+      "sprite": "/img/item_bluelobster.png",
+      "obtain": [
+        {
+          "where": "Ocean Fishing Cruiser",
+          "details": [
+            [
+              "Times of Day",
+              "Morning, Evening, Night"
+            ],
+            [
+              "Minimum Bait",
+              "Pouch of Prawns"
+            ],
+            [
+              "Weather Conditions",
+              "All"
+            ]
+          ]
+        }
+      ]
+    },
+    {
+      "name": "Sea Angel",
+      "block": "Ocean Fishing Cruiser",
+      "sprite": "/img/item_sea_angel.png",
+      "obtain": [
+        {
+          "where": "Ocean Fishing Cruiser",
+          "details": [
+            [
+              "Times of Day",
+              "Morning"
+            ],
+            [
+              "Minimum Bait",
+              "Pouch of Prawns"
+            ],
+            [
+              "Weather Conditions",
+              "All"
+            ]
+          ]
+        }
+      ]
+    },
+    {
+      "name": "Shooting Starfish",
+      "block": "Ocean Fishing Cruiser",
+      "sprite": "/img/item_shootingstarfish.png",
+      "obtain": [
+        {
+          "where": "Ocean Fishing Cruiser",
+          "details": [
+            [
+              "Times of Day",
+              "Night"
+            ],
+            [
+              "Minimum Bait",
+              "Pouch of Prawns"
+            ],
+            [
+              "Weather Conditions",
+              "All"
+            ]
+          ]
+        }
+      ]
+    },
+    {
+      "name": "Flying Fish",
+      "block": "Fly Fishing Ship",
+      "sprite": "/img/items/fish/AirfishFlyfish.png",
+      "obtain": [
+        {
+          "where": "Fly Fishing Ship",
+          "details": [
+            [
+              "Times of Day",
+              "All"
+            ],
+            [
+              "Minimum Bait",
+              "Balloon Hook"
+            ],
+            [
+              "Weather Conditions",
+              "All"
+            ]
+          ]
+        }
+      ]
+    },
+    {
+      "name": "Cloudfish",
+      "block": "Fly Fishing Ship",
+      "sprite": "/img/items/fish/AirfishCloud.png",
+      "obtain": [
+        {
+          "where": "Fly Fishing Ship",
+          "details": [
+            [
+              "Times of Day",
+              "All"
+            ],
+            [
+              "Minimum Bait",
+              "Balloon Hook"
+            ],
+            [
+              "Weather Conditions",
+              "All"
+            ]
+          ]
+        }
+      ]
+    },
+    {
+      "name": "Thundering Cloudfish",
+      "block": "Fly Fishing Ship",
+      "sprite": "https://static.wikitide.net/dogonlinedotnetwikiwiki/3/3d/Item_Thundering_Cloudfish.png",
+      "obtain": [
+        {
+          "where": "Fly Fishing Ship",
+          "details": [
+            [
+              "Times of Day",
+              "Afternoon, Evening, Night"
+            ],
+            [
+              "Minimum Bait",
+              "Wicked Skymetal Hook"
+            ],
+            [
+              "Weather Conditions",
+              "Stormy"
+            ]
+          ]
+        }
+      ]
+    },
+    {
+      "name": "Steamfish",
+      "block": "Fly Fishing Ship",
+      "sprite": "/img/items/fish/AirfishSteampunk2.png",
+      "obtain": [
+        {
+          "where": "Fly Fishing Ship",
+          "details": [
+            [
+              "Times of Day",
+              "Morning, Afternoon"
+            ],
+            [
+              "Minimum Bait",
+              "Balloon Hook"
+            ],
+            [
+              "Weather Conditions",
+              "Clear Skies, Rainy, Snowy, Stormy"
+            ]
+          ]
+        }
+      ]
+    },
+    {
+      "name": "Red Balloonfish",
+      "block": "Fly Fishing Ship",
+      "sprite": "/img/items/fish/AirfishBalloon.png",
+      "obtain": [
+        {
+          "where": "Fly Fishing Ship",
+          "details": [
+            [
+              "Times of Day",
+              "Morning, Afternoon"
+            ],
+            [
+              "Minimum Bait",
+              "Balloon Hook"
+            ],
+            [
+              "Weather Conditions",
+              "Clear Skies"
+            ]
+          ]
+        }
+      ]
+    },
+    {
+      "name": "Blue Balloonfish",
+      "block": "Fly Fishing Ship",
+      "sprite": "/img/items/fish/AirfishBalloonBlue.png",
+      "obtain": [
+        {
+          "where": "Fly Fishing Ship",
+          "details": [
+            [
+              "Times of Day",
+              "Evening, Night"
+            ],
+            [
+              "Minimum Bait",
+              "Balloon Hook"
+            ],
+            [
+              "Weather Conditions",
+              "Clear Skies"
+            ]
+          ]
+        }
+      ]
+    },
+    {
+      "name": "Plane-Mimicking Fish",
+      "block": "Fly Fishing Ship",
+      "sprite": "https://static.wikitide.net/dogonlinedotnetwikiwiki/e/e5/Item_Plane-Mimicking_Fish.png",
+      "obtain": [
+        {
+          "where": "Fly Fishing Ship",
+          "details": [
+            [
+              "Times of Day",
+              "Morning, Afternoon"
+            ],
+            [
+              "Minimum Bait",
+              "Wicked Skymetal Hook"
+            ],
+            [
+              "Weather Conditions",
+              "Clear Skies, Rainy, Stormy"
+            ]
+          ]
+        }
+      ]
+    },
+    {
+      "name": "Rainbow Trout (Sky)",
+      "block": "Fly Fishing Ship",
+      "sprite": "/img/items/fish/AirfishRainbowTrout.png",
+      "obtain": [
+        {
+          "where": "Fly Fishing Ship",
+          "details": [
+            [
+              "Times of Day",
+              "Afternoon"
+            ],
+            [
+              "Minimum Bait",
+              "Wicked Skymetal Hook"
+            ],
+            [
+              "Weather Conditions",
+              "Rainy"
+            ]
+          ]
+        }
+      ]
+    },
+    {
+      "name": "Very Lost Fish",
+      "block": "Fly Fishing Ship",
+      "sprite": "/img/items/fish/AirfishLostfish.png",
+      "obtain": [
+        {
+          "where": "Fly Fishing Ship",
+          "details": [
+            [
+              "Times of Day",
+              "Morning, Afternoon"
+            ],
+            [
+              "Minimum Bait",
+              "Wicked Skymetal Hook"
+            ],
+            [
+              "Weather Conditions",
+              "Clear Skies, Rainy, Stormy"
+            ]
+          ]
+        }
+      ]
+    },
+    {
+      "name": "Starwhale",
+      "block": "Fly Fishing Ship",
+      "sprite": "https://static.wikitide.net/dogonlinedotnetwikiwiki/d/da/Item_Starwhale.png",
+      "obtain": [
+        {
+          "where": "Fly Fishing Ship",
+          "details": [
+            [
+              "Times of Day",
+              "Evening, Night"
+            ],
+            [
+              "Minimum Bait",
+              "Wicked Skymetal Hook"
+            ],
+            [
+              "Weather Conditions",
+              "Clear Skies"
+            ]
+          ]
+        }
+      ]
+    },
+    {
+      "name": "Aurora Eel",
+      "block": "Fly Fishing Ship",
+      "sprite": "https://static.wikitide.net/dogonlinedotnetwikiwiki/b/ba/Item_Aurora_Eel.png",
+      "obtain": [
+        {
+          "where": "Fly Fishing Ship",
+          "details": [
+            [
+              "Times of Day",
+              "Night"
+            ],
+            [
+              "Minimum Bait",
+              "Sky Tackle"
+            ],
+            [
+              "Weather Conditions",
+              "Clear Skies"
+            ]
+          ]
+        }
+      ]
+    },
+    {
+      "name": "Skyfish",
+      "block": "Fly Fishing Ship",
+      "sprite": "/img/items/fish/AirfishSkyfish.png",
+      "obtain": [
+        {
+          "where": "Fly Fishing Ship",
+          "details": [
+            [
+              "Times of Day",
+              "Morning, Afternoon"
+            ],
+            [
+              "Minimum Bait",
+              "Sky Tackle"
+            ],
+            [
+              "Weather Conditions",
+              "Clear Skies"
+            ]
+          ]
+        }
+      ]
+    },
+    {
+      "name": "Extraterrestrial Octopus",
+      "block": "Fly Fishing Ship",
+      "sprite": "https://static.wikitide.net/dogonlinedotnetwikiwiki/1/13/Item_Extraterrestrial_Octopus.png",
+      "obtain": [
+        {
+          "where": "Fly Fishing Ship",
+          "details": [
+            [
+              "Times of Day",
+              "Night"
+            ],
+            [
+              "Minimum Bait",
+              "Sky Tackle"
+            ],
+            [
+              "Weather Conditions",
+              "Clear Skies, Rainy"
+            ]
+          ]
+        }
+      ]
+    },
+    {
+      "name": "Jellyfish...?",
+      "block": "Fly Fishing Ship",
+      "sprite": "/img/items/fish/AirfishJellyfish.png",
+      "obtain": [
+        {
+          "where": "Fly Fishing Ship",
+          "details": [
+            [
+              "Times of Day",
+              "Evening, Night"
+            ],
+            [
+              "Minimum Bait",
+              "Sky Tackle"
+            ],
+            [
+              "Weather Conditions",
+              "All"
+            ]
+          ]
+        }
+      ]
+    },
+    {
+      "name": "Ocean Fella",
+      "block": "Fly Fishing Ship",
+      "sprite": "https://static.wikitide.net/dogonlinedotnetwikiwiki/4/40/Item_Ocean_Fella.png",
+      "obtain": [
+        {
+          "where": "Fly Fishing Ship",
+          "details": [
+            [
+              "Times of Day",
+              "All"
+            ],
+            [
+              "Minimum Bait",
+              "Golden Grub"
+            ],
+            [
+              "Weather Conditions",
+              "All"
+            ]
+          ]
+        }
+      ]
+    }
+  ],
+  "fishing": {
+    "areas": {
+      "lake": "Old Fishin' Hole",
+      "desert": "Desert Oasis",
+      "ice": "Ice Fishing Hole",
+      "ocean": "Ocean Fishing Cruiser",
+      "sky": "Fly Fishing Ship"
+    },
+    "baitTiers": [
+      [
+        "Bucket of Worms",
+        "Mound of Minnows",
+        "Cup of Crickets",
+        "Pouch of Prawns"
+      ],
+      [
+        "Balloon Hook",
+        "Wicked Skymetal Hook",
+        "Sky Tackle"
+      ],
+      [
+        "Golden Grub"
+      ]
+    ]
+  }
+}

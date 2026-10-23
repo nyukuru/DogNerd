@@ -1,0 +1,121 @@
+.dognerd-bait-mark {
+  position: absolute;
+  top: -7px;
+  right: -7px;
+  min-width: 1.2em;
+  padding: 0 4px;
+  border: 1px solid #ffd27a;
+  border-radius: 8px;
+  background: #f08c00;
+  color: white;
+  line-height: 1.2;
+  text-align: center;
+}
+
+.dognerd-catchable {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  gap: 4px;
+  max-width: 450px;
+  margin: 10px auto 0;
+}
+
+.dognerd-catchable img {
+  width: 32px;
+  height: 32px;
+  object-fit: contain;
+  image-rendering: pixelated;
+}
+
+.dognerd-catchable img.dognerd-uncaught {
+  filter: brightness(0);
+  opacity: 0.85;
+}
+
+[data-theme="dark"] .dognerd-catchable img.dognerd-uncaught {
+  filter: brightness(0) drop-shadow(0 0 1px rgba(255, 255, 255, 0.7));
+  opacity: 1;
+}
+
+[class*="Weather_message__"] > .dognerd-new-day {
+  font-size: inherit;
+  font-weight: inherit;
+}
+
+[class*="NpcPortrait_dialogue__"]:has(> .dognerd-fish-count) {
+  position: relative;
+}
+
+.dognerd-fish-count {
+  position: absolute;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 4px;
+  line-height: 1;
+  white-space: nowrap;
+  font-style: normal;
+  color: var(--text);
+  pointer-events: none;
+}
+
+.dognerd-fish-count.dognerd-above {
+  position: static;
+  order: -1;
+}
+
+.dognerd-fish-caption {
+  font-size: 22px;
+}
+
+.dognerd-fish-badge {
+  position: relative;
+  box-sizing: border-box;
+  width: 72px;
+  height: 72px;
+  border: 2px solid var(--item-frame);
+  border-radius: 6px;
+  background: var(--surface-bg);
+}
+
+.dognerd-fish-badge > span {
+  position: absolute;
+}
+
+.dognerd-fish-badge > .dognerd-numerator {
+  top: 2px;
+  left: 5px;
+  font-size: 40px;
+}
+
+.dognerd-fish-badge > .dognerd-slash {
+  top: 50%;
+  left: 50%;
+  font-size: 72px;
+  translate: -50% -50%;
+  color: var(--text-muted);
+}
+
+.dognerd-fish-badge > .dognerd-denominator {
+  right: 5px;
+  bottom: 2px;
+  font-size: 40px;
+}
+
+.dognerd-fish-badge.dognerd-sprite {
+  border: none;
+  border-radius: 0;
+  background: none;
+}
+
+.dognerd-fish-badge.dognerd-sprite > img {
+  display: block;
+  width: 72px;
+  height: 72px;
+  image-rendering: pixelated;
+}
+
+[data-theme="dark"] .dognerd-fish-badge.dognerd-sprite > img {
+  filter: invert(1);
+}
