@@ -1,7 +1,7 @@
 (() => {
   "use strict";
 
-  const { COLLECTIONS, onData, norm, warnOnce, el, spriteUrl, query } = DogNerd;
+  const { COLLECTIONS, onData, norm, warnOnce, el, spriteUrl, untilNewDay, query, activeDog } = DogNerd;
 
   const ROUTE = /^\/fish\/([a-z]+)\/?$/;
   const MARK = "dognerd-bait-mark";
@@ -9,8 +9,6 @@
   const COUNT = "dognerd-fish-count";
   const NEW_DAY = "dognerd-new-day";
   const CAUGHT_KEY = "fishCaught";
-  const DAY = 24 * 60 * 60 * 1000;
-  const NEW_DAY_UTC_HOUR = 7;
 
   const currentArea = () => location.pathname.match(ROUTE)?.[1] ?? null;
 
@@ -67,7 +65,7 @@
         query("doghouse.getState"),
         stored ? query("collection.getDogState", { dogIndex: stored.dogIndex }).catch(() => null) : null,
       ]);
-      const dogIndex = (dogs.find((d) => d.isActiveDog) ?? dogs[0]).index;
+      const dogIndex = activeDog(dogs).index;
       const { fish } =
         storedDogState && dogIndex === stored.dogIndex
           ? storedDogState
@@ -130,8 +128,7 @@
     const text = `${fished}/${today.limit}`;
     if (label.dataset.text !== text) {
       label.dataset.text = text;
-      label.title = `Fished ${fished} of ${today.limit} times today`;
-      label.setAttribute("aria-label", label.title);
+      label.setAttribute("aria-label", `Fished ${fished} of ${today.limit} times today`);
       label.replaceChildren(
         el("div", { className: "dognerd-fish-caption", textContent: "Daily Fish:", ariaHidden: "true" }),
         countBadge(fished, today.limit),
@@ -146,33 +143,12 @@
     label.style.top = above ? "" : `${Math.round(art.offsetTop + (art.offsetHeight - label.offsetHeight) / 2)}px`;
   }
 
-  function untilNewDay(now = Date.now()) {
-    const d = new Date(now);
-    const start = Date.UTC(d.getUTCFullYear(), d.getUTCMonth(), d.getUTCDate(), NEW_DAY_UTC_HOUR);
-    return start > now ? start - now : start + DAY - now;
-  }
-
-  const clock = (ms) => {
-    const minutes = Math.floor(ms / 60000);
-    return [Math.floor(minutes / 60), minutes % 60].map((n) => String(n).padStart(2, "0")).join(":");
-  };
-
-  function showNewDay() {
-    const message = document.querySelector('[class*="Weather_message__"]');
-    if (!message) return;
-    let line = message.querySelector(`:scope > .${NEW_DAY}`);
-    if (!line) message.append((line = el("span", { className: NEW_DAY }, [el("br"), "A new day will come in: ", el("span")])));
-    line.lastChild.textContent = clock(untilNewDay());
-  }
-
   let previousLeft = untilNewDay();
   setInterval(() => {
     const area = currentArea();
-    if (!area) return;
-    showNewDay();
     const left = untilNewDay();
     const dayRolledOver = left > previousLeft;
-    if (dayRolledOver) setTimeout(() => loadToday(area), 5000);
+    if (area && dayRolledOver) setTimeout(() => loadToday(area), 5000);
     previousLeft = left;
   }, 1000);
 
@@ -189,7 +165,7 @@
         continue;
       }
       if (!mark) wrap.append((mark = el("span", { className: MARK, textContent: "!" })));
-      mark.title = `${uncaught} fish not caught yet can bite on this bait right now`;
+      mark.setAttribute("aria-label", `${uncaught} fish not caught yet can bite on this bait right now`);
     }
   }
 
@@ -213,7 +189,6 @@
           return el("img", {
             src: spriteUrl(slot.sprite),
             alt: name,
-            title: name,
             className: caught[i] ? "" : "dognerd-uncaught",
           });
         }),
@@ -229,7 +204,10 @@
     requestAnimationFrame(() => {
       scheduled = false;
       const area = currentArea();
-      if (!area) return;
+      if (!area) {
+        loadedFor = null;
+        return;
+      }
       if (loadedFor !== location.pathname) {
         loadedFor = location.pathname;
         today = null;
@@ -237,7 +215,6 @@
         loadToday(area);
       }
       showToday();
-      showNewDay();
       if (!COLLECTIONS.fish?.fishing) return;
       const now = conditions();
       if (!caught || !now) return;
@@ -252,6 +229,10 @@
       const button = e.target.closest?.('[role="dialog"] button');
       const area = currentArea();
       if (!area || !button || !/fish/i.test(button.textContent)) return;
+      if (today) {
+        today = { ...today, fished: Math.min(today.fished + 1, today.limit) };
+        schedule();
+      }
       setTimeout(() => {
         loadCaught();
         loadToday(area);

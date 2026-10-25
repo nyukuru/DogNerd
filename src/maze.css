@@ -1,0 +1,88 @@
+[class*="tower_mapGrid__"]:has(+ .dognerd-maze-grid) {
+  visibility: hidden;
+}
+
+[class*="tower_"]:has(> .dognerd-maze-grid) {
+  position: relative;
+}
+
+.dognerd-maze-grid {
+  position: absolute;
+  display: grid;
+}
+
+.dognerd-maze-cell {
+  position: relative;
+  background: var(--dognerd-maze-nothing) center / 100% 100% no-repeat;
+  image-rendering: pixelated;
+}
+
+.dognerd-maze-cell[data-dognerd-maze]::before {
+  content: "";
+  position: absolute;
+  inset: 0;
+  background: var(--dognerd-maze-room) center / 100% 100% no-repeat;
+  image-rendering: pixelated;
+}
+
+.dognerd-maze-cell:is([data-dognerd-maze="chest"], [data-dognerd-maze="opened"])::after {
+  content: "";
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  width: 14px;
+  height: 12px;
+  margin: -6px 0 0 -7px;
+  background: #ffd84a;
+  mask: var(--dognerd-maze-gem) center / 100% 100% no-repeat;
+}
+
+.dognerd-maze-cell[data-dognerd-maze="opened"]::after {
+  background: #3a3f4f;
+}
+
+.dognerd-maze-cell[data-dognerd-maze="cheese"]::before {
+  background-image: var(--dognerd-maze-cheese);
+}
+
+.dognerd-maze-cell[data-dognerd-maze="chest"],
+.dognerd-maze-cell[data-dognerd-maze="player"] {
+  z-index: 2;
+}
+
+.dognerd-maze-cell[data-dognerd-maze="player"]::before {
+  background-image: var(--dognerd-maze-player);
+}
+
+.dognerd-maze-lines {
+  position: absolute;
+  z-index: 1;
+  inset: 0;
+  width: 100%;
+  height: 100%;
+  overflow: hidden;
+  pointer-events: none;
+}
+
+.dognerd-maze-lines polyline {
+  fill: none;
+  stroke-width: 3;
+  stroke-linecap: square;
+  stroke-linejoin: miter;
+  shape-rendering: crispEdges;
+}
+
+.dognerd-maze-line-cheese {
+  stroke: #ff7a2f;
+}
+
+.dognerd-maze-line-chest {
+  stroke: #ffd84a;
+}
+
+.dognerd-maze-note {
+  margin-top: 6px;
+  color: #ccc;
+  font-size: 14px;
+  text-align: center;
+}

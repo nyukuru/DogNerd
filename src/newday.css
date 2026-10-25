@@ -1,0 +1,4 @@
+[class*="Weather_message__"] > .dognerd-new-day {
+  font-size: inherit;
+  font-weight: inherit;
+}

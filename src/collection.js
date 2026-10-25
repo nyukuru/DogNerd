@@ -50,13 +50,11 @@
     img.src = url;
     card.classList.add(SILHOUETTE);
     card.classList.toggle(GUESS, !!entry.guess);
-    if (entry.guess) card.title = `Exact spot unconfirmed, somewhere in ${entry.block}`;
     makeClickable(card, true);
   }
 
   function restore(card, img, revertSrc) {
     card.classList.remove(SILHOUETTE, GUESS);
-    card.removeAttribute("title");
     makeClickable(card, false);
     if (img.dataset.dognerdOriginal === undefined) return;
     if (revertSrc) img.src = img.dataset.dognerdOriginal;

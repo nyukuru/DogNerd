@@ -1,16 +1,27 @@
 (() => {
   "use strict";
 
-  const { COLLECTIONS, onData, norm, warnOnce, el, icon, query } = DogNerd;
+  const { COLLECTIONS, onData, norm, warnOnce, el, icon, query, activeDog, watchStored } = DogNerd;
 
   const BADGES = "dognerd-item-badges";
   const STATE_KEY = "itemBadges";
+  const TRADE_KEY = "upForTrade";
   const STALE = 30 * 1000;
 
   let state = null;
+  let trade = {};
   let lookup = null;
   let loadedAt = 0;
   let loading = false;
+
+  const toItem = (i, dogUuid) => ({
+    name: i.name,
+    image: i.image,
+    count: i.count ?? 1,
+    food: !!i.food,
+    book: !!i.book,
+    consumed: !!i.consumedByDog?.[dogUuid],
+  });
 
   function applyState(fresh) {
     if (JSON.stringify(fresh) === JSON.stringify(state)) return;
@@ -34,24 +45,18 @@
         query("dressup.getState", {}),
         stored ? query("collection.getDogState", { dogIndex: stored.dogIndex }).catch(() => null) : null,
       ]);
-      const dog = dogs.find((d) => d.isActiveDog) ?? dogs[0];
+      const dog = activeDog(dogs);
       const { food, books } =
         storedDogState?.dogUuid === dog.uuid
           ? storedDogState
           : await query("collection.getDogState", { dogIndex: dog.index });
 
-      const item = (i) => ({
-        name: i.name,
-        image: i.image,
-        count: i.count ?? 1,
-        food: !!i.food,
-        book: !!i.book,
-        consumed: !!i.consumedByDog?.[dog.uuid],
-      });
+      const item = (i) => toItem(i, dog.uuid);
       const seen = (i) => ({ name: i.name, image: i.image });
       const fresh = {
         dog: dog.name,
         dogIndex: dog.index,
+        dogUuid: dog.uuid,
         doghouse: inventory.map(item),
         storage: storage.map(item),
         closet: cosmetics.map(item),
@@ -75,7 +80,7 @@
       const isGamePath = path && !/^[a-z]+:/.test(path);
       let info = isGamePath ? byImage.get(path) : byName.get(norm(name));
       if (!info) {
-        info = { food: false, book: false, done: false, doghouse: 0, storage: 0, closet: 0 };
+        info = { food: false, book: false, done: false, doghouse: 0, storage: 0, closet: 0, trade: 0 };
         if (isGamePath) byImage.set(path, info);
       }
       if (!byName.has(norm(name))) byName.set(norm(name), info);
@@ -93,6 +98,11 @@
     }
     for (const i of state.eaten) Object.assign(infoOf(i.name, i.image), { food: true, done: true });
     for (const i of state.read) Object.assign(infoOf(i.name, i.image), { book: true, done: true });
+    for (const i of Object.values(trade)) {
+      const info = infoOf(i.name, i.image);
+      info.trade = Math.min(i.qty, info.doghouse);
+      info.doghouse -= info.trade;
+    }
     for (const slot of COLLECTIONS.food?.slots ?? []) if (slot) infoOf(slot.name, slot.sprite).food = true;
     for (const slot of COLLECTIONS.books?.slots ?? []) if (slot) infoOf(slot.name, slot.sprite).book = true;
     return { byImage, byName };
@@ -128,6 +138,7 @@
     if (info.doghouse) list.push({ kind: "doghouse", count: info.doghouse, label: `${info.doghouse} in your doghouse` });
     if (info.storage) list.push({ kind: "storage", count: info.storage, label: `${info.storage} in storage` });
     if (info.closet) list.push({ kind: "closet", count: info.closet, label: `${info.closet} in your closet` });
+    if (info.trade) list.push({ kind: "trade", count: info.trade, label: `${info.trade} up for trade` });
     return list;
   }
 
@@ -178,16 +189,48 @@
     });
   }
 
+  // The game refetches these lists whenever they change, any other call on these routers means a reload.
+  const LISTS = {
+    "doghouse.getState": ["doghouse", (data) => data?.inventory],
+    "storage.getItems": ["storage", (data) => data],
+    "dressup.getState": ["closet", (data) => data?.cosmetics],
+  };
+
   let refresh = null;
-  document.addEventListener(
-    "click",
-    (e) => {
-      if (!e.target.closest?.('[role="dialog"] button')) return;
-      clearTimeout(refresh);
-      refresh = setTimeout(load, 1500);
-    },
-    true,
-  );
+  for (const router of ["doghouse", "storage", "dressup"]) {
+    document.addEventListener(`dognerd:${router}`, (e) => {
+      try {
+        const { procedures, text } = JSON.parse(e.detail);
+        const results = JSON.parse(text);
+        let fresh = state;
+        procedures.forEach((procedure, i) => {
+          const data = results?.[i]?.result?.data?.json;
+          if (!LISTS[procedure]) {
+            if (procedure.startsWith(`${router}.`)) {
+              clearTimeout(refresh);
+              refresh = setTimeout(load, 500);
+            }
+            return;
+          }
+          const [where, list] = LISTS[procedure];
+          if (fresh?.dogUuid && Array.isArray(list(data))) {
+            fresh = { ...fresh, [where]: list(data).map((i) => toItem(i, fresh.dogUuid)) };
+          }
+        });
+        if (fresh !== state) applyState(fresh);
+      } catch (err) {
+        warnOnce("items-fetch", "couldn't follow an item request:", err.message);
+      }
+    });
+  }
+
+  function applyTrade(fresh) {
+    trade = fresh ?? {};
+    lookup = null;
+    schedule();
+  }
+
+  watchStored(TRADE_KEY, applyTrade);
 
   new MutationObserver(schedule).observe(document.body, { childList: true, subtree: true });
   onData(() => {

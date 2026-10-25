@@ -1,7 +1,7 @@
 {
   "manifest_version": 3,
   "name": "DogNerd",
-  "version": "0.1.0",
+  "version": "0.2.0",
   "description": "Extra information and UI improvements for Dog Online.",
   "homepage_url": "https://github.com/nyukuru/DogNerd",
   "icons": {
@@ -30,14 +30,14 @@
   "content_scripts": [
     {
       "matches": ["https://dogonline.net/*"],
-      "js": ["src/tower-page.js"],
+      "js": ["src/page-hook.js"],
       "run_at": "document_start",
       "world": "MAIN"
     },
     {
       "matches": ["https://dogonline.net/*"],
-      "js": ["src/common.js", "src/collection.js", "src/fishing.js", "src/items.js", "src/tower.js"],
-      "css": ["src/collection.css", "src/fishing.css", "src/items.css", "src/tower.css"],
+      "js": ["src/common.js", "src/collection.js", "src/doghouse.js", "src/farm.js", "src/fishing.js", "src/items.js", "src/maze.js", "src/newday.js", "src/storage.js", "src/tower.js", "src/trade.js", "src/tradeimage.js"],
+      "css": ["src/collection.css", "src/doghouse.css", "src/farm.css", "src/fishing.css", "src/items.css", "src/maze.css", "src/newday.css", "src/tower.css", "src/trade.css"],
       "run_at": "document_idle"
     }
   ]

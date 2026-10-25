@@ -1,0 +1,25 @@
+.dognerd-crop-variants {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  gap: 4px;
+  max-width: 450px;
+  margin: 0 auto 10px;
+}
+
+.dognerd-crop-variants img {
+  width: 32px;
+  height: 32px;
+  object-fit: contain;
+  image-rendering: pixelated;
+}
+
+.dognerd-crop-variants img.dognerd-unharvested {
+  filter: brightness(0);
+  opacity: 0.85;
+}
+
+[data-theme="dark"] .dognerd-crop-variants img.dognerd-unharvested {
+  filter: brightness(0) drop-shadow(0 0 1px rgba(255, 255, 255, 0.7));
+  opacity: 1;
+}

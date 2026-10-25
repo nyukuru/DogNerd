@@ -38,11 +38,6 @@
   opacity: 1;
 }
 
-[class*="Weather_message__"] > .dognerd-new-day {
-  font-size: inherit;
-  font-weight: inherit;
-}
-
 [class*="NpcPortrait_dialogue__"]:has(> .dognerd-fish-count) {
   position: relative;
 }

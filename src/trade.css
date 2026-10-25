@@ -1,0 +1,9 @@
+.dognerd-trade-section {
+  margin-top: 24px;
+  padding-top: 16px;
+  border-top: 2px solid #9cc0f5;
+}
+
+.dognerd-trade-section > [class*="doghouse_bulkActionsBar__"] {
+  gap: 8px;
+}

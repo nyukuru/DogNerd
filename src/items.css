@@ -65,6 +65,11 @@
   --dognerd-badge-border: #8fc96b;
 }
 
+.dognerd-item-badge.dognerd-trade {
+  --dognerd-badge-bg: #1f9bb8;
+  --dognerd-badge-border: #7fd3e6;
+}
+
 @media (max-width: 780px) {
   .dognerd-item-badge {
     font-size: 16px;

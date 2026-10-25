@@ -78,6 +78,15 @@ var DogNerd = (() => {
     return new URL(sprite, location.origin).href;
   }
 
+  const DAY = 24 * 60 * 60 * 1000;
+  const NEW_DAY_UTC_HOUR = 7;
+
+  function untilNewDay(now = Date.now()) {
+    const d = new Date(now);
+    const start = Date.UTC(d.getUTCFullYear(), d.getUTCMonth(), d.getUTCDate(), NEW_DAY_UTC_HOUR);
+    return start > now ? start - now : start + DAY - now;
+  }
+
   async function query(procedure, input = null) {
     const batch = encodeURIComponent(JSON.stringify({ 0: { json: input } }));
     // Firefox exposes the page-context fetch as content.fetch.
@@ -87,12 +96,49 @@ var DogNerd = (() => {
     return (await res.json())[0].result.data.json;
   }
 
+  async function mutate(procedure, input) {
+    const pageFetch = globalThis.content?.fetch ?? fetch;
+    const res = await pageFetch(`/api/trpc/${procedure}?batch=1`, {
+      method: "POST",
+      credentials: "include",
+      headers: { "content-type": "application/json" },
+      body: JSON.stringify({ 0: { json: input } }),
+    });
+    if (!res.ok) throw new Error(`${res.status} ${procedure}`);
+    return (await res.json())[0].result.data.json;
+  }
+
+  const activeDog = (dogs) => dogs?.find((d) => d.isActiveDog) ?? dogs?.[0];
+
+  function onResponse(router, fn) {
+    document.addEventListener(`dognerd:${router}`, (e) => {
+      try {
+        const { procedures, text } = JSON.parse(e.detail);
+        const results = JSON.parse(text);
+        procedures.forEach((procedure, i) => fn(procedure, results?.[i]?.result?.data?.json));
+      } catch (err) {
+        warnOnce(`${router}-fetch`, `couldn't follow a ${router} request:`, err.message);
+      }
+    });
+  }
+
+  // True when page-hook.js refetched the game's queries, so no reload is needed.
+  const refetch = (router) => !document.dispatchEvent(new CustomEvent("dognerd:refetch", { detail: router, cancelable: true }));
+
+  function watchStored(key, fn) {
+    browser.storage.local.get(key).then((r) => fn(r[key]));
+    browser.storage.onChanged.addListener((changes, area) => {
+      if (area === "local" && changes[key]) fn(changes[key].newValue);
+    });
+  }
+
   // data/index.json lists the sections; data/<section>.json holds one collection:
   //   schema   must equal SCHEMA
   //   unseen   "hidden" when the game omits unseen entries from the grid
   //   blocks   [{name, color, size}], outlined groups of slots
-  //   slots    [{name, block, sprite, obtain: [{where, details: [[label, text]]}], guess?, group?}]
+  //   slots    [{name, block, sprite, obtain: [{where, details: [[label, text]]}], guess?, group?, plant?}]
   //   fishing  (fish only) {areas: {areaId: where}, baitTiers: [[bait, ...weakest first]]}
+  //   plant    (harvestables only) the crop's farm tile label, "Oak Tree" for Acorn and its variants
   const BUNDLED = browser.runtime.getURL("data/");
   const REMOTE = "https://raw.githubusercontent.com/nyukuru/DogNerd/main/data/";
   const SCHEMA = 1;
@@ -165,6 +211,12 @@ var DogNerd = (() => {
     el,
     icon,
     spriteUrl,
+    untilNewDay,
     query,
+    mutate,
+    activeDog,
+    onResponse,
+    refetch,
+    watchStored,
   };
 })();
