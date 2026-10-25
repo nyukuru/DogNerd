@@ -80,6 +80,6 @@ A plot's dialog shows every variant of its crop, with the ones you haven't harve
 
 ## Special Thanks
 
-Thank you to all the dogonline wiki editors to which this extension would not be possible without.
-Thank you to the dog online discord for being an awesome place.
-And thank YOU for using this extension <3
+- Thank you to all the dogonline wiki editors to which this extension would not be possible without.
+- Thank you to the dog online discord for being an awesome place.
+- And thank YOU for using this extension <3
