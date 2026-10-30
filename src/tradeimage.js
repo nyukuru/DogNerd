@@ -1,4 +1,5 @@
-// Draws the active dog surrounded by item cards for trade.js's "Copy as Image", themed like the dog's page.
+// Draws trade.js's "Copy as Image", the active dog surrounded by item cards, and inventory.js's, item cards under
+// a heading per type, both themed like the dog's page.
 var DogNerdTradeImage = (() => {
   "use strict";
 
@@ -10,6 +11,9 @@ var DogNerdTradeImage = (() => {
   const MIN_SCALE = 0.5;
   const DOG_PAD = 12;
   const TITLE = { band: 110, height: 76, font: 44, pad: 32 };
+  const HEADING = { height: 52, font: 30, pad: 20 };
+  // The inventory image is a screen's size, its cards shrink to fit and past MIN_SCALE it grows downwards.
+  const SCREEN = { w: 1920, h: 1080, gap: 16, pad: 24, inset: 10, perRow: 5 };
   const FONT_FAMILY = "dognerd-trade-font";
 
   const fonts = new Map();
@@ -213,6 +217,122 @@ var DogNerdTradeImage = (() => {
     });
   }
 
+  function background(ctx, canvas, theme) {
+    ctx.fillStyle = theme.backgroundColor;
+    ctx.fillRect(0, 0, canvas.width, canvas.height);
+    if (theme.background) {
+      ctx.fillStyle = ctx.createPattern(theme.background, "repeat");
+      ctx.fillRect(0, 0, canvas.width, canvas.height);
+    }
+  }
+
+  function title(ctx, text, theme, full = WIDTH) {
+    const size = TITLE.font * theme.fontScale;
+    ctx.font = `${size}px ${theme.font}`;
+    ctx.textAlign = "center";
+    ctx.textBaseline = "middle";
+    const width = Math.min(full - 40, ctx.measureText(text).width + TITLE.pad * 2);
+    const top = (TITLE.band - TITLE.height) / 2;
+    panel(ctx, (full - width) / 2, top, width, TITLE.height, theme);
+    ctx.fillStyle = theme.text;
+    ctx.fillText(text, full / 2, top + TITLE.height / 2 + 2, full - 40 - TITLE.pad * 2);
+  }
+
+  function png(canvas) {
+    return new Promise((resolve, reject) =>
+      canvas.toBlob((blob) => (blob ? resolve(blob) : reject(new Error("couldn't encode the image"))), "image/png"),
+    );
+  }
+
+  // Groups flow down fixed-height columns of SCREEN.perRow cards and on into the next column, like sav.estate's DOGDATA.
+  // A group cut by a column's end goes on at the top of the next in its own panel, the heading only on the first.
+  function flow(groups, scale, height) {
+    const w = CARD.w * scale;
+    const h = CARD.h * scale;
+    const hs = Math.max(scale, 0.7);
+    const head = HEADING.height * hs;
+    const colW = SCREEN.perRow * w + 2 * SCREEN.inset;
+    const cols = Math.max(1, Math.floor((SCREEN.w - 2 * SCREEN.pad + SCREEN.gap) / (colW + SCREEN.gap)));
+    const room = height - TITLE.band - SCREEN.pad;
+    const panels = [];
+    let col = 0;
+    let y = 0;
+    let panel = null;
+    const open = (group, heading) => {
+      panel = { col, y, h: 0, group: heading ? group : null, cards: [] };
+      panels.push(panel);
+      y += SCREEN.inset + (heading ? head : 0);
+    };
+    const close = () => {
+      y += SCREEN.inset;
+      panel.h = y - panel.y;
+      y += SCREEN.gap;
+    };
+    const nextCol = () => {
+      col++;
+      y = 0;
+    };
+    for (const group of groups) {
+      if (y > 0 && y + 2 * SCREEN.inset + head + h > room) nextCol();
+      open(group, true);
+      for (let start = 0; start < group.items.length; start += SCREEN.perRow) {
+        if (y + h + SCREEN.inset > room && panel.cards.length) {
+          close();
+          nextCol();
+          open(group, false);
+        }
+        group.items.slice(start, start + SCREEN.perRow).forEach((item, i) => panel.cards.push({ item, x: i * w, y: y - panel.y }));
+        y += h;
+      }
+      close();
+    }
+    const used = col + 1;
+    return { scale, w, h, hs, head, colW, used, fits: used <= cols, panels };
+  }
+
+  // groups: [{label, items: [{name, image, qty}]}]
+  async function renderGroups(groups, dogName) {
+    const theme = await pageTheme(dogName);
+    await document.fonts.load(`${CARD.font}px ${theme.font}`).catch(() => {});
+    let height = SCREEN.h;
+    let fit = flow(groups, 1, height);
+    for (let scale = 1; scale >= MIN_SCALE && !fit.fits; scale -= 0.01) fit = flow(groups, scale, height);
+    while (!fit.fits) fit = flow(groups, MIN_SCALE, (height += 20));
+    const images = new Map(
+      await Promise.all(groups.flatMap((g) => g.items).map(async (i) => [i, await loadImage(spriteUrl(`/${i.image}`))])),
+    );
+
+    const canvas = document.createElement("canvas");
+    canvas.width = SCREEN.w;
+    canvas.height = height;
+    const ctx = canvas.getContext("2d");
+    ctx.imageSmoothingEnabled = false;
+    background(ctx, canvas, theme);
+    if (dogName) title(ctx, `♡ ${dogName}'s inventory ♡`, theme, SCREEN.w);
+
+    const left = (SCREEN.w - (fit.used * (fit.colW + SCREEN.gap) - SCREEN.gap)) / 2;
+    for (const p of fit.panels) {
+      const x = left + p.col * (fit.colW + SCREEN.gap);
+      const y = TITLE.band + p.y;
+      panel(ctx, x, y, fit.colW, p.h, theme);
+      if (p.group) {
+        ctx.font = `${HEADING.font * fit.hs * theme.fontScale}px ${theme.font}`;
+        ctx.textAlign = "center";
+        ctx.textBaseline = "middle";
+        ctx.fillStyle = theme.text;
+        ctx.fillText(p.group.label, x + fit.colW / 2, y + SCREEN.inset + fit.head / 2 + 2, fit.colW - 2 * SCREEN.inset);
+      }
+      for (const c of p.cards) {
+        ctx.save();
+        ctx.translate(x + SCREEN.inset + c.x, y + c.y);
+        ctx.scale(fit.scale, fit.scale);
+        drawCard(ctx, c.item, images.get(c.item), theme);
+        ctx.restore();
+      }
+    }
+    return png(canvas);
+  }
+
   async function render(items, dogName) {
     const theme = await pageTheme(dogName);
     await document.fonts.load(`${CARD.font}px ${theme.font}`).catch(() => {});
@@ -228,25 +348,8 @@ var DogNerdTradeImage = (() => {
     canvas.height = band + Math.ceil(grid.height);
     const ctx = canvas.getContext("2d");
     ctx.imageSmoothingEnabled = false;
-    ctx.fillStyle = theme.backgroundColor;
-    ctx.fillRect(0, 0, canvas.width, canvas.height);
-    if (theme.background) {
-      ctx.fillStyle = ctx.createPattern(theme.background, "repeat");
-      ctx.fillRect(0, 0, canvas.width, canvas.height);
-    }
-
-    if (dogName) {
-      const size = TITLE.font * theme.fontScale;
-      const title = `♡ ${dogName}'s items for trade ♡`;
-      ctx.font = `${size}px ${theme.font}`;
-      ctx.textAlign = "center";
-      ctx.textBaseline = "middle";
-      const width = Math.min(WIDTH - 40, ctx.measureText(title).width + TITLE.pad * 2);
-      const top = (TITLE.band - TITLE.height) / 2;
-      panel(ctx, (WIDTH - width) / 2, top, width, TITLE.height, theme);
-      ctx.fillStyle = theme.text;
-      ctx.fillText(title, WIDTH / 2, top + TITLE.height / 2 + 2, WIDTH - 40 - TITLE.pad * 2);
-    }
+    background(ctx, canvas, theme);
+    if (dogName) title(ctx, `♡ ${dogName}'s items for trade ♡`, theme);
     ctx.translate(0, band);
 
     if (dog) {
@@ -262,10 +365,8 @@ var DogNerdTradeImage = (() => {
       ctx.restore();
     });
 
-    return new Promise((resolve, reject) =>
-      canvas.toBlob((blob) => (blob ? resolve(blob) : reject(new Error("couldn't encode the image"))), "image/png"),
-    );
+    return png(canvas);
   }
 
-  return { render };
+  return { render, renderGroups };
 })();

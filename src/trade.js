@@ -1,7 +1,7 @@
 (() => {
   "use strict";
 
-  const { el, warnOnce, query, gameClass: g, spriteUrl, activeDog, onResponse, refetch, watchStored } = DogNerd;
+  const { el, warnOnce, query, gameClass: g, spriteUrl, activeDog, onResponse, refetch, watchStored, quantitySelector } = DogNerd;
 
   const ROUTE = /^\/doghouse\/?$/;
   const TRADE_KEY = "upForTrade";
@@ -79,30 +79,6 @@
       cancelIn(dialog)?.click();
     };
     row.append(button);
-  }
-
-  function quantitySelector(max) {
-    let value = 1;
-    const input = el("input", { className: g("QuantitySelector_input"), type: "text", inputMode: "numeric", value: "1" });
-    const minus = el("button", { type: "button", className: g("QuantitySelector_stepButton"), textContent: "-" });
-    const plus = el("button", { type: "button", className: g("QuantitySelector_stepButton"), textContent: "+" });
-    const set = (n) => {
-      value = Math.min(max, Math.max(1, n || 1));
-      input.value = String(value);
-      minus.disabled = value <= 1;
-      plus.disabled = value >= max;
-    };
-    minus.onclick = () => set(value - 1);
-    plus.onclick = () => set(value + 1);
-    input.onchange = () => set(parseInt(input.value, 10));
-    set(1);
-    const node = el("div", { className: g("QuantitySelector_container") }, [
-      el("p", { className: g("QuantitySelector_label"), textContent: "Quantity:" }),
-      minus,
-      input,
-      plus,
-    ]);
-    return { node, value: () => value };
   }
 
   function openDialog(item) {

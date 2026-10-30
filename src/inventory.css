@@ -1,0 +1,260 @@
+/* The game's loading screen (Loading_container) while the inventory is being built. */
+.dognerd-inventory-loading [class*="Layout_content__"] > * {
+  display: none !important;
+}
+
+.dognerd-inventory-loading [class*="Layout_content__"]::before {
+  content: url("https://dogonline.net/img/loading.gif");
+  display: flex;
+  justify-content: center;
+  margin: 200px 0;
+}
+
+.dognerd-inventory-active > [class*="storage_listContainer__"],
+.dognerd-inventory-active > [class*="storage_actionsBar__"] > button:not(.dognerd-inventory-copy),
+.dognerd-inventory-copy[hidden] {
+  display: none;
+}
+
+/* Wider than the game's 780px when the screen allows, so more items fit per row. */
+[class*="Layout_main__"]:has(> .dognerd-inventory-active) {
+  max-width: max(780px, min(1600px, 100% - 64px));
+}
+
+/* The game's phone sizes for medium items, at any width. */
+.dognerd-inventory [class*="ItemGrid_grid__"] {
+  --item-icon-size: 71px;
+  max-width: none;
+}
+
+/* The picture plus its frame and padding, instead of the game's 20% of the row capped at 200px. */
+.dognerd-inventory [class*="ItemCard_card__"] {
+  flex: 0 0 calc(var(--item-icon-size) + 28px);
+  max-width: none;
+  padding: 5px;
+}
+
+.dognerd-inventory [class*="ItemCard_name__"] {
+  font-size: 20px;
+}
+
+.dognerd-inventory .dognerd-item-badge {
+  font-size: 16px;
+}
+
+.dognerd-inventory[data-hidden~="doghouse"] .dognerd-item-badge.dognerd-doghouse,
+.dognerd-inventory[data-hidden~="storage"] .dognerd-item-badge.dognerd-storage,
+.dognerd-inventory[data-hidden~="closet"] .dognerd-item-badge.dognerd-closet,
+.dognerd-inventory[data-hidden~="trade"] .dognerd-item-badge.dognerd-trade {
+  display: none;
+}
+
+.dognerd-inventory-areas {
+  display: flex;
+  gap: 8px;
+  margin-bottom: 16px;
+}
+
+.dognerd-inventory-areas > button {
+  flex: 1 1 0;
+  flex-direction: row;
+  justify-content: center;
+  align-items: center;
+  gap: 6px;
+  width: auto;
+  min-width: 0;
+  padding-left: 8px;
+  padding-right: 8px;
+  color: white;
+  white-space: nowrap;
+}
+
+/* Outranks the game's Button_neutral colors, including its hover and dark theme ones. */
+.dognerd-inventory-areas > button[class*="Button_neutral__"] {
+  border-color: var(--dognerd-badge-border);
+  background-color: var(--dognerd-badge-bg);
+}
+
+.dognerd-inventory-areas > button[class*="Button_neutral__"]:hover:not(:disabled) {
+  border-color: var(--dognerd-badge-bg);
+  background-color: color-mix(in srgb, var(--dognerd-badge-bg) 80%, black);
+}
+
+.dognerd-inventory-areas > button[aria-pressed="false"] {
+  opacity: 0.45;
+}
+
+.dognerd-area-doghouse {
+  --dognerd-badge-bg: #ff4141;
+  --dognerd-badge-border: #ff9a9a;
+}
+
+.dognerd-area-storage {
+  --dognerd-badge-bg: #6b63d1;
+  --dognerd-badge-border: #aaa5ee;
+}
+
+.dognerd-area-closet {
+  --dognerd-badge-bg: #4e8d29;
+  --dognerd-badge-border: #8fc96b;
+}
+
+.dognerd-area-trade {
+  --dognerd-badge-bg: #1f9bb8;
+  --dognerd-badge-border: #7fd3e6;
+}
+
+@media (max-width: 780px) {
+  .dognerd-area-label {
+    display: none;
+  }
+}
+
+.dognerd-inventory-areas .dognerd-icon {
+  display: flex;
+  zoom: 2;
+}
+
+.dognerd-inventory-empty {
+  text-align: center;
+}
+.dognerd-confirm p {
+  margin-bottom: 16px;
+  text-align: center;
+}
+
+.dognerd-inventory-feed-label {
+  margin: 0 0 8px;
+  font-size: 18px;
+  text-align: center;
+}
+
+.dognerd-inventory-feeds {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  gap: 8px;
+  margin-bottom: 14px;
+}
+
+.dognerd-inventory-feeds > button {
+  width: auto;
+  min-height: 40px;
+  padding: 6px 16px;
+  font-size: 19px;
+}
+
+.dognerd-inventory-feeds > button.dognerd-inventory-done {
+  border-color: #6cc697;
+  background: #a6e3c2;
+  color: #145c35;
+}
+
+.dognerd-inventory-amounts {
+  display: grid;
+  grid-template-columns: auto 1fr 5em;
+  align-items: center;
+  gap: 8px 12px;
+  width: 100%;
+  margin-bottom: 16px;
+}
+
+.dognerd-inventory-amount {
+  display: contents;
+}
+
+.dognerd-inventory-amount > span {
+  display: flex;
+  align-items: center;
+  gap: 6px;
+  white-space: nowrap;
+}
+
+.dognerd-inventory-amount .dognerd-icon {
+  display: flex;
+  zoom: 2;
+}
+
+/* --dognerd-knob is set by inventory.js. */
+.dognerd-inventory-amount > input[type="range"] {
+  width: 100%;
+  min-width: 0;
+  height: 24px;
+  margin: 0;
+  background: transparent;
+  appearance: none;
+}
+
+.dognerd-inventory-amount > input[type="range"]::-webkit-slider-runnable-track {
+  height: 10px;
+  border: 2px solid var(--border-subtle, #ddd);
+  border-radius: 0;
+  background: linear-gradient(to right, #4d8eff var(--dognerd-fill, 0%), transparent var(--dognerd-fill, 0%));
+}
+
+.dognerd-inventory-amount > input[type="range"]::-moz-range-track {
+  height: 6px;
+  border: 2px solid var(--border-subtle, #ddd);
+  border-radius: 0;
+  background: transparent;
+}
+
+.dognerd-inventory-amount > input[type="range"]::-moz-range-progress {
+  height: 6px;
+  border-radius: 0;
+  background: #4d8eff;
+}
+
+.dognerd-inventory-amount > input[type="range"]::-webkit-slider-thumb {
+  width: 24px;
+  height: 24px;
+  margin-top: -9px;
+  border: none;
+  border-radius: 0;
+  background: var(--dognerd-knob) center / 100% no-repeat;
+  appearance: none;
+}
+
+.dognerd-inventory-amount > input[type="range"]::-moz-range-thumb {
+  width: 24px;
+  height: 24px;
+  border: none;
+  border-radius: 0;
+  background: var(--dognerd-knob) center / 100% no-repeat;
+}
+
+.dognerd-inventory-amount > input[type="text"] {
+  width: 100%;
+  text-align: center;
+}
+
+.dognerd-inventory-tray {
+  position: fixed;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  z-index: 10;
+  padding: 12px 16px;
+  border-top: 2px solid #aeceff;
+  background: white;
+  box-shadow: 0 -4px 12px rgba(0, 0, 0, 0.15);
+}
+
+.dognerd-inventory-tray[hidden] {
+  display: none;
+}
+
+.dognerd-inventory-count {
+  margin: 0 0 8px;
+  text-align: center;
+}
+
+.dognerd-inventory .dognerd-item-badge.dognerd-picked {
+  --dognerd-badge-bg: #1a73e8;
+  --dognerd-badge-border: #aeceff;
+  position: absolute;
+  right: -7px;
+  bottom: -7px;
+  font-size: 13px;
+  pointer-events: none;
+}
