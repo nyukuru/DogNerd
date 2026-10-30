@@ -70,6 +70,22 @@
   --dognerd-badge-border: #7fd3e6;
 }
 
+/* The shadow thickens the border without moving the picture. */
+.dognerd-worn [class*="ItemCard_iconWrap__"] {
+  border-color: #9a6b3d;
+  box-shadow: 0 0 0 1px #9a6b3d;
+}
+
+.dognerd-worn-icon {
+  position: absolute;
+  top: -11px;
+  right: -11px;
+  width: 24px;
+  height: 24px;
+  image-rendering: pixelated;
+  pointer-events: none;
+}
+
 @media (max-width: 780px) {
   .dognerd-item-badge {
     font-size: 16px;

@@ -29,10 +29,6 @@ Item cards across the site show how many you have in your doghouse, storage and 
 
 ![Doghouse buttons](docs/screenshots/doghouse-buttons.png)
 
-**Remove All** takes everything out of storage at once.
-
-![Storage Remove All](docs/screenshots/storage-remove-all.png)
-
 ### Up for trade
 
 Mark items as up for trade from their dialog or with bulk actions. They're set aside in their own section of the doghouse, and the list can be copied as text or as an image to share.

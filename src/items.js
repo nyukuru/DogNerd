@@ -4,6 +4,7 @@
   const { COLLECTIONS, onData, norm, warnOnce, el, icon, query, activeDog, watchStored } = DogNerd;
 
   const BADGES = "dognerd-item-badges";
+  const WORN = "dognerd-worn";
   const STATE_KEY = "itemBadges";
   const TRADE_KEY = "upForTrade";
   const STALE = 30 * 1000;
@@ -46,10 +47,18 @@
         stored ? query("collection.getDogState", { dogIndex: stored.dogIndex }).catch(() => null) : null,
       ]);
       const dog = activeDog(dogs);
-      const { food, books } =
-        storedDogState?.dogUuid === dog.uuid
-          ? storedDogState
-          : await query("collection.getDogState", { dogIndex: dog.index });
+      // Worn copies only show up, with isEquipped, in the wearing dog's closet and aren't in its counts.
+      const [{ food, books }, ...dressed] = await Promise.all([
+        storedDogState?.dogUuid === dog.uuid ? storedDogState : query("collection.getDogState", { dogIndex: dog.index }),
+        ...dogs.map((d) => query("dressup.getState", { dogIndex: d.index })),
+      ]);
+      const worn = new Map();
+      dogs.forEach((d, n) => {
+        for (const i of dressed[n].cosmetics.filter((c) => c.isEquipped)) {
+          if (!worn.has(i.id)) worn.set(i.id, { name: i.name, image: i.image, dogs: [] });
+          worn.get(i.id).dogs.push(d.name);
+        }
+      });
 
       const item = (i) => toItem(i, dog.uuid);
       const seen = (i) => ({ name: i.name, image: i.image });
@@ -62,6 +71,7 @@
         closet: cosmetics.map(item),
         eaten: food.map(seen),
         read: books.map(seen),
+        worn: [...worn.values()],
       };
       applyState(fresh);
       await browser.storage.local.set({ [STATE_KEY]: fresh });
@@ -80,7 +90,7 @@
       const isGamePath = path && !/^[a-z]+:/.test(path);
       let info = isGamePath ? byImage.get(path) : byName.get(norm(name));
       if (!info) {
-        info = { food: false, book: false, done: false, doghouse: 0, storage: 0, closet: 0, trade: 0 };
+        info = { food: false, book: false, done: false, doghouse: 0, storage: 0, closet: 0, trade: 0, worn: [] };
         if (isGamePath) byImage.set(path, info);
       }
       if (!byName.has(norm(name))) byName.set(norm(name), info);
@@ -98,6 +108,7 @@
     }
     for (const i of state.eaten) Object.assign(infoOf(i.name, i.image), { food: true, done: true });
     for (const i of state.read) Object.assign(infoOf(i.name, i.image), { book: true, done: true });
+    for (const i of state.worn ?? []) infoOf(i.name, i.image).worn.push(...i.dogs);
     for (const i of Object.values(trade)) {
       const info = infoOf(i.name, i.image);
       info.trade = Math.min(i.qty, info.doghouse);
@@ -151,10 +162,26 @@
     return badge;
   }
 
+  function markWorn(card, dogs) {
+    const label = dogs.length ? `Worn by ${dogs.join(", ")}` : "";
+    if ((card.dataset.dognerdWorn ?? "") === label && !!card.querySelector(`.${WORN}-icon`) === !!label) return;
+    card.classList.toggle(WORN, !!label);
+    card.querySelector(`.${WORN}-icon`)?.remove();
+    if (label) {
+      card.dataset.dognerdWorn = card.title = label;
+      const wrap = card.querySelector('[class*="ItemCard_iconWrap__"]');
+      wrap.append(el("img", { className: `${WORN}-icon`, src: new URL("/favicon.ico", location.origin).href, alt: "" }));
+    } else {
+      delete card.dataset.dognerdWorn;
+      card.removeAttribute("title");
+    }
+  }
+
   function markCard(card) {
     const wrap = card.querySelector('[class*="ItemCard_iconWrap__"]');
     if (!wrap) return;
     const info = infoFor(card);
+    markWorn(card, info?.worn ?? []);
     const list = info ? badges(info) : [];
     const sig = JSON.stringify(list);
     let box = wrap.querySelector(`:scope > .${BADGES}`);
@@ -231,6 +258,13 @@
   }
 
   watchStored(TRADE_KEY, applyTrade);
+
+  // Sent by inventory.js with the game's lists, its moves don't go through the page's fetch.
+  document.addEventListener("dognerd:inventory", (e) => {
+    if (!state?.dogUuid) return;
+    const item = (i) => toItem(i, state.dogUuid);
+    applyState({ ...state, doghouse: e.detail.doghouse.map(item), storage: e.detail.storage.map(item), closet: e.detail.closet.map(item) });
+  });
 
   new MutationObserver(schedule).observe(document.body, { childList: true, subtree: true });
   onData(() => {
