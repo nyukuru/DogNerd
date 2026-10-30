@@ -93,7 +93,8 @@ var DogNerd = (() => {
     const pageFetch = globalThis.content?.fetch ?? fetch;
     const res = await pageFetch(`/api/trpc/${procedure}?batch=1&input=${batch}`, { credentials: "include" });
     if (!res.ok) throw new Error(`${res.status} ${procedure}`);
-    return (await res.json())[0].result.data.json;
+    // Parsed here, the page's own JSON objects can't take extension objects in Firefox.
+    return JSON.parse(await res.text())[0].result.data.json;
   }
 
   async function mutate(procedure, input) {
@@ -105,7 +106,87 @@ var DogNerd = (() => {
       body: JSON.stringify({ 0: { json: input } }),
     });
     if (!res.ok) throw new Error(`${res.status} ${procedure}`);
-    return (await res.json())[0].result.data.json;
+    return JSON.parse(await res.text())[0].result.data.json;
+  }
+
+  function quantitySelector(max) {
+    let value = 1;
+    const input = el("input", { className: gameClass("QuantitySelector_input"), type: "text", inputMode: "numeric", value: "1" });
+    const minus = el("button", { type: "button", className: gameClass("QuantitySelector_stepButton"), textContent: "−" });
+    const plus = el("button", { type: "button", className: gameClass("QuantitySelector_stepButton"), textContent: "+" });
+    const set = (n) => {
+      value = Math.min(max, Math.max(1, n || 1));
+      input.value = String(value);
+      minus.disabled = value <= 1;
+      plus.disabled = value >= max;
+    };
+    minus.onclick = () => set(value - 1);
+    plus.onclick = () => set(value + 1);
+    input.onchange = () => set(parseInt(input.value, 10));
+    set(1);
+    const node = el("div", { className: gameClass("QuantitySelector_container") }, [
+      el("p", { className: gameClass("QuantitySelector_label"), textContent: "Quantity:" }),
+      minus,
+      input,
+      plus,
+    ]);
+    return { node, value: () => value };
+  }
+
+  // The game's dialog around `body`, returns its close().
+  function dialog(body, className = "", onClose = () => {}) {
+    const close = () => {
+      onClose();
+      overlay.remove();
+      removeEventListener("keydown", onKey, true);
+    };
+    const onKey = (e) => {
+      if (e.key !== "Escape" || [...document.querySelectorAll(".dognerd-overlay")].pop() !== overlay) return;
+      e.stopPropagation();
+      close();
+    };
+    const content = el("div", { className: `${gameClass("Dialog_content")} ${gameClass("Dialog_contentWide")} ${className}`, role: "dialog", tabIndex: -1 }, [
+      el("div", { className: gameClass("Dialog_modalBody") }, [
+        el("div", { className: `${gameClass("Dialog_body")} ${gameClass("Dialog_bodyWide")}` }, [body]),
+      ]),
+    ]);
+    const overlay = el("div", { className: `${gameClass("Dialog_overlay")} dognerd-overlay` }, [content]);
+    overlay.dataset.state = content.dataset.state = "open";
+    // A game dialog underneath turns off pointer events on the body and closes on presses outside it.
+    overlay.style.pointerEvents = "auto";
+    overlay.onpointerdown = (e) => e.stopPropagation();
+    overlay.onclick = (e) => {
+      if (e.target === overlay) close();
+    };
+    addEventListener("keydown", onKey, true);
+    document.body.append(overlay);
+    content.focus();
+    return close;
+  }
+
+  function confirmDialog({ title, text, confirm, variant = "Button_danger" }) {
+    return new Promise((resolve) => {
+      const answer = (yes) => () => {
+        resolve(yes);
+        close();
+      };
+      const button = (cls, label, onclick) =>
+        el("button", { type: "button", className: `${gameClass("Button_button")} ${gameClass(cls)} ${gameClass("ButtonGroup_buttonContainer")}`, textContent: label, onclick });
+      const close = dialog(
+        el("div", { className: gameClass("doghouse_itemDialogBody") }, [
+          el("h2", { className: gameClass("doghouse_itemTitle"), textContent: title }),
+          el("p", { textContent: text }),
+          el("div", { className: gameClass("ButtonGroup_groupContainer") }, [
+            el("div", { className: `${gameClass("ButtonGroup_rowContainer")} ${gameClass("ButtonGroup_row")}` }, [
+              button(variant, confirm, answer(true)),
+              button("Button_neutral", "Cancel", answer(false)),
+            ]),
+          ]),
+        ]),
+        "dognerd-confirm",
+        () => resolve(false),
+      );
+    });
   }
 
   const activeDog = (dogs) => dogs?.find((d) => d.isActiveDog) ?? dogs?.[0];
@@ -214,6 +295,9 @@ var DogNerd = (() => {
     untilNewDay,
     query,
     mutate,
+    quantitySelector,
+    dialog,
+    confirmDialog,
     activeDog,
     onResponse,
     refetch,

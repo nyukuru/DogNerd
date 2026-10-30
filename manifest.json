@@ -36,7 +36,13 @@
     },
     {
       "matches": ["https://dogonline.net/*"],
-      "js": ["src/common.js", "src/collection.js", "src/doghouse.js", "src/farm.js", "src/fishing.js", "src/items.js", "src/maze.js", "src/newday.js", "src/storage.js", "src/tower.js", "src/trade.js", "src/tradeimage.js"],
+      "js": ["src/inventory-early.js"],
+      "css": ["src/inventory.css"],
+      "run_at": "document_start"
+    },
+    {
+      "matches": ["https://dogonline.net/*"],
+      "js": ["src/common.js", "src/collection.js", "src/doghouse.js", "src/farm.js", "src/fishing.js", "src/inventory.js", "src/items.js", "src/maze.js", "src/newday.js", "src/tower.js", "src/trade.js", "src/tradeimage.js"],
       "css": ["src/collection.css", "src/doghouse.css", "src/farm.css", "src/fishing.css", "src/items.css", "src/maze.css", "src/newday.css", "src/tower.css", "src/trade.css"],
       "run_at": "document_idle"
     }
