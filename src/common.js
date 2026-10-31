@@ -324,7 +324,7 @@ var DogNerd = (() => {
   // data/index.json lists the sections; data/<section>.json holds one collection:
   //   schema   must equal SCHEMA
   //   unseen   "hidden" when the game omits unseen entries from the grid
-  //   blocks   [{name, color, size}], outlined groups of slots
+  //   blocks   [{name, size}], unused but required by older versions' validation
   //   slots    [{name, block, sprite, obtain: [{where, details: [[label, text]]}], guess?, group?, plant?}]
   //   fishing  (fish only) {areas: {areaId: where}, baitTiers: [[bait, ...weakest first]]}
   //   plant    (harvestables only) the crop's farm tile label, "Oak Tree" for Acorn and its variants

@@ -3,27 +3,22 @@
   "blocks": [
     {
       "name": "Old Fishin' Hole",
-      "color": "#3fae52",
       "size": 17
     },
     {
       "name": "Desert Oasis",
-      "color": "#c99c42",
       "size": 16
     },
     {
       "name": "Ice Fishing Hole",
-      "color": "#b5d3e5",
       "size": 11
     },
     {
       "name": "Ocean Fishing Cruiser",
-      "color": "#15276b",
       "size": 14
     },
     {
       "name": "Fly Fishing Ship",
-      "color": "#3a64fc",
       "size": 15
     }
   ],
