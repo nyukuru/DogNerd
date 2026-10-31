@@ -7,6 +7,8 @@
   const WORN = "dognerd-worn";
   const STATE_KEY = "itemBadges";
   const STALE = 30 * 1000;
+  const WORN_STALE = 10 * 60 * 1000;
+  const WEAR = ["doghouse.wearCosmetic", "dressup.wearCosmetic", "dressup.removeCosmetic"];
 
   let enabled = true;
   let state = null;
@@ -14,6 +16,9 @@
   let lookup = null;
   let loadedAt = 0;
   let loading = false;
+  let loadAgain = false;
+  let wornChanged = false;
+  let doghouseChanged = false;
 
   const toItem = (i, dogUuid) => ({
     name: i.name,
@@ -32,12 +37,20 @@
   }
 
   async function load() {
-    if (loading) return;
+    if (loading) {
+      loadAgain = true;
+      return;
+    }
     loading = true;
     loadedAt = Date.now();
+    let wornStale = false;
     try {
       const stored = (await browser.storage.local.get(STATE_KEY))[STATE_KEY];
       if (stored && !state) applyState(stored);
+
+      const prev = state ?? stored;
+      wornStale = wornChanged || !prev?.wornAt || Date.now() - prev.wornAt > WORN_STALE;
+      wornChanged = doghouseChanged = false;
 
       // The stored dog's collection is fetched in parallel and only refetched if the active dog changed.
       const [{ dogs, inventory }, storage, { cosmetics }, storedDogState] = await Promise.all([
@@ -47,18 +60,10 @@
         stored ? query("collection.getDogState", { dogIndex: stored.dogIndex }).catch(() => null) : null,
       ]);
       const dog = activeDog(dogs);
-      // Worn copies only show up, with isEquipped, in the wearing dog's closet and aren't in its counts.
-      const [{ food, books }, ...dressed] = await Promise.all([
+      const [{ food, books }, worn] = await Promise.all([
         storedDogState?.dogUuid === dog.uuid ? storedDogState : query("collection.getDogState", { dogIndex: dog.index }),
-        ...dogs.map((d) => query("dressup.getState", { dogIndex: d.index })),
+        wornStale ? loadWorn(dogs) : null,
       ]);
-      const worn = new Map();
-      dogs.forEach((d, n) => {
-        for (const i of dressed[n].cosmetics.filter((c) => c.isEquipped)) {
-          if (!worn.has(i.id)) worn.set(i.id, { name: i.name, image: i.image, dogs: [] });
-          worn.get(i.id).dogs.push(d.name);
-        }
-      });
 
       const item = (i) => toItem(i, dog.uuid);
       const seen = (i) => ({ name: i.name, image: i.image });
@@ -71,14 +76,49 @@
         closet: cosmetics.map(item),
         eaten: food.map(seen),
         read: books.map(seen),
-        worn: [...worn.values()],
+        worn: worn ?? prev?.worn ?? [],
+        wornAt: worn ? Date.now() : (prev?.wornAt ?? 0),
       };
       applyState(fresh);
       await browser.storage.local.set({ [STATE_KEY]: fresh });
     } catch (e) {
+      wornChanged ||= wornStale;
       warnOnce("items", "couldn't load the items:", e.message);
     } finally {
       loading = false;
+      if (loadAgain) {
+        loadAgain = false;
+        load();
+      }
+    }
+  }
+
+  // Worn copies only show up, with isEquipped, in the wearing dog's closet and aren't in its counts.
+  async function loadWorn(dogs) {
+    try {
+      const dressed = await Promise.all(dogs.map((d) => query("dressup.getState", { dogIndex: d.index })));
+      const worn = new Map();
+      dogs.forEach((d, n) => {
+        for (const i of dressed[n].cosmetics.filter((c) => c.isEquipped)) {
+          if (!worn.has(i.id)) worn.set(i.id, { name: i.name, image: i.image, dogs: [] });
+          worn.get(i.id).dogs.push(d.name);
+        }
+      });
+      return [...worn.values()];
+    } catch (e) {
+      wornChanged = true;
+      warnOnce("items-worn", "couldn't load what the dogs are wearing:", e.message);
+      return null;
+    }
+  }
+
+  async function loadDoghouse() {
+    doghouseChanged = false;
+    try {
+      const { inventory } = await query("doghouse.getState");
+      if (state?.dogUuid) applyState({ ...state, doghouse: inventory.map((i) => toItem(i, state.dogUuid)) });
+    } catch (e) {
+      warnOnce("items-doghouse", "couldn't reload the doghouse:", e.message);
     }
   }
 
@@ -220,6 +260,7 @@
         if (Date.now() - loadedAt > STALE) load();
       }
       if (!state) return;
+      if (doghouseChanged && !loading) loadDoghouse();
       cards.forEach(markCard);
     });
   }
@@ -231,7 +272,6 @@
     "dressup.getState": ["closet", (data) => data?.cosmetics],
   };
 
-  let refresh = null;
   for (const router of ["doghouse", "storage", "dressup"]) {
     document.addEventListener(`dognerd:${router}`, (e) => {
       try {
@@ -240,13 +280,7 @@
         let fresh = state;
         procedures.forEach((procedure, i) => {
           const data = results?.[i]?.result?.data?.json;
-          if (!LISTS[procedure]) {
-            if (procedure.startsWith(`${router}.`)) {
-              clearTimeout(refresh);
-              refresh = setTimeout(load, 500);
-            }
-            return;
-          }
+          if (!LISTS[procedure]) return;
           const [where, list] = LISTS[procedure];
           if (fresh?.dogUuid && Array.isArray(list(data))) {
             fresh = { ...fresh, [where]: list(data).map((i) => toItem(i, fresh.dogUuid)) };
@@ -258,6 +292,23 @@
       }
     });
   }
+
+  // Purchases, exchanges and the like only change the doghouse.
+  let refresh = null;
+  let settle = null;
+  document.addEventListener("dognerd:mutation", (e) => {
+    const { procedures, ours } = JSON.parse(e.detail);
+    const wore = procedures.some((p) => WEAR.includes(p));
+    if (wore) wornChanged = true;
+    if (wore || (!ours && procedures.some((p) => /^(doghouse|storage|dressup)\./.test(p)))) {
+      clearTimeout(refresh);
+      refresh = setTimeout(load, 500);
+    } else if (!ours) {
+      doghouseChanged = true;
+      clearTimeout(settle);
+      settle = setTimeout(schedule, 500);
+    }
+  });
 
   watchTrade((fresh) => {
     trade = fresh;

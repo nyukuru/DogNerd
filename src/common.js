@@ -87,24 +87,89 @@ var DogNerd = (() => {
     return start > now ? start - now : start + DAY - now;
   }
 
-  async function query(procedure, input = null) {
-    const batch = encodeURIComponent(JSON.stringify({ 0: { json: input } }));
-    // Firefox exposes the page-context fetch as content.fetch.
-    const pageFetch = globalThis.content?.fetch ?? fetch;
-    const res = await pageFetch(`/api/trpc/${procedure}?batch=1&input=${batch}`, { credentials: "include" });
-    if (!res.ok) throw new Error(`${res.status} ${procedure}`);
-    // Parsed here, the page's own JSON objects can't take extension objects in Firefox.
-    return JSON.parse(await res.text())[0].result.data.json;
+  // The game rate limits per request, not per procedure.
+  const SHARED = 5000;
+  const MAX_BATCH = 10;
+  const answers = new Map();
+  let generation = 0;
+  let pending = [];
+
+  // Firefox exposes the page-context fetch as content.fetch.
+  const pageFetch = (...args) => (globalThis.content?.fetch ?? fetch)(...args);
+  const queryKey = (procedure, input) => `${procedure} ${JSON.stringify(input ?? null)}`;
+
+  function share(key, text) {
+    const entry = { at: Date.now(), generation, text };
+    answers.set(key, entry);
+    text.catch(() => answers.get(key) === entry && answers.delete(key));
   }
 
-  async function mutate(procedure, input) {
-    const pageFetch = globalThis.content?.fetch ?? fetch;
-    const res = await pageFetch(`/api/trpc/${procedure}?batch=1`, {
-      method: "POST",
-      credentials: "include",
-      headers: { "content-type": "application/json" },
-      body: JSON.stringify({ 0: { json: input } }),
+  function query(procedure, input = null) {
+    const key = queryKey(procedure, input);
+    const hit = answers.get(key);
+    if (!hit || hit.generation !== generation || Date.now() - hit.at > SHARED) {
+      const text = new Promise((resolve, reject) => {
+        if (!pending.length) setTimeout(flush);
+        pending.push({ procedure, input, resolve, reject });
+      });
+      share(key, text);
+    }
+    return answers.get(key).text.then(JSON.parse);
+  }
+
+  function flush() {
+    const batch = pending;
+    pending = [];
+    for (let i = 0; i < batch.length; i += MAX_BATCH) send(batch.slice(i, i + MAX_BATCH));
+  }
+
+  async function send(batch) {
+    try {
+      const procedures = batch.map((q) => q.procedure).join(",");
+      const input = encodeURIComponent(JSON.stringify(Object.fromEntries(batch.map((q, i) => [i, { json: q.input }]))));
+      const res = await pageFetch(`/api/trpc/${procedures}?batch=1&input=${input}`, { credentials: "include" });
+      // Parsed here, the page's own JSON objects can't take extension objects in Firefox.
+      const results = await res.text().then(JSON.parse).catch(() => null);
+      batch.forEach((q, i) => {
+        const data = results?.[i]?.result?.data;
+        if (data) q.resolve(JSON.stringify(data.json ?? null));
+        else q.reject(new Error(`${res.status} ${q.procedure}`));
+      });
+    } catch (e) {
+      batch.forEach((q) => q.reject(e));
+    }
+  }
+
+  for (const router of ["tower", "doghouse", "storage", "dressup"]) {
+    document.addEventListener(`dognerd:${router}`, (e) => {
+      try {
+        const { procedures, input, body, text } = JSON.parse(e.detail);
+        if (body !== null || !input) return;
+        const inputs = JSON.parse(input);
+        const results = JSON.parse(text);
+        procedures.forEach((procedure, i) => {
+          const data = results?.[i]?.result?.data;
+          if (data) share(queryKey(procedure, inputs?.[i]?.json), Promise.resolve(JSON.stringify(data.json ?? null)));
+        });
+      } catch {}
     });
+  }
+
+  // From page-hook.js and mutate().
+  document.addEventListener("dognerd:mutation", () => generation++);
+
+  async function mutate(procedure, input) {
+    let res;
+    try {
+      res = await pageFetch(`/api/trpc/${procedure}?batch=1`, {
+        method: "POST",
+        credentials: "include",
+        headers: { "content-type": "application/json" },
+        body: JSON.stringify({ 0: { json: input } }),
+      });
+    } finally {
+      document.dispatchEvent(new CustomEvent("dognerd:mutation", { detail: JSON.stringify({ procedures: [procedure], ours: true }) }));
+    }
     if (!res.ok) throw new Error(`${res.status} ${procedure}`);
     return JSON.parse(await res.text())[0].result.data.json;
   }
