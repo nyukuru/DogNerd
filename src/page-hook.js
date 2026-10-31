@@ -14,17 +14,36 @@
     }
   }
 
+  // superjson's meta finds values by path, {"inventory.3.navigate": ["undefined"]}, so it has to follow the items.
+  function reindex(meta, moved) {
+    if (!meta?.values || Array.isArray(meta.values)) return;
+    meta.values = Object.fromEntries(
+      Object.entries(meta.values).flatMap(([path, type]) => {
+        const [, n, rest] = path.match(/^inventory\.(\d+)(\..*)?$/) ?? [];
+        if (n === undefined) return [[path, type]];
+        return moved.has(+n) ? [[`inventory.${moved.get(+n)}${rest ?? ""}`, type]] : [];
+      }),
+    );
+  }
+
   async function hideTraded(res, procedures) {
     try {
       const counts = traded();
       if (!Object.keys(counts).length || !res.ok) return res;
       const results = JSON.parse(await res.clone().text());
       procedures.forEach((procedure, i) => {
-        const data = results?.[i]?.result?.data?.json;
-        if (procedure !== "doghouse.getState" || !Array.isArray(data?.inventory)) return;
-        data.inventory = data.inventory
-          .map((item) => ({ ...item, count: item.count - (counts[item.id] ?? 0) }))
-          .filter((item) => item.count > 0);
+        const data = results?.[i]?.result?.data;
+        if (procedure !== "doghouse.getState" || !Array.isArray(data?.json?.inventory)) return;
+        const kept = [];
+        const moved = new Map();
+        data.json.inventory.forEach((item, n) => {
+          const count = item.count - (counts[item.id] ?? 0);
+          if (count <= 0) return;
+          moved.set(n, kept.length);
+          kept.push({ ...item, count });
+        });
+        data.json.inventory = kept;
+        reindex(data.meta, moved);
       });
       const headers = new Headers(res.headers);
       headers.delete("content-length");

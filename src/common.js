@@ -109,6 +109,27 @@ var DogNerd = (() => {
     return JSON.parse(await res.text())[0].result.data.json;
   }
 
+  // A game page only has the stylesheets of the pages visited before it.
+  const styleLoads = new Map();
+  function loadStyles(path) {
+    if (!styleLoads.has(path)) styleLoads.set(path, addStyles(path));
+    return styleLoads.get(path);
+  }
+
+  async function addStyles(path) {
+    const pageFetch = globalThis.content?.fetch ?? fetch;
+    const html = await (await pageFetch(path, { credentials: "include" })).text();
+    const have = new Set([...document.styleSheets].map((s) => s.href));
+    const hrefs = [...new DOMParser().parseFromString(html, "text/html").querySelectorAll('link[rel="stylesheet"]')]
+      .map((link) => new URL(link.getAttribute("href"), location.origin).href)
+      .filter((href) => !have.has(href));
+    await Promise.all(
+      [...new Set(hrefs)].map(
+        (href) => new Promise((resolve) => document.head.append(el("link", { rel: "stylesheet", href, onload: resolve, onerror: resolve }))),
+      ),
+    );
+  }
+
   function quantitySelector(max) {
     let value = 1;
     const input = el("input", { className: gameClass("QuantitySelector_input"), type: "text", inputMode: "numeric", value: "1" });
@@ -317,6 +338,7 @@ var DogNerd = (() => {
     untilNewDay,
     query,
     mutate,
+    loadStyles,
     quantitySelector,
     dialog,
     confirmDialog,

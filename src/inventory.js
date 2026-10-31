@@ -1,7 +1,7 @@
 (() => {
   "use strict";
 
-  const { el, icon, norm, warnOnce, query, mutate, spriteUrl, gameClass: g, onResponse, watchStored, watchSetting, watchTrade, dialog, confirmDialog, activeDog } = DogNerd;
+  const { el, icon, norm, warnOnce, query, mutate, loadStyles, spriteUrl, gameClass: g, onResponse, watchStored, watchSetting, watchTrade, dialog, confirmDialog, activeDog } = DogNerd;
 
   const ROUTE = /^\/doghouse\/storage\/?$/;
   const AREAS_KEY = "inventoryAreas";
@@ -11,7 +11,6 @@
   const TRAY = "dognerd-inventory-tray";
   const COPY = "dognerd-inventory-copy";
   const DIALOG = "dognerd-inventory-dialog";
-  const STYLES = "dognerd-inventory-styles";
   // Set by inventory-early.js.
   const LOADING = "dognerd-inventory-loading";
   const TITLE = "Inventory";
@@ -107,25 +106,10 @@
     });
   }
 
-  // Storage only loads the doghouse's stylesheets, which hold the item grid's, after a visit to the doghouse.
-  async function addStyles() {
-    const pageFetch = globalThis.content?.fetch ?? fetch;
-    const html = await (await pageFetch("/doghouse", { credentials: "include" })).text();
-    const have = new Set([...document.styleSheets].map((s) => s.href));
-    const hrefs = [...new DOMParser().parseFromString(html, "text/html").querySelectorAll('link[rel="stylesheet"]')]
-      .map((link) => new URL(link.getAttribute("href"), location.origin).href)
-      .filter((href) => !have.has(href));
-    await Promise.all(
-      [...new Set(hrefs)].map(
-        (href) =>
-          new Promise((resolve) => document.head.append(el("link", { rel: "stylesheet", href, className: STYLES, onload: resolve, onerror: resolve }))),
-      ),
-    );
-  }
-
+  // Storage only has the item grid's styles after a visit to the doghouse.
   function ensureStyles() {
     if (g("ItemCard_card") !== "ItemCard_card") return (styled = true);
-    styling ??= addStyles()
+    styling ??= loadStyles("/doghouse")
       .catch((e) => warnOnce("inventory-styles", "couldn't load the item card styles:", e.message))
       .finally(() => {
         styled = true;
@@ -150,7 +134,7 @@
         // Closet items come without a price or categories.
         if (i.categories) {
           Object.assign(item, { price: i.price ?? 0, categories: i.categories, petpet: !!i.petpet });
-          Object.assign(item, { food: i.food, book: i.book, useable: i.useable?.action, consumedByDog: i.consumedByDog ?? {} });
+          Object.assign(item, { food: i.food, book: i.book, useable: i.useable?.action, navigate: i.navigate, consumedByDog: i.consumedByDog ?? {} });
         }
         if (TRANSFORMS.has(i.useable?.action) || TRANSFORMATIONS.has(norm(i.name))) item.transformation = true;
       }
@@ -344,6 +328,23 @@
     return null;
   }
 
+  async function takeOut(item) {
+    if (item.doghouse) return;
+    if (item.storage) await mutate("storage.returnToInventory", { items: [{ itemId: item.id, qty: 1 }] });
+    else await mutate("dressup.removeFromCloset", { itemId: item.id });
+  }
+
+  // The game's pages for these items look for one in the doghouse.
+  async function useAt(item) {
+    try {
+      await takeOut(item);
+      location.assign(item.navigate);
+    } catch (e) {
+      warnOnce("inventory-use", "couldn't use the item:", e.message);
+      await load();
+    }
+  }
+
   async function useOn(item, dog) {
     const ok =
       !item.transformation ||
@@ -354,8 +355,7 @@
       }));
     if (!ok) return;
     try {
-      if (!item.doghouse && item.storage) await mutate("storage.returnToInventory", { items: [{ itemId: item.id, qty: 1 }] });
-      else if (!item.doghouse) await mutate("dressup.removeFromCloset", { itemId: item.id });
+      await takeOut(item);
       if (item.useable === "rename-dog") {
         location.assign(`/rename-dog/${dog.index}`);
         return;
@@ -437,6 +437,17 @@
         : verb
           ? dogGroup(verb, dogs)
           : [];
+      const use = () => {
+        const node = button("Button_primary", "Use", async () => {
+          busy = true;
+          render();
+          await useAt(item);
+          busy = false;
+          render();
+        });
+        node.disabled = busy || item.doghouse + item.storage + item.closet === 0;
+        return el("div", { className: "dognerd-inventory-feeds" }, [node]);
+      };
       const select = grouped("Button_primary", "Select", () => {
         const pick = Object.fromEntries(amounts.map(([key, row]) => [key, row.value()]).filter(([, n]) => n > 0));
         if (Object.keys(pick).length) selected.set(id, pick);
@@ -448,6 +459,7 @@
         el("img", { className: g("doghouse_itemPreviewImage"), src: spriteUrl(`/${item.image}`), alt: "" }),
         el("h2", { className: g("doghouse_itemTitle"), textContent: item.name }),
         ...feeds,
+        ...(item.navigate ? [use()] : []),
         el("div", { className: "dognerd-inventory-amounts" }, amounts.map(([, row]) => row.node)),
         el("div", { className: g("ButtonGroup_groupContainer") }, [row([select, grouped("Button_neutral", "Cancel", () => close())])]),
       );
