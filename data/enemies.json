@@ -3,47 +3,38 @@
   "blocks": [
     {
       "name": "Floor 1",
-      "color": "#4DB6AC",
       "size": 13
     },
     {
       "name": "Floor 2",
-      "color": "#4DB6AC",
       "size": 5
     },
     {
       "name": "Cheese Maze",
-      "color": "#FDD835",
       "size": 1
     },
     {
       "name": "Peeper's Parlor",
-      "color": "#9575CD",
       "size": 10
     },
     {
       "name": "Freezy Fridge",
-      "color": "#9575CD",
       "size": 5
     },
     {
       "name": "Dogre's Dungeon",
-      "color": "#9575CD",
       "size": 8
     },
     {
       "name": "Hungry Hall",
-      "color": "#9575CD",
       "size": 9
     },
     {
       "name": "Construction Junction",
-      "color": "#F06292",
       "size": 3
     },
     {
       "name": "Dreamy Dragon's Den",
-      "color": "#F06292",
       "size": 5
     }
   ],
