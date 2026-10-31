@@ -1,12 +1,13 @@
 (() => {
   "use strict";
 
-  const { COLLECTIONS, onData, warnOnce, el, spriteUrl, query, activeDog } = DogNerd;
+  const { COLLECTIONS, onData, warnOnce, el, spriteUrl, query, activeDog, watchSetting } = DogNerd;
 
   const ROUTE = /^\/farm\/?$/;
   const ROW = "dognerd-crop-variants";
 
   let harvested = null;
+  let enabled = true;
 
   async function loadHarvested() {
     try {
@@ -59,6 +60,10 @@
         loaded = false;
         return;
       }
+      if (!enabled) {
+        document.querySelector(`.${ROW}`)?.remove();
+        return;
+      }
       if (!loaded) {
         loaded = true;
         loadHarvested();
@@ -71,7 +76,7 @@
   document.addEventListener(
     "click",
     (e) => {
-      if (!ROUTE.test(location.pathname) || !e.target.closest?.('[class*="FarmGrid_tileActionButton__"]')) return;
+      if (!enabled || !ROUTE.test(location.pathname) || !e.target.closest?.('[class*="FarmGrid_tileActionButton__"]')) return;
       setTimeout(loadHarvested, 1500);
     },
     true,
@@ -79,6 +84,10 @@
 
   new MutationObserver(schedule).observe(document.body, { childList: true, subtree: true });
 
+  watchSetting("farm", (on) => {
+    enabled = on;
+    schedule();
+  });
   onData(schedule);
   schedule();
 })();

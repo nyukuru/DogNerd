@@ -7,6 +7,8 @@ Web extension to provide oodles of extra information to [Dog Online](https://dog
 
 ## Features
 
+Most features can be turned off from the gear in the top right of the site.
+
 ### Collection
 
 Entries you haven't found yet show as silhouettes, with outlines around groups that share where they're found.
@@ -69,6 +71,10 @@ A plot's dialog shows every variant of its crop, with the ones you haven't harve
 - A map for the cheese maze that follows where you are and draws the way to the cheese and any unopened chests.
 
 ![Cheese maze map](docs/screenshots/cheese-maze.png)
+
+### Accessibility
+
+The settings can switch the whole site to the Dyslexic Lief font and stop the tower's status effects from flashing, keeping their color.
 
 ## TODO
 

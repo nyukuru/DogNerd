@@ -1,7 +1,7 @@
 (() => {
   "use strict";
 
-  const { COLLECTIONS, onData, hasClass, norm, warnOnce, gameClass, el, spriteUrl } = DogNerd;
+  const { COLLECTIONS, onData, hasClass, norm, warnOnce, gameClass, el, spriteUrl, watchSetting } = DogNerd;
 
   const ROUTE = /^\/collection\/(?:.+\/)?([a-z]+)\/?$/;
   const SILHOUETTE = "dognerd-silhouette";
@@ -508,12 +508,24 @@
     return `${d}Z`;
   }
 
+  function undoAll() {
+    document.querySelectorAll(`.${PLACEHOLDER}, .${OUTLINE}, .${OBTAIN}`).forEach((n) => n.remove());
+    for (const card of document.querySelectorAll(`.${SILHOUETTE}`)) restore(card, card.querySelector("img"), true);
+  }
+
+  let enabled = true;
+  watchSetting("collection", (on) => {
+    enabled = on;
+    schedule();
+  });
+
   let scheduled = false;
   function schedule() {
     if (scheduled) return;
     scheduled = true;
     requestAnimationFrame(() => {
       scheduled = false;
+      if (!enabled) return undoAll();
       const section = currentSection();
       if (!section) return;
       syncPlaceholders(section);

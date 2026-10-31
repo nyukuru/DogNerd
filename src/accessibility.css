@@ -1,0 +1,17 @@
+/* Its digits and most punctuation are blank glyphs, those fall back to the game's font. */
+@font-face {
+  font-family: "DogNerd Dyslexic Lief";
+  src: url("https://dogonline.net/fonts/DyslexicPixel.ttf") format("truetype");
+  unicode-range: U+0020, U+002C, U+002E, U+0041-005A, U+0061-007A;
+}
+
+.dognerd-dyslexia-font,
+.dognerd-dyslexia-font * {
+  font-family: "DogNerd Dyslexic Lief", "NDS BIOS", sans-serif !important;
+}
+
+/* Paused rather than removed, the tint is what shows the effect. */
+.dognerd-still-effects [class*="tower_fx"],
+.dognerd-still-effects [style*="enemy-ghost-"] {
+  animation-play-state: paused !important;
+}

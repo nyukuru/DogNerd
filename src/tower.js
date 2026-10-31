@@ -1,7 +1,7 @@
 (() => {
   "use strict";
 
-  const { el, icon, warnOnce, query } = DogNerd;
+  const { el, icon, warnOnce, query, watchSetting } = DogNerd;
 
   const ROUTE = /^\/tower\/?$/;
   const RUN_KEY = "towerRun";
@@ -216,6 +216,12 @@
     );
   }
 
+  let enabled = true;
+  watchSetting("tower", (on) => {
+    enabled = on;
+    schedule();
+  });
+
   let scheduled = false;
   function schedule() {
     if (scheduled) return;
@@ -223,6 +229,10 @@
     requestAnimationFrame(() => {
       scheduled = false;
       if (!ROUTE.test(location.pathname)) return;
+      if (!enabled) {
+        document.querySelectorAll(".dognerd-turns, .dognerd-queue, .dognerd-statuses").forEach((n) => n.remove());
+        return;
+      }
       showEffects();
       showQueue();
       showStatuses(document.querySelector(PLAYER_PORTRAIT), latestUi?.playerPortrait?.statusEffects);

@@ -1,18 +1,18 @@
 (() => {
   "use strict";
 
-  const { el, warnOnce, query, mutate, activeDog, onResponse, refetch, watchStored } = DogNerd;
+  const { el, warnOnce, query, mutate, activeDog, onResponse, refetch, watchSetting, watchTrade } = DogNerd;
 
   const ROUTE = /^\/doghouse\/?$/;
   const BAR = '[class*="doghouse_bulkActionsBar__"]:not(.dognerd-trade-section *)';
   const BUTTON = "dognerd-doghouse-button";
-  const TRADE_KEY = "upForTrade";
   const COMBAT_SLOTS = 4;
 
   let house = null;
   let trinketSlots = 3;
   let moving = false;
   let trade = {};
+  let enabled = true;
 
   onResponse("doghouse", (procedure, data) => {
     if (procedure !== "doghouse.getState" || !data?.inventory) return;
@@ -91,8 +91,13 @@
     }
   }
 
-  watchStored(TRADE_KEY, (stored) => {
-    trade = stored ?? {};
+  watchTrade((fresh) => {
+    trade = fresh;
+    schedule();
+  });
+
+  watchSetting("doghouse", (on) => {
+    enabled = on;
     schedule();
   });
 
@@ -119,6 +124,10 @@
       scheduled = false;
       if (!ROUTE.test(location.pathname)) {
         loaded = false;
+        return;
+      }
+      if (!enabled) {
+        document.querySelectorAll(`.${BUTTON}`).forEach((b) => b.remove());
         return;
       }
       if (!loaded) {

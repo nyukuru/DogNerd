@@ -133,8 +133,7 @@ var DogNerd = (() => {
     return { node, value: () => value };
   }
 
-  // The game's dialog around `body`, returns its close().
-  function dialog(body, className = "", onClose = () => {}) {
+  function dialog(body, className = "", onClose = () => {}, { wide = true, footer = null } = {}) {
     const close = () => {
       onClose();
       overlay.remove();
@@ -145,9 +144,11 @@ var DogNerd = (() => {
       e.stopPropagation();
       close();
     };
-    const content = el("div", { className: `${gameClass("Dialog_content")} ${gameClass("Dialog_contentWide")} ${className}`, role: "dialog", tabIndex: -1 }, [
+    const widened = (name) => (wide ? `${gameClass(name)} ${gameClass(name + "Wide")}` : gameClass(name));
+    const content = el("div", { className: `${widened("Dialog_content")} ${className}`, role: "dialog", tabIndex: -1 }, [
       el("div", { className: gameClass("Dialog_modalBody") }, [
-        el("div", { className: `${gameClass("Dialog_body")} ${gameClass("Dialog_bodyWide")}` }, [body]),
+        el("div", { className: widened("Dialog_body") }, [body]),
+        ...(footer ? [footer] : []),
       ]),
     ]);
     const overlay = el("div", { className: `${gameClass("Dialog_overlay")} dognerd-overlay` }, [content]);
@@ -210,6 +211,27 @@ var DogNerd = (() => {
     browser.storage.local.get(key).then((r) => fn(r[key]));
     browser.storage.onChanged.addListener((changes, area) => {
       if (area === "local" && changes[key]) fn(changes[key].newValue);
+    });
+  }
+
+  const SETTINGS_KEY = "settings";
+  // Also hardcoded in accessibility.js, which runs before this file.
+  const OFF_BY_DEFAULT = ["dyslexiaFont", "stillEffects"];
+  const settingOn = (stored, feature) => stored?.[feature] ?? !OFF_BY_DEFAULT.includes(feature);
+  const watchSetting = (feature, fn) => watchStored(SETTINGS_KEY, (stored) => fn(settingOn(stored, feature)));
+
+  function watchTrade(fn) {
+    let on, list;
+    const update = () => {
+      if (on !== undefined && list !== undefined) fn(on ? list : {});
+    };
+    watchSetting("trade", (enabled) => {
+      on = enabled;
+      update();
+    });
+    watchStored("upForTrade", (stored) => {
+      list = stored ?? {};
+      update();
     });
   }
 
@@ -302,5 +324,9 @@ var DogNerd = (() => {
     onResponse,
     refetch,
     watchStored,
+    SETTINGS_KEY,
+    settingOn,
+    watchSetting,
+    watchTrade,
   };
 })();
