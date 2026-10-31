@@ -1,10 +1,9 @@
 (() => {
   "use strict";
 
-  const { el, icon, norm, warnOnce, query, mutate, spriteUrl, gameClass: g, onResponse, watchStored, dialog, confirmDialog, activeDog } = DogNerd;
+  const { el, icon, norm, warnOnce, query, mutate, spriteUrl, gameClass: g, onResponse, watchStored, watchSetting, watchTrade, dialog, confirmDialog, activeDog } = DogNerd;
 
   const ROUTE = /^\/doghouse\/storage\/?$/;
-  const ENABLED_KEY = "inventoryOverhaul";
   const AREAS_KEY = "inventoryAreas";
   const TRADE_KEY = "upForTrade";
   const ACTIVE = "dognerd-inventory-active";
@@ -36,6 +35,8 @@
   ];
 
   let enabled = true;
+  let tradeOn = true;
+  let areas = AREAS;
   let styled = false;
   let styling = null;
   let shown = new Set(AREAS.map((a) => a.key));
@@ -54,8 +55,14 @@
   // itemId -> {area: qty}
   const selected = new Map();
 
-  watchStored(ENABLED_KEY, (stored) => {
-    enabled = stored !== false;
+  watchSetting("inventory", (on) => {
+    enabled = on;
+    schedule();
+  });
+
+  watchSetting("trade", (on) => {
+    tradeOn = on;
+    areas = on ? AREAS : AREAS.filter(({ key }) => key !== "trade");
     schedule();
   });
 
@@ -64,8 +71,8 @@
     schedule();
   });
 
-  watchStored(TRADE_KEY, (stored) => {
-    trade = stored ?? {};
+  watchTrade((fresh) => {
+    trade = fresh;
     cache = null;
     schedule();
   });
@@ -156,7 +163,7 @@
     return [...byId.values()];
   }
 
-  const total = (item) => AREAS.reduce((sum, { key }) => sum + (shown.has(key) ? item[key] : 0), 0);
+  const total = (item) => areas.reduce((sum, { key }) => sum + (shown.has(key) ? item[key] : 0), 0);
 
   const SORTS = {
     "name-asc": (a, b) => a.name.localeCompare(b.name),
@@ -178,7 +185,6 @@
     };
   }
 
-  // An item with several types goes with the first, untyped ones last.
   function group(item, types) {
     const values = types.map(([value]) => value);
     const ranks = [...item.categories, ...(item.petpet ? ["petpet"] : [])].map((t) => values.indexOf(t)).filter((r) => r >= 0);
@@ -235,7 +241,6 @@
 
   const fits = (item, to) => to !== "closet" || item.categories.includes("cosmetic");
 
-  // {area: qty} of the selection that a move to `to` takes.
   function sources(item, to) {
     if (!fits(item, to)) return {};
     const from = {};
@@ -246,7 +251,8 @@
     return from;
   }
 
-  function saveTrade(plan, to) {
+  async function saveTrade(plan, to) {
+    if (!tradeOn) return;
     const next = { ...trade };
     for (const { item, from } of plan) {
       if (to !== "trade" && !from.trade) continue;
@@ -400,7 +406,7 @@
     const body = el("div", { className: g("doghouse_itemDialogBody") });
     const render = () => {
       const item = merged().find((i) => i.id === id);
-      const held = AREAS.filter(({ key }) => shown.has(key) && item?.[key] > 0);
+      const held = areas.filter(({ key }) => shown.has(key) && item?.[key] > 0);
       if (!held.length) return close();
       const was = selected.get(id);
       const start = (key) => Math.min(item[key], draft[key] ?? (was ? (was[key] ?? 0) : item[key]));
@@ -452,13 +458,13 @@
 
   function showTray(tray) {
     const items = picked();
-    const movable = AREAS.map(({ key }) => items.some((i) => Object.keys(sources(i, key)).length));
+    const movable = areas.map(({ key }) => items.some((i) => Object.keys(sources(i, key)).length));
     const all = visible.length > 0 && visible.every((i) => chosen(i.id) === total(i));
     const sig = JSON.stringify([moving, progress, movable, items.length, all]);
     tray.hidden = items.length === 0;
     if (tray.dataset.sig === sig) return;
     tray.dataset.sig = sig;
-    const moves = AREAS.map(({ key, move: label }, i) => {
+    const moves = areas.map(({ key, move: label }, i) => {
       const node = button("Button_primary", label, () => moveSelected(key));
       node.disabled = moving || !movable[i];
       return node;
@@ -467,7 +473,7 @@
       if (all) selected.clear();
       else {
         for (const i of visible) {
-          const held = AREAS.filter(({ key }) => shown.has(key) && i[key] > 0);
+          const held = areas.filter(({ key }) => shown.has(key) && i[key] > 0);
           selected.set(i.id, Object.fromEntries(held.map(({ key }) => [key, i[key]])));
         }
       }
@@ -479,7 +485,7 @@
     });
     select.disabled = cancel.disabled = moving;
     tray.replaceChildren(
-      el("p", { className: "dognerd-inventory-count", textContent: progress ? `Moving… ${progress[0]}/${progress[1]}` : `${items.length} selected` }),
+      el("p", { className: "dognerd-inventory-count", textContent: progress ? `Moving... ${progress[0]}/${progress[1]}` : `${items.length} selected` }),
       el("div", { className: g("doghouse_bulkActionsContainer") }, [...moves, select, cancel]),
     );
   }
@@ -492,12 +498,12 @@
 
   function showAreas(row) {
     const all = merged();
-    const counts = Object.fromEntries(AREAS.map(({ key }) => [key, all.reduce((sum, i) => sum + i[key], 0)]));
+    const counts = Object.fromEntries(areas.map(({ key }) => [key, all.reduce((sum, i) => sum + i[key], 0)]));
     const sig = JSON.stringify([[...shown], counts]);
     if (row.dataset.sig === sig) return;
     row.dataset.sig = sig;
     row.replaceChildren(
-      ...AREAS.map(({ key, label }) => {
+      ...areas.map(({ key, label }) => {
         const on = shown.has(key);
         const toggle = el("button", {
           type: "button",
@@ -515,7 +521,6 @@
     );
   }
 
-  // [{label, items}]
   function byType(items, types) {
     const groups = [];
     for (const item of items) {
@@ -618,7 +623,7 @@
     let tray = section.querySelector(`.${TRAY}`);
     if (!tray) section.append((tray = el("div", { className: TRAY, hidden: true })));
     rename(content.querySelector('[class*="Header_header__"]'));
-    section.dataset.hidden = AREAS.filter(({ key }) => !shown.has(key))
+    section.dataset.hidden = areas.filter(({ key }) => !shown.has(key))
       .map(({ key }) => key)
       .join(" ");
     const [row, grid, empty] = section.children;
@@ -627,7 +632,6 @@
     for (const id of selected.keys()) if (!ids.has(id)) selected.delete(id);
     for (const id of cards.keys()) if (!ids.has(id)) cards.delete(id);
     showTray(tray);
-    // On the body so the buttons under the grid can still scroll clear of the tray.
     document.body.style.paddingBottom = tray.hidden ? "" : `${tray.offsetHeight}px`;
     showAreas(row);
     showCopy(content.querySelector('[class*="storage_actionsBar__"]'), bar);
@@ -693,7 +697,6 @@
     });
   }
 
-  // The item dialog's sliders don't change the grid.
   document.addEventListener("input", (e) => e.target.closest?.(".dognerd-overlay") || schedule(), true);
   document.addEventListener("change", schedule, true);
   new MutationObserver(schedule).observe(document.body, { childList: true, subtree: true });

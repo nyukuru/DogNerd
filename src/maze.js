@@ -1,7 +1,7 @@
 (() => {
   "use strict";
 
-  const { el, warnOnce, query, spriteUrl } = DogNerd;
+  const { el, warnOnce, query, spriteUrl, watchSetting } = DogNerd;
 
   const ROUTE = /^\/tower\/?$/;
   const MAZE_KEY = "cheeseMaze";
@@ -270,13 +270,20 @@
     drawLines(view, here, paths);
   }
 
+  let enabled = true;
+  watchSetting("maze", (on) => {
+    enabled = on;
+    schedule();
+  });
+
   let scheduled = false;
   function schedule() {
     if (scheduled) return;
     scheduled = true;
     requestAnimationFrame(() => {
       scheduled = false;
-      if (grid && ROUTE.test(location.pathname)) showMaze();
+      if (!enabled) document.querySelectorAll(".dognerd-maze-grid, .dognerd-maze-note").forEach((n) => n.remove());
+      else if (grid && ROUTE.test(location.pathname)) showMaze();
     });
   }
 

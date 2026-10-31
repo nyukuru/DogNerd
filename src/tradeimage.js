@@ -1,5 +1,4 @@
-// Draws trade.js's "Copy as Image", the active dog surrounded by item cards, and inventory.js's, item cards under
-// a heading per type, both themed like the dog's page.
+// Draws the "Copy as Image" pictures for trade.js and inventory.js, themed like the dog's page.
 var DogNerdTradeImage = (() => {
   "use strict";
 
@@ -12,7 +11,6 @@ var DogNerdTradeImage = (() => {
   const DOG_PAD = 12;
   const TITLE = { band: 110, height: 76, font: 44, pad: 32 };
   const HEADING = { height: 52, font: 30, pad: 20 };
-  // The inventory image is a screen's size, its cards shrink to fit and past MIN_SCALE it grows downwards.
   const SCREEN = { w: 1920, h: 1080, gap: 16, pad: 24, inset: 10, perRow: 5 };
   const FONT_FAMILY = "dognerd-trade-font";
 
@@ -244,8 +242,8 @@ var DogNerdTradeImage = (() => {
     );
   }
 
-  // Groups flow down fixed-height columns of SCREEN.perRow cards and on into the next column, like sav.estate's DOGDATA.
-  // A group cut by a column's end goes on at the top of the next in its own panel, the heading only on the first.
+  // Groups fill fixed-height columns top to bottom. A group cut off at a column's end continues in a new panel,
+  // without its heading, at the top of the next column.
   function flow(groups, scale, height) {
     const w = CARD.w * scale;
     const h = CARD.h * scale;
