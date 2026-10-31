@@ -220,7 +220,7 @@
   function markCard(card) {
     const wrap = card.querySelector('[class*="ItemCard_iconWrap__"]');
     if (!wrap) return;
-    const info = inGallery(card) ? null : infoFor(card);
+    const info = unbadged(card) ? null : infoFor(card);
     markWorn(card, info?.worn ?? []);
     const list = info ? badges(info) : [];
     const sig = JSON.stringify(list);
@@ -236,8 +236,10 @@
   }
 
   const inCollection = () => location.pathname.startsWith("/collection");
-  // dog page item gallery
-  const inGallery = (card) => location.pathname.startsWith("/dog/") && !card.closest('[class*="Dialog_"]');
+  // A dog page's item gallery and the tower loadout.
+  const unbadged = (card) =>
+    (location.pathname.startsWith("/dog/") && !card.closest('[class*="Dialog_"]')) ||
+    !!card.closest('[class*="tower_towerOptions__"]');
 
   let scheduled = false;
   let shownFor = null;

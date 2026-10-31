@@ -106,9 +106,23 @@
     });
   }
 
-  // Storage only has the item grid's styles after a visit to the doghouse.
+  const hasCardRules = (sheet) => {
+    try {
+      return [...sheet.cssRules].some((rule) => rule.selectorText?.includes("ItemCard_card__"));
+    } catch {
+      return false;
+    }
+  };
+
+  // Storage's own styles don't have the item cards, and Next turns off a previous page's with media="x".
   function ensureStyles() {
-    if (g("ItemCard_card") !== "ItemCard_card") return (styled = true);
+    const source = [...document.querySelectorAll('style, link[rel="stylesheet"]')].find((n) => n.sheet && hasCardRules(n.sheet));
+    if (source) {
+      document.head.append(
+        source.tagName === "STYLE" ? el("style", { textContent: source.textContent }) : el("link", { rel: "stylesheet", href: source.href }),
+      );
+      return (styled = true);
+    }
     styling ??= loadStyles("/doghouse")
       .catch((e) => warnOnce("inventory-styles", "couldn't load the item card styles:", e.message))
       .finally(() => {
