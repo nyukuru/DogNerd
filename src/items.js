@@ -1,14 +1,14 @@
 (() => {
   "use strict";
 
-  const { COLLECTIONS, onData, norm, warnOnce, el, icon, query, activeDog, watchStored } = DogNerd;
+  const { COLLECTIONS, onData, norm, warnOnce, el, icon, query, activeDog, watchSetting, watchTrade } = DogNerd;
 
   const BADGES = "dognerd-item-badges";
   const WORN = "dognerd-worn";
   const STATE_KEY = "itemBadges";
-  const TRADE_KEY = "upForTrade";
   const STALE = 30 * 1000;
 
+  let enabled = true;
   let state = null;
   let trade = {};
   let lookup = null;
@@ -204,6 +204,12 @@
     scheduled = true;
     requestAnimationFrame(() => {
       scheduled = false;
+      if (!enabled) {
+        shownFor = null;
+        document.querySelectorAll(`.${BADGES}`).forEach((n) => n.remove());
+        document.querySelectorAll(`.${WORN}`).forEach((card) => markWorn(card, []));
+        return;
+      }
       if (inCollection()) return;
       const cards = document.querySelectorAll('[class*="ItemCard_card__"]');
       if (!cards.length) return;
@@ -251,13 +257,16 @@
     });
   }
 
-  function applyTrade(fresh) {
-    trade = fresh ?? {};
+  watchTrade((fresh) => {
+    trade = fresh;
     lookup = null;
     schedule();
-  }
+  });
 
-  watchStored(TRADE_KEY, applyTrade);
+  watchSetting("items", (on) => {
+    enabled = on;
+    schedule();
+  });
 
   // Sent by inventory.js with the game's lists, its moves don't go through the page's fetch.
   document.addEventListener("dognerd:inventory", (e) => {

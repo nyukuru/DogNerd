@@ -1,0 +1,84 @@
+[class*="Layout_nav__"]:has(> .dognerd-settings-button) {
+  position: relative;
+}
+
+.dognerd-settings-button {
+  position: absolute;
+  top: 16px;
+  right: 16px;
+  display: flex;
+  padding: 4px;
+  border: none;
+  background: none;
+  color: var(--nav-link);
+  cursor: pointer;
+}
+
+.dognerd-settings-button:hover {
+  color: var(--nav-link-hover);
+}
+
+.dognerd-settings-button svg {
+  display: block;
+  width: 23px;
+  height: 23px;
+}
+
+.dognerd-settings-list {
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+  gap: 20px;
+}
+
+[class*="ButtonGroup_groupContainer__"]:has(.dognerd-settings-arrow) {
+  align-self: stretch;
+}
+
+[class*="ButtonGroup_rowContainer__"]:has(> .dognerd-settings-arrow) {
+  position: relative;
+  justify-content: center;
+}
+
+.dognerd-settings-arrow {
+  position: absolute;
+  top: 50%;
+  display: flex;
+  padding: 8px;
+  border: none;
+  background: none;
+  color: inherit;
+  cursor: pointer;
+  transform: translateY(-50%);
+}
+
+.dognerd-settings-arrow img {
+  display: block;
+  width: 56px;
+  image-rendering: pixelated;
+}
+
+.dognerd-settings-arrow-left {
+  left: 0;
+}
+
+.dognerd-settings-arrow-right {
+  right: 0;
+}
+
+.dognerd-settings-arrow-left img {
+  transform: scaleX(-1);
+}
+
+.dognerd-settings [class*="SettingsDialog_buttonRow__"] {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  gap: 10px;
+}
+
+@media (max-width: 550px) {
+  .dognerd-settings-button {
+    top: 52px;
+  }
+}

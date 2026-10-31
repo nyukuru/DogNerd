@@ -1,7 +1,7 @@
 (() => {
   "use strict";
 
-  const { COLLECTIONS, onData, norm, warnOnce, el, spriteUrl, untilNewDay, query, activeDog } = DogNerd;
+  const { COLLECTIONS, onData, norm, warnOnce, el, spriteUrl, untilNewDay, query, activeDog, watchSetting } = DogNerd;
 
   const ROUTE = /^\/fish\/([a-z]+)\/?$/;
   const MARK = "dognerd-bait-mark";
@@ -43,6 +43,7 @@
     });
   }
 
+  let enabled = true;
   let caught = null;
   let loadingCaught = false;
 
@@ -148,7 +149,7 @@
     const area = currentArea();
     const left = untilNewDay();
     const dayRolledOver = left > previousLeft;
-    if (area && dayRolledOver) setTimeout(() => loadToday(area), 5000);
+    if (area && enabled && dayRolledOver) setTimeout(() => loadToday(area), 5000);
     previousLeft = left;
   }, 1000);
 
@@ -204,8 +205,9 @@
     requestAnimationFrame(() => {
       scheduled = false;
       const area = currentArea();
-      if (!area) {
+      if (!area || !enabled) {
         loadedFor = null;
+        document.querySelectorAll(`.${MARK}, .${ROW}, .${COUNT}`).forEach((n) => n.remove());
         return;
       }
       if (loadedFor !== location.pathname) {
@@ -228,7 +230,7 @@
     (e) => {
       const button = e.target.closest?.('[role="dialog"] button');
       const area = currentArea();
-      if (!area || !button || !/fish/i.test(button.textContent)) return;
+      if (!area || !enabled || !button || !/fish/i.test(button.textContent)) return;
       if (today) {
         today = { ...today, fished: Math.min(today.fished + 1, today.limit) };
         schedule();
@@ -253,6 +255,10 @@
     schedule();
   }).observe(document.body, { childList: true, subtree: true, characterData: true });
 
+  watchSetting("fishing", (on) => {
+    enabled = on;
+    schedule();
+  });
   onData(schedule);
   schedule();
 })();

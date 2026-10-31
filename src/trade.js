@@ -1,7 +1,7 @@
 (() => {
   "use strict";
 
-  const { el, warnOnce, query, gameClass: g, spriteUrl, activeDog, onResponse, refetch, watchStored, quantitySelector } = DogNerd;
+  const { el, warnOnce, query, gameClass: g, spriteUrl, activeDog, onResponse, refetch, watchSetting, watchTrade, quantitySelector } = DogNerd;
 
   const ROUTE = /^\/doghouse\/?$/;
   const TRADE_KEY = "upForTrade";
@@ -17,6 +17,7 @@
   let house = null;
   let bulk = false;
   let selected = new Set();
+  let enabled = true;
 
   const realItem = (id) => house?.inventory.find((i) => i.id === id) ?? null;
   const itemNamed = (name) => house?.inventory.find((i) => i.name === name) ?? null;
@@ -35,12 +36,16 @@
   }
 
   function applyTrade(fresh) {
-    trade = fresh ?? {};
+    trade = fresh;
     mirror();
     schedule();
   }
 
-  watchStored(TRADE_KEY, applyTrade);
+  watchTrade(applyTrade);
+  watchSetting("trade", (on) => {
+    enabled = on;
+    schedule();
+  });
 
   // changes: [[item, qty]] with the item's unfiltered count, a qty of 0 takes the item off trade.
   function setTrade(changes) {
@@ -260,11 +265,12 @@
     scheduled = true;
     requestAnimationFrame(() => {
       scheduled = false;
-      if (!ROUTE.test(location.pathname)) {
+      if (!enabled || !ROUTE.test(location.pathname)) {
         loaded = false;
         // The game keeps its layout across client-side navigation.
         document.querySelector(`.${SECTION}`)?.remove();
         document.querySelector(`.${DIALOG}`)?.parentElement.remove();
+        document.querySelectorAll(`.${TRADE_BUTTON}`).forEach((b) => b.remove());
         bulk = false;
         selected.clear();
         return;
