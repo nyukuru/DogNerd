@@ -39,6 +39,10 @@ Mark items as up for trade from their dialog or with bulk actions. They're set a
 
 ![Up for trade section](docs/screenshots/trade-section.png)
 
+### Gifting
+
+The Send an Item page gets the search, type filter and sort bar from the doghouse. You pick who to send to from your buddy list, or type a friend code for anyone else (with a warning that it can't be checked), and the message after sending names the item and who it went to.
+
 ### Fishing
 
 Bait that can catch a fish you haven't caught yet, given the current time and weather, is marked with a "!".

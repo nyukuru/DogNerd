@@ -1,0 +1,11 @@
+.dognerd-gift-hidden {
+  display: none !important;
+}
+
+.dognerd-gift-empty {
+  text-align: center;
+}
+
+.dognerd-gift-hint.dognerd-gift-warn {
+  color: #d64545;
+}
