@@ -168,7 +168,7 @@
       "name": "Doggplant",
       "block": null,
       "sprite": "/img/item_doggplant.png",
-      "plant": "Doggplant",
+      "plant": "Doggplant Vine",
       "obtain": [
         {
           "where": null,
