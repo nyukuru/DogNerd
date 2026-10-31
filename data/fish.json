@@ -3,27 +3,22 @@
   "blocks": [
     {
       "name": "Old Fishin' Hole",
-      "color": "#3fae52",
       "size": 17
     },
     {
       "name": "Desert Oasis",
-      "color": "#c99c42",
       "size": 16
     },
     {
       "name": "Ice Fishing Hole",
-      "color": "#b5d3e5",
       "size": 11
     },
     {
       "name": "Ocean Fishing Cruiser",
-      "color": "#15276b",
       "size": 14
     },
     {
       "name": "Fly Fishing Ship",
-      "color": "#3a64fc",
       "size": 15
     }
   ],
@@ -55,7 +50,7 @@
           "details": [
             [
               "Times of Day",
-              "Afternoon, Evening, Night"
+              "All"
             ],
             [
               "Minimum Bait",
@@ -255,7 +250,7 @@
             ],
             [
               "Weather Conditions",
-              "Clear Skies, Stormy"
+              "Clear Skies, Rainy, Stormy"
             ]
           ]
         }
@@ -399,7 +394,7 @@
             ],
             [
               "Weather Conditions",
-              "Clear Skies, Rainy, Stormy"
+              "All"
             ]
           ]
         }
@@ -487,7 +482,7 @@
           "details": [
             [
               "Times of Day",
-              "Morning, Afternoon"
+              "All"
             ],
             [
               "Minimum Bait",
@@ -543,7 +538,7 @@
             ],
             [
               "Weather Conditions",
-              "Clear Skies, Rainy, Stormy"
+              "All"
             ]
           ]
         }
@@ -799,7 +794,7 @@
           "details": [
             [
               "Times of Day",
-              "Evening, Night"
+              "Night"
             ],
             [
               "Minimum Bait",
@@ -1231,11 +1226,11 @@
           "details": [
             [
               "Times of Day",
-              "Morning, Night"
+              "Night"
             ],
             [
               "Minimum Bait",
-              "Pouch of Prawns"
+              "Cup of Crickets"
             ],
             [
               "Weather Conditions",
@@ -1259,7 +1254,7 @@
             ],
             [
               "Minimum Bait",
-              "Pouch of Prawns"
+              "Cup of Crickets"
             ],
             [
               "Weather Conditions",
@@ -1311,7 +1306,7 @@
             ],
             [
               "Weather Conditions",
-              "Clear Skies"
+              "All"
             ]
           ]
         }
@@ -1335,7 +1330,7 @@
             ],
             [
               "Weather Conditions",
-              "Clear Skies, Rainy, Stormy"
+              "All"
             ]
           ]
         }
@@ -1375,7 +1370,7 @@
           "details": [
             [
               "Times of Day",
-              "Morning, Evening, Night"
+              "All"
             ],
             [
               "Minimum Bait",
@@ -1471,7 +1466,7 @@
           "details": [
             [
               "Times of Day",
-              "All"
+              "Morning, Afternoon"
             ],
             [
               "Minimum Bait",
@@ -1687,7 +1682,7 @@
           "details": [
             [
               "Times of Day",
-              "Night"
+              "Evening, Night"
             ],
             [
               "Minimum Bait",

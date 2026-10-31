@@ -8,15 +8,17 @@
   const GUESS = "dognerd-guess";
   const OBTAIN = "dognerd-obtain";
   const PLACEHOLDER = "dognerd-placeholder";
-  const OUTLINE = "dognerd-outline";
   const QUESTION_MARK = "/img/wiggle-icon-question-mark.gif";
-  const SVG_NS = "http://www.w3.org/2000/svg";
-  const OUTLINE_WIDTH = 2;
-  const SHARED_EDGE_INSET = 1.5;
+
+  const TAB_ROUTE = /^\/collection\/?$/;
+  const TAB_SECTION = /-trigger-([a-z]+)$/;
 
   function currentSection() {
-    const m = location.pathname.match(ROUTE);
-    return m && COLLECTIONS[m[1]] ? m[1] : null;
+    let section = location.pathname.match(ROUTE)?.[1];
+    if (!section && TAB_ROUTE.test(location.pathname)) {
+      section = document.querySelector('[role="tab"][aria-selected="true"]')?.id.match(TAB_SECTION)?.[1];
+    }
+    return section && COLLECTIONS[section] ? section : null;
   }
 
   function cards() {
@@ -295,221 +297,8 @@
     card.click();
   });
 
-  function svg(tag, attrs = {}, children = []) {
-    const node = document.createElementNS(SVG_NS, tag);
-    for (const [k, v] of Object.entries(attrs)) node.setAttribute(k, v);
-    node.append(...children);
-    return node;
-  }
-
-  // Merges the [from, to] pieces of the line where keep(insideA, insideB) holds.
-  function combineIntervals(a, b, keep) {
-    const points = [...new Set([...a, ...b].flat())].sort((x, y) => x - y);
-    const inside = (set, x) => set.some(([from, to]) => from < x && x < to);
-    const out = [];
-    for (let i = 0; i + 1 < points.length; i++) {
-      const mid = (points[i] + points[i + 1]) / 2;
-      if (!keep(inside(a, mid), inside(b, mid))) continue;
-      if (out.length && out.at(-1)[1] === points[i]) out.at(-1)[1] = points[i + 1];
-      else out.push([points[i], points[i + 1]]);
-    }
-    return out;
-  }
-
-  // Each card's cell extends halfway to its neighbours so adjacent cells touch.
-  function gridCells(rects) {
-    const rows = [];
-    rects.forEach((r, i) => {
-      const row = rows.at(-1);
-      if (row && Math.abs(rects[row[0]].t - r.t) < 1) row.push(i);
-      else rows.push([i]);
-    });
-    const top = (row) => Math.min(...row.map((i) => rects[i].t));
-    const bottom = (row) => Math.max(...row.map((i) => rects[i].b));
-    const cells = [];
-    rows.forEach((row, ri) => {
-      const t = ri ? (bottom(rows[ri - 1]) + top(row)) / 2 : top(row);
-      const b = ri < rows.length - 1 ? (bottom(row) + top(rows[ri + 1])) / 2 : bottom(row);
-      row.forEach((i, k) => {
-        const l = k ? (rects[row[k - 1]].r + rects[i].l) / 2 : rects[i].l;
-        const r = k < row.length - 1 ? (rects[i].r + rects[row[k + 1]].l) / 2 : rects[i].r;
-        cells[i] = { l, t, r, b };
-      });
-    });
-    return { rows, cells };
-  }
-
-  // Boundary edges per block, directed so the block is on their right.
-  function blockEdges(rows, cells, blockOf, blockCount) {
-    const edges = Array.from({ length: blockCount }, () => []);
-    const addEdge = (bi, x1, y1, x2, y2, shared) =>
-      edges[bi].push({ x1, y1, x2, y2, inset: shared ? SHARED_EDGE_INSET : 0 });
-
-    for (const row of rows) {
-      row.forEach((i, k) => {
-        const c = cells[i];
-        const bi = blockOf[i];
-        const isFirst = k === 0;
-        const isLast = k === row.length - 1;
-        if (isFirst || blockOf[row[k - 1]] !== bi) addEdge(bi, c.l, c.b, c.l, c.t, !isFirst);
-        if (isLast || blockOf[row[k + 1]] !== bi) addEdge(bi, c.r, c.t, c.r, c.b, !isLast);
-      });
-    }
-
-    const spans = (row, bi) => row.filter((i) => bi === undefined || blockOf[i] === bi).map((i) => [cells[i].l, cells[i].r]);
-    for (let ri = 0; ri <= rows.length; ri++) {
-      const above = rows[ri - 1] ?? [];
-      const below = rows[ri] ?? [];
-      const y = below.length ? cells[below[0]].t : cells[above[0]].b;
-      for (let bi = 0; bi < blockCount; bi++) {
-        const own = [spans(above, bi), spans(below, bi)];
-        const across = [spans(below), spans(above)];
-        // side 0: bottom edges of the row above (right to left); side 1: top edges of the row below (left to right).
-        for (const side of [0, 1]) {
-          const ends = combineIntervals(own[side], own[1 - side], (a, b) => a && !b);
-          for (const shared of [true, false]) {
-            for (const [from, to] of combineIntervals(ends, across[side], (a, b) => a && b === shared)) {
-              if (side === 0) addEdge(bi, to, y, from, y, shared);
-              else addEdge(bi, from, y, to, y, shared);
-            }
-          }
-        }
-      }
-    }
-    return edges;
-  }
-
-  const resizeWatched = new WeakSet();
-
-  function renderOutlines(section) {
-    const { blocks, slots } = COLLECTIONS[section];
-    const all = cards();
-    const grid = all[0]?.parentElement;
-    const blockIndex = new Map(blocks.map((b, i) => [b.name, i]));
-    const blockOf = slots.map((s) => blockIndex.get(s?.block));
-    if (
-      !grid ||
-      !blocks.some((b) => b.color) ||
-      blockOf.includes(undefined) ||
-      all.length !== slots.length ||
-      all.some((c) => c.parentElement !== grid)
-    ) {
-      document.querySelectorAll(`.${OUTLINE}`).forEach((n) => n.remove());
-      return;
-    }
-    if (!resizeWatched.has(grid)) {
-      resizeWatched.add(grid);
-      new ResizeObserver(schedule).observe(grid);
-    }
-
-    const origin = grid.getBoundingClientRect();
-    const rects = all.map((c) => {
-      const r = c.getBoundingClientRect();
-      return { l: r.left - origin.left, t: r.top - origin.top, r: r.right - origin.left, b: r.bottom - origin.top };
-    });
-    const signature = rects.map((r) => [r.l, r.t, r.r, r.b].map(Math.round).join(",")).join(";");
-    let overlay = grid.querySelector(`:scope > .${OUTLINE}`);
-    if (overlay?.dataset.signature === signature) return;
-
-    const { rows, cells } = gridCells(rects);
-    const edges = blockEdges(rows, cells, blockOf, blocks.length);
-    const radius = parseFloat(getComputedStyle(grid.closest('[class*="Layout_main__"]') ?? grid).borderTopLeftRadius) || 6;
-
-    overlay?.remove();
-    overlay = svg(
-      "svg",
-      { class: OUTLINE, width: origin.width, height: origin.height, "aria-hidden": "true" },
-      blocks.map((block, bi) =>
-        svg("path", {
-          d: outlineLoops(edges[bi]).map((loop) => roundedLoop(loop, radius)).join(""),
-          fill: "none",
-          stroke: block.color,
-          "stroke-width": OUTLINE_WIDTH,
-        }),
-      ),
-    );
-    overlay.dataset.signature = signature;
-    grid.append(overlay);
-  }
-
-  const direction = (e) => [Math.sign(e.x2 - e.x1), Math.sign(e.y2 - e.y1)];
-  const cross = ([ax, ay], [bx, by]) => ax * by - ay * bx;
-  const continues = (a, b) => a.inset === b.inset && direction(a).join() === direction(b).join();
-
-  function outlineLoops(edges) {
-    const key = (x, y) => `${Math.round(x * 100)},${Math.round(y * 100)}`;
-    const startingAt = new Map();
-    for (const e of edges) {
-      const k = key(e.x1, e.y1);
-      if (!startingAt.has(k)) startingAt.set(k, []);
-      startingAt.get(k).push(e);
-    }
-    const used = new Set();
-    const loops = [];
-    for (const first of edges) {
-      if (used.has(first)) continue;
-      const loop = [];
-      for (let e = first; e && !used.has(e); ) {
-        used.add(e);
-        const last = loop.at(-1);
-        if (last && continues(last, e)) {
-          last.x2 = e.x2;
-          last.y2 = e.y2;
-        } else loop.push({ ...e });
-        // Where diagonal cells meet at a corner, take the leftmost turn.
-        const candidates = (startingAt.get(key(e.x2, e.y2)) ?? []).filter((n) => !used.has(n));
-        e = candidates.sort((a, b) => cross(direction(e), direction(a)) - cross(direction(e), direction(b)))[0];
-      }
-      const [head, tail] = [loop[0], loop.at(-1)];
-      if (loop.length > 1 && continues(tail, head)) {
-        head.x1 = tail.x1;
-        head.y1 = tail.y1;
-        loop.pop();
-      }
-      loops.push(loop);
-    }
-    return loops;
-  }
-
-  // Offsets each edge inward by its inset plus half the stroke, then rounds the corners.
-  function roundedLoop(loop, radius) {
-    const half = OUTLINE_WIDTH / 2;
-    const corners = [];
-    loop.forEach((e, i) => {
-      const next = loop[(i + 1) % loop.length];
-      const [dx, dy] = direction(e);
-      const [nx, ny] = direction(next);
-      const o1 = e.inset + half;
-      const o2 = next.inset + half;
-      const turn = cross([dx, dy], [nx, ny]);
-      if (turn) {
-        const r = turn > 0 ? radius - half : radius + half + 2 * Math.min(e.inset, next.inset);
-        corners.push({ x: e.x2 - dy * o1 - ny * o2, y: e.y2 + dx * o1 + nx * o2, r, sweep: turn > 0 ? 1 : 0 });
-      } else {
-        // Straight continuation with a different inset: an S-shaped step.
-        const sweepIn = o2 > o1 ? 1 : 0;
-        corners.push({ x: e.x2 - dy * o1, y: e.y2 + dx * o1, r: radius, sweep: sweepIn });
-        corners.push({ x: e.x2 - dy * o2, y: e.y2 + dx * o2, r: radius, sweep: 1 - sweepIn });
-      }
-    });
-    const n = corners.length;
-    const dist = (a, b) => Math.hypot(b.x - a.x, b.y - a.y);
-    const toward = (a, b, d) => {
-      const len = dist(a, b) || 1;
-      return `${a.x + ((b.x - a.x) * d) / len} ${a.y + ((b.y - a.y) * d) / len}`;
-    };
-    let d = "";
-    corners.forEach((c, i) => {
-      const prev = corners[(i + n - 1) % n];
-      const next = corners[(i + 1) % n];
-      const r = Math.max(0, Math.min(c.r, dist(prev, c) / 2, dist(c, next) / 2));
-      d += `${i ? "L" : "M"}${toward(c, prev, r)}A${r} ${r} 0 0 ${c.sweep} ${toward(c, next, r)}`;
-    });
-    return `${d}Z`;
-  }
-
   function undoAll() {
-    document.querySelectorAll(`.${PLACEHOLDER}, .${OUTLINE}, .${OBTAIN}`).forEach((n) => n.remove());
+    document.querySelectorAll(`.${PLACEHOLDER}, .${OBTAIN}`).forEach((n) => n.remove());
     for (const card of document.querySelectorAll(`.${SILHOUETTE}`)) restore(card, card.querySelector("img"), true);
   }
 
@@ -530,7 +319,6 @@
       if (!section) return;
       syncPlaceholders(section);
       applySilhouettes(section);
-      renderOutlines(section);
       decorateGameDialog();
     });
   }
@@ -544,7 +332,7 @@
   schedule();
 
   onData(() => {
-    document.querySelectorAll(`.${PLACEHOLDER}, .${OUTLINE}`).forEach((n) => n.remove());
+    document.querySelectorAll(`.${PLACEHOLDER}`).forEach((n) => n.remove());
     schedule();
   });
 })();

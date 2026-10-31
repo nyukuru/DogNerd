@@ -11,7 +11,7 @@ Most features can be turned off from the gear in the top right of the site.
 
 ### Collection
 
-Entries you haven't found yet show as silhouettes, with outlines around groups that share where they're found.
+Entries you haven't found yet show as silhouettes.
 
 ![Collection silhouettes](docs/screenshots/collection-silhouettes.png)
 
