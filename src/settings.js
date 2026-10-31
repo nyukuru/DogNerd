@@ -14,6 +14,7 @@
     { key: "inventory", label: "Inventory 2.0" },
     { key: "doghouse", label: "Doghouse store buttons" },
     { key: "trade", label: "Up for trade" },
+    { key: "gift", label: "Gifting search and recipient" },
     { key: "fishing", label: "Fishing info" },
     { key: "farm", label: "Farm crop variants" },
     { key: "tower", label: "Tower info" },
