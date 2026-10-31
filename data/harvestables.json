@@ -3,8 +3,7 @@
   "blocks": [
     {
       "name": null,
-      "color": null,
-      "size": 76
+      "size": 77
     }
   ],
   "slots": [
@@ -169,7 +168,7 @@
       "name": "Doggplant",
       "block": null,
       "sprite": "/img/item_doggplant.png",
-      "plant": "Doggplant",
+      "plant": "Doggplant Vine",
       "obtain": [
         {
           "where": null,
@@ -1242,6 +1241,22 @@
       "name": "Vacation Egg",
       "block": null,
       "sprite": "https://static.wikitide.net/dogonlinedotnetwikiwiki/c/cc/Item_Vacation_Egg.png",
+      "obtain": [
+        {
+          "where": null,
+          "details": [
+            [
+              null,
+              "Eggschange"
+            ]
+          ]
+        }
+      ]
+    },
+    {
+      "name": "Gourd Egg",
+      "block": null,
+      "sprite": "https://static.wikitide.net/dogonlinedotnetwikiwiki/6/63/Item_Gourd_Egg.png",
       "obtain": [
         {
           "where": null,
