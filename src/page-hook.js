@@ -1,5 +1,6 @@
-// Runs in the page's world. Forwards API responses as "dognerd:<router>" events, refetches a router's queries
-// on "dognerd:refetch" (cancelling the event when it did) and hides what's up for trade from the doghouse.
+// Runs in the page's world. Forwards API responses as "dognerd:<router>" events and finished mutations as
+// "dognerd:mutation", refetches a router's queries on "dognerd:refetch" (cancelling the event when it did) and
+// hides what's up for trade from the doghouse.
 (() => {
   "use strict";
 
@@ -62,13 +63,15 @@
       const url = new URL(typeof input === "string" ? input : String(input?.url ?? ""), location.origin);
       const procedures = url.pathname.match(/^\/api\/trpc\/(.+)$/)?.[1].split(",") ?? [];
       const routers = ["tower", "doghouse", "storage", "dressup"].filter((r) => procedures.some((p) => p.startsWith(`${r}.`)));
-      if (routers.length) {
+      const mutation = procedures.length && (init?.method ?? input?.method ?? "GET").toUpperCase() !== "GET";
+      if (routers.length || mutation) {
         response
           .then((res) => res.clone().text())
           .then((text) => {
             const body = typeof init?.body === "string" ? init.body : null;
-            const detail = JSON.stringify({ procedures, body, text });
+            const detail = JSON.stringify({ procedures, input: url.searchParams.get("input"), body, text });
             routers.forEach((r) => document.dispatchEvent(new CustomEvent(`dognerd:${r}`, { detail })));
+            if (mutation) document.dispatchEvent(new CustomEvent("dognerd:mutation", { detail: JSON.stringify({ procedures }) }));
           })
           .catch(() => {});
       }
