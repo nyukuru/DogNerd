@@ -2,7 +2,7 @@
 var DogNerdTradeImage = (() => {
   "use strict";
 
-  const { spriteUrl, query } = DogNerd;
+  const { el, flash, spriteUrl, query, warnOnce, dialog, watchStored, gameClass: g } = DogNerd;
 
   const WIDTH = 1000;
   const CARD = { w: 162, h: 219, icon: 124, top: 16, font: 24, line: 26 };
@@ -13,6 +13,13 @@ var DogNerdTradeImage = (() => {
   const HEADING = { height: 52, font: 30, pad: 20 };
   const SCREEN = { w: 1920, h: 1080, gap: 16, pad: 24, inset: 10, perRow: 5 };
   const FONT_FAMILY = "dognerd-trade-font";
+  const THEMED_KEY = "copyImageThemed";
+
+  let themed = true;
+  watchStored(THEMED_KEY, (stored) => {
+    themed = stored ?? true;
+    for (const input of document.querySelectorAll(".dognerd-theme-toggle input")) input.checked = themed;
+  });
 
   const fonts = new Map();
   function loadFont(src) {
@@ -24,22 +31,25 @@ var DogNerdTradeImage = (() => {
   }
 
   async function pageTheme(dogName) {
-    const state = dogName ? await query("dog.getState", { name: dogName }).catch(() => null) : null;
+    const state = dogName && themed ? await query("dog.getState", { name: dogName }).catch(() => null) : null;
     const look = state?.appearance ?? {};
     const decoration = (type) => state?.decorations?.find((d) => d.type === type && d.src);
     const font = decoration("font");
     const background = decoration("background");
     const fontLoaded = font ? await loadFont(font.src).then(() => true, () => false) : false;
-    const site = document.querySelector('[class*="Layout_main__"]');
+    // The game's light and dark mode colors, set on the root element.
+    const site = getComputedStyle(document.documentElement);
+    const color = (name, fallback) => site.getPropertyValue(name).trim() || fallback;
+    const surface = color("--surface-bg", "white");
     return {
       background: background ? await loadImage(spriteUrl(background.src)) : null,
-      backgroundColor: site ? getComputedStyle(site).backgroundColor : "white",
-      panel: look.panelBgColor ?? "#ffffffd9",
-      border: look.panelBorderColor ?? "#cccccc",
+      backgroundColor: state ? surface : color("--page-bg", surface),
+      panel: look.panelBgColor ?? (state ? "#ffffffd9" : surface),
+      border: look.panelBorderColor ?? (state ? "#cccccc" : color("--item-frame", "#cccccc")),
       borderStyle: look.panelBorderStyle ?? "solid",
       borderWidth: look.panelBorderWidth ?? 2,
       radius: look.panelBorderRadius ?? 8,
-      text: look.fontColor ?? "#3a3a4a",
+      text: look.fontColor ?? (state ? "#3a3a4a" : color("--text", "#3a3a4a")),
       accent: look.panelAccentColor ?? "#315eff",
       font: fontLoaded ? FONT_FAMILY : '"NDS BIOS", sans-serif',
       fontScale: fontLoaded ? (font.sizeScale ?? 1) : 1,
@@ -68,7 +78,8 @@ var DogNerdTradeImage = (() => {
     };
   }
 
-  // Cells of a centred grid that miss the dog, nearest the dog first, rows past the square run downwards.
+  // Cells of a centred grid that miss the dog, in square rings around it, each ring top to bottom.
+  // Rows past the square run downwards.
   function cells(scale, dogBox, extraRows) {
     const w = CARD.w * scale;
     const h = CARD.h * scale;
@@ -79,17 +90,22 @@ var DogNerdTradeImage = (() => {
     const ox = (WIDTH - cols * w) / 2;
     const oy = (WIDTH - baseRows * h) / 2;
     const list = [];
+    const dogCells = [];
     for (let r = 0; r < baseRows + extraRows; r++) {
       for (let c = 0; c < cols; c++) {
         const x = ox + c * w;
         const y = oy + r * h;
         const hitsDog = dogBox && x < dogBox.right && x + w > dogBox.left && y < dogBox.bottom && y + h > dogBox.top;
-        if (!hitsDog) list.push({ x, y });
+        (hitsDog ? dogCells : list).push({ x, y, r, c });
       }
     }
-    const centre = WIDTH / 2;
-    const dist = ({ x, y }) => Math.hypot(x + w / 2 - centre, y + h / 2 - centre);
-    list.sort((a, b) => dist(a) - dist(b) || a.y - b.y || a.x - b.x);
+    // Without a dog the rings grow from the centre cell.
+    if (!dogCells.length) dogCells.push({ r: (baseRows - 1) / 2, c: (cols - 1) / 2 });
+    const rows = dogCells.map((d) => d.r);
+    const columns = dogCells.map((d) => d.c);
+    const [top, bottom, left, right] = [Math.min(...rows), Math.max(...rows), Math.min(...columns), Math.max(...columns)];
+    const ring = ({ r, c }) => Math.max(top - r, r - bottom, left - c, c - right);
+    list.sort((a, b) => ring(a) - ring(b) || a.y - b.y || a.x - b.x);
     return { list, cols, height: Math.max(WIDTH, oy * 2 + (baseRows + extraRows) * h) };
   }
 
@@ -366,5 +382,52 @@ var DogNerdTradeImage = (() => {
     return png(canvas);
   }
 
-  return { render, renderGroups };
+  // png is the pending render, so the click's permission to write the clipboard lasts while it draws.
+  async function copy(button, label, png, warnKey) {
+    button.disabled = true;
+    let ok = true;
+    try {
+      await navigator.clipboard.write([new ClipboardItem({ "image/png": png })]);
+    } catch (e) {
+      warnOnce(warnKey, "couldn't copy the image:", e.message);
+      ok = false;
+    }
+    button.disabled = false;
+    flash(button, ok ? "Copied!" : "Couldn't Copy", label);
+    if (ok) return;
+    const blob = await png.catch((e) => warnOnce(`${warnKey}-render`, "couldn't draw the image:", e.message));
+    if (blob) copyFailed(blob);
+  }
+
+  function copyFailed(blob) {
+    const url = URL.createObjectURL(blob);
+    const close = dialog(
+      el("div", { className: g("doghouse_itemDialogBody") }, [
+        el("h2", { className: g("doghouse_itemTitle"), textContent: "Couldn't Copy" }),
+        el("p", { textContent: "Copy or save the image manually" }),
+        el("img", { className: "dognerd-copy-image", src: url, alt: "" }),
+        el("div", { className: g("ButtonGroup_groupContainer") }, [
+          el("div", { className: `${g("ButtonGroup_rowContainer")} ${g("ButtonGroup_row")}` }, [
+            el("button", {
+              type: "button",
+              className: `${g("Button_button")} ${g("Button_neutral")} ${g("ButtonGroup_buttonContainer")}`,
+              textContent: "Close",
+              onclick: () => close(),
+            }),
+          ]),
+        ]),
+      ]),
+      "dognerd-confirm",
+      () => URL.revokeObjectURL(url),
+    );
+  }
+
+  function themeToggle() {
+    const input = el("input", { className: g("Checkbox_checkbox"), type: "checkbox", checked: themed });
+    input.onchange = () =>
+      browser.storage.local.set({ [THEMED_KEY]: input.checked }).catch((e) => warnOnce("copy-themed", "couldn't save the image theme choice:", e.message));
+    return el("div", { className: `${g("Checkbox_group")} dognerd-theme-toggle` }, [el("label", { className: g("Checkbox_label") }, [input, "Use Dog Theme"])]);
+  }
+
+  return { render, renderGroups, copy, themeToggle };
 })();
