@@ -1,7 +1,7 @@
 (() => {
   "use strict";
 
-  const { el, warnOnce, query, gameClass: g, spriteUrl, activeDog, onResponse, refetch, watchSetting, watchTrade, quantitySelector } = DogNerd;
+  const { el, flash, warnOnce, query, gameClass: g, spriteUrl, activeDog, onResponse, refetch, watchSetting, watchTrade, quantitySelector } = DogNerd;
 
   const ROUTE = /^\/doghouse\/?$/;
   const TRADE_KEY = "upForTrade";
@@ -151,28 +151,17 @@
     const text = ["♡ items up for sale ♡", ...lines].join("\n");
     try {
       await navigator.clipboard.writeText(text);
-      button.textContent = "Copied!";
+      flash(button, "Copied!", "Copy as Text");
     } catch (e) {
       warnOnce("trade-copy", "couldn't copy the trade list:", e.message);
-      button.textContent = "Couldn't Copy";
+      flash(button, "Couldn't Copy", "Copy as Text");
     }
-    setTimeout(() => (button.textContent = "Copy as Text"), 1500);
   }
 
-  async function copyAsImage(button) {
+  function copyAsImage(button) {
     const items = tradedItems().map((i) => ({ name: i.name, image: i.image, qty: tradedQty(i) }));
-    button.disabled = true;
-    try {
-      // Passing the pending blob keeps the click's permission to write the clipboard while it draws.
-      const png = DogNerdTradeImage.render(items, activeDog(house?.dogs)?.name);
-      await navigator.clipboard.write([new ClipboardItem({ "image/png": png })]);
-      button.textContent = "Copied!";
-    } catch (e) {
-      warnOnce("trade-image", "couldn't copy the trade image:", e.message);
-      button.textContent = "Couldn't Copy";
-    }
-    button.disabled = false;
-    setTimeout(() => (button.textContent = "Copy as Image"), 1500);
+    const png = DogNerdTradeImage.render(items, activeDog(house?.dogs)?.name);
+    DogNerdTradeImage.copy(button, "Copy as Image", png, "trade-image");
   }
 
   function showSection() {
@@ -226,6 +215,7 @@
         }),
         copy,
         copyImage,
+        DogNerdTradeImage.themeToggle(),
       );
       return;
     }
