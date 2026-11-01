@@ -118,6 +118,22 @@
   text-align: center;
 }
 
+.dognerd-theme-toggle {
+  align-self: center;
+}
+
+.dognerd-theme-toggle label {
+  align-items: center;
+  font-size: 18px;
+}
+
+.dognerd-copy-image {
+  display: block;
+  max-width: 100%;
+  max-height: 60vh;
+  margin: 0 auto 16px;
+}
+
 .dognerd-inventory-feed-label {
   margin: 0 0 8px;
   font-size: 18px;

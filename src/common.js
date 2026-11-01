@@ -48,6 +48,21 @@ var DogNerd = (() => {
     return gameClasses.get(name);
   }
 
+  // Holds the button's width so its neighbours in a flex row don't shift while the text changes.
+  const flashes = new WeakMap();
+  function flash(button, text, label) {
+    clearTimeout(flashes.get(button));
+    if (!button.style.flex) button.style.flex = `0 0 ${button.getBoundingClientRect().width}px`;
+    button.textContent = text;
+    flashes.set(
+      button,
+      setTimeout(() => {
+        button.textContent = label;
+        button.style.flex = "";
+      }, 1500),
+    );
+  }
+
   function el(tag, props = {}, children = []) {
     const node = Object.assign(document.createElement(tag), props);
     node.append(...children);
@@ -398,6 +413,7 @@ var DogNerd = (() => {
     warnOnce,
     gameClass,
     el,
+    flash,
     icon,
     spriteUrl,
     untilNewDay,

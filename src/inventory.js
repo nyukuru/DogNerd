@@ -1,7 +1,7 @@
 (() => {
   "use strict";
 
-  const { el, icon, norm, warnOnce, query, mutate, loadStyles, spriteUrl, gameClass: g, onResponse, watchStored, watchSetting, watchTrade, dialog, confirmDialog, activeDog } = DogNerd;
+  const { el, flash, icon, norm, warnOnce, query, mutate, loadStyles, spriteUrl, gameClass: g, onResponse, watchStored, watchSetting, watchTrade, dialog, confirmDialog, activeDog } = DogNerd;
 
   const ROUTE = /^\/doghouse\/storage\/?$/;
   const AREAS_KEY = "inventoryAreas";
@@ -186,7 +186,10 @@
   function group(item, types) {
     const values = types.map(([value]) => value);
     const ranks = [...item.categories, ...(item.petpet ? ["petpet"] : [])].map((t) => values.indexOf(t)).filter((r) => r >= 0);
-    return ranks.length ? Math.min(...ranks) : types.length;
+    // Lots of fish, crops and clothes are edible too, so they only count as food when nothing else fits.
+    const food = values.indexOf("food");
+    const kept = ranks.some((r) => r !== food) ? ranks.filter((r) => r !== food) : ranks;
+    return kept.length ? Math.min(...kept) : types.length;
   }
 
   function visibleItems(bar) {
@@ -572,10 +575,7 @@
     }));
   }
 
-  function copied(button, label, ok) {
-    button.textContent = ok ? "Copied!" : "Couldn't Copy";
-    setTimeout(() => (button.textContent = label), 1500);
-  }
+  const copied = (button, label, ok) => flash(button, ok ? "Copied!" : "Couldn't Copy", label);
 
   async function copyAsText(button, bar) {
     const dog = activeDog(dogs)?.name;
@@ -592,28 +592,19 @@
     }
   }
 
-  async function copyAsImage(button, bar) {
-    button.disabled = true;
-    try {
-      // Passing the pending blob keeps the click's permission to write the clipboard while it draws.
-      const png = DogNerdTradeImage.renderGroups(copyGroups(bar), activeDog(dogs)?.name);
-      await navigator.clipboard.write([new ClipboardItem({ "image/png": png })]);
-      copied(button, "Copy as Image", true);
-    } catch (e) {
-      warnOnce("inventory-image", "couldn't copy the inventory image:", e.message);
-      copied(button, "Copy as Image", false);
-    }
-    button.disabled = false;
+  function copyAsImage(button, bar) {
+    const png = DogNerdTradeImage.renderGroups(copyGroups(bar), activeDog(dogs)?.name);
+    DogNerdTradeImage.copy(button, "Copy as Image", png, "inventory-image");
   }
 
   function showCopy(actions, bar) {
     if (!actions) return;
     let copy = [...actions.querySelectorAll(`:scope > .${COPY}`)];
-    if (copy.length !== 2) {
+    if (copy.length !== 3) {
       copy.forEach((n) => n.remove());
       const text = button("Button_neutral", "Copy as Text", () => copyAsText(text, bar));
       const image = button("Button_neutral", "Copy as Image", () => copyAsImage(image, bar));
-      copy = [text, image];
+      copy = [text, image, DogNerdTradeImage.themeToggle()];
       for (const n of copy) n.classList.add(COPY);
       actions.append(...copy);
     }
