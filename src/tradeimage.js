@@ -22,12 +22,28 @@ var DogNerdTradeImage = (() => {
   });
 
   const fonts = new Map();
-  function loadFont(src) {
-    if (!fonts.has(src)) {
-      const face = new FontFace(FONT_FAMILY, `url("${spriteUrl(src)}")`);
-      fonts.set(src, face.load().then(() => document.fonts.add(face)));
+  function loadFont(font) {
+    if (!fonts.has(font.src)) {
+      const family = `${FONT_FAMILY}-${fonts.size}`;
+      const faces = [new FontFace(family, `url("${spriteUrl(font.src)}")`)];
+      // flag determines if the font doesnt have digit glyphs
+      if (font.digitFallback) {
+        faces.push(
+          new FontFace(family, `url("${spriteUrl("/fonts/nds_bios.ttf")}")`, {
+            unicodeRange: "U+0030-0039",
+            sizeAdjust: `${100 / (font.sizeScale ?? 1)}%`,
+          }),
+        );
+      }
+      fonts.set(
+        font.src,
+        Promise.all(faces.map((f) => f.load())).then(() => {
+          for (const f of faces) document.fonts.add(f);
+          return family;
+        }),
+      );
     }
-    return fonts.get(src);
+    return fonts.get(font.src);
   }
 
   async function pageTheme(dogName) {
@@ -36,7 +52,7 @@ var DogNerdTradeImage = (() => {
     const decoration = (type) => state?.decorations?.find((d) => d.type === type && d.src);
     const font = decoration("font");
     const background = decoration("background");
-    const fontLoaded = font ? await loadFont(font.src).then(() => true, () => false) : false;
+    const family = font ? await loadFont(font).catch(() => null) : null;
     // The game's light and dark mode colors, set on the root element.
     const site = getComputedStyle(document.documentElement);
     const color = (name, fallback) => site.getPropertyValue(name).trim() || fallback;
@@ -51,8 +67,8 @@ var DogNerdTradeImage = (() => {
       radius: look.panelBorderRadius ?? 8,
       text: look.fontColor ?? (state ? "#3a3a4a" : color("--text", "#3a3a4a")),
       accent: look.panelAccentColor ?? "#315eff",
-      font: fontLoaded ? FONT_FAMILY : '"NDS BIOS", sans-serif',
-      fontScale: fontLoaded ? (font.sizeScale ?? 1) : 1,
+      font: family ? `"${family}", "NDS BIOS", sans-serif` : '"NDS BIOS", sans-serif',
+      fontScale: family ? (font.sizeScale ?? 1) : 1,
     };
   }
 
