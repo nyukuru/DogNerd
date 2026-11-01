@@ -9,6 +9,7 @@ var DogNerdTradeImage = (() => {
   // Cards shrink to fit until this scale, then the image grows downwards instead.
   const MIN_SCALE = 0.5;
   const DOG_PAD = 12;
+  const DOG_NUDGE = 3;
   const TITLE = { band: 110, height: 76, font: 44, pad: 32 };
   const HEADING = { height: 52, font: 30, pad: 20 };
   const SCREEN = { w: 1920, h: 1080, gap: 16, pad: 24, inset: 10, perRow: 5 };
@@ -22,12 +23,28 @@ var DogNerdTradeImage = (() => {
   });
 
   const fonts = new Map();
-  function loadFont(src) {
-    if (!fonts.has(src)) {
-      const face = new FontFace(FONT_FAMILY, `url("${spriteUrl(src)}")`);
-      fonts.set(src, face.load().then(() => document.fonts.add(face)));
+  function loadFont(font) {
+    if (!fonts.has(font.src)) {
+      const family = `${FONT_FAMILY}-${fonts.size}`;
+      const faces = [new FontFace(family, `url("${spriteUrl(font.src)}")`)];
+      // flag determines if the font doesnt have digit glyphs
+      if (font.digitFallback) {
+        faces.push(
+          new FontFace(family, `url("${spriteUrl("/fonts/nds_bios.ttf")}")`, {
+            unicodeRange: "U+0030-0039",
+            sizeAdjust: `${100 / (font.sizeScale ?? 1)}%`,
+          }),
+        );
+      }
+      fonts.set(
+        font.src,
+        Promise.all(faces.map((f) => f.load())).then(() => {
+          for (const f of faces) document.fonts.add(f);
+          return family;
+        }),
+      );
     }
-    return fonts.get(src);
+    return fonts.get(font.src);
   }
 
   async function pageTheme(dogName) {
@@ -36,7 +53,7 @@ var DogNerdTradeImage = (() => {
     const decoration = (type) => state?.decorations?.find((d) => d.type === type && d.src);
     const font = decoration("font");
     const background = decoration("background");
-    const fontLoaded = font ? await loadFont(font.src).then(() => true, () => false) : false;
+    const family = font ? await loadFont(font).catch(() => null) : null;
     // The game's light and dark mode colors, set on the root element.
     const site = getComputedStyle(document.documentElement);
     const color = (name, fallback) => site.getPropertyValue(name).trim() || fallback;
@@ -51,8 +68,8 @@ var DogNerdTradeImage = (() => {
       radius: look.panelBorderRadius ?? 8,
       text: look.fontColor ?? (state ? "#3a3a4a" : color("--text", "#3a3a4a")),
       accent: look.panelAccentColor ?? "#315eff",
-      font: fontLoaded ? FONT_FAMILY : '"NDS BIOS", sans-serif',
-      fontScale: fontLoaded ? (font.sizeScale ?? 1) : 1,
+      font: family ? `"${family}", "NDS BIOS", sans-serif` : '"NDS BIOS", sans-serif',
+      fontScale: family ? (font.sizeScale ?? 1) : 1,
     };
   }
 
@@ -67,15 +84,9 @@ var DogNerdTradeImage = (() => {
     return { size: dog.offsetWidth, layers: layers.sort((a, b) => a.z - b.z) };
   }
 
-  function dogBounds(dog, ox, oy, margin) {
-    const xs = dog.layers.flatMap((l) => [l.x, l.x + l.img.naturalWidth]).concat([0, dog.size]);
-    const ys = dog.layers.flatMap((l) => [l.y, l.y + l.img.naturalHeight]).concat([0, dog.size]);
-    return {
-      left: ox + Math.min(...xs) - margin,
-      right: ox + Math.max(...xs) + margin,
-      top: oy + Math.min(...ys) - margin,
-      bottom: oy + Math.max(...ys) + margin,
-    };
+  function dogBounds(dog, origin) {
+    const [near, far] = [origin - DOG_PAD, origin + dog.size + DOG_PAD];
+    return { left: near, top: near, right: far, bottom: far };
   }
 
   // Cells of a centred grid that miss the dog, in square rings around it, each ring top to bottom.
@@ -352,7 +363,7 @@ var DogNerdTradeImage = (() => {
     await document.fonts.load(`${CARD.font}px ${theme.font}`).catch(() => {});
     const dog = dogLayers();
     const dogOrigin = dog ? (WIDTH - dog.size) / 2 : 0;
-    const dogBox = dog ? dogBounds(dog, dogOrigin, dogOrigin, DOG_PAD) : null;
+    const dogBox = dog ? dogBounds(dog, dogOrigin) : null;
     const grid = layout(items.length, dogBox);
     const images = await Promise.all(items.map((i) => loadImage(spriteUrl(`/${i.image}`))));
 
@@ -363,12 +374,11 @@ var DogNerdTradeImage = (() => {
     const ctx = canvas.getContext("2d");
     ctx.imageSmoothingEnabled = false;
     background(ctx, canvas, theme);
-    if (dogName) title(ctx, `♡ ${dogName}'s items for trade ♡`, theme);
+    ctx.save();
     ctx.translate(0, band);
-
     if (dog) {
       panel(ctx, dogBox.left, dogBox.top, dogBox.right - dogBox.left, dogBox.bottom - dogBox.top, theme);
-      for (const l of dog.layers) ctx.drawImage(l.img, dogOrigin + l.x, dogOrigin + l.y);
+      for (const l of dog.layers) ctx.drawImage(l.img, dogOrigin + DOG_NUDGE + l.x, dogOrigin + l.y);
     }
     items.forEach((item, i) => {
       const cell = grid.list[i];
@@ -378,6 +388,8 @@ var DogNerdTradeImage = (() => {
       drawCard(ctx, item, images[i], theme);
       ctx.restore();
     });
+    ctx.restore();
+    if (dogName) title(ctx, `♡ ${dogName}'s items for trade ♡`, theme);
 
     return png(canvas);
   }
