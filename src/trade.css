@@ -6,4 +6,10 @@
 
 .dognerd-trade-section > [class*="doghouse_bulkActionsBar__"] {
   gap: 8px;
+  margin-bottom: 8px;
+}
+
+.dognerd-trade-section > [class*="doghouse_bulkActionsBarStatus"] {
+  width: 100%;
+  min-height: 28px;
 }

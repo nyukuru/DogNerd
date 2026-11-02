@@ -63,6 +63,19 @@ var DogNerd = (() => {
     );
   }
 
+  // Temporary display of text given a status textbox
+  const temporaryTexts = new WeakMap();
+  function temporaryText(box, text, time = 5000) {
+    clearTimeout(temporaryTexts.get(box));
+    box.textContent = text;
+    temporaryTexts.set(
+      box,
+      setTimeout(() => {
+        box.textContent = "";
+      }, time),
+    )
+  }
+
   function el(tag, props = {}, children = []) {
     const node = Object.assign(document.createElement(tag), props);
     node.append(...children);
@@ -414,6 +427,7 @@ var DogNerd = (() => {
     gameClass,
     el,
     flash,
+    temporaryText,
     icon,
     spriteUrl,
     untilNewDay,

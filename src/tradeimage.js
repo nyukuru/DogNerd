@@ -2,7 +2,7 @@
 var DogNerdTradeImage = (() => {
   "use strict";
 
-  const { el, flash, spriteUrl, query, warnOnce, dialog, watchStored, gameClass: g } = DogNerd;
+  const { el, flash, temporaryText, spriteUrl, query, warnOnce, dialog, watchStored, gameClass: g } = DogNerd;
 
   const WIDTH = 1000;
   const CARD = { w: 162, h: 219, icon: 124, top: 16, font: 24, line: 26 };
@@ -405,7 +405,11 @@ var DogNerdTradeImage = (() => {
       ok = false;
     }
     button.disabled = false;
-    flash(button, ok ? "Copied!" : "Couldn't Copy", label);
+    showStatus(
+      ok
+        ? "Copied! Press Ctrl+V to paste the image elsewhere!"
+        : "Couldn't copy!"
+    );
     if (ok) return;
     const blob = await png.catch((e) => warnOnce(`${warnKey}-render`, "couldn't draw the image:", e.message));
     if (blob) copyFailed(blob);
@@ -432,6 +436,11 @@ var DogNerdTradeImage = (() => {
       "dognerd-confirm",
       () => URL.revokeObjectURL(url),
     );
+  }
+
+  function showStatus(text) {
+    const textbox = document.querySelector('.doghouse_bulkActionsBarStatus');
+    temporaryText(textbox, text);
   }
 
   function themeToggle() {
