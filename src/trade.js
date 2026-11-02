@@ -1,7 +1,7 @@
 (() => {
   "use strict";
 
-  const { el, flash, warnOnce, query, gameClass: g, spriteUrl, activeDog, onResponse, refetch, watchSetting, watchTrade, quantitySelector } = DogNerd;
+  const { el, flash, temporaryText, warnOnce, query, gameClass: g, spriteUrl, activeDog, onResponse, refetch, watchSetting, watchTrade, quantitySelector } = DogNerd;
 
   const ROUTE = /^\/doghouse\/?$/;
   const TRADE_KEY = "upForTrade";
@@ -151,11 +151,16 @@
     const text = ["♡ items up for sale ♡", ...lines].join("\n");
     try {
       await navigator.clipboard.writeText(text);
-      flash(button, "Copied!", "Copy as Text");
+      showStatus("Copied! Press Ctrl+V to paste the text elsewhere!");
     } catch (e) {
       warnOnce("trade-copy", "couldn't copy the trade list:", e.message);
-      flash(button, "Couldn't Copy", "Copy as Text");
+      showStatus("Couldn't copy!");
     }
+  }
+
+  function showStatus(text) {
+    const textbox = document.querySelector('.doghouse_bulkActionsBarStatus');
+    temporaryText(textbox, text);
   }
 
   function copyAsImage(button) {
@@ -178,6 +183,7 @@
     if (!section) {
       section = el("div", { className: SECTION }, [
         el("div", { className: g("doghouse_bulkActionsBar") }),
+        el("div", { className: g("doghouse_bulkActionsBarStatus") }),
         el("div", { className: `${g("ItemGrid_grid")} ${g("ItemGrid_medium")}` }),
       ]);
     }
