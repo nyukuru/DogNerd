@@ -9,3 +9,23 @@
 .dognerd-gift-hint.dognerd-gift-warn {
   color: #d64545;
 }
+
+.dognerd-gift-picker-wrapper {
+  display: flex;
+  width: 100%;
+  align-items: flex-start;
+  justify-content: space-around;
+}
+
+.dognerd-gift-picker label {
+  margin-bottom: 5px;
+}
+
+.dognerd-gift-picker-wrapper button {
+  margin-top: 36px;
+}
+
+.dognerd-gift-picker-wrapper:has(.dognerd-gift-hidden) {
+  justify-content: center;
+  gap: 16px;
+}
