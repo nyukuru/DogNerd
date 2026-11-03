@@ -12,7 +12,6 @@
     { key: "collection", label: "Collection hints" },
     { key: "items", label: "Item badges" },
     { key: "inventory", label: "Inventory 2.0" },
-    { key: "doghouse", label: "Doghouse store buttons" },
     { key: "trade", label: "Up for trade" },
     { key: "gift", label: "Gifting search and recipient" },
     { key: "fishing", label: "Fishing info" },
