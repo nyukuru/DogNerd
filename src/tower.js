@@ -21,7 +21,7 @@
   ];
 
   let run = null;
-  const newRun = () => ({ floor: null, queue: 0, pendingPop: false, effects: {}, last: null });
+  const newRun = () => ({ effects: {}, last: null });
 
   const hashString = (s) => [...s].reduce((h, c) => (Math.imul(h, 31) + c.charCodeAt(0)) | 0, 7);
 
@@ -56,20 +56,6 @@
     }
   }
 
-  function followQueue(ui, text) {
-    const floor = ui.levelName?.text ?? null;
-    if (floor !== run.floor) Object.assign(run, { floor, queue: 0, pendingPop: false });
-
-    const mob = ui.mobPortrait;
-    if (run.pendingPop && mob?.visible && mob.hp > 0) {
-      run.queue = Math.max(0, run.queue - 1);
-      run.pendingPop = false;
-    }
-    if (/You SLICE the enemy in two/.test(text)) run.queue += 1;
-    if (/You defeated/.test(text) && run.queue > 0) run.pendingPop = true;
-    if (ui.directionControls?.visible) Object.assign(run, { queue: 0, pendingPop: false });
-  }
-
   function follow(ui) {
     const step = hashString(JSON.stringify(ui));
     if (run?.last === step) return;
@@ -77,7 +63,6 @@
     run.last = step;
     const text = ui.textbox?.text ?? "";
     followEffects(ui, text);
-    followQueue(ui, text);
     save();
   }
 
@@ -159,17 +144,6 @@
     }
   }
 
-  function showQueue() {
-    const portrait = document.querySelector(MOB_PORTRAIT);
-    let badge = portrait?.querySelector(":scope > .dognerd-queue");
-    if (!portrait || !run?.queue) {
-      badge?.remove();
-      return;
-    }
-    if (!badge) portrait.append((badge = el("span", { className: "dognerd-queue" })));
-    badge.textContent = `+${run.queue}`;
-  }
-
   const STATUS_KINDS = {
     riposting: "good",
     protected: "good",
@@ -230,11 +204,10 @@
       scheduled = false;
       if (!ROUTE.test(location.pathname)) return;
       if (!enabled) {
-        document.querySelectorAll(".dognerd-turns, .dognerd-queue, .dognerd-statuses").forEach((n) => n.remove());
+        document.querySelectorAll(".dognerd-turns, .dognerd-statuses").forEach((n) => n.remove());
         return;
       }
       showEffects();
-      showQueue();
       showStatuses(document.querySelector(PLAYER_PORTRAIT), latestUi?.playerPortrait?.statusEffects);
       showStatuses(
         document.querySelector(MOB_PORTRAIT),

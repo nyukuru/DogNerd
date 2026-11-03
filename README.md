@@ -25,12 +25,6 @@ Item cards across the site show how many you have in your doghouse, storage and 
 
 ![Item badges](docs/screenshots/item-badges.png)
 
-### Doghouse
-
-**Put All Clothes in Closet** moves every cosmetic to the closet. **Smart Store** also sends extras to storage, keeping bait, seeds, uneaten food, unread books and enough combat items for a tower loadout.
-
-![Doghouse buttons](docs/screenshots/doghouse-buttons.png)
-
 ### Up for trade
 
 Mark items as up for trade from their dialog or with bulk actions. They're set aside in their own section of the doghouse, and the list can be copied as text or as an image to share.
@@ -70,9 +64,8 @@ A plot's dialog shows every variant of its crop, with the ones you haven't harve
 ### Tower
 
 - Turns left on effects like riposting, shown on the item that started them.
-- How many enemies are queued up after slicing one in two.
 - Status effects on you and the enemy, as colored labels.
-- A map for the cheese maze that follows where you are and draws the way to the cheese and any unopened chests.
+- A map for the cheese maze that follows where you are from the moment you enter it and marks the cheese and the treasure rooms.
 
 ![Cheese maze map](docs/screenshots/cheese-maze.png)
 
