@@ -122,16 +122,20 @@
     }
   }
 
+  // key is a combination of image and name because some items share images and others share names
+  const itemKey = (path, name) => `${path}|${norm(name)}`;
+
   function buildLookup() {
-    const byImage = new Map();
+    const byKey = new Map();
     const byName = new Map();
     const infoOf = (name, image) => {
       const path = image?.replace(/^\//, "");
       const isGamePath = path && !/^[a-z]+:/.test(path);
-      let info = isGamePath ? byImage.get(path) : byName.get(norm(name));
+      const key = isGamePath && itemKey(path, name);
+      let info = isGamePath ? byKey.get(key) : byName.get(norm(name));
       if (!info) {
         info = { food: false, book: false, done: false, doghouse: 0, storage: 0, closet: 0, trade: 0, worn: [] };
-        if (isGamePath) byImage.set(path, info);
+        if (isGamePath) byKey.set(key, info);
       }
       if (!byName.has(norm(name))) byName.set(norm(name), info);
       return info;
@@ -156,7 +160,7 @@
     }
     for (const slot of COLLECTIONS.food?.slots ?? []) if (slot) infoOf(slot.name, slot.sprite).food = true;
     for (const slot of COLLECTIONS.books?.slots ?? []) if (slot) infoOf(slot.name, slot.sprite).book = true;
-    return { byImage, byName };
+    return { byKey, byName };
   }
 
   function imageKey(img) {
@@ -172,7 +176,7 @@
     lookup ??= buildLookup();
     const img = card.querySelector('[class*="ItemCard_icon__"]');
     const name = card.querySelector('[class*="ItemCard_name__"]')?.textContent ?? img?.alt ?? "";
-    return lookup.byImage.get(imageKey(img)) ?? lookup.byName.get(norm(name)) ?? null;
+    return lookup.byKey.get(itemKey(imageKey(img), name)) ?? lookup.byName.get(norm(name)) ?? null;
   }
 
   function badges(info) {
