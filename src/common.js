@@ -106,13 +106,28 @@ var DogNerd = (() => {
     return new URL(sprite, location.origin).href;
   }
 
-  const DAY = 24 * 60 * 60 * 1000;
-  const NEW_DAY_UTC_HOUR = 7;
+  // day starts at midnight Pacific time, daylight saving included.
+  const NEW_DAY_ZONE = new Intl.DateTimeFormat("en-US", {
+    timeZone: "America/Los_Angeles",
+    hourCycle: "h23",
+    year: "numeric",
+    month: "numeric",
+    day: "numeric",
+    hour: "numeric",
+    minute: "numeric",
+    second: "numeric",
+  });
+
+  // How far the zone's clock is ahead of UTC at a moment.
+  function zoneOffset(at) {
+    const p = Object.fromEntries(NEW_DAY_ZONE.formatToParts(at).map(({ type, value }) => [type, Number(value)]));
+    return Date.UTC(p.year, p.month - 1, p.day, p.hour, p.minute, p.second) - Math.floor(at / 1000) * 1000;
+  }
 
   function untilNewDay(now = Date.now()) {
-    const d = new Date(now);
-    const start = Date.UTC(d.getUTCFullYear(), d.getUTCMonth(), d.getUTCDate(), NEW_DAY_UTC_HOUR);
-    return start > now ? start - now : start + DAY - now;
+    const today = new Date(now + zoneOffset(now));
+    const midnight = Date.UTC(today.getUTCFullYear(), today.getUTCMonth(), today.getUTCDate() + 1);
+    return midnight - zoneOffset(midnight - zoneOffset(now)) - now;
   }
 
   // The game rate limits per request, not per procedure.
