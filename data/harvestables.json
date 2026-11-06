@@ -1,5 +1,5 @@
 {
-  "schema": 1,
+  "schema": 2,
   "blocks": [
     {
       "name": null,
@@ -15,12 +15,7 @@
       "obtain": [
         {
           "where": null,
-          "details": [
-            [
-              null,
-              "Grown from Acorn"
-            ]
-          ]
+          "details": "Grown from Acorn"
         }
       ]
     },
@@ -32,12 +27,7 @@
       "obtain": [
         {
           "where": null,
-          "details": [
-            [
-              null,
-              "Grown from Apple Tree Seeds"
-            ]
-          ]
+          "details": "Grown from Apple Tree Seeds"
         }
       ]
     },
@@ -49,12 +39,7 @@
       "obtain": [
         {
           "where": null,
-          "details": [
-            [
-              null,
-              "Variant of Apple"
-            ]
-          ]
+          "details": "Variant of Apple"
         }
       ]
     },
@@ -66,12 +51,7 @@
       "obtain": [
         {
           "where": null,
-          "details": [
-            [
-              null,
-              "Variant of Apple"
-            ]
-          ]
+          "details": "Variant of Apple"
         }
       ]
     },
@@ -83,12 +63,7 @@
       "obtain": [
         {
           "where": null,
-          "details": [
-            [
-              null,
-              "Variant of Apple"
-            ]
-          ]
+          "details": "Variant of Apple"
         }
       ]
     },
@@ -100,12 +75,7 @@
       "obtain": [
         {
           "where": null,
-          "details": [
-            [
-              null,
-              "Grown from Watermelon Seed"
-            ]
-          ]
+          "details": "Grown from Watermelon Seed"
         }
       ]
     },
@@ -117,16 +87,7 @@
       "obtain": [
         {
           "where": null,
-          "details": [
-            [
-              null,
-              "Variant of Watermelon"
-            ],
-            [
-              null,
-              "Hint for obtaining: Surround Watermelon Crop with Water. Water tiles cannot have crops in them"
-            ]
-          ]
+          "details": "Variant of Watermelon\nHint for obtaining: Surround Watermelon Crop with Water. Water tiles cannot have crops in them. The water tiles are replaced with regular grass tiles after the Water Melon is harvested"
         }
       ]
     },
@@ -138,12 +99,7 @@
       "obtain": [
         {
           "where": null,
-          "details": [
-            [
-              null,
-              "Variant of Watermelon"
-            ]
-          ]
+          "details": "Variant of Watermelon"
         }
       ]
     },
@@ -155,12 +111,7 @@
       "obtain": [
         {
           "where": null,
-          "details": [
-            [
-              null,
-              "Grown from Boneanna Seeds"
-            ]
-          ]
+          "details": "Grown from Boneanna Seeds"
         }
       ]
     },
@@ -172,12 +123,7 @@
       "obtain": [
         {
           "where": null,
-          "details": [
-            [
-              null,
-              "Grown from Doggplant Seeds"
-            ]
-          ]
+          "details": "Grown from Doggplant Seeds"
         }
       ]
     },
@@ -189,12 +135,7 @@
       "obtain": [
         {
           "where": null,
-          "details": [
-            [
-              null,
-              "Grown from Pomnapple Seed"
-            ]
-          ]
+          "details": "Grown from Pomnapple Seed"
         }
       ]
     },
@@ -206,12 +147,7 @@
       "obtain": [
         {
           "where": null,
-          "details": [
-            [
-              null,
-              "Variant of Pomnapple"
-            ]
-          ]
+          "details": "Variant of Pomnapple"
         }
       ]
     },
@@ -223,12 +159,7 @@
       "obtain": [
         {
           "where": null,
-          "details": [
-            [
-              null,
-              "Grown from Pawberry Seeds"
-            ]
-          ]
+          "details": "Grown from Pawberry Seeds"
         }
       ]
     },
@@ -240,12 +171,7 @@
       "obtain": [
         {
           "where": null,
-          "details": [
-            [
-              null,
-              "Variant of Pawberry"
-            ]
-          ]
+          "details": "Variant of Pawberry"
         }
       ]
     },
@@ -257,12 +183,7 @@
       "obtain": [
         {
           "where": null,
-          "details": [
-            [
-              null,
-              "Variant of Pawberry"
-            ]
-          ]
+          "details": "Variant of Pawberry"
         }
       ]
     },
@@ -274,12 +195,7 @@
       "obtain": [
         {
           "where": null,
-          "details": [
-            [
-              null,
-              "Variant of Acorn"
-            ]
-          ]
+          "details": "Variant of Acorn"
         }
       ]
     },
@@ -291,12 +207,7 @@
       "obtain": [
         {
           "where": null,
-          "details": [
-            [
-              null,
-              "Variant of Acorn"
-            ]
-          ]
+          "details": "Variant of Acorn"
         }
       ]
     },
@@ -308,12 +219,7 @@
       "obtain": [
         {
           "where": null,
-          "details": [
-            [
-              null,
-              "Grown from Collieflower Seeds"
-            ]
-          ]
+          "details": "Grown from Collieflower Seeds"
         }
       ]
     },
@@ -325,12 +231,7 @@
       "obtain": [
         {
           "where": null,
-          "details": [
-            [
-              null,
-              "Variant of Collieflower"
-            ]
-          ]
+          "details": "Variant of Collieflower"
         }
       ]
     },
@@ -342,12 +243,7 @@
       "obtain": [
         {
           "where": null,
-          "details": [
-            [
-              null,
-              "Grown from Barkkoli Seeds"
-            ]
-          ]
+          "details": "Grown from Barkkoli Seeds"
         }
       ]
     },
@@ -359,12 +255,7 @@
       "obtain": [
         {
           "where": null,
-          "details": [
-            [
-              null,
-              "Variant of Barkkoli"
-            ]
-          ]
+          "details": "Variant of Barkkoli"
         }
       ]
     },
@@ -376,12 +267,7 @@
       "obtain": [
         {
           "where": null,
-          "details": [
-            [
-              null,
-              "Grown from Sweet Pea Seeds"
-            ]
-          ]
+          "details": "Grown from Sweet Pea Seeds"
         }
       ]
     },
@@ -393,29 +279,19 @@
       "obtain": [
         {
           "where": null,
-          "details": [
-            [
-              null,
-              "Variant of Sweet Peas"
-            ]
-          ]
+          "details": "Variant of Sweet Peas"
         }
       ]
     },
     {
       "name": "Flowery Cactus",
       "block": null,
-      "sprite": "https://static.wikitide.net/dogonlinedotnetwikiwiki/a/a4/Item_Flowery_Cactus.png",
+      "sprite": "/img/item_babycactus.png",
       "plant": "Flowery Cactus",
       "obtain": [
         {
           "where": null,
-          "details": [
-            [
-              null,
-              "Grown from Flowery Cactus Seeds"
-            ]
-          ]
+          "details": "Grown from Flowery Cactus Seeds"
         }
       ]
     },
@@ -427,12 +303,7 @@
       "obtain": [
         {
           "where": null,
-          "details": [
-            [
-              null,
-              "Grown from Cowboy Cactus Seeds"
-            ]
-          ]
+          "details": "Grown from Cowboy Cactus Seeds"
         }
       ]
     },
@@ -444,12 +315,7 @@
       "obtain": [
         {
           "where": null,
-          "details": [
-            [
-              null,
-              "Grown from Starry Cactus Seeds"
-            ]
-          ]
+          "details": "Grown from Starry Cactus Seeds"
         }
       ]
     },
@@ -461,12 +327,7 @@
       "obtain": [
         {
           "where": null,
-          "details": [
-            [
-              null,
-              "Grown from Cack-o-lantern Seeds"
-            ]
-          ]
+          "details": "Grown from Cack-o-lantern Seeds"
         }
       ]
     },
@@ -478,12 +339,7 @@
       "obtain": [
         {
           "where": null,
-          "details": [
-            [
-              null,
-              "Variant of Flowery Cactus"
-            ]
-          ]
+          "details": "Variant of Flowery Cactus"
         }
       ]
     },
@@ -495,12 +351,7 @@
       "obtain": [
         {
           "where": null,
-          "details": [
-            [
-              null,
-              "Variant of Cowboy Cactus"
-            ]
-          ]
+          "details": "Variant of Cowboy Cactus"
         }
       ]
     },
@@ -512,12 +363,7 @@
       "obtain": [
         {
           "where": null,
-          "details": [
-            [
-              null,
-              "Grown from Flower Seeds"
-            ]
-          ]
+          "details": "Grown from Flower Seeds"
         }
       ]
     },
@@ -529,12 +375,7 @@
       "obtain": [
         {
           "where": null,
-          "details": [
-            [
-              null,
-              "Grown from Flower Seeds"
-            ]
-          ]
+          "details": "Grown from Flower Seeds"
         }
       ]
     },
@@ -546,12 +387,7 @@
       "obtain": [
         {
           "where": null,
-          "details": [
-            [
-              null,
-              "Grown from Flower Seeds"
-            ]
-          ]
+          "details": "Grown from Flower Seeds"
         }
       ]
     },
@@ -563,12 +399,7 @@
       "obtain": [
         {
           "where": null,
-          "details": [
-            [
-              null,
-              "Grown from Flower Seeds"
-            ]
-          ]
+          "details": "Grown from Flower Seeds"
         }
       ]
     },
@@ -580,12 +411,7 @@
       "obtain": [
         {
           "where": null,
-          "details": [
-            [
-              null,
-              "Grown from Cranberry Seeds"
-            ]
-          ]
+          "details": "Grown from Cranberry Seeds"
         }
       ]
     },
@@ -597,12 +423,7 @@
       "obtain": [
         {
           "where": null,
-          "details": [
-            [
-              null,
-              "Grown from Rice Seeds"
-            ]
-          ]
+          "details": "Grown from Rice Seeds"
         }
       ]
     },
@@ -614,12 +435,7 @@
       "obtain": [
         {
           "where": null,
-          "details": [
-            [
-              null,
-              "Variant of Rice"
-            ]
-          ]
+          "details": "Variant of Rice"
         }
       ]
     },
@@ -630,12 +446,7 @@
       "obtain": [
         {
           "where": null,
-          "details": [
-            [
-              null,
-              "Oak Tree (dig up), Apple Tree (dig up), Barkkoli (dig up), Pomnapple (dig up)"
-            ]
-          ]
+          "details": "Oak Tree, Apple Tree, Barkkoli, Pomnapple"
         }
       ]
     },
@@ -646,12 +457,7 @@
       "obtain": [
         {
           "where": null,
-          "details": [
-            [
-              null,
-              "Flowery Cactus (dig up), Cowboy Cactus (dig up), Starry Cactus (dig up), Cack-o-lantern (dig up)"
-            ]
-          ]
+          "details": "Flowery Cactus, Cowboy Cactus, Starry Cactus, Cack-o-lantern"
         }
       ]
     },
@@ -662,12 +468,7 @@
       "obtain": [
         {
           "where": null,
-          "details": [
-            [
-              null,
-              "Oak Tree (dig up), Apple Tree (dig up)"
-            ]
-          ]
+          "details": "Oak Tree, Apple Tree"
         }
       ]
     },
@@ -678,12 +479,7 @@
       "obtain": [
         {
           "where": null,
-          "details": [
-            [
-              null,
-              "Flowery Cactus (dig up), Cowboy Cactus (dig up), Starry Cactus (dig up), Cack-o-lantern (dig up)"
-            ]
-          ]
+          "details": "Flowery Cactus, Cowboy Cactus, Starry Cactus, Cack-o-lantern"
         }
       ]
     },
@@ -694,12 +490,7 @@
       "obtain": [
         {
           "where": null,
-          "details": [
-            [
-              null,
-              "Fruits, Veggies, Flowers. Most Commonly Watermelon (dig up) and Pomnapple (dig up)"
-            ]
-          ]
+          "details": "Fruits, Veggies, Flowers. Most Commonly Watermelon and Pomnapple"
         }
       ]
     },
@@ -710,12 +501,7 @@
       "obtain": [
         {
           "where": null,
-          "details": [
-            [
-              null,
-              "Fruits, Veggies, Flowers. Most Commonly Watermelon (dig up) and Pomnapple (dig up)"
-            ]
-          ]
+          "details": "Fruits, Veggies, Flowers. Most Commonly Watermelon and Pomnapple"
         }
       ]
     },
@@ -726,12 +512,7 @@
       "obtain": [
         {
           "where": null,
-          "details": [
-            [
-              null,
-              "Oak Tree (dig up)"
-            ]
-          ]
+          "details": "Oak Tree, Apple Tree"
         }
       ]
     },
@@ -742,12 +523,7 @@
       "obtain": [
         {
           "where": null,
-          "details": [
-            [
-              null,
-              "Flowery Cactus (dig up), Cowboy Cactus (dig up), Starry Cactus (dig up), Cack-o-lantern (dig up)"
-            ]
-          ]
+          "details": "Flowery Cactus, Cowboy Cactus, Starry Cactus, Cack-o-lantern"
         }
       ]
     },
@@ -758,12 +534,7 @@
       "obtain": [
         {
           "where": null,
-          "details": [
-            [
-              null,
-              "Flowery Cactus (dig up), Cowboy Cactus (dig up), Starry Cactus (dig up), Cack-o-lantern (dig up)"
-            ]
-          ]
+          "details": "Flowery Cactus, Cowboy Cactus, Starry Cactus, Cack-o-lantern"
         }
       ]
     },
@@ -774,12 +545,7 @@
       "obtain": [
         {
           "where": null,
-          "details": [
-            [
-              null,
-              "Fruits, Veggies, Flowers. Most Commonly Barkkoli (dig up) and Sweet Peas (dig up)"
-            ]
-          ]
+          "details": "Fruits, Veggies, Flowers. Most Commonly Barkkoli and Sweet Peas"
         }
       ]
     },
@@ -790,12 +556,7 @@
       "obtain": [
         {
           "where": null,
-          "details": [
-            [
-              null,
-              "Fruits, Veggies, Flowers. Most Commonly Pawberry Bush (dig up) and Sweet Peas (dig up)"
-            ]
-          ]
+          "details": "Fruits, Veggies, Flowers. Most Commonly Pawberry Bush and Sweet Peas"
         }
       ]
     },
@@ -806,12 +567,7 @@
       "obtain": [
         {
           "where": null,
-          "details": [
-            [
-              null,
-              "Farm Weed (dig up)"
-            ]
-          ]
+          "details": "Farm Weed"
         }
       ]
     },
@@ -822,12 +578,7 @@
       "obtain": [
         {
           "where": null,
-          "details": [
-            [
-              null,
-              "Farm Weed (dig up)"
-            ]
-          ]
+          "details": "Farm Weed"
         }
       ]
     },
@@ -838,12 +589,7 @@
       "obtain": [
         {
           "where": null,
-          "details": [
-            [
-              null,
-              "Farm Weed (dig up)"
-            ]
-          ]
+          "details": "Farm Weed"
         }
       ]
     },
@@ -854,12 +600,7 @@
       "obtain": [
         {
           "where": null,
-          "details": [
-            [
-              null,
-              "Can appear on empty plots"
-            ]
-          ]
+          "details": "Fruits, Trees & Cactus. Most Commonly Flowery Cactus\nAppears on empty plots"
         }
       ]
     },
@@ -870,12 +611,7 @@
       "obtain": [
         {
           "where": null,
-          "details": [
-            [
-              null,
-              "Barkkoli (dig up), Pomnapple (dig up), Flower Bush (dig up)"
-            ]
-          ]
+          "details": "Digging Fruits, Vegetables and Cactus"
         }
       ]
     },
@@ -886,12 +622,7 @@
       "obtain": [
         {
           "where": null,
-          "details": [
-            [
-              null,
-              "Barkkoli (dig up)"
-            ]
-          ]
+          "details": "Digging Fruits, Vegetables and Cactus"
         }
       ]
     },
@@ -902,12 +633,7 @@
       "obtain": [
         {
           "where": null,
-          "details": [
-            [
-              null,
-              "Can appear on empty plots next to vegetables"
-            ]
-          ]
+          "details": "Fruit, Cactus and most commonly Trees\nCan appear on empty plots"
         }
       ]
     },
@@ -915,7 +641,12 @@
       "name": "Apple Moth",
       "block": null,
       "sprite": "/img/item_apple_moth.png",
-      "obtain": []
+      "obtain": [
+        {
+          "where": null,
+          "details": "Fruits, Cactus & Trees\nCan appear on empty plots"
+        }
+      ]
     },
     {
       "name": "Candy-Striped Leafhopper",
@@ -924,12 +655,7 @@
       "obtain": [
         {
           "where": null,
-          "details": [
-            [
-              null,
-              "Can appear on empty plots next to trees"
-            ]
-          ]
+          "details": "Fruits, Vegetables, Cactus and Trees\nCan appear on empty plots"
         }
       ]
     },
@@ -940,12 +666,7 @@
       "obtain": [
         {
           "where": null,
-          "details": [
-            [
-              null,
-              "Can appear on empty plots"
-            ]
-          ]
+          "details": "Cactus & Trees\nCan appear on empty plots"
         }
       ]
     },
@@ -956,12 +677,7 @@
       "obtain": [
         {
           "where": null,
-          "details": [
-            [
-              null,
-              "Barkkoli (dig up), Flowery Cactus (dig up), Doggplant (dig up), Pawberry Bush (dig up)"
-            ]
-          ]
+          "details": "Digging Fruits, Vegetables and Cactus"
         }
       ]
     },
@@ -972,12 +688,7 @@
       "obtain": [
         {
           "where": null,
-          "details": [
-            [
-              null,
-              "Can appear on empty plots next to trees"
-            ]
-          ]
+          "details": "Fruit, Cactus and most commonly Trees\nCan appear on empty plots"
         }
       ]
     },
@@ -988,12 +699,7 @@
       "obtain": [
         {
           "where": null,
-          "details": [
-            [
-              null,
-              "Oak Tree (dig up), Apple Tree (dig up)"
-            ]
-          ]
+          "details": "Oak Tree, Apple Tree"
         }
       ]
     },
@@ -1004,12 +710,7 @@
       "obtain": [
         {
           "where": null,
-          "details": [
-            [
-              null,
-              "Oak Tree (dig up), Apple Tree (dig up)"
-            ]
-          ]
+          "details": "Oak Tree, Apple Tree"
         }
       ]
     },
@@ -1020,12 +721,7 @@
       "obtain": [
         {
           "where": null,
-          "details": [
-            [
-              null,
-              "Oak Tree"
-            ]
-          ]
+          "details": "Fruit, Cactus & Trees. Most commonly Sweet Peas\nCan appear on empty plots"
         }
       ]
     },
@@ -1036,12 +732,7 @@
       "obtain": [
         {
           "where": null,
-          "details": [
-            [
-              null,
-              "Can appear on empty plots next to trees"
-            ]
-          ]
+          "details": "Fruit, Cactus & Trees\nCan appear on empty plots"
         }
       ]
     },
@@ -1052,28 +743,18 @@
       "obtain": [
         {
           "where": null,
-          "details": [
-            [
-              null,
-              "Barkkoli (dig up), Pawberry Bush (dig up), Pomnapple (dig up)"
-            ]
-          ]
+          "details": "Digging Fruits, Vegetables and Cactus"
         }
       ]
     },
     {
       "name": "Io Moth",
       "block": null,
-      "sprite": "https://static.wikitide.net/dogonlinedotnetwikiwiki/c/c1/Item_Io_Moth.png",
+      "sprite": "/img/item_io_moth_idle.png",
       "obtain": [
         {
           "where": null,
-          "details": [
-            [
-              null,
-              "Can appear on empty plots next to cacti and trees"
-            ]
-          ]
+          "details": "Fruit, Cactus & Trees\nCan appear on empty plots"
         }
       ]
     },
@@ -1084,12 +765,7 @@
       "obtain": [
         {
           "where": null,
-          "details": [
-            [
-              null,
-              "Eggschange"
-            ]
-          ]
+          "details": "Peacock Dog"
         }
       ]
     },
@@ -1100,12 +776,7 @@
       "obtain": [
         {
           "where": null,
-          "details": [
-            [
-              null,
-              "Eggschange"
-            ]
-          ]
+          "details": "Peacock Dog"
         }
       ]
     },
@@ -1116,28 +787,18 @@
       "obtain": [
         {
           "where": null,
-          "details": [
-            [
-              null,
-              "Eggschange"
-            ]
-          ]
+          "details": "Peacock Dog"
         }
       ]
     },
     {
       "name": "Evil Egg",
       "block": null,
-      "sprite": "https://static.wikitide.net/dogonlinedotnetwikiwiki/2/27/Item_Evil_Egg.png",
+      "sprite": "/img/items/other/EvilEgg.png",
       "obtain": [
         {
           "where": null,
-          "details": [
-            [
-              null,
-              "Eggschange"
-            ]
-          ]
+          "details": "Peacock Dog"
         }
       ]
     },
@@ -1148,12 +809,7 @@
       "obtain": [
         {
           "where": null,
-          "details": [
-            [
-              null,
-              "Chicken Dog"
-            ]
-          ]
+          "details": "Chicken Dog"
         }
       ]
     },
@@ -1164,12 +820,7 @@
       "obtain": [
         {
           "where": null,
-          "details": [
-            [
-              null,
-              "Chicken Dog"
-            ]
-          ]
+          "details": "Chicken Dog"
         }
       ]
     },
@@ -1180,12 +831,7 @@
       "obtain": [
         {
           "where": null,
-          "details": [
-            [
-              null,
-              "Chicken Dog"
-            ]
-          ]
+          "details": "Chicken Dog"
         }
       ]
     },
@@ -1196,28 +842,18 @@
       "obtain": [
         {
           "where": null,
-          "details": [
-            [
-              null,
-              "Chicken Dog"
-            ]
-          ]
+          "details": "Chicken Dog"
         }
       ]
     },
     {
       "name": "Chrysalis Egg",
       "block": null,
-      "sprite": "https://static.wikitide.net/dogonlinedotnetwikiwiki/1/1a/Item_Chrysalis_Egg.png",
+      "sprite": "/img/items/other/EggChrysalis.png",
       "obtain": [
         {
           "where": null,
-          "details": [
-            [
-              null,
-              "Eggschange"
-            ]
-          ]
+          "details": "Peacock Dog"
         }
       ]
     },
@@ -1228,44 +864,29 @@
       "obtain": [
         {
           "where": null,
-          "details": [
-            [
-              null,
-              "Trading Post"
-            ]
-          ]
+          "details": "Trading Post"
         }
       ]
     },
     {
       "name": "Vacation Egg",
       "block": null,
-      "sprite": "https://static.wikitide.net/dogonlinedotnetwikiwiki/c/cc/Item_Vacation_Egg.png",
+      "sprite": "/img/item_egg_relaxed.png",
       "obtain": [
         {
           "where": null,
-          "details": [
-            [
-              null,
-              "Eggschange"
-            ]
-          ]
+          "details": "Peacock Dog"
         }
       ]
     },
     {
       "name": "Gourd Egg",
       "block": null,
-      "sprite": "https://static.wikitide.net/dogonlinedotnetwikiwiki/6/63/Item_Gourd_Egg.png",
+      "sprite": "/img/items/food/Egg_Gourd.png",
       "obtain": [
         {
           "where": null,
-          "details": [
-            [
-              null,
-              "Eggschange"
-            ]
-          ]
+          "details": "Peacock Dog"
         }
       ]
     }

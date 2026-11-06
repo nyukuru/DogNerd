@@ -102,8 +102,11 @@ var DogNerd = (() => {
     return slot;
   }
 
+  // Entries with no known sprite yet use the game's unknown item icon.
+  const QUESTION_MARK = "/img/wiggle-icon-question-mark.gif";
+
   function spriteUrl(sprite) {
-    return new URL(sprite, location.origin).href;
+    return new URL(sprite ?? QUESTION_MARK, location.origin).href;
   }
 
   // day starts at midnight Pacific time, daylight saving included.
@@ -344,7 +347,6 @@ var DogNerd = (() => {
   }
 
   const SETTINGS_KEY = "settings";
-  // Also hardcoded in accessibility.js, which runs before this file.
   const OFF_BY_DEFAULT = ["dyslexiaFont", "stillEffects"];
   const settingOn = (stored, feature) => stored?.[feature] ?? !OFF_BY_DEFAULT.includes(feature);
   const watchSetting = (feature, fn) => watchStored(SETTINGS_KEY, (stored) => fn(settingOn(stored, feature)));
@@ -368,12 +370,13 @@ var DogNerd = (() => {
   //   schema   must equal SCHEMA
   //   unseen   "hidden" when the game omits unseen entries from the grid
   //   blocks   [{name, size}], unused but required by older versions' validation
-  //   slots    [{name, block, sprite, obtain: [{where, details: [[label, text]]}], guess?, group?, plant?}]
+  //   slots    [{name, block, sprite, obtain: [{where, details: text or {label: text}}], guess?, plant?}] in the game's order,
+  //            sprite is a game path or null when unknown
   //   fishing  (fish only) {areas: {areaId: where}, baitTiers: [[bait, ...weakest first]]}
   //   plant    (harvestables only) the crop's farm tile label, "Oak Tree" for Acorn and its variants
   const BUNDLED = browser.runtime.getURL("data/");
   const REMOTE = "https://raw.githubusercontent.com/nyukuru/DogNerd/main/data/";
-  const SCHEMA = 1;
+  const SCHEMA = 2;
   const REFRESH = 6 * 60 * 60 * 1000;
   const CACHE_KEY = "collections";
 
@@ -419,10 +422,11 @@ var DogNerd = (() => {
       getCollections(BUNDLED).catch((e) => (warnOnce("bundled", "couldn't load the collection data:", e.message), {})),
       browser.storage.local.get(CACHE_KEY).then((r) => r[CACHE_KEY]),
     ]);
-    applyData({ ...bundled, ...cached?.collections });
+    // invalidate old schemas
+    let collections = Object.fromEntries(Object.entries(cached?.collections ?? {}).filter(([, c]) => valid(c)));
+    applyData({ ...bundled, ...collections });
     if (cached && Date.now() - cached.fetchedAt < REFRESH) return;
 
-    let collections = cached?.collections ?? {};
     try {
       collections = { ...collections, ...(await getCollections(REMOTE)) };
     } finally {
@@ -445,6 +449,7 @@ var DogNerd = (() => {
     temporaryText,
     icon,
     spriteUrl,
+    QUESTION_MARK,
     untilNewDay,
     query,
     mutate,

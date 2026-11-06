@@ -1,5 +1,5 @@
 {
-  "schema": 1,
+  "schema": 2,
   "blocks": [
     {
       "name": "Old Fishin' Hole",
@@ -26,41 +26,23 @@
     {
       "name": "Minnow",
       "block": "Old Fishin' Hole",
-      "sprite": "https://static.wikitide.net/dogonlinedotnetwikiwiki/d/de/Item_Minnow.png",
+      "sprite": "/img/item_fish.png",
       "obtain": [
         {
           "where": "Old Fishin' Hole",
-          "details": [
-            [
-              "Times of Day",
-              "All"
-            ],
-            [
-              "Minimum Bait",
-              "Bucket of Worms"
-            ],
-            [
-              "Weather Conditions",
-              "All"
-            ]
-          ]
+          "details": {
+            "Times of Day": "All",
+            "Minimum Bait": "Bucket of Worms",
+            "Weather Conditions": "All"
+          }
         },
         {
           "where": "Ocean Fishing Cruiser",
-          "details": [
-            [
-              "Times of Day",
-              "All"
-            ],
-            [
-              "Minimum Bait",
-              "Bucket of Worms"
-            ],
-            [
-              "Weather Conditions",
-              "All"
-            ]
-          ]
+          "details": {
+            "Times of Day": "All",
+            "Minimum Bait": "Bucket of Worms",
+            "Weather Conditions": "All"
+          }
         }
       ]
     },
@@ -71,20 +53,11 @@
       "obtain": [
         {
           "where": "Old Fishin' Hole",
-          "details": [
-            [
-              "Times of Day",
-              "All"
-            ],
-            [
-              "Minimum Bait",
-              "Bucket of Worms"
-            ],
-            [
-              "Weather Conditions",
-              "All"
-            ]
-          ]
+          "details": {
+            "Times of Day": "All",
+            "Minimum Bait": "Bucket of Worms",
+            "Weather Conditions": "All"
+          }
         }
       ]
     },
@@ -95,20 +68,11 @@
       "obtain": [
         {
           "where": "Old Fishin' Hole",
-          "details": [
-            [
-              "Times of Day",
-              "All"
-            ],
-            [
-              "Minimum Bait",
-              "Bucket of Worms"
-            ],
-            [
-              "Weather Conditions",
-              "All"
-            ]
-          ]
+          "details": {
+            "Times of Day": "All",
+            "Minimum Bait": "Bucket of Worms",
+            "Weather Conditions": "All"
+          }
         }
       ]
     },
@@ -119,20 +83,11 @@
       "obtain": [
         {
           "where": "Old Fishin' Hole",
-          "details": [
-            [
-              "Times of Day",
-              "Evening, Night"
-            ],
-            [
-              "Minimum Bait",
-              "Mound of Minnows"
-            ],
-            [
-              "Weather Conditions",
-              "All"
-            ]
-          ]
+          "details": {
+            "Times of Day": "Evening, Night",
+            "Minimum Bait": "Bucket of Worms",
+            "Weather Conditions": "All"
+          }
         }
       ]
     },
@@ -143,20 +98,11 @@
       "obtain": [
         {
           "where": "Old Fishin' Hole",
-          "details": [
-            [
-              "Times of Day",
-              "Night"
-            ],
-            [
-              "Minimum Bait",
-              "Mound of Minnows"
-            ],
-            [
-              "Weather Conditions",
-              "All"
-            ]
-          ]
+          "details": {
+            "Times of Day": "Night",
+            "Minimum Bait": "Mound of Minnows",
+            "Weather Conditions": "All"
+          }
         }
       ]
     },
@@ -167,20 +113,11 @@
       "obtain": [
         {
           "where": "Old Fishin' Hole",
-          "details": [
-            [
-              "Times of Day",
-              "Morning, Afternoon"
-            ],
-            [
-              "Minimum Bait",
-              "Mound of Minnows"
-            ],
-            [
-              "Weather Conditions",
-              "All"
-            ]
-          ]
+          "details": {
+            "Times of Day": "Morning, Afternoon",
+            "Minimum Bait": "Mound of Minnows",
+            "Weather Conditions": "All"
+          }
         }
       ]
     },
@@ -191,20 +128,11 @@
       "obtain": [
         {
           "where": "Old Fishin' Hole",
-          "details": [
-            [
-              "Times of Day",
-              "All"
-            ],
-            [
-              "Minimum Bait",
-              "Mound of Minnows"
-            ],
-            [
-              "Weather Conditions",
-              "All"
-            ]
-          ]
+          "details": {
+            "Times of Day": "All",
+            "Minimum Bait": "Mound of Minnows",
+            "Weather Conditions": "All"
+          }
         }
       ]
     },
@@ -215,20 +143,11 @@
       "obtain": [
         {
           "where": "Old Fishin' Hole",
-          "details": [
-            [
-              "Times of Day",
-              "All"
-            ],
-            [
-              "Minimum Bait",
-              "Cup of Crickets"
-            ],
-            [
-              "Weather Conditions",
-              "All"
-            ]
-          ]
+          "details": {
+            "Times of Day": "All",
+            "Minimum Bait": "Cup of Crickets",
+            "Weather Conditions": "All"
+          }
         }
       ]
     },
@@ -239,20 +158,11 @@
       "obtain": [
         {
           "where": "Old Fishin' Hole",
-          "details": [
-            [
-              "Times of Day",
-              "Night"
-            ],
-            [
-              "Minimum Bait",
-              "Bucket of Worms"
-            ],
-            [
-              "Weather Conditions",
-              "Clear Skies, Rainy, Stormy"
-            ]
-          ]
+          "details": {
+            "Times of Day": "Night",
+            "Minimum Bait": "Cup of Crickets",
+            "Weather Conditions": "All"
+          }
         }
       ]
     },
@@ -263,20 +173,11 @@
       "obtain": [
         {
           "where": "Old Fishin' Hole",
-          "details": [
-            [
-              "Times of Day",
-              "Morning, Afternoon, Evening"
-            ],
-            [
-              "Minimum Bait",
-              "Cup of Crickets"
-            ],
-            [
-              "Weather Conditions",
-              "All"
-            ]
-          ]
+          "details": {
+            "Times of Day": "Morning, Afternoon, Evening",
+            "Minimum Bait": "Cup of Crickets",
+            "Weather Conditions": "All"
+          }
         }
       ]
     },
@@ -287,20 +188,11 @@
       "obtain": [
         {
           "where": "Old Fishin' Hole",
-          "details": [
-            [
-              "Times of Day",
-              "All"
-            ],
-            [
-              "Minimum Bait",
-              "Cup of Crickets"
-            ],
-            [
-              "Weather Conditions",
-              "All"
-            ]
-          ]
+          "details": {
+            "Times of Day": "All",
+            "Minimum Bait": "Cup of Crickets",
+            "Weather Conditions": "All"
+          }
         }
       ]
     },
@@ -311,20 +203,11 @@
       "obtain": [
         {
           "where": "Old Fishin' Hole",
-          "details": [
-            [
-              "Times of Day",
-              "All"
-            ],
-            [
-              "Minimum Bait",
-              "Cup of Crickets"
-            ],
-            [
-              "Weather Conditions",
-              "Clear Skies"
-            ]
-          ]
+          "details": {
+            "Times of Day": "All",
+            "Minimum Bait": "Cup of Crickets",
+            "Weather Conditions": "Clear Skies"
+          }
         }
       ]
     },
@@ -335,20 +218,11 @@
       "obtain": [
         {
           "where": "Old Fishin' Hole",
-          "details": [
-            [
-              "Times of Day",
-              "All"
-            ],
-            [
-              "Minimum Bait",
-              "Cup of Crickets"
-            ],
-            [
-              "Weather Conditions",
-              "Clear Skies"
-            ]
-          ]
+          "details": {
+            "Times of Day": "All",
+            "Minimum Bait": "Cup of Crickets",
+            "Weather Conditions": "Clear Skies"
+          }
         }
       ]
     },
@@ -359,20 +233,11 @@
       "obtain": [
         {
           "where": "Old Fishin' Hole",
-          "details": [
-            [
-              "Times of Day",
-              "Morning, Afternoon, Evening"
-            ],
-            [
-              "Minimum Bait",
-              "Pouch of Prawns"
-            ],
-            [
-              "Weather Conditions",
-              "All"
-            ]
-          ]
+          "details": {
+            "Times of Day": "Morning, Afternoon, Evening",
+            "Minimum Bait": "Pouch of Prawns",
+            "Weather Conditions": "All"
+          }
         }
       ]
     },
@@ -383,20 +248,11 @@
       "obtain": [
         {
           "where": "Old Fishin' Hole",
-          "details": [
-            [
-              "Times of Day",
-              "Night"
-            ],
-            [
-              "Minimum Bait",
-              "Pouch of Prawns"
-            ],
-            [
-              "Weather Conditions",
-              "All"
-            ]
-          ]
+          "details": {
+            "Times of Day": "Night",
+            "Minimum Bait": "Pouch of Prawns",
+            "Weather Conditions": "All"
+          }
         }
       ]
     },
@@ -407,20 +263,11 @@
       "obtain": [
         {
           "where": "Old Fishin' Hole",
-          "details": [
-            [
-              "Times of Day",
-              "Night"
-            ],
-            [
-              "Minimum Bait",
-              "Mound of Minnows"
-            ],
-            [
-              "Weather Conditions",
-              "Clear Skies, Rainy"
-            ]
-          ]
+          "details": {
+            "Times of Day": "Night",
+            "Minimum Bait": "Mound of Minnows",
+            "Weather Conditions": "Clear Skies, Rainy, Snowy"
+          }
         }
       ]
     },
@@ -431,20 +278,11 @@
       "obtain": [
         {
           "where": "Old Fishin' Hole",
-          "details": [
-            [
-              "Times of Day",
-              "All"
-            ],
-            [
-              "Minimum Bait",
-              "Golden Grub"
-            ],
-            [
-              "Weather Conditions",
-              "All"
-            ]
-          ]
+          "details": {
+            "Times of Day": "All",
+            "Minimum Bait": "Golden Grub",
+            "Weather Conditions": "All"
+          }
         }
       ]
     },
@@ -455,20 +293,11 @@
       "obtain": [
         {
           "where": "Desert Oasis",
-          "details": [
-            [
-              "Times of Day",
-              "All"
-            ],
-            [
-              "Minimum Bait",
-              "Bucket of Worms"
-            ],
-            [
-              "Weather Conditions",
-              "All"
-            ]
-          ]
+          "details": {
+            "Times of Day": "All",
+            "Minimum Bait": "Bucket of Worms",
+            "Weather Conditions": "All"
+          }
         }
       ]
     },
@@ -479,20 +308,11 @@
       "obtain": [
         {
           "where": "Desert Oasis",
-          "details": [
-            [
-              "Times of Day",
-              "All"
-            ],
-            [
-              "Minimum Bait",
-              "Bucket of Worms"
-            ],
-            [
-              "Weather Conditions",
-              "All"
-            ]
-          ]
+          "details": {
+            "Times of Day": "Morning, Afternoon",
+            "Minimum Bait": "Bucket of Worms",
+            "Weather Conditions": "All"
+          }
         }
       ]
     },
@@ -503,20 +323,11 @@
       "obtain": [
         {
           "where": "Desert Oasis",
-          "details": [
-            [
-              "Times of Day",
-              "Night"
-            ],
-            [
-              "Minimum Bait",
-              "Bucket of Worms"
-            ],
-            [
-              "Weather Conditions",
-              "All"
-            ]
-          ]
+          "details": {
+            "Times of Day": "Night",
+            "Minimum Bait": "Bucket of Worms",
+            "Weather Conditions": "All"
+          }
         }
       ]
     },
@@ -527,20 +338,11 @@
       "obtain": [
         {
           "where": "Desert Oasis",
-          "details": [
-            [
-              "Times of Day",
-              "Morning, Afternoon"
-            ],
-            [
-              "Minimum Bait",
-              "Mound of Minnows"
-            ],
-            [
-              "Weather Conditions",
-              "All"
-            ]
-          ]
+          "details": {
+            "Times of Day": "Morning, Afternoon",
+            "Minimum Bait": "Mound of Minnows",
+            "Weather Conditions": "All"
+          }
         }
       ]
     },
@@ -551,20 +353,11 @@
       "obtain": [
         {
           "where": "Desert Oasis",
-          "details": [
-            [
-              "Times of Day",
-              "All"
-            ],
-            [
-              "Minimum Bait",
-              "Cup of Crickets"
-            ],
-            [
-              "Weather Conditions",
-              "All"
-            ]
-          ]
+          "details": {
+            "Times of Day": "All",
+            "Minimum Bait": "Cup of Crickets",
+            "Weather Conditions": "All"
+          }
         }
       ]
     },
@@ -575,20 +368,11 @@
       "obtain": [
         {
           "where": "Desert Oasis",
-          "details": [
-            [
-              "Times of Day",
-              "All"
-            ],
-            [
-              "Minimum Bait",
-              "Cup of Crickets"
-            ],
-            [
-              "Weather Conditions",
-              "All"
-            ]
-          ]
+          "details": {
+            "Times of Day": "All",
+            "Minimum Bait": "Cup of Crickets",
+            "Weather Conditions": "All"
+          }
         }
       ]
     },
@@ -599,20 +383,11 @@
       "obtain": [
         {
           "where": "Desert Oasis",
-          "details": [
-            [
-              "Times of Day",
-              "Afternoon, Evening"
-            ],
-            [
-              "Minimum Bait",
-              "Mound of Minnows"
-            ],
-            [
-              "Weather Conditions",
-              "All"
-            ]
-          ]
+          "details": {
+            "Times of Day": "Afternoon, Evening",
+            "Minimum Bait": "Mound of Minnows",
+            "Weather Conditions": "All"
+          }
         }
       ]
     },
@@ -623,20 +398,11 @@
       "obtain": [
         {
           "where": "Desert Oasis",
-          "details": [
-            [
-              "Times of Day",
-              "Morning, Afternoon, Evening"
-            ],
-            [
-              "Minimum Bait",
-              "Cup of Crickets"
-            ],
-            [
-              "Weather Conditions",
-              "All"
-            ]
-          ]
+          "details": {
+            "Times of Day": "Morning, Afternoon, Evening",
+            "Minimum Bait": "Cup of Crickets",
+            "Weather Conditions": "All"
+          }
         }
       ]
     },
@@ -647,20 +413,11 @@
       "obtain": [
         {
           "where": "Desert Oasis",
-          "details": [
-            [
-              "Times of Day",
-              "All"
-            ],
-            [
-              "Minimum Bait",
-              "Cup of Crickets"
-            ],
-            [
-              "Weather Conditions",
-              "All"
-            ]
-          ]
+          "details": {
+            "Times of Day": "All",
+            "Minimum Bait": "Cup of Crickets",
+            "Weather Conditions": "All"
+          }
         }
       ]
     },
@@ -671,20 +428,11 @@
       "obtain": [
         {
           "where": "Desert Oasis",
-          "details": [
-            [
-              "Times of Day",
-              "Morning, Afternoon, Evening"
-            ],
-            [
-              "Minimum Bait",
-              "Cup of Crickets"
-            ],
-            [
-              "Weather Conditions",
-              "All"
-            ]
-          ]
+          "details": {
+            "Times of Day": "Morning, Afternoon, Evening",
+            "Minimum Bait": "Cup of Crickets",
+            "Weather Conditions": "All"
+          }
         }
       ]
     },
@@ -695,20 +443,11 @@
       "obtain": [
         {
           "where": "Desert Oasis",
-          "details": [
-            [
-              "Times of Day",
-              "Night"
-            ],
-            [
-              "Minimum Bait",
-              "Cup of Crickets"
-            ],
-            [
-              "Weather Conditions",
-              "All"
-            ]
-          ]
+          "details": {
+            "Times of Day": "Night",
+            "Minimum Bait": "Cup of Crickets",
+            "Weather Conditions": "All"
+          }
         }
       ]
     },
@@ -719,44 +458,26 @@
       "obtain": [
         {
           "where": "Desert Oasis",
-          "details": [
-            [
-              "Times of Day",
-              "All"
-            ],
-            [
-              "Minimum Bait",
-              "Pouch of Prawns"
-            ],
-            [
-              "Weather Conditions",
-              "All"
-            ]
-          ]
+          "details": {
+            "Times of Day": "All",
+            "Minimum Bait": "Pouch of Prawns",
+            "Weather Conditions": "All"
+          }
         }
       ]
     },
     {
       "name": "Eye of Horus Fish",
       "block": "Desert Oasis",
-      "sprite": "https://static.wikitide.net/dogonlinedotnetwikiwiki/8/8f/Item_Eye_of_Horus_Fish.png",
+      "sprite": "/img/item_desertfish.png",
       "obtain": [
         {
           "where": "Desert Oasis",
-          "details": [
-            [
-              "Times of Day",
-              "All"
-            ],
-            [
-              "Minimum Bait",
-              "Pouch of Prawns"
-            ],
-            [
-              "Weather Conditions",
-              "All"
-            ]
-          ]
+          "details": {
+            "Times of Day": "All",
+            "Minimum Bait": "Pouch of Prawns",
+            "Weather Conditions": "All"
+          }
         }
       ]
     },
@@ -767,20 +488,11 @@
       "obtain": [
         {
           "where": "Desert Oasis",
-          "details": [
-            [
-              "Times of Day",
-              "Morning, Afternoon"
-            ],
-            [
-              "Minimum Bait",
-              "Pouch of Prawns"
-            ],
-            [
-              "Weather Conditions",
-              "All"
-            ]
-          ]
+          "details": {
+            "Times of Day": "Morning, Afternoon",
+            "Minimum Bait": "Pouch of Prawns",
+            "Weather Conditions": "All"
+          }
         }
       ]
     },
@@ -791,20 +503,11 @@
       "obtain": [
         {
           "where": "Desert Oasis",
-          "details": [
-            [
-              "Times of Day",
-              "Night"
-            ],
-            [
-              "Minimum Bait",
-              "Pouch of Prawns"
-            ],
-            [
-              "Weather Conditions",
-              "All"
-            ]
-          ]
+          "details": {
+            "Times of Day": "Night",
+            "Minimum Bait": "Pouch of Prawns",
+            "Weather Conditions": "All"
+          }
         }
       ]
     },
@@ -815,20 +518,11 @@
       "obtain": [
         {
           "where": "Desert Oasis",
-          "details": [
-            [
-              "Times of Day",
-              "All"
-            ],
-            [
-              "Minimum Bait",
-              "Golden Grub"
-            ],
-            [
-              "Weather Conditions",
-              "All"
-            ]
-          ]
+          "details": {
+            "Times of Day": "All",
+            "Minimum Bait": "Golden Grub",
+            "Weather Conditions": "All"
+          }
         }
       ]
     },
@@ -839,20 +533,11 @@
       "obtain": [
         {
           "where": "Ice Fishing Hole",
-          "details": [
-            [
-              "Times of Day",
-              "All"
-            ],
-            [
-              "Minimum Bait",
-              "Bucket of Worms"
-            ],
-            [
-              "Weather Conditions",
-              "All"
-            ]
-          ]
+          "details": {
+            "Times of Day": "All",
+            "Minimum Bait": "Bucket of Worms",
+            "Weather Conditions": "All"
+          }
         }
       ]
     },
@@ -863,20 +548,11 @@
       "obtain": [
         {
           "where": "Ice Fishing Hole",
-          "details": [
-            [
-              "Times of Day",
-              "All"
-            ],
-            [
-              "Minimum Bait",
-              "Bucket of Worms"
-            ],
-            [
-              "Weather Conditions",
-              "All"
-            ]
-          ]
+          "details": {
+            "Times of Day": "All",
+            "Minimum Bait": "Bucket of Worms",
+            "Weather Conditions": "All"
+          }
         }
       ]
     },
@@ -887,20 +563,11 @@
       "obtain": [
         {
           "where": "Ice Fishing Hole",
-          "details": [
-            [
-              "Times of Day",
-              "All"
-            ],
-            [
-              "Minimum Bait",
-              "Bucket of Worms"
-            ],
-            [
-              "Weather Conditions",
-              "All"
-            ]
-          ]
+          "details": {
+            "Times of Day": "All",
+            "Minimum Bait": "Bucket of Worms",
+            "Weather Conditions": "All"
+          }
         }
       ]
     },
@@ -911,20 +578,11 @@
       "obtain": [
         {
           "where": "Ice Fishing Hole",
-          "details": [
-            [
-              "Times of Day",
-              "All"
-            ],
-            [
-              "Minimum Bait",
-              "Bucket of Worms"
-            ],
-            [
-              "Weather Conditions",
-              "All"
-            ]
-          ]
+          "details": {
+            "Times of Day": "All",
+            "Minimum Bait": "Bucket of Worms",
+            "Weather Conditions": "All"
+          }
         }
       ]
     },
@@ -935,20 +593,11 @@
       "obtain": [
         {
           "where": "Ice Fishing Hole",
-          "details": [
-            [
-              "Times of Day",
-              "All"
-            ],
-            [
-              "Minimum Bait",
-              "Cup of Crickets"
-            ],
-            [
-              "Weather Conditions",
-              "All"
-            ]
-          ]
+          "details": {
+            "Times of Day": "All",
+            "Minimum Bait": "Cup of Crickets",
+            "Weather Conditions": "All"
+          }
         }
       ]
     },
@@ -959,68 +608,41 @@
       "obtain": [
         {
           "where": "Ice Fishing Hole",
-          "details": [
-            [
-              "Times of Day",
-              "All"
-            ],
-            [
-              "Minimum Bait",
-              "Cup of Crickets"
-            ],
-            [
-              "Weather Conditions",
-              "All"
-            ]
-          ]
+          "details": {
+            "Times of Day": "All",
+            "Minimum Bait": "Cup of Crickets",
+            "Weather Conditions": "All"
+          }
         }
       ]
     },
     {
       "name": "Ice Cream Sharkwich",
       "block": "Ice Fishing Hole",
-      "sprite": "https://static.wikitide.net/dogonlinedotnetwikiwiki/1/11/Item_Ice_Cream_Sharkwich.png",
+      "sprite": "/img/item_icecreamshark.png",
       "obtain": [
         {
           "where": "Ice Fishing Hole",
-          "details": [
-            [
-              "Times of Day",
-              "All"
-            ],
-            [
-              "Minimum Bait",
-              "Cup of Crickets"
-            ],
-            [
-              "Weather Conditions",
-              "All"
-            ]
-          ]
+          "details": {
+            "Times of Day": "All",
+            "Minimum Bait": "Cup of Crickets",
+            "Weather Conditions": "All"
+          }
         }
       ]
     },
     {
       "name": "Strawberry Ice Cream Sharkwich",
       "block": "Ice Fishing Hole",
-      "sprite": "https://static.wikitide.net/dogonlinedotnetwikiwiki/a/ab/Item_Strawberry_Ice_Cream_Sharkwich.png",
+      "sprite": "/img/item_starberrysharkwich.png",
       "obtain": [
         {
           "where": "Ice Fishing Hole",
-          "details": [
-            [
-              "Times of Day",
-              "All"
-            ],
-            [
-              "Minimum Bait",
-              "Pouch of Prawns"
-            ],
-            [
-              "Weather Conditions",
-              "All"
-            ]
-          ]
+          "details": {
+            "Times of Day": "All",
+            "Minimum Bait": "Pouch of Prawns",
+            "Weather Conditions": "All"
+          }
         }
       ]
     },
@@ -1031,20 +653,11 @@
       "obtain": [
         {
           "where": "Ice Fishing Hole",
-          "details": [
-            [
-              "Times of Day",
-              "All"
-            ],
-            [
-              "Minimum Bait",
-              "Pouch of Prawns"
-            ],
-            [
-              "Weather Conditions",
-              "All"
-            ]
-          ]
+          "details": {
+            "Times of Day": "All",
+            "Minimum Bait": "Pouch of Prawns",
+            "Weather Conditions": "All"
+          }
         }
       ]
     },
@@ -1055,20 +668,11 @@
       "obtain": [
         {
           "where": "Ice Fishing Hole",
-          "details": [
-            [
-              "Times of Day",
-              "All"
-            ],
-            [
-              "Minimum Bait",
-              "Pouch of Prawns"
-            ],
-            [
-              "Weather Conditions",
-              "All"
-            ]
-          ]
+          "details": {
+            "Times of Day": "All",
+            "Minimum Bait": "Pouch of Prawns",
+            "Weather Conditions": "All"
+          }
         }
       ]
     },
@@ -1079,20 +683,11 @@
       "obtain": [
         {
           "where": "Ice Fishing Hole",
-          "details": [
-            [
-              "Times of Day",
-              "All"
-            ],
-            [
-              "Minimum Bait",
-              "Golden Grub"
-            ],
-            [
-              "Weather Conditions",
-              "All"
-            ]
-          ]
+          "details": {
+            "Times of Day": "All",
+            "Minimum Bait": "Golden Grub",
+            "Weather Conditions": "All"
+          }
         }
       ]
     },
@@ -1103,20 +698,11 @@
       "obtain": [
         {
           "where": "Ocean Fishing Cruiser",
-          "details": [
-            [
-              "Times of Day",
-              "All"
-            ],
-            [
-              "Minimum Bait",
-              "Bucket of Worms"
-            ],
-            [
-              "Weather Conditions",
-              "All"
-            ]
-          ]
+          "details": {
+            "Times of Day": "All",
+            "Minimum Bait": "Bucket of Worms",
+            "Weather Conditions": "All"
+          }
         }
       ]
     },
@@ -1127,20 +713,11 @@
       "obtain": [
         {
           "where": "Ocean Fishing Cruiser",
-          "details": [
-            [
-              "Times of Day",
-              "All"
-            ],
-            [
-              "Minimum Bait",
-              "Bucket of Worms"
-            ],
-            [
-              "Weather Conditions",
-              "Clear Skies, Stormy"
-            ]
-          ]
+          "details": {
+            "Times of Day": "All",
+            "Minimum Bait": "Bucket of Worms",
+            "Weather Conditions": "All"
+          }
         }
       ]
     },
@@ -1151,20 +728,11 @@
       "obtain": [
         {
           "where": "Ocean Fishing Cruiser",
-          "details": [
-            [
-              "Times of Day",
-              "Morning, Afternoon"
-            ],
-            [
-              "Minimum Bait",
-              "Cup of Crickets"
-            ],
-            [
-              "Weather Conditions",
-              "Clear Skies"
-            ]
-          ]
+          "details": {
+            "Times of Day": "Morning, Afternoon",
+            "Minimum Bait": "Mound of Minnows",
+            "Weather Conditions": "Clear Skies"
+          }
         }
       ]
     },
@@ -1175,20 +743,11 @@
       "obtain": [
         {
           "where": "Ocean Fishing Cruiser",
-          "details": [
-            [
-              "Times of Day",
-              "Night"
-            ],
-            [
-              "Minimum Bait",
-              "Mound of Minnows"
-            ],
-            [
-              "Weather Conditions",
-              "All"
-            ]
-          ]
+          "details": {
+            "Times of Day": "Night",
+            "Minimum Bait": "Mound of Minnows",
+            "Weather Conditions": "All"
+          }
         }
       ]
     },
@@ -1199,20 +758,11 @@
       "obtain": [
         {
           "where": "Ocean Fishing Cruiser",
-          "details": [
-            [
-              "Times of Day",
-              "All"
-            ],
-            [
-              "Minimum Bait",
-              "Mound of Minnows"
-            ],
-            [
-              "Weather Conditions",
-              "All"
-            ]
-          ]
+          "details": {
+            "Times of Day": "All",
+            "Minimum Bait": "Mound of Minnows",
+            "Weather Conditions": "All"
+          }
         }
       ]
     },
@@ -1223,20 +773,11 @@
       "obtain": [
         {
           "where": "Ocean Fishing Cruiser",
-          "details": [
-            [
-              "Times of Day",
-              "Night"
-            ],
-            [
-              "Minimum Bait",
-              "Cup of Crickets"
-            ],
-            [
-              "Weather Conditions",
-              "All"
-            ]
-          ]
+          "details": {
+            "Times of Day": "Night",
+            "Minimum Bait": "Cup of Crickets",
+            "Weather Conditions": "All"
+          }
         }
       ]
     },
@@ -1247,20 +788,11 @@
       "obtain": [
         {
           "where": "Ocean Fishing Cruiser",
-          "details": [
-            [
-              "Times of Day",
-              "Morning, Afternoon"
-            ],
-            [
-              "Minimum Bait",
-              "Cup of Crickets"
-            ],
-            [
-              "Weather Conditions",
-              "All"
-            ]
-          ]
+          "details": {
+            "Times of Day": "Morning, Afternoon",
+            "Minimum Bait": "Cup of Crickets",
+            "Weather Conditions": "All"
+          }
         }
       ]
     },
@@ -1271,20 +803,11 @@
       "obtain": [
         {
           "where": "Ocean Fishing Cruiser",
-          "details": [
-            [
-              "Times of Day",
-              "All"
-            ],
-            [
-              "Minimum Bait",
-              "Cup of Crickets"
-            ],
-            [
-              "Weather Conditions",
-              "All"
-            ]
-          ]
+          "details": {
+            "Times of Day": "All",
+            "Minimum Bait": "Cup of Crickets",
+            "Weather Conditions": "All"
+          }
         }
       ]
     },
@@ -1295,20 +818,11 @@
       "obtain": [
         {
           "where": "Ocean Fishing Cruiser",
-          "details": [
-            [
-              "Times of Day",
-              "All"
-            ],
-            [
-              "Minimum Bait",
-              "Cup of Crickets"
-            ],
-            [
-              "Weather Conditions",
-              "All"
-            ]
-          ]
+          "details": {
+            "Times of Day": "All",
+            "Minimum Bait": "Cup of Crickets",
+            "Weather Conditions": "All"
+          }
         }
       ]
     },
@@ -1319,20 +833,11 @@
       "obtain": [
         {
           "where": "Ocean Fishing Cruiser",
-          "details": [
-            [
-              "Times of Day",
-              "Night"
-            ],
-            [
-              "Minimum Bait",
-              "Cup of Crickets"
-            ],
-            [
-              "Weather Conditions",
-              "All"
-            ]
-          ]
+          "details": {
+            "Times of Day": "Night",
+            "Minimum Bait": "Cup of Crickets",
+            "Weather Conditions": "All"
+          }
         }
       ]
     },
@@ -1343,20 +848,11 @@
       "obtain": [
         {
           "where": "Ocean Fishing Cruiser",
-          "details": [
-            [
-              "Times of Day",
-              "All"
-            ],
-            [
-              "Minimum Bait",
-              "Pouch of Prawns"
-            ],
-            [
-              "Weather Conditions",
-              "All"
-            ]
-          ]
+          "details": {
+            "Times of Day": "All",
+            "Minimum Bait": "Pouch of Prawns",
+            "Weather Conditions": "All"
+          }
         }
       ]
     },
@@ -1367,20 +863,11 @@
       "obtain": [
         {
           "where": "Ocean Fishing Cruiser",
-          "details": [
-            [
-              "Times of Day",
-              "All"
-            ],
-            [
-              "Minimum Bait",
-              "Pouch of Prawns"
-            ],
-            [
-              "Weather Conditions",
-              "All"
-            ]
-          ]
+          "details": {
+            "Times of Day": "All",
+            "Minimum Bait": "Pouch of Prawns",
+            "Weather Conditions": "All"
+          }
         }
       ]
     },
@@ -1391,20 +878,11 @@
       "obtain": [
         {
           "where": "Ocean Fishing Cruiser",
-          "details": [
-            [
-              "Times of Day",
-              "Morning"
-            ],
-            [
-              "Minimum Bait",
-              "Pouch of Prawns"
-            ],
-            [
-              "Weather Conditions",
-              "All"
-            ]
-          ]
+          "details": {
+            "Times of Day": "Morning",
+            "Minimum Bait": "Pouch of Prawns",
+            "Weather Conditions": "All"
+          }
         }
       ]
     },
@@ -1415,20 +893,11 @@
       "obtain": [
         {
           "where": "Ocean Fishing Cruiser",
-          "details": [
-            [
-              "Times of Day",
-              "Night"
-            ],
-            [
-              "Minimum Bait",
-              "Pouch of Prawns"
-            ],
-            [
-              "Weather Conditions",
-              "All"
-            ]
-          ]
+          "details": {
+            "Times of Day": "Night",
+            "Minimum Bait": "Pouch of Prawns",
+            "Weather Conditions": "All"
+          }
         }
       ]
     },
@@ -1439,20 +908,11 @@
       "obtain": [
         {
           "where": "Fly Fishing Ship",
-          "details": [
-            [
-              "Times of Day",
-              "All"
-            ],
-            [
-              "Minimum Bait",
-              "Balloon Hook"
-            ],
-            [
-              "Weather Conditions",
-              "All"
-            ]
-          ]
+          "details": {
+            "Times of Day": "All",
+            "Minimum Bait": "Balloon Hook",
+            "Weather Conditions": "All"
+          }
         }
       ]
     },
@@ -1463,44 +923,26 @@
       "obtain": [
         {
           "where": "Fly Fishing Ship",
-          "details": [
-            [
-              "Times of Day",
-              "Morning, Afternoon"
-            ],
-            [
-              "Minimum Bait",
-              "Balloon Hook"
-            ],
-            [
-              "Weather Conditions",
-              "All"
-            ]
-          ]
+          "details": {
+            "Times of Day": "All",
+            "Minimum Bait": "Balloon Hook",
+            "Weather Conditions": "All"
+          }
         }
       ]
     },
     {
       "name": "Thundering Cloudfish",
       "block": "Fly Fishing Ship",
-      "sprite": "https://static.wikitide.net/dogonlinedotnetwikiwiki/3/3d/Item_Thundering_Cloudfish.png",
+      "sprite": "/img/items/fish/AirfishCloudrain.png",
       "obtain": [
         {
           "where": "Fly Fishing Ship",
-          "details": [
-            [
-              "Times of Day",
-              "Afternoon, Evening, Night"
-            ],
-            [
-              "Minimum Bait",
-              "Wicked Skymetal Hook"
-            ],
-            [
-              "Weather Conditions",
-              "Stormy"
-            ]
-          ]
+          "details": {
+            "Times of Day": "Afternoon, Evening, Night",
+            "Minimum Bait": "Wicked Skymetal Hook",
+            "Weather Conditions": "Stormy"
+          }
         }
       ]
     },
@@ -1511,20 +953,11 @@
       "obtain": [
         {
           "where": "Fly Fishing Ship",
-          "details": [
-            [
-              "Times of Day",
-              "Morning, Afternoon"
-            ],
-            [
-              "Minimum Bait",
-              "Balloon Hook"
-            ],
-            [
-              "Weather Conditions",
-              "Clear Skies, Rainy, Snowy, Stormy"
-            ]
-          ]
+          "details": {
+            "Times of Day": "Morning, Afternoon",
+            "Minimum Bait": "Balloon Hook",
+            "Weather Conditions": "All"
+          }
         }
       ]
     },
@@ -1535,20 +968,11 @@
       "obtain": [
         {
           "where": "Fly Fishing Ship",
-          "details": [
-            [
-              "Times of Day",
-              "Morning, Afternoon"
-            ],
-            [
-              "Minimum Bait",
-              "Balloon Hook"
-            ],
-            [
-              "Weather Conditions",
-              "Clear Skies"
-            ]
-          ]
+          "details": {
+            "Times of Day": "Morning, Afternoon",
+            "Minimum Bait": "Balloon Hook",
+            "Weather Conditions": "Clear Skies"
+          }
         }
       ]
     },
@@ -1559,68 +983,41 @@
       "obtain": [
         {
           "where": "Fly Fishing Ship",
-          "details": [
-            [
-              "Times of Day",
-              "Evening, Night"
-            ],
-            [
-              "Minimum Bait",
-              "Balloon Hook"
-            ],
-            [
-              "Weather Conditions",
-              "Clear Skies"
-            ]
-          ]
+          "details": {
+            "Times of Day": "Evening, Night",
+            "Minimum Bait": "Balloon Hook",
+            "Weather Conditions": "Clear Skies"
+          }
         }
       ]
     },
     {
       "name": "Plane-Mimicking Fish",
       "block": "Fly Fishing Ship",
-      "sprite": "https://static.wikitide.net/dogonlinedotnetwikiwiki/e/e5/Item_Plane-Mimicking_Fish.png",
+      "sprite": "/img/items/fish/AirfishBoeing.png",
       "obtain": [
         {
           "where": "Fly Fishing Ship",
-          "details": [
-            [
-              "Times of Day",
-              "Morning, Afternoon"
-            ],
-            [
-              "Minimum Bait",
-              "Wicked Skymetal Hook"
-            ],
-            [
-              "Weather Conditions",
-              "Clear Skies, Rainy, Stormy"
-            ]
-          ]
+          "details": {
+            "Times of Day": "Morning, Afternoon",
+            "Minimum Bait": "Wicked Skymetal Hook",
+            "Weather Conditions": "All"
+          }
         }
       ]
     },
     {
-      "name": "Rainbow Trout (Sky)",
+      "name": "Rainbow Trout",
       "block": "Fly Fishing Ship",
       "sprite": "/img/items/fish/AirfishRainbowTrout.png",
       "obtain": [
         {
           "where": "Fly Fishing Ship",
-          "details": [
-            [
-              "Times of Day",
-              "Afternoon"
-            ],
-            [
-              "Minimum Bait",
-              "Wicked Skymetal Hook"
-            ],
-            [
-              "Weather Conditions",
-              "Rainy"
-            ]
-          ]
+          "details": {
+            "Times of Day": "Morning, Afternoon",
+            "Minimum Bait": "Wicked Skymetal Hook",
+            "Weather Conditions": "Rainy"
+          }
         }
       ]
     },
@@ -1631,68 +1028,41 @@
       "obtain": [
         {
           "where": "Fly Fishing Ship",
-          "details": [
-            [
-              "Times of Day",
-              "Morning, Afternoon"
-            ],
-            [
-              "Minimum Bait",
-              "Wicked Skymetal Hook"
-            ],
-            [
-              "Weather Conditions",
-              "Clear Skies, Rainy, Stormy"
-            ]
-          ]
+          "details": {
+            "Times of Day": "Morning, Afternoon",
+            "Minimum Bait": "Wicked Skymetal Hook",
+            "Weather Conditions": "All"
+          }
         }
       ]
     },
     {
       "name": "Starwhale",
       "block": "Fly Fishing Ship",
-      "sprite": "https://static.wikitide.net/dogonlinedotnetwikiwiki/d/da/Item_Starwhale.png",
+      "sprite": "/img/items/fish/AirfishSpacewhale.png",
       "obtain": [
         {
           "where": "Fly Fishing Ship",
-          "details": [
-            [
-              "Times of Day",
-              "Evening, Night"
-            ],
-            [
-              "Minimum Bait",
-              "Wicked Skymetal Hook"
-            ],
-            [
-              "Weather Conditions",
-              "Clear Skies"
-            ]
-          ]
+          "details": {
+            "Times of Day": "Evening, Night",
+            "Minimum Bait": "Wicked Skymetal Hook",
+            "Weather Conditions": "Clear Skies"
+          }
         }
       ]
     },
     {
       "name": "Aurora Eel",
       "block": "Fly Fishing Ship",
-      "sprite": "https://static.wikitide.net/dogonlinedotnetwikiwiki/b/ba/Item_Aurora_Eel.png",
+      "sprite": "/img/items/fish/AirfishAuroraboreelalis.png",
       "obtain": [
         {
           "where": "Fly Fishing Ship",
-          "details": [
-            [
-              "Times of Day",
-              "Evening, Night"
-            ],
-            [
-              "Minimum Bait",
-              "Sky Tackle"
-            ],
-            [
-              "Weather Conditions",
-              "Clear Skies"
-            ]
-          ]
+          "details": {
+            "Times of Day": "Evening, Night",
+            "Minimum Bait": "Sky Tackle",
+            "Weather Conditions": "Clear Skies"
+          }
         }
       ]
     },
@@ -1703,44 +1073,26 @@
       "obtain": [
         {
           "where": "Fly Fishing Ship",
-          "details": [
-            [
-              "Times of Day",
-              "Morning, Afternoon"
-            ],
-            [
-              "Minimum Bait",
-              "Sky Tackle"
-            ],
-            [
-              "Weather Conditions",
-              "Clear Skies"
-            ]
-          ]
+          "details": {
+            "Times of Day": "Morning, Afternoon",
+            "Minimum Bait": "Sky Tackle",
+            "Weather Conditions": "Clear Skies"
+          }
         }
       ]
     },
     {
       "name": "Extraterrestrial Octopus",
       "block": "Fly Fishing Ship",
-      "sprite": "https://static.wikitide.net/dogonlinedotnetwikiwiki/1/13/Item_Extraterrestrial_Octopus.png",
+      "sprite": "/img/items/fish/AirfishGreytupus.png",
       "obtain": [
         {
           "where": "Fly Fishing Ship",
-          "details": [
-            [
-              "Times of Day",
-              "Night"
-            ],
-            [
-              "Minimum Bait",
-              "Sky Tackle"
-            ],
-            [
-              "Weather Conditions",
-              "Clear Skies, Rainy"
-            ]
-          ]
+          "details": {
+            "Times of Day": "Evening, Night",
+            "Minimum Bait": "Sky Tackle",
+            "Weather Conditions": "All"
+          }
         }
       ]
     },
@@ -1751,44 +1103,26 @@
       "obtain": [
         {
           "where": "Fly Fishing Ship",
-          "details": [
-            [
-              "Times of Day",
-              "Evening, Night"
-            ],
-            [
-              "Minimum Bait",
-              "Sky Tackle"
-            ],
-            [
-              "Weather Conditions",
-              "All"
-            ]
-          ]
+          "details": {
+            "Times of Day": "Evening, Night",
+            "Minimum Bait": "Sky Tackle",
+            "Weather Conditions": "All"
+          }
         }
       ]
     },
     {
       "name": "Ocean Fella",
       "block": "Fly Fishing Ship",
-      "sprite": "https://static.wikitide.net/dogonlinedotnetwikiwiki/4/40/Item_Ocean_Fella.png",
+      "sprite": "/img/items/fish/AirfishSeaman.png",
       "obtain": [
         {
           "where": "Fly Fishing Ship",
-          "details": [
-            [
-              "Times of Day",
-              "All"
-            ],
-            [
-              "Minimum Bait",
-              "Golden Grub"
-            ],
-            [
-              "Weather Conditions",
-              "All"
-            ]
-          ]
+          "details": {
+            "Times of Day": "All",
+            "Minimum Bait": "Golden Grub",
+            "Weather Conditions": "All"
+          }
         }
       ]
     }

@@ -1,5 +1,5 @@
 {
-  "schema": 1,
+  "schema": 2,
   "blocks": [
     {
       "name": "Floor 1",
@@ -46,12 +46,7 @@
       "obtain": [
         {
           "where": null,
-          "details": [
-            [
-              "Found",
-              "Floor 1, Peeper's Parlor"
-            ]
-          ]
+          "details": "Floor 1, Peeper's Parlor, Freezy Fridge"
         }
       ]
     },
@@ -62,12 +57,7 @@
       "obtain": [
         {
           "where": null,
-          "details": [
-            [
-              "Found",
-              "Floor 1, Freezy Fridge"
-            ]
-          ]
+          "details": "Floor 1, Freezy Fridge"
         }
       ]
     },
@@ -78,12 +68,7 @@
       "obtain": [
         {
           "where": null,
-          "details": [
-            [
-              "Found",
-              "Floor 1"
-            ]
-          ]
+          "details": "Floor 1"
         }
       ]
     },
@@ -94,12 +79,7 @@
       "obtain": [
         {
           "where": null,
-          "details": [
-            [
-              "Found",
-              "Floor 1, Peeper's Parlor"
-            ]
-          ]
+          "details": "Floor 1"
         }
       ]
     },
@@ -110,12 +90,7 @@
       "obtain": [
         {
           "where": null,
-          "details": [
-            [
-              "Found",
-              "Floor 1"
-            ]
-          ]
+          "details": "Floor 1"
         }
       ]
     },
@@ -126,12 +101,7 @@
       "obtain": [
         {
           "where": null,
-          "details": [
-            [
-              "Found",
-              "Floor 1, Freezy Fridge, Hungry Hall"
-            ]
-          ]
+          "details": "Floor 1, Freezy Fridge, Hungry Hall"
         }
       ]
     },
@@ -142,12 +112,7 @@
       "obtain": [
         {
           "where": null,
-          "details": [
-            [
-              "Found",
-              "Floor 1, Floor 2"
-            ]
-          ]
+          "details": "Floor 1, Floor 2"
         }
       ]
     },
@@ -158,12 +123,7 @@
       "obtain": [
         {
           "where": null,
-          "details": [
-            [
-              "Found",
-              "Floor 1, Floor 2"
-            ]
-          ]
+          "details": "Floor 1, Floor 2"
         }
       ]
     },
@@ -174,12 +134,7 @@
       "obtain": [
         {
           "where": null,
-          "details": [
-            [
-              "Found",
-              "Floor 1, Floor 2"
-            ]
-          ]
+          "details": "Floor 1, Floor 2"
         }
       ]
     },
@@ -190,12 +145,7 @@
       "obtain": [
         {
           "where": null,
-          "details": [
-            [
-              "Found",
-              "Floor 1"
-            ]
-          ]
+          "details": "Floor 1"
         }
       ]
     },
@@ -206,12 +156,7 @@
       "obtain": [
         {
           "where": null,
-          "details": [
-            [
-              "Found",
-              "Floor 2"
-            ]
-          ]
+          "details": "Floor 2"
         }
       ]
     },
@@ -222,12 +167,7 @@
       "obtain": [
         {
           "where": null,
-          "details": [
-            [
-              "Found",
-              "Floor 1"
-            ]
-          ]
+          "details": "Floor 1"
         }
       ]
     },
@@ -238,12 +178,7 @@
       "obtain": [
         {
           "where": null,
-          "details": [
-            [
-              "Found",
-              "Cheese Maze"
-            ]
-          ]
+          "details": "Cheese Maze"
         }
       ]
     },
@@ -254,12 +189,7 @@
       "obtain": [
         {
           "where": null,
-          "details": [
-            [
-              "Found",
-              "Floor 2"
-            ]
-          ]
+          "details": "Floor 2"
         }
       ]
     },
@@ -270,12 +200,7 @@
       "obtain": [
         {
           "where": null,
-          "details": [
-            [
-              "Found",
-              "Floor 2, Peeper's Parlor"
-            ]
-          ]
+          "details": "Floor 2"
         }
       ]
     },
@@ -286,12 +211,7 @@
       "obtain": [
         {
           "where": null,
-          "details": [
-            [
-              "Found",
-              "Floor 2"
-            ]
-          ]
+          "details": "Floor 2"
         }
       ]
     },
@@ -302,12 +222,7 @@
       "obtain": [
         {
           "where": null,
-          "details": [
-            [
-              "Found",
-              "Floor 2"
-            ]
-          ]
+          "details": "Floor 2"
         }
       ]
     },
@@ -318,12 +233,7 @@
       "obtain": [
         {
           "where": null,
-          "details": [
-            [
-              "Found",
-              "Peeper's Parlor"
-            ]
-          ]
+          "details": "Peeper's Parlor"
         }
       ]
     },
@@ -334,12 +244,7 @@
       "obtain": [
         {
           "where": null,
-          "details": [
-            [
-              "Found",
-              "Peeper's Parlor"
-            ]
-          ]
+          "details": "Peeper's Parlor"
         }
       ]
     },
@@ -350,12 +255,7 @@
       "obtain": [
         {
           "where": null,
-          "details": [
-            [
-              "Found",
-              "Peeper's Parlor"
-            ]
-          ]
+          "details": "Peeper's Parlor"
         }
       ]
     },
@@ -366,12 +266,7 @@
       "obtain": [
         {
           "where": null,
-          "details": [
-            [
-              "Found",
-              "Peeper's Parlor"
-            ]
-          ]
+          "details": "Peeper's Parlor"
         }
       ]
     },
@@ -382,12 +277,7 @@
       "obtain": [
         {
           "where": null,
-          "details": [
-            [
-              "Found",
-              "Peeper's Parlor"
-            ]
-          ]
+          "details": "Peeper's Parlor"
         }
       ]
     },
@@ -398,12 +288,7 @@
       "obtain": [
         {
           "where": null,
-          "details": [
-            [
-              "Found",
-              "Peeper's Parlor"
-            ]
-          ]
+          "details": "Peeper's Parlor"
         }
       ]
     },
@@ -414,12 +299,7 @@
       "obtain": [
         {
           "where": null,
-          "details": [
-            [
-              "Found",
-              "Peeper's Parlor"
-            ]
-          ]
+          "details": "Peeper's Parlor"
         }
       ]
     },
@@ -430,12 +310,7 @@
       "obtain": [
         {
           "where": null,
-          "details": [
-            [
-              "Found",
-              "Peeper's Parlor"
-            ]
-          ]
+          "details": "Peeper's Parlor"
         }
       ]
     },
@@ -446,12 +321,7 @@
       "obtain": [
         {
           "where": null,
-          "details": [
-            [
-              "Found",
-              "Peeper's Parlor"
-            ]
-          ]
+          "details": "Peeper's Parlor"
         }
       ]
     },
@@ -462,12 +332,7 @@
       "obtain": [
         {
           "where": null,
-          "details": [
-            [
-              "Found",
-              "Peeper's Parlor"
-            ]
-          ]
+          "details": "Peeper's Parlor"
         }
       ]
     },
@@ -478,12 +343,7 @@
       "obtain": [
         {
           "where": null,
-          "details": [
-            [
-              "Found",
-              "Freezy Fridge"
-            ]
-          ]
+          "details": "Freezy Fridge"
         }
       ]
     },
@@ -494,12 +354,7 @@
       "obtain": [
         {
           "where": null,
-          "details": [
-            [
-              "Found",
-              "Freezy Fridge"
-            ]
-          ]
+          "details": "Freezy Fridge"
         }
       ]
     },
@@ -510,12 +365,7 @@
       "obtain": [
         {
           "where": null,
-          "details": [
-            [
-              "Found",
-              "Freezy Fridge"
-            ]
-          ]
+          "details": "Freezy Fridge"
         }
       ]
     },
@@ -526,12 +376,7 @@
       "obtain": [
         {
           "where": null,
-          "details": [
-            [
-              "Found",
-              "Freezy Fridge"
-            ]
-          ]
+          "details": "Freezy Fridge"
         }
       ]
     },
@@ -542,12 +387,7 @@
       "obtain": [
         {
           "where": null,
-          "details": [
-            [
-              "Found",
-              "Freezy Fridge"
-            ]
-          ]
+          "details": "Freezy Fridge"
         }
       ]
     },
@@ -558,12 +398,7 @@
       "obtain": [
         {
           "where": null,
-          "details": [
-            [
-              "Found",
-              "Dogre's Dungeon"
-            ]
-          ]
+          "details": "Dogre's Dungeon"
         }
       ]
     },
@@ -574,12 +409,7 @@
       "obtain": [
         {
           "where": null,
-          "details": [
-            [
-              "Found",
-              "Dogre's Dungeon"
-            ]
-          ]
+          "details": "Dogre's Dungeon"
         }
       ]
     },
@@ -590,12 +420,7 @@
       "obtain": [
         {
           "where": null,
-          "details": [
-            [
-              "Found",
-              "Dogre's Dungeon"
-            ]
-          ]
+          "details": "Dogre's Dungeon"
         }
       ]
     },
@@ -606,12 +431,7 @@
       "obtain": [
         {
           "where": null,
-          "details": [
-            [
-              "Found",
-              "Dogre's Dungeon"
-            ]
-          ]
+          "details": "Dogre's Dungeon"
         }
       ]
     },
@@ -622,12 +442,7 @@
       "obtain": [
         {
           "where": null,
-          "details": [
-            [
-              "Found",
-              "Dogre's Dungeon"
-            ]
-          ]
+          "details": "Dogre's Dungeon"
         }
       ]
     },
@@ -638,12 +453,7 @@
       "obtain": [
         {
           "where": null,
-          "details": [
-            [
-              "Found",
-              "Dogre's Dungeon"
-            ]
-          ]
+          "details": "Dogre's Dungeon"
         }
       ]
     },
@@ -654,12 +464,7 @@
       "obtain": [
         {
           "where": null,
-          "details": [
-            [
-              "Found",
-              "Dogre's Dungeon, Floor 2"
-            ]
-          ]
+          "details": "Floor 2, Dogre's Dungeon"
         }
       ]
     },
@@ -670,12 +475,7 @@
       "obtain": [
         {
           "where": null,
-          "details": [
-            [
-              "Found",
-              "Dogre's Dungeon"
-            ]
-          ]
+          "details": "Dogre's Dungeon"
         }
       ]
     },
@@ -686,12 +486,7 @@
       "obtain": [
         {
           "where": null,
-          "details": [
-            [
-              "Found",
-              "Hungry Hall"
-            ]
-          ]
+          "details": "Hungry Hall"
         }
       ]
     },
@@ -702,12 +497,7 @@
       "obtain": [
         {
           "where": null,
-          "details": [
-            [
-              "Found",
-              "Hungry Hall"
-            ]
-          ]
+          "details": "Hungry Hall"
         }
       ]
     },
@@ -718,12 +508,7 @@
       "obtain": [
         {
           "where": null,
-          "details": [
-            [
-              "Found",
-              "Hungry Hall"
-            ]
-          ]
+          "details": "Hungry Hall"
         }
       ]
     },
@@ -734,12 +519,7 @@
       "obtain": [
         {
           "where": null,
-          "details": [
-            [
-              "Found",
-              "Hungry Hall"
-            ]
-          ]
+          "details": "Hungry Hall"
         }
       ]
     },
@@ -750,12 +530,7 @@
       "obtain": [
         {
           "where": null,
-          "details": [
-            [
-              "Found",
-              "Hungry Hall"
-            ]
-          ]
+          "details": "Hungry Hall"
         }
       ]
     },
@@ -766,12 +541,7 @@
       "obtain": [
         {
           "where": null,
-          "details": [
-            [
-              "Found",
-              "Hungry Hall"
-            ]
-          ]
+          "details": "Hungry Hall"
         }
       ]
     },
@@ -782,12 +552,7 @@
       "obtain": [
         {
           "where": null,
-          "details": [
-            [
-              "Found",
-              "Hungry Hall"
-            ]
-          ]
+          "details": "Hungry Hall"
         }
       ]
     },
@@ -798,12 +563,7 @@
       "obtain": [
         {
           "where": null,
-          "details": [
-            [
-              "Found",
-              "Hungry Hall"
-            ]
-          ]
+          "details": "Hungry Hall"
         }
       ]
     },
@@ -814,12 +574,7 @@
       "obtain": [
         {
           "where": null,
-          "details": [
-            [
-              "Found",
-              "Hungry Hall"
-            ]
-          ]
+          "details": "Hungry Hall"
         }
       ]
     },
@@ -830,12 +585,7 @@
       "obtain": [
         {
           "where": null,
-          "details": [
-            [
-              "Found",
-              "Construction Junction (Floor 1)"
-            ]
-          ]
+          "details": "Construction Junction"
         }
       ]
     },
@@ -846,12 +596,7 @@
       "obtain": [
         {
           "where": null,
-          "details": [
-            [
-              "Found",
-              "Construction Junction (Floor 1)"
-            ]
-          ]
+          "details": "Construction Junction"
         }
       ]
     },
@@ -862,12 +607,7 @@
       "obtain": [
         {
           "where": null,
-          "details": [
-            [
-              "Found",
-              "Construction Junction (Floor 1)"
-            ]
-          ]
+          "details": "Construction Junction"
         }
       ]
     },
@@ -878,12 +618,7 @@
       "obtain": [
         {
           "where": null,
-          "details": [
-            [
-              "Found",
-              "Dreamy Dragon's Den (Floor 2)"
-            ]
-          ]
+          "details": "Dreamy Dragon's Den"
         }
       ]
     },
@@ -894,12 +629,7 @@
       "obtain": [
         {
           "where": null,
-          "details": [
-            [
-              "Found",
-              "Dreamy Dragon's Den (Floor 2)"
-            ]
-          ]
+          "details": "Dreamy Dragon's Den"
         }
       ]
     },
@@ -910,12 +640,7 @@
       "obtain": [
         {
           "where": null,
-          "details": [
-            [
-              "Found",
-              "Dreamy Dragon's Den (Floor 2)"
-            ]
-          ]
+          "details": "Dreamy Dragon's Den"
         }
       ]
     },
@@ -926,12 +651,7 @@
       "obtain": [
         {
           "where": null,
-          "details": [
-            [
-              "Found",
-              "Dreamy Dragon's Den (Floor 2)"
-            ]
-          ]
+          "details": "Dreamy Dragon's Den"
         }
       ]
     },
@@ -942,12 +662,7 @@
       "obtain": [
         {
           "where": null,
-          "details": [
-            [
-              "Found",
-              "Dreamy Dragon's Den (Floor 2)"
-            ]
-          ]
+          "details": "Dreamy Dragon's Den"
         }
       ]
     },
@@ -958,12 +673,7 @@
       "obtain": [
         {
           "where": null,
-          "details": [
-            [
-              "Found",
-              "Floor 1"
-            ]
-          ]
+          "details": "Floor 1"
         }
       ]
     },
@@ -974,12 +684,7 @@
       "obtain": [
         {
           "where": null,
-          "details": [
-            [
-              "Found",
-              "Floor 1"
-            ]
-          ]
+          "details": "Floor 1"
         }
       ]
     }

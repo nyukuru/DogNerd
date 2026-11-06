@@ -56,6 +56,10 @@
   text-align: center;
 }
 
+.dognerd-obtain p {
+  white-space: pre-line;
+}
+
 .dognerd-obtain > p {
   margin: 0;
   text-align: center;
