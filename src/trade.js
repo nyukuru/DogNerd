@@ -1,7 +1,7 @@
 (() => {
   "use strict";
 
-  const { el, flash, temporaryText, warnOnce, query, gameClass: g, spriteUrl, activeDog, onResponse, refetch, watchSetting, watchTrade, quantitySelector } = DogNerd;
+  const { el, warnOnce, query, gameClass: g, spriteUrl, activeDog, onResponse, refetch, watchSetting, watchTrade, quantitySelector } = DogNerd;
 
   const ROUTE = /^\/doghouse\/?$/;
   const TRADE_KEY = "upForTrade";
@@ -146,27 +146,15 @@
   const tradedItems = () =>
     (house?.inventory ?? []).filter((i) => tradedQty(i) > 0).sort((a, b) => a.name.localeCompare(b.name));
 
-  async function copyAsText(button) {
+  function copyAsText(status) {
     const lines = tradedItems().map((i) => `~ ${i.name}${tradedQty(i) > 1 ? ` x${tradedQty(i)}` : ""}`);
-    const text = ["♡ items up for sale ♡", ...lines].join("\n");
-    try {
-      await navigator.clipboard.writeText(text);
-      showStatus("Copied! Press Ctrl+V to paste the text elsewhere!");
-    } catch (e) {
-      warnOnce("trade-copy", "couldn't copy the trade list:", e.message);
-      showStatus("Couldn't copy!");
-    }
+    DogNerdTradeImage.copyText(["♡ items up for sale ♡", ...lines].join("\n"), status, "trade-copy");
   }
 
-  function showStatus(text) {
-    const textbox = document.querySelector('.doghouse_bulkActionsBarStatus');
-    temporaryText(textbox, text);
-  }
-
-  function copyAsImage(button) {
+  function copyAsImage(button, status) {
     const items = tradedItems().map((i) => ({ name: i.name, image: i.image, qty: tradedQty(i) }));
     const png = DogNerdTradeImage.render(items, activeDog(house?.dogs)?.name);
-    DogNerdTradeImage.copy(button, "Copy as Image", png, "trade-image");
+    DogNerdTradeImage.copyImage(button, status, png, "trade-image");
   }
 
   function showSection() {
@@ -183,12 +171,12 @@
     if (!section) {
       section = el("div", { className: SECTION }, [
         el("div", { className: g("doghouse_bulkActionsBar") }),
-        el("div", { className: g("doghouse_bulkActionsBarStatus") }),
+        DogNerdTradeImage.statusBox(),
         el("div", { className: `${g("ItemGrid_grid")} ${g("ItemGrid_medium")}` }),
       ]);
     }
     if (content.lastElementChild !== section) content.append(section);
-    showSectionBar(section.firstElementChild, items);
+    showSectionBar(section.firstElementChild, section.children[1], items);
     const grid = section.lastElementChild;
     const sig = JSON.stringify(items.map((i) => [i.id, i.name, i.image, tradedQty(i)]));
     if (grid.dataset.sig !== sig) {
@@ -198,7 +186,7 @@
     for (const node of grid.children) node.classList.toggle(g("ItemCard_selected"), selected.has(node.dataset.itemId));
   }
 
-  function showSectionBar(bar, items) {
+  function showSectionBar(bar, status, items) {
     const ids = new Set(items.map((i) => i.id));
     for (const id of selected) if (!ids.has(id)) selected.delete(id);
     const sig = JSON.stringify([bulk, selected.size > 0]);
@@ -212,8 +200,8 @@
       schedule();
     };
     if (!bulk) {
-      const copy = button("Button_neutral", "Copy as Text", () => copyAsText(copy));
-      const copyImage = button("Button_neutral", "Copy as Image", () => copyAsImage(copyImage));
+      const copy = button("Button_neutral", "Copy as Text", () => copyAsText(status));
+      const copyImage = button("Button_neutral", "Copy as Image", () => copyAsImage(copyImage, status));
       bar.replaceChildren(
         button("Button_neutral", "Bulk Actions", () => {
           bulk = true;

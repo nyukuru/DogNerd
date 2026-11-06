@@ -48,21 +48,6 @@ var DogNerd = (() => {
     return gameClasses.get(name);
   }
 
-  // Holds the button's width so its neighbours in a flex row don't shift while the text changes.
-  const flashes = new WeakMap();
-  function flash(button, text, label) {
-    clearTimeout(flashes.get(button));
-    if (!button.style.flex) button.style.flex = `0 0 ${button.getBoundingClientRect().width}px`;
-    button.textContent = text;
-    flashes.set(
-      button,
-      setTimeout(() => {
-        button.textContent = label;
-        button.style.flex = "";
-      }, 1500),
-    );
-  }
-
   // Temporary display of text given a status textbox
   const temporaryTexts = new WeakMap();
   function temporaryText(box, text, time = 5000) {
@@ -445,7 +430,6 @@ var DogNerd = (() => {
     warnOnce,
     gameClass,
     el,
-    flash,
     temporaryText,
     icon,
     spriteUrl,
