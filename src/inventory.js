@@ -11,6 +11,7 @@
   const TRAY = "dognerd-inventory-tray";
   const COPY = "dognerd-inventory-copy";
   const DIALOG = "dognerd-inventory-dialog";
+  const BAR = "dognerd-inventory-bar";
   // Set by inventory-early.js.
   const LOADING = "dognerd-inventory-loading";
   const TITLE = "Inventory";
@@ -26,6 +27,16 @@
   const TRANSFORMS = new Set(["randomize-dog", "transform-dog"]);
   const TRANSFORMATION = { value: "transformation", label: "Transformations" };
   const TYPE_SORT = { value: "type", label: "Type" };
+  // The game's search bar options, for when storage leaves it out.
+  const BAR_TYPES = [
+    ["all", "All Types"], ["cosmetic", "Cosmetics"], ["food", "Food"], ["book", "Books"], ["fish", "Fish"], ["gem", "Gems"],
+    ["bug", "Bugs"], ["bait", "Bait"], ["toy", "Toys"], ["combat", "Combat"], ["crop", "Crops"], ["seed", "Seeds"],
+    ["petpet", "Dogpets"], ["decoration", "Decorations"],
+  ];
+  const BAR_SORTS = [
+    ["name-asc", "Name (A-Z)"], ["name-desc", "Name (Z-A)"], ["quantity-desc", "Quantity (High-Low)"],
+    ["quantity-asc", "Quantity (Low-High)"], ["price-desc", "Price (High-Low)"], ["price-asc", "Price (Low-High)"],
+  ];
   const AREAS = [
     { key: "doghouse", label: "Doghouse", move: "Put in doghouse" },
     { key: "storage", label: "Storage", move: "Put in storage" },
@@ -611,10 +622,41 @@
     for (const n of copy) n.hidden = visible.length === 0;
   }
 
+  function fallbackBar() {
+    const select = (label, options) =>
+      el("div", { className: g("Select_group") }, [
+        el("select", { className: g("Select_select"), ariaLabel: label }, options.map(([value, text]) => el("option", { value, textContent: text }))),
+      ]);
+    return el("div", { className: `${g("ItemSortFilterBar_optionsBar")} ${BAR}` }, [
+      el("div", { className: g("Input_group") }, [
+        el("input", { className: g("Input_input"), ariaLabel: "Search items", placeholder: "Search items..." }),
+      ]),
+      select("Filter", BAR_TYPES),
+      select("Sort", BAR_SORTS),
+    ]);
+  }
+
+  // Storage leaves out its search bar when it's empty, so one stands in for it.
+  function findBar(content) {
+    const own = content.querySelector(`[class*="ItemSortFilterBar_optionsBar__"]:not(.${BAR})`);
+    const fallback = content.querySelector(`.${BAR}`);
+    if (own) {
+      fallback?.remove();
+      return own;
+    }
+    if (fallback) return fallback;
+    const empty = content.querySelector('[class*="storage_emptyMessage__"]');
+    if (!empty) return null;
+    const bar = fallbackBar();
+    empty.before(bar);
+    return bar;
+  }
+
   function show() {
     const content = document.querySelector('[class*="Layout_content__"]');
-    const bar = content?.querySelector('[class*="ItemSortFilterBar_optionsBar__"]');
-    if (!bar || !lists || !(styled || ensureStyles())) return;
+    if (!content || !lists || !(styled || ensureStyles())) return;
+    const bar = findBar(content);
+    if (!bar) return;
     content.classList.add(ACTIVE);
     let section = content.querySelector(`.${SECTION}`);
     if (!section) {
@@ -675,6 +717,7 @@
     document.documentElement.classList.remove(LOADING);
     document.querySelector(`.${DIALOG}`)?.parentElement.remove();
     document.querySelector(`.${SECTION}`)?.remove();
+    document.querySelector(`.${BAR}`)?.remove();
     document.querySelectorAll(`.${COPY}`).forEach((n) => n.remove());
     addedOptions.splice(0).forEach((option) => option.remove());
     document.querySelector(`.${ACTIVE}`)?.classList.remove(ACTIVE);

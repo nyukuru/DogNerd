@@ -1,14 +1,13 @@
 (() => {
   "use strict";
 
-  const { COLLECTIONS, onData, hasClass, norm, warnOnce, gameClass, el, spriteUrl, watchSetting } = DogNerd;
+  const { COLLECTIONS, onData, hasClass, norm, warnOnce, gameClass, el, spriteUrl, QUESTION_MARK, watchSetting } = DogNerd;
 
   const ROUTE = /^\/collection\/(?:.+\/)?([a-z]+)\/?$/;
   const SILHOUETTE = "dognerd-silhouette";
   const GUESS = "dognerd-guess";
   const OBTAIN = "dognerd-obtain";
   const PLACEHOLDER = "dognerd-placeholder";
-  const QUESTION_MARK = "/img/wiggle-icon-question-mark.gif";
 
   const TAB_ROUTE = /^\/collection\/?$/;
   const TAB_SECTION = /-trigger-([a-z]+)$/;
@@ -65,7 +64,7 @@
   }
 
   function placeholder(entry) {
-    const img = el("img", { className: gameClass("ItemCard_icon"), alt: "???", src: spriteUrl(entry.sprite ?? QUESTION_MARK) });
+    const img = el("img", { className: gameClass("ItemCard_icon"), alt: "???", src: spriteUrl(entry.sprite) });
     img.dataset.dognerdOriginal = QUESTION_MARK;
     img.dataset.dognerd = entry.name;
     const className = `${gameClass("ItemCard_card")} ${gameClass("ItemCard_unknown")} ${PLACEHOLDER} ${SILHOUETTE}`;
@@ -77,11 +76,6 @@
     makeClickable(card, true);
     return card;
   }
-
-  const precedes = (a, b) => {
-    for (let k = 0; k < a.length; k++) if (a[k] !== b[k]) return a[k] < b[k];
-    return false;
-  };
 
   function syncPlaceholders(section) {
     const { slots, unseen } = COLLECTIONS[section];
@@ -104,28 +98,23 @@
       return i;
     };
 
-    // Sort keys: [slot], or when grouped [-group, 0 for game cards / 1 for placeholders, slot].
-    const grouped = slots.some((s) => s.group !== undefined);
-    const groupOf = (card) =>
-      Number(/-?\d+/.exec(card.querySelector('[class*="ItemCard_nameSubtitle__"]')?.textContent ?? "")?.[0] ?? 0);
+    // Sort keys are slot indexes, a card missing from the data keeps to the card before it.
     const gameKeys = [];
     for (const card of gameCards) {
       const i = claimSlot(card);
       if (i >= 0) cardEntries.set(card, slots[i]);
-      else if (!grouped) {
+      else {
         const name = card.querySelector('[class*="ItemCard_name__"]')?.textContent ?? "";
-        warnOnce(`unknown:${section}:${name}`, `${section}: "${name}" is not in the data, can't place the missing entries.`);
-        placeholders().forEach((n) => n.remove());
-        return;
+        warnOnce(`unknown:${section}:${name}`, `${section}: "${name}" is not in the data, add it to data/${section}.json.`);
       }
-      gameKeys.push(grouped ? [-groupOf(card), 0, 0] : [i]);
+      gameKeys.push(i >= 0 ? i : (gameKeys.at(-1) ?? -1));
     }
-    const missing = slots.flatMap((s, i) => (taken.has(i) ? [] : [{ slot: s, key: grouped ? [-s.group, 1, i] : [i] }]));
+    const missing = slots.flatMap((s, i) => (taken.has(i) ? [] : [{ slot: s, key: i }]));
 
     const wanted = [];
     let next = 0;
     gameCards.forEach((card, r) => {
-      while (next < missing.length && precedes(missing[next].key, gameKeys[r])) wanted.push(missing[next++].slot);
+      while (next < missing.length && missing[next].key < gameKeys[r]) wanted.push(missing[next++].slot);
       wanted.push(card);
     });
     for (; next < missing.length; next++) wanted.push(missing[next].slot);
@@ -198,14 +187,16 @@
     return el("div", { className: OBTAIN }, [
       el("h3", { textContent: "Where to find" }),
       ...entry.obtain.flatMap(({ where, details }) => {
-        const isPlainText = !where && (details.length === 1 || details.every(([label]) => !label));
-        if (isPlainText) return details.map(([, value]) => el("p", { textContent: value }));
+        if (typeof details === "string") {
+          const text = el("p", { textContent: details });
+          return where ? el("section", {}, [el("h4", { textContent: where }), text]) : text;
+        }
         return el("section", {}, [
           ...(where ? [el("h4", { textContent: where })] : []),
           el(
             "dl",
             {},
-            details.flatMap(([label, value]) => [el("dt", { textContent: label }), el("dd", { textContent: value })]),
+            Object.entries(details).flatMap(([label, value]) => [el("dt", { textContent: label }), el("dd", { textContent: value })]),
           ),
         ]);
       }),
