@@ -1,7 +1,7 @@
 (() => {
   "use strict";
 
-  const { el, flash, icon, norm, warnOnce, query, mutate, loadStyles, spriteUrl, gameClass: g, onResponse, watchStored, watchSetting, watchTrade, dialog, confirmDialog, activeDog } = DogNerd;
+  const { el, icon, norm, warnOnce, query, mutate, loadStyles, spriteUrl, gameClass: g, onResponse, watchStored, watchSetting, watchTrade, dialog, confirmDialog, activeDog } = DogNerd;
 
   const ROUTE = /^\/doghouse\/storage\/?$/;
   const AREAS_KEY = "inventoryAreas";
@@ -277,11 +277,13 @@
 
   // plan: [{item, from: {area: qty}}], everything passes through the doghouse.
   function applyPlan(plan, to) {
+    // capture before moving
+    const entries = new Map(plan.map(({ item }) => [item.id, Object.values(lists).flat().find((i) => i.id === item.id)]));
     const adjust = (where, item, delta) => {
       const list = lists[where];
       const found = list.find((i) => i.id === item.id);
       if (found) found.count += delta;
-      else list.push({ ...Object.values(lists).flat().find((i) => i.id === item.id), count: delta });
+      else list.push({ ...entries.get(item.id), count: delta });
       lists[where] = list.filter((i) => i.count > 0);
       cache = null;
     };
@@ -586,40 +588,40 @@
     }));
   }
 
-  const copied = (button, label, ok) => flash(button, ok ? "Copied!" : "Couldn't Copy", label);
+  // owned by tradeimage.js
+  let status = null;
 
-  async function copyAsText(button, bar) {
+  function copyAsText(bar) {
     const dog = activeDog(dogs)?.name;
     const lines = [dog ? `♡ ${dog}'s inventory ♡` : "♡ inventory ♡"];
     for (const { label, items } of copyGroups(bar)) {
       lines.push("", label, ...items.map((i) => `~ ${i.name}${i.qty > 1 ? ` x${i.qty}` : ""}`));
     }
-    try {
-      await navigator.clipboard.writeText(lines.join("\n"));
-      copied(button, "Copy as Text", true);
-    } catch (e) {
-      warnOnce("inventory-copy", "couldn't copy the inventory:", e.message);
-      copied(button, "Copy as Text", false);
-    }
+    DogNerdTradeImage.copyText(lines.join("\n"), status, "inventory-copy");
   }
 
   function copyAsImage(button, bar) {
     const png = DogNerdTradeImage.renderGroups(copyGroups(bar), activeDog(dogs)?.name);
-    DogNerdTradeImage.copy(button, "Copy as Image", png, "inventory-image");
+    DogNerdTradeImage.copyImage(button, status, png, "inventory-image");
   }
 
   function showCopy(actions, bar) {
     if (!actions) return;
+    if (!status) {
+      status = DogNerdTradeImage.statusBox();
+      status.classList.add(COPY);
+    }
     let copy = [...actions.querySelectorAll(`:scope > .${COPY}`)];
     if (copy.length !== 3) {
       copy.forEach((n) => n.remove());
-      const text = button("Button_neutral", "Copy as Text", () => copyAsText(text, bar));
+      const text = button("Button_neutral", "Copy as Text", () => copyAsText(bar));
       const image = button("Button_neutral", "Copy as Image", () => copyAsImage(image, bar));
       copy = [text, image, DogNerdTradeImage.themeToggle()];
       for (const n of copy) n.classList.add(COPY);
       actions.append(...copy);
     }
-    for (const n of copy) n.hidden = visible.length === 0;
+    if (actions.nextElementSibling !== status) actions.after(status);
+    for (const n of [...copy, status]) n.hidden = visible.length === 0;
   }
 
   function fallbackBar() {

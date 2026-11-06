@@ -2,7 +2,7 @@
 var DogNerdTradeImage = (() => {
   "use strict";
 
-  const { el, flash, temporaryText, spriteUrl, query, warnOnce, dialog, watchStored, gameClass: g } = DogNerd;
+  const { el, temporaryText, spriteUrl, query, warnOnce, dialog, watchStored, gameClass: g } = DogNerd;
 
   const WIDTH = 1000;
   const CARD = { w: 162, h: 219, icon: 124, top: 16, font: 24, line: 26 };
@@ -394,8 +394,20 @@ var DogNerdTradeImage = (() => {
     return png(canvas);
   }
 
+  const statusBox = () => el("div", { className: "dognerd-copy-status" });
+
+  async function copyText(text, status, warnKey) {
+    try {
+      await navigator.clipboard.writeText(text);
+      temporaryText(status, "Copied! Paste the text elsewhere!");
+    } catch (e) {
+      warnOnce(warnKey, "couldn't copy the text:", e.message);
+      temporaryText(status, "Couldn't copy!");
+    }
+  }
+
   // png is the pending render, so the click's permission to write the clipboard lasts while it draws.
-  async function copy(button, label, png, warnKey) {
+  async function copyImage(button, status, png, warnKey) {
     button.disabled = true;
     let ok = true;
     try {
@@ -405,11 +417,7 @@ var DogNerdTradeImage = (() => {
       ok = false;
     }
     button.disabled = false;
-    showStatus(
-      ok
-        ? "Copied! Press Ctrl+V to paste the image elsewhere!"
-        : "Couldn't copy!"
-    );
+    temporaryText(status, ok ? "Copied! Paste the image elsewhere!" : "Couldn't copy!");
     if (ok) return;
     const blob = await png.catch((e) => warnOnce(`${warnKey}-render`, "couldn't draw the image:", e.message));
     if (blob) copyFailed(blob);
@@ -438,11 +446,6 @@ var DogNerdTradeImage = (() => {
     );
   }
 
-  function showStatus(text) {
-    const textbox = document.querySelector('.doghouse_bulkActionsBarStatus');
-    temporaryText(textbox, text);
-  }
-
   function themeToggle() {
     const input = el("input", { className: g("Checkbox_checkbox"), type: "checkbox", checked: themed });
     input.onchange = () =>
@@ -450,5 +453,5 @@ var DogNerdTradeImage = (() => {
     return el("div", { className: `${g("Checkbox_group")} dognerd-theme-toggle` }, [el("label", { className: g("Checkbox_label") }, [input, "Use Dog Theme"])]);
   }
 
-  return { render, renderGroups, copy, themeToggle };
+  return { render, renderGroups, statusBox, copyText, copyImage, themeToggle };
 })();
