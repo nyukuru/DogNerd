@@ -30,13 +30,12 @@
     return fish.slots.flatMap((slot, index) => {
       const bites = slot?.obtain.some(({ where: spot, details }) => {
         if (spot !== where) return false;
-        const info = Object.fromEntries(details);
-        const minimumRank = rankOf(info["Minimum Bait"] ?? "");
+        const minimumRank = rankOf(details["Minimum Bait"] ?? "");
         return (
           minimumRank >= 0 &&
           minimumRank <= baitRank &&
-          allows(info["Times of Day"], now.time) &&
-          allows(info["Weather Conditions"], now.weather)
+          allows(details["Times of Day"], now.time) &&
+          allows(details["Weather Conditions"], now.weather)
         );
       });
       return bites ? [index] : [];
