@@ -10,6 +10,7 @@
   const COUNT = "dognerd-gift-count";
   const HINT = "dognerd-gift-hint";
   const PICKER = "dognerd-gift-picker";
+  const AGAIN = "dognerd-gift-send-again";
   const OTHER = "other";
   const TYPES = [
     ["all", "All Types"], ["cosmetic", "Cosmetics"], ["food", "Food"], ["book", "Books"], ["fish", "Fish"], ["gem", "Gems"],
@@ -121,16 +122,41 @@
     input.dispatchEvent(new Event("input", { bubbles: true }));
   }
 
+  function movePicker(form) {
+    const existing = form.querySelector(`:scope > .${PICKER}-wrapper`);
+    if (existing === null) {
+      const picker = form.querySelector(`:scope > .${PICKER}`);
+      const group = form.querySelector(':scope > [class*="Input_group__"]');
+      const button = form.querySelector(':scope > [class*="Button_button__"]');
+      if (!group || !button) return;
+      const wrapper = el("div", { className: `${PICKER}-wrapper` });
+      if (picker) wrapper.append(picker);
+      wrapper.append(group);
+      wrapper.append(button);
+      form.prepend(wrapper);
+    }
+  }
+
+  function unmovePicker(form) {
+    const existing = form?.querySelector(`:scope > .${PICKER}-wrapper`);
+    if (existing) {
+      const group = existing.querySelector('[class*="Input_group__"]');
+      const button = existing.querySelector('[class*="Button_button__"]');
+      if (group) form.append(group);
+      if (button) form.append(button);
+      existing.remove();
+    }
+  }
+
   function picker(input) {
     const list = [...buddies.buddies].sort((a, b) => a.username.localeCompare(b.username));
     const code = input.value.trim();
     const select = el("select", { className: g("Select_select"), id: `${PICKER}-select` }, [
-      el("option", { value: "", textContent: "Choose a buddy" }),
+      el("option", { value: OTHER, textContent: "Friend Code" }),
       ...list.map((b) => el("option", { value: b.friendCode, textContent: b.username })),
-      el("option", { value: OTHER, textContent: "Someone else (friend code)" }),
     ]);
     // ?friendcode= from the buddy list fills the game's input before this exists.
-    select.value = !code || list.some((b) => b.friendCode === code) ? code : OTHER;
+    select.value = list.some((b) => b.friendCode === code) ? code : OTHER;
     select.onchange = () => {
       setCode(input, select.value === OTHER ? "" : select.value);
       schedule();
@@ -143,7 +169,7 @@
   }
 
   function showPicker(form) {
-    const group = form.querySelector(':scope > [class*="Input_group__"]');
+    const group = form.querySelector('[class*="Input_group__"]');
     const input = group?.querySelector("input");
     if (!input || !buddies?.buddies.length) return;
     let node = form.querySelector(`.${PICKER}`);
@@ -153,14 +179,14 @@
   }
 
   function showHint(form) {
-    const group = form.querySelector(':scope > [class*="Input_group__"]');
+    const group = form.querySelector('[class*="Input_group__"]');
     const input = group?.querySelector("input");
     if (!input) return;
     const found = recipient(input.value.trim());
     let hint = group.querySelector(`.${HINT}`);
     if (!found) return hint?.remove();
     if (!hint) group.append((hint = el("small", { className: `${g("Input_hint")} ${HINT}` })));
-    hint.textContent = found.text;
+    if (hint.textContent !== found.text) hint.textContent = found.text;
     hint.classList.toggle("dognerd-gift-warn", !!found.warn);
   }
 
@@ -169,6 +195,16 @@
     if (!sent || !message) return;
     const text = `You sent ${sent.item} to ${recipient(sent.code)?.name ?? sent.code}!`;
     if (message.textContent !== text) message.textContent = text;
+    const again = container.querySelector(`.${AGAIN}`);
+    if (again === null) {
+      const buttons = container.querySelector('[class*="ResultMessage_buttons__"]');
+      const button = el("a", {
+        className: `${g("Button_button")} ${g("Button_neutral") } ${AGAIN}`,
+        textContent: "Send another item",
+        href: "/send-item",
+      });
+      buttons.append(button);
+    }
   }
 
   function show() {
@@ -181,6 +217,7 @@
     showHint(form);
     if (!styled) return;
     showPicker(form);
+    movePicker(form);
     if (!items) return;
     if (!options) options = bar();
     if (form.previousElementSibling !== options) form.before(options);
@@ -188,6 +225,7 @@
   }
 
   function hide() {
+    document.querySelectorAll('form[class*="send-item_form__"]').forEach(unmovePicker);
     document.querySelector(`.${BAR}`)?.remove();
     document.querySelectorAll(`.${EMPTY}, .${COUNT}, .${HINT}, .${PICKER}`).forEach((n) => n.remove());
     document.querySelectorAll(`.${HIDDEN}`).forEach((n) => n.classList.remove(HIDDEN));
@@ -220,7 +258,7 @@
     (e) => {
       if (!enabled || !e.target.matches?.('[class*="send-item_form__"]')) return;
       const item = e.target.querySelector('[class*="ItemCard_selected__"] [class*="ItemCard_name__"]')?.textContent;
-      const code = e.target.querySelector(':scope > [class*="Input_group__"] input')?.value.trim();
+      const code = e.target.querySelector('[class*="Input_group__"] input')?.value.trim();
       if (item && code) sent = { item, code };
     },
     true,
