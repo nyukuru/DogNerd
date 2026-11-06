@@ -3,7 +3,7 @@ result-*
 dist/
 web-ext-artifacts/
 node_modules/
-.firefox-profile/
+.dognerd-profile/
 .chrome-profile/
 .pre-commit-config.yaml
 .mcp.json

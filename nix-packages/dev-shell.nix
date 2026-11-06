@@ -13,14 +13,31 @@
 }: let
   inherit (self.checks.${stdenv.hostPlatform.system}) pre-commit-check;
 
+  dognerd-dev = writeShellApplication {
+    name = "dognerd-dev";
+    runtimeInputs = [web-ext];
+    text = ''
+      mkdir -p .dognerd-profile
+      exec web-ext run \
+        --source-dir "$PWD" \
+        --firefox "$(command -v firefox)" \
+        --firefox-profile "$PWD/.dognerd-profile" \
+        --keep-profile-changes \
+        --watch-ignored "$PWD/.dognerd-profile" \
+        --watch-ignored "$PWD/.chrome-profile" \
+        --start-url https://dogonline.net \
+        "$@"
+    '';
+  };
+
   firefox-mcp = writeShellApplication {
     name = "firefox-mcp";
     runtimeInputs = [nodejs geckodriver];
     text = ''
-      mkdir -p .firefox-profile
+      mkdir -p .dognerd-profile
       exec npx -y @mozilla/firefox-devtools-mcp@0.10.6 \
         --firefox-path "$(command -v firefox)" \
-        --profile-path "$PWD/.firefox-profile" \
+        --profile-path "$PWD/.dognerd-profile" \
         "$@"
     '';
   };
@@ -46,6 +63,7 @@ in
         web-ext
         android-tools
         claude-code
+        dognerd-dev
         firefox-mcp
       ]
       ++ lib.optional (lib.meta.availableOn stdenv.hostPlatform chromium) chrome-mcp;
