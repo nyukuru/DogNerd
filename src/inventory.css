@@ -128,6 +128,11 @@
   font-size: 18px;
 }
 
+.dognerd-copy-status {
+  width: 100%;
+  min-height: 28px;
+}
+
 .dognerd-copy-image {
   display: block;
   max-width: 100%;
